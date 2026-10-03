@@ -2,101 +2,82 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIERRA ROSA - 15K Pro 3D</title>
+<title>TIERRA ROSA - Login Principal</title>
 <style>
 :root{--beige:#F5EDE0;--arena:#E8DCC8;--crema:#C9B99A;--cafe:#5C3D2E;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
-body{background:var(--beige);color:var(--cafe);}
-.btn{background:white;border:2.5px solid var(--crema);padding:12px;border-radius:12px;font-weight:800;width:100%;cursor:pointer;}
+body{background:var(--beige);color:var(--cafe);padding:12px;}
+.card{background:#FFFEFB;border-radius:20px;padding:20px;border:2.5px solid var(--arena);max-width:560px;margin:14px auto;box-shadow:0 12px 30px rgba(92,61,46,.12);}
+.circle{width:76px;height:76px;border-radius:50%;background:var(--beige);border:3px solid var(--crema);display:flex;align-items:center;justify-content:center;font-size:38px;margin:auto;}
+.input{width:100%;padding:12px;border:2px solid var(--crema);border-radius:11px;margin:5px 0;background:white;}
+.btn{width:100%;padding:13px;background:white;border:2.5px solid var(--crema);border-radius:12px;font-weight:900;cursor:pointer;margin-top:6px;}
 .btn:hover{background:var(--cafe);color:white;}
-.input{width:100%;padding:12px;border:2px solid var(--crema);border-radius:11px;background:white;margin:5px 0;}
-#header{position:sticky;top:0;z-index:50;background:#FFFEFB;border-bottom:2px solid var(--arena);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;}
-.icon{font-size:22px;padding:8px 12px;background:var(--beige);border:2px solid var(--crema);border-radius:10px;cursor:pointer;}
-.circle{width:46px;height:46px;border-radius:50%;background:var(--beige);border:2.5px solid var(--crema);display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden;}
-.circle img{width:100%;height:100%;object-fit:cover;}
-#side{position:fixed;top:0;left:-300px;width:285px;height:100vh;background:white;z-index:100;transition:.3s;padding:20px;}#side.open{left:0;}
-#ov{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:90;display:none;}#ov.show{display:block;}
-.searchBig{width:100%;padding:20px 20px 20px 55px;border-radius:18px;border:2.5px solid var(--cafe);font-size:17px;background:white;box-shadow:0 8px 25px rgba(92,61,46,.15);}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}@media(min-width:900px){.grid{grid-template-columns:1fr 1fr 1fr 1fr;}}
-.prod{background:white;border-radius:18px;overflow:hidden;border:2px solid var(--arena);box-shadow:0 8px 20px rgba(92,61,46,.12);position:relative;}
-.badge{position:absolute;top:8px;left:8px;background:var(--cafe);color:white;font-size:8px;padding:4px 8px;border-radius:20px;font-weight:700;}
-.disc{position:absolute;top:8px;right:8px;background:#D96C6C;color:white;font-size:9px;padding:4px 8px;border-radius:20px;}
-.drawBox{height:185px;background:linear-gradient(145deg,#F5EDE0 0%,#E8DCC8 40%,#C9B99A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.draw3D{width:88px;height:88px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:44px;box-shadow:0 12px 25px rgba(92,61,46,.25), inset 0 4px 10px rgba(255,255,255,.8), inset 0 -6px 12px rgba(92,61,46,.15);transform:rotateX(10deg) rotateY(-12deg);transition:.3s;}
-.prod:hover.draw3D{transform:rotateX(0) rotateY(0) scale(1.08);}
-.logoPill{background:white;border:2px solid var(--cafe);padding:3px 10px;border-radius:20px;font-weight:900;font-size:9px;letter-spacing:1px;margin-top:8px;}
-.priceBtn{width:100%;background:white;border:2px solid var(--cafe);border-radius:10px;padding:9px;font-weight:900;font-size:11px;pointer-events:none;margin-top:6px;text-align:center;}
+.btn-cafe{width:100%;padding:16px;background:var(--cafe);color:white;border:none;border-radius:14px;font-weight:900;cursor:pointer;margin-top:10px;}
+.sep{height:2px;background:var(--beige);margin:14px 0;}
 </style>
 </head>
 <body>
-<header id="header">
-<div style="display:flex;align-items:center;gap:10px;"><div class="icon" onclick="tog()">☰</div><div style="display:flex;align-items:center;gap:10px;"><div class="circle">🌸</div><div><h2 style="font-size:13px;letter-spacing:2px;">TIERRA ROSA</h2><span style="font-size:9px;opacity:.7;">BELLEZA QUE NACE DE LA TIERRA</span></div></div></div>
-<div style="display:flex;align-items:center;gap:8px;">🛒<span id="cartN" style="background:var(--cafe);color:white;border-radius:50%;padding:2px 7px;font-size:11px;">0</span>
-<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
-<div class="circle" style="width:52px;height:52px;" id="avatarBox"><img id="avatar" src="https://i.pravatar.cc/100"></div>
-<button class="btn" style="font-size:9px;padding:6px 8px;" onclick="document.getElementById('f').click()">Botón Subir Avatar o Fotografía</button>
-<button class="btn" style="font-size:9px;padding:6px 8px;background:var(--cafe);color:white;" onclick="alert('[Guardar] Foto OK TITAN')">[Guardar]</button>
-<input type="file" id="f" hidden accept="image/*" onchange="up(event)">
-</div></div>
-</header>
-<div id="ov" onclick="tog()"></div>
-<nav id="side"><div style="display:flex;align-items:center;gap:10px;"><div class="circle">🌸</div><div><h2 style="font-size:14px;">TIERRA ROSA</h2><span style="font-size:10px;">BELLEZA QUE NACE DE LA TIERRA</span></div></div><br><a href="#" style="display:block;padding:12px;background:var(--beige);border-radius:12px;text-decoration:none;color:var(--cafe);font-weight:700;">🛍️ Tienda</a><br><a href="acerca-de.html" style="display:block;padding:12px;background:var(--cafe);color:white;border-radius:12px;text-decoration:none;">📖 Acerca de - Funcionando</a><br><button class="btn" onclick="location.href='Login.html'">Ir a Login.html</button></nav>
-
-<main style="padding:12px;max-width:1300px;margin:auto;">
-<div style="background:white;border-radius:16px;padding:16px;border:1.5px solid var(--arena);">
-<h3>icono circular de perfil editar icono</h3><br>
-Descripción<textarea class="input" style="height:70px;" placeholder="Descripción"></textarea><button class="btn" onclick="alert('Descripción Guardar OK')">Botón Guardar</button><br><br>
-6 Links Webs<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;"><input class="input" placeholder="Web 1"><input class="input" placeholder="Web 2"><input class="input" placeholder="Web 3"><input class="input" placeholder="Web 4"><input class="input" placeholder="Web 5"><input class="input" placeholder="Web 6"></div><button class="btn" onclick="alert('Webs Guardar OK')">Botón Guardar</button><br><br>
-6 Links R. Sociales<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;"><input class="input" placeholder="Social 1"><input class="input" placeholder="2"><input class="input" placeholder="3"><input class="input" placeholder="4"><input class="input" placeholder="5"><input class="input" placeholder="6"></div><button class="btn" onclick="alert('Social Guardar OK')">Botón Guardar</button><br><br>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;"><div>Ocupación<input class="input" placeholder="Ocupación"></div><div>E-mail<input class="input" placeholder="E-mail"></div><div>Teléfono<input class="input" placeholder="Teléfono"></div></div><br><button class="btn" style="background:var(--cafe);color:white;padding:16px;" onclick="alert('Botón [Guardar] todos OK TITAN')">Botón [Guardar]</button>
+<div class="card" style="text-align:center;">
+<div class="circle">🌸</div>
+<h1 style="letter-spacing:6px;margin-top:8px;">TIERRA ROSA</h1>
+<p style="font-size:11px;letter-spacing:3px;opacity:.7;">BELLEZA QUE NACE DE LA TIERRA</p>
 </div>
 
-<div style="position:relative;margin:16px 0;"><span style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:20px;">🔍</span><input id="s" class="searchBig" placeholder="Buscador grande justo debajo de la Marca - busca 15,000" oninput="buscar()"></div>
+<div class="card">
+<h2 style="text-align:center;">Login</h2><br>
+<b>Usuario</b><input class="input" placeholder="Usuario"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
+<div class="sep"></div>
+<b>1er Correo Electrónico</b><input class="input" placeholder="1er Correo Electrónico"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
+<div class="sep"></div>
+<b>2do Correo Electrónico</b><input class="input" placeholder="2do Correo Electrónico"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
+<div class="sep"></div>
+<b>Teléfono</b><input class="input" placeholder="Teléfono"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
+<div class="sep"></div>
+<b>Microsoft</b><input class="input" placeholder="Microsoft"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
 
-<div style="display:flex;justify-content:space-between;margin-bottom:10px;"><b id="info">Cargando 15,000 PRO...</b><button class="btn" style="width:auto;" onclick="more()">Cargar +120</button></div>
-<div class="grid" id="grid"></div>
-<div style="text-align:center;margin:22px;"><button class="btn" style="background:var(--cafe);color:white;padding:16px;" onclick="more()">Ver más 120 productos profesionales 3D (15,000 totales)</button><p id="cont" style="font-size:11px;opacity:.6;margin-top:8px;"></p></div>
-</main>
+<br><p style="font-size:12px;line-height:1.8;margin-top:14px;"><b>Necesitas ayuda?</b><br>Sigue las pasos y tendrá acceso a entrar a esta maravillosa tienda creada para que tu sientas satisfacción a tu gusto.<br><br><b>No tienes una cuenta?</b><br>Crea una cuenta en Tierra Rosa es fácil y sencillo es súper gratis no se te cobrará nada solamente llena tus datos en el formulario de Registrar y Listo. Solamente acuérdate de su usuario y contraseña que no se te olvide cuando te registres debes guardar tu datos en un lugar seguro 🔐.</p>
+<center><a href="#reg" style="font-weight:900;color:var(--cafe);text-decoration:none;">Registrarme Aquí</a></center>
+</div>
 
-<script>
-const data=[
-{c:"💄",bg:"linear-gradient(145deg,#FFD6D6,#FF8A8A)",n:"Labial Betabel Natural"},
-{c:"🌸",bg:"linear-gradient(145deg,#FFD9E8,#FF9BC1)",n:"Rubor Bambú 2EN1"},
-{c:"🥑",bg:"linear-gradient(145deg,#D6FFD6,#8AFF8A)",n:"Sérum Aguacate"},
-{c:"🧴",bg:"linear-gradient(145deg,#D6E8FF,#8AB8FF)",n:"Base Líquida Bambú"},
-{c:"✨",bg:"linear-gradient(145deg,#FFF5CC,#FFE07A)",n:"Polvo Compacto 3D PRO"},
-{c:"💫",bg:"linear-gradient(145deg,#FFE8CC,#FFC17A)",n:"Iluminador Dorado"},
-{c:"☀️",bg:"linear-gradient(145deg,#FFEDCC,#FFB86A)",n:"Bronzer Bambú"},
-{c:"✒️",bg:"linear-gradient(145deg,#E8D6FF,#B88AFF)",n:"Delineador Preciso 3D"},
-{c:"💋",bg:"linear-gradient(145deg,#FFCCDD,#FF7A9E)",n:"Gloss Jugoso Natural"},
-{c:"🧼",bg:"linear-gradient(145deg,#DDFFEE,#7AFFB8)",n:"Crema Hidratante 24H"},
-{c:"🌿",bg:"linear-gradient(145deg,#E0FFCC,#9AFF7A)",n:"Tónico Facial Rosa"},
-{c:"💧",bg:"linear-gradient(145deg,#CCE8FF,#7AB8FF)",n:"Aceite Argán Puro"},
-{c:"🎨",bg:"linear-gradient(145deg,#FFDDCC,#FF9E7A)",n:"Corrector Ojeras"},
-{c:"🖌️",bg:"linear-gradient(145deg,#F0D6FF,#C78AFF)",n:"Contorno Barra Pro"},
-{c:"🌷",bg:"linear-gradient(145deg,#FFCCE6,#FF8AC1)",n:"Rubor Líquido"}
-];
-let all=[],filt=[],shown=0,STEP=120;
-function gen(){
-for(let i=0;i<15000;i++){let b=data[i%data.length];let id=String(i+1).padStart(5,'0');
-all.push({id:id,name:`${b.n} ${id}`,emoji:b.c,bg:b.bg,logo:`TR-${b.n.substring(0,3).toUpperCase()}-${id}`,price:89+(i%311),off:10+(i%36)});
-}filt=[...all];
-}
-function render(){
-const g=document.getElementById('grid');let end=Math.min(shown+STEP,filt.length);
-for(let i=shown;i<end;i++){let p=filt[i];let fin=Math.round(p.price*(1-p.off/100));
-g.innerHTML+=`<div class="prod"><span class="badge">Nuevo Lanzamiento</span><span class="disc">-${p.off}%</span>
-<div class="drawBox"><div style="position:absolute;top:18px;left:18px;width:60px;height:60px;background:rgba(255,255,255,.4);border-radius:50%;filter:blur(8px);"></div>
-<div class="draw3D" style="background:${p.bg}">${p.emoji}</div>
-<div class="logoPill">${p.logo}</div><div style="font-size:8px;opacity:.5;margin-top:2px;">DIBUJO 3D PROFESIONAL • SIN IMAGEN ROTA</div></div>
-<div style="padding:10px;"><b style="font-size:12px;">${p.name}</b><br><span style="font-size:10px;opacity:.6;">Logo ${p.logo} • Nuevo Lanzamiento • ${p.off}%</span><div class="priceBtn">$${fin} MXN <s style="opacity:.35;">$${p.price}</s> • -${p.off}% OFF</div></div></div>`;
-}shown=end;document.getElementById('info').innerText=`Mostrando ${shown} de ${filt.length} / 15,000 Maquillaje Belleza Cosmética 3D PRO`;document.getElementById('cont').innerText=`Has visto ${shown} - Quedan ${filt.length-shown} dibujos profesionales`;
-}
-function more(){render();}
-function buscar(){let q=document.getElementById('s').value.toLowerCase();filt=all.filter(p=>p.name.toLowerCase().includes(q));document.getElementById('grid').innerHTML='';shown=0;render();}
-function tog(){document.getElementById('side').classList.toggle('open');document.getElementById('ov').classList.toggle('show');}
-function up(e){let file=e.target.files[0];if(!file)return;let r=new FileReader();r.onload=ev=>{document.getElementById('avatar').src=ev.target.result;};r.readAsDataURL(file);}
-gen();render();
-</script>
+<div class="card" id="reg">
+<h3>Crea Una cuenta</h3><br>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+<input class="input" placeholder="1er Nombre"><input class="input" placeholder="2do Nombre">
+<input class="input" placeholder="1er Apellido"><input class="input" placeholder="2do Apellido">
+<input class="input" placeholder="Usuario"><input class="input" placeholder="Contraseña">
+<input class="input" placeholder="Teléfono"><input class="input" placeholder="Contraseña">
+</div>
+1er Correo Electrónico Contraseña<input class="input" placeholder="1er Correo Electrónico"><input class="input" type="password" placeholder="Contraseña">
+2do Correcto Electrónico Contraseña<input class="input" placeholder="2do Correcto Electrónico"><input class="input" type="password" placeholder="Contraseña">
+Microsoft Contraseña<input class="input" placeholder="Microsoft"><input class="input" type="password" placeholder="Contraseña">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+<input class="input" placeholder="Edad"><input class="input" placeholder="Ciudad"><input class="input" placeholder="Estado"><input class="input" placeholder="País">
+<input class="input" placeholder="1er Apodo"><input class="input" type="date">
+</div>
+<p style="font-weight:800;margin-top:12px;font-size:13px;">Novedades de Tierra Rosa - Palomear los siguiente ✓</p>
+<div style="font-size:11px;line-height:2;">
+✓ Aceptas jurar y guardar protesta de tus datos confidenciales.<br>
+✓ Aceptas jurar dices totalmente la verdad<br>
+✓ Aceptas los términos de condiciones además de los avisos de política de privacidad.<br>
+✓ Esta Aplicación trabaja como aplicación Principiante por lo cual deberás mantener el órden y el seguimiento en los eventos noticias rueda de prensa y mucho mas.
+</div><br>
+<b>OTRAS FORMAS OPCIONALES *Cómo un solo Inicio entras* elige la que sea posible. Gracias por tu atención.</b><br><br>
+Iniciar Sesión/Redes Sociales con<br><br>
+Facebook Contraseña<input class="input" placeholder="Facebook Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
+Twitch Contraseña<input class="input" placeholder="Twitch Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
+X Contraseña<input class="input" placeholder="X Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
+Bluesky Contraseña<input class="input" placeholder="Bluesky Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
+Acode Contraseña<input class="input" placeholder="Acode Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
+Spotify Contraseña<input class="input" placeholder="Spotify Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
+Snapchat Contraseña<input class="input" placeholder="Snapchat Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
+GitHub Contraseña<input class="input" placeholder="GitHub Contraseña"><button class="btn" onclick="go()">Botón Login</button><br><br>
+
+<button class="btn" style="padding:16px;" onclick="document.getElementById('ok').style.display='block'">Botón blanco *Registrar*</button>
+<div id="ok" style="display:none;background:var(--beige);border:2px solid var(--cafe);padding:14px;border-radius:12px;margin-top:12px;text-align:center;">
+Notificación<br><b>*Su registro ha sido un éxito muchas gracias*</b><br><br>
+<button class="btn-cafe" onclick="go()">Botón blanco *Login* en automático q este funcionando directo a tienda.html</button>
+</div>
+</div>
+<script>function go(){localStorage.setItem('tr_user','ok');location.href='tienda.html';}</script>
 </body>
-                                                                                                                                                                                                                                                                                            </html>
+  </html>
