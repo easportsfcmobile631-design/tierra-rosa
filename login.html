@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIERRA ROSA Login</title>
+<style>
+:root{--beige:#F5EDE0;--arena:#E8DCC8;--crema:#C9B99A;--cafe:#5C3D2E;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:var(--beige);color:var(--cafe);padding:12px;}
+.card{background:white;border-radius:18px;padding:18px;border:2px solid var(--arena);max-width:520px;margin:12px auto;box-shadow:0 10px 30px rgba(92,61,46,.12);}
+.circle{width:72px;height:72px;border-radius:50%;background:var(--beige);border:3px solid var(--crema);display:flex;align-items:center;justify-content:center;font-size:36px;margin:auto;}
+.input{width:100%;padding:12px;border:2px solid var(--crema);border-radius:10px;margin:5px 0;background:white;}
+.btn{width:100%;padding:13px;background:white;border:2.5px solid var(--crema);border-radius:12px;font-weight:900;cursor:pointer;margin-top:6px;}
+.btn:hover{background:var(--cafe);color:white;}
+.sep{height:2px;background:var(--beige);margin:14px 0;}
+</style>
+</head>
+<body>
+<div class="card" style="text-align:center;">
+<div class="circle">🌸</div>
+<h1 style="letter-spacing:5px;">TIERRA ROSA</h1>
+<p style="font-size:11px;letter-spacing:3px;opacity:.7;">BELLEZA QUE NACE DE LA TIERRA</p>
+</div>
 
+<div class="card">
+<h2 style="text-align:center;">Login</h2><br>
+
+<b>Usuario</b><input class="input" id="u1" placeholder="Usuario"><input class="input" id="pu1" type="password" placeholder="Contraseña"><button class="btn" onclick="entrar('u1')">Boton Login</button>
+<div class="sep"></div>
+
+<b>1er Correo Electrónico</b><input class="input" id="e1" placeholder="1er Correo Electrónico"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="entrar('e1')">Boton Login</button>
+<div class="sep"></div>
+
+<b>2do Correo Electrónico</b><input class="input" id="e2" placeholder="2do Correo Electrónico"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="entrar('e2')">Boton Login</button>
+<div class="sep"></div>
+
+<b>Teléfono</b><input class="input" id="t1" placeholder="Teléfono"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="entrar('t1')">Boton Login</button>
+<div class="sep"></div>
+
+<b>Microsoft</b><input class="input" id="m1" placeholder="Microsoft"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="entrar('m1')">Boton Login</button>
+
+<br><br><p style="font-size:12px;line-height:1.7;"><b>Necesitas ayuda?</b><br>Sigue las pasos y tendrá acceso a entrar a esta maravillosa tienda creada para que tu sientas satisfacción a tu gusto.<br><br><b>No tienes una cuenta?</b><br>Crea una cuenta en Tierra Rosa es fácil y sencillo es súper gratis no se te cobrará nada solamente llena tus datos en el formulario de Registrar y Listo. Solamente acuérdate de su usuario y contraseña que no se te olvide cuando te registres debes guardar tu datos en un lugar seguro 🔐.</p>
+<center><a href="#reg" style="font-weight:900;color:var(--cafe);">Registrarme Aquí</a></center>
+</div>
+
+<div class="card" id="reg">
+<h3>Crea Una cuenta</h3><br>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+<input class="input" placeholder="1er Nombre"><input class="input" placeholder="2do Nombre">
+<input class="input" placeholder="1er Apellido"><input class="input" placeholder="2do Apellido">
+<input class="input" placeholder="Usuario"><input class="input" placeholder="Contraseña">
+<input class="input" placeholder="Teléfono"><input class="input" placeholder="Contraseña">
+</div>
+1er Correo Electrónico Contraseña<input class="input" placeholder="1er Correo Electrónico"><input class="input" type="password" placeholder="Contraseña">
+2do Correcto Electrónico Contraseña<input class="input" placeholder="2do Correcto Electrónico"><input class="input" type="password" placeholder="Contraseña">
+Microsoft Contraseña<input class="input" placeholder="Microsoft"><input class="input" type="password" placeholder="Contraseña">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+<input class="input" placeholder="Edad"><input class="input" placeholder="Ciudad"><input class="input" placeholder="Estado"><input class="input" placeholder="País">
+<input class="input" placeholder="1er Apodo"><input class="input" type="date">
+</div>
+<p style="font-weight:700;margin-top:10px;">Novedades de Tierra Rosa - Palomear los siguiente ✓</p>
+<div style="font-size:11px;line-height:1.9;">
+✓ Aceptas jurar y guardar protesta de tus datos confidenciales.<br>
+✓ Aceptas jurar dices totalmente la verdad<br>
+✓ Aceptas los términos de condiciones además de los avisos de política de privacidad.<br>
+✓ Esta Aplicación trabaja bajo licencia limitada por lo cual deberás mantener el órden y el seguimiento en los eventos noticias rueda de prensa y mucho mas.
+</div>
+<br><b>OTRAS FORMAS OPCIONALES *Cómo un solo Inicio entras* elige la que sea posible. Gracias por tu atención.</b><br><br>
+Iniciar Sesión/Redes Sociales con<br><br>
+
+Facebook Contraseña<input class="input" placeholder="Facebook Contraseña"><button class="btn" onclick="entrar('fb')">Botón Login</button><br>
+Twitch Contraseña<input class="input" placeholder="Twitch Contraseña"><button class="btn" onclick="entrar('tw')">Botón Login</button><br>
+X Contraseña<input class="input" placeholder="X Contraseña"><button class="btn" onclick="entrar('x')">Botón Login</button><br>
+Bluesky Contraseña<input class="input" placeholder="Bluesky Contraseña"><button class="btn" onclick="entrar('bs')">Botón Login</button><br>
+Acode Contraseña<input class="input" placeholder="Acode Contraseña"><button class="btn" onclick="entrar('ac')">Botón Login</button><br>
+Spotify Contraseña<input class="input" placeholder="Spotify Contraseña"><button class="btn" onclick="entrar('sp')">Botón Login</button><br>
+Snapchat Contraseña<input class="input" placeholder="Snapchat Contraseña"><button class="btn" onclick="entrar('sn')">Botón Login</button><br>
+GitHub Contraseña<input class="input" placeholder="GitHub Contraseña"><button class="btn" onclick="entrar('gh')">Botón Login</button><br>
+
+<br><button class="btn" style="padding:16px;" onclick="document.getElementById('ok').style.display='block'">Botón blanco *Registrar*</button>
+<div id="ok" style="display:none;background:var(--beige);border:2px solid var(--cafe);padding:14px;border-radius:12px;margin-top:12px;text-align:center;">
+Notificación<br><b>*Su registro ha sido un éxito muchas gracias*</b><br><br>
+<button class="btn" onclick="location.href='index.html'" style="background:var(--cafe);color:white;">Botón blanco *Login* en automático q este funcionando directo a index.html</button>
+</div>
+</div>
+
+<script>
+function entrar(id){
+let el=document.getElementById(id);
+let v=el?el.value:'social';
+if(id.length==2 && id!='u1' &&!v){ // redes sociales sin id real
+location.href='index.html';return;
+}
+if(!v && ['u1','e1','e2','t1','m1'].includes(id)){alert('Escribe dato TITAN');return;}
+localStorage.setItem('tr_user',v||id);
+location.href='index.html';
+}
+</script>
+</body>
+  </html>
