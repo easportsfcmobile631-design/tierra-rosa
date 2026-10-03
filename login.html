@@ -1,1 +1,88 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - TIERRA ROSA</title>
+<style>
+:root{--beige-claro:#F5EDE0;--arena-calido:#E8DCC8;--crema-tostado:#C9B99A;--cafe:#5C3D2E;--blanco:#FFFEFB;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:linear-gradient(135deg,var(--beige-claro) 0%,var(--arena-calido) 50%,var(--crema-tostado) 100%);min-height:100vh;display:flex;justify-content:center;padding:20px;color:var(--cafe);}
+.container{max-width:620px;width:100%;background:var(--blanco);border-radius:24px;padding:28px;box-shadow:0 12px 40px rgba(92,61,46,.18);border:2px solid var(--arena-calido);}
+.icon-circle{width:88px;height:88px;border-radius:50%;background:var(--beige-claro);border:3px solid var(--crema-tostado);display:flex;align-items:center;justify-content:center;font-size:48px;margin:0 auto 14px;}
+.btn-blanco{background:white;color:var(--cafe);border:2.5px solid var(--crema-tostado);padding:15px 28px;border-radius:14px;font-weight:900;cursor:pointer;width:100%;font-size:16px;}
+.btn-blanco:hover{background:var(--cafe);color:white;}
+.input{width:100%;padding:13px 14px;border:2px solid var(--crema-tostado);border-radius:11px;background:white;margin:6px 0 12px 0;}
+.card-light{background:var(--beige-claro);border-radius:14px;padding:16px;margin:14px 0;border:1.5px solid var(--arena-calido);}
+.hidden{display:none!important;}
+.check{display:flex;gap:10px;font-size:12px;margin:10px 0;}
+.link{font-weight:900;text-decoration:underline;cursor:pointer;color:var(--cafe);}
+.label-mini{font-size:12px;font-weight:700;opacity:.8;margin-top:8px;display:block;}
+</style>
+</head>
+<body>
+<div class="container" id="boxLogin">
+<div style="text-align:center;"><div class="icon-circle">🌸</div><h1 style="letter-spacing:6px;font-size:28px;">TIERRA ROSA</h1><p style="letter-spacing:3px;font-size:11px;opacity:.7;">BELLEZA QUE NACE DE LA TIERRA</p></div>
+<br>
+<div class="card-light" style="text-align:center;">
+<p style="font-weight:700;">Bienvenido a Tierra Rosa te presento las distintas formas de iniciar Sesión</p>
+<p style="font-size:14px;margin-top:10px;">Son 5 Formas de Iniciar Sesión de esa 5 Formas con solamente 1 entras y listo solamente 1 no necesariamente los 5 es para cuando se te olvide una contraseña te acuerdas y puedas entrar con otra con un solo Inicio de las 5 Opciones datos la bienvenida Oficial</p>
+<p style="font-size:13px;margin-top:12px;background:white;padding:10px;border-radius:10px;border:1px dashed var(--crema-tostado);"><b>Recuerda como un solo Inicio podrás ver el contenido de la aplicación.</b></p>
+</div>
+<h2 style="text-align:center;margin:18px 0;">Iniciar Sesión</h2>
+<span class="label-mini">Usuario</span><input class="input" id="lUser" placeholder="Usuario">
+<span class="label-mini">Contraseña</span><input class="input" id="lPassU" type="password" placeholder="Contraseña">
+<span class="label-mini">1er Correo Electrónico</span><input class="input" id="lEmail1" placeholder="1er Correo Electrónico">
+<span class="label-mini">Contraseña</span><input class="input" id="lPassE1" type="password" placeholder="Contraseña">
+<span class="label-mini">2do Correo Electrónico</span><input class="input" id="lEmail2" placeholder="2do Correo Electrónico">
+<span class="label-mini">Contraseña</span><input class="input" id="lPassE2" type="password" placeholder="Contraseña">
+<span class="label-mini">Teléfono</span><input class="input" id="lTel" placeholder="Teléfono">
+<span class="label-mini">Contraseña</span><input class="input" id="lPassT" type="password" placeholder="Contraseña">
+<span class="label-mini">Microsoft</span><input class="input" id="lMs" placeholder="Microsoft">
+<span class="label-mini">Contraseña</span><input class="input" id="lPassMs" type="password" placeholder="Contraseña">
+<br><button class="btn-blanco" onclick="doLogin()">Login</button>
+<div class="card-light"><h3>Necesitas ayuda?</h3><p style="font-size:13px;margin-top:8px;">Sigue las pasos y tendrá acceso a entrar a esta maravillosa tienda creada para que tu sientas satisfacción a tu gusto.</p><br><p style="font-size:13px;"><b>No tienes una cuenta?</b><br>Crea una cuenta en Tierra Rosa es fácil y sencillo es súper gratis no se te cobrará nada solamente llena tus datos en el formulario de Registrar y Listo. Solamente acuérdate de su usuario y contraseña que no se te olvide cuando te registres debes guardar tu datos en un lugar seguro 🔐.</p><br><a class="link" onclick="showReg()">Registrarme Aquí</a></div>
+</div>
+<div class="container hidden" id="boxReg">
+<div style="text-align:center;"><div class="icon-circle">🌸</div><h1 style="letter-spacing:5px;">TIERRA ROSA</h1><p style="letter-spacing:2px;font-size:11px;opacity:.7;">BELLEZA QUE NACE DE LA TIERRA</p></div>
+<h2 style="text-align:center;margin:16px 0;">Crea Una cuenta</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+<input class="input" placeholder="1er Nombre"><input class="input" placeholder="2do Nombre">
+<input class="input" placeholder="1er Apellido"><input class="input" placeholder="2do Apellido">
+<input class="input" id="rUser" placeholder="Usuario"><input class="input" id="rPass" type="password" placeholder="Contraseña">
+<input class="input" placeholder="Teléfono"><input class="input" type="password" placeholder="Contraseña">
+<input class="input" placeholder="1er Correo Electrónico"><input class="input" type="password" placeholder="Contraseña">
+<input class="input" placeholder="2do Correcto Electrónico"><input class="input" type="password" placeholder="Contraseña">
+<input class="input" placeholder="Microsoft"><input class="input" type="password" placeholder="Contraseña">
+<input class="input" placeholder="Edad"><input class="input" placeholder="Ciudad">
+<input class="input" placeholder="Estado"><input class="input" placeholder="País">
+<input class="input" placeholder="1er Apodo"><input class="input" placeholder="Fecha de Nacimiento">
+</div>
+<div class="card-light"><h3>Novedades de Tierra Rosa</h3><p><b>Palomear los siguiente ✓</b></p>
+<label class="check"><input type="checkbox" id="c1"> Aceptas jurar y guardar protesta de tus datos confidenciales.</label>
+<label class="check"><input type="checkbox" id="c2"> Aceptas jurar dices totalmente la verdad</label>
+<label class="check"><input type="checkbox" id="c3"> Aceptas los términos de condiciones además de los avisos de política de privacidad.</label>
+<label class="check"><input type="checkbox" id="c4"> Esta Aplicación trabaja bajo licencia limitada por lo cual deberás mantener el órden y el seguimiento en los eventos noticias rueda de prensa y mucho mas.</label>
+</div>
+<h3>OTRAS FORMAS OPCIONALES</h3><p style="font-size:12px;margin:6px 0 10px 0;"><b>*Cómo un solo Inicio entras*</b> elige la que sea posible. Gracias por tu atención.</p><h4>Iniciar Sesión/Redes Sociales con</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;">
+<div style="border:2px solid var(--crema-tostado);border-radius:12px;padding:10px;background:white;"><b>Facebook</b><span class="label-mini">Contraseña</span><input class="input" placeholder="Contraseña" type="password"></div>
+<div style="border:2px solid var(--crema-tostado);border-radius:12px;padding:10px;background:white;"><b>Twitch</b><span class="label-mini">Contraseña</span><input class="input" placeholder="Contraseña" type="password"></div>
+<div style="border:2px solid var(--crema-tostado);border-radius:12px;padding:10px;background:white;"><b>X</b><span class="label-mini">Contraseña</span><input class="input" placeholder="Contraseña" type="password"></div>
+<div style="border:2px solid var(--crema-tostado);border-radius:12px;padding:10px;background:white;"><b>Bluesky</b><span class="label-mini">Contraseña</span><input class="input" placeholder="Contraseña" type="password"></div>
+<div style="border:2px solid var(--crema-tostado);border-radius:12px;padding:10px;background:white;"><b>Acode</b><span class="label-mini">Contraseña</span><input class="input" placeholder="Contraseña" type="password"></div>
+<div style="border:2px solid var(--crema-tostado);border-radius:12px;padding:10px;background:white;"><b>Spotify</b><span class="label-mini">Contraseña</span><input class="input" placeholder="Contraseña" type="password"></div>
+<div style="border:2px solid var(--crema-tostado);border-radius:12px;padding:10px;background:white;"><b>Snapchat</b><span class="label-mini">Contraseña</span><input class="input" placeholder="Contraseña" type="password"></div>
+<div style="border:2px solid var(--crema-tostado);border-radius:12px;padding:10px;background:white;"><b>GitHub</b><span class="label-mini">Contraseña</span><input class="input" placeholder="Contraseña" type="password"></div>
+</div>
+<br><button class="btn-blanco" onclick="doRegister()">Registrar</button>
+<p id="msgReg" style="text-align:center;margin-top:12px;font-weight:800;color:green;"></p>
+<div id="afterReg" class="hidden" style="text-align:center;margin-top:16px;"><div class="card-light" style="background:#E6F4EA;"><p style="font-weight:900;">*Su registro ha sido un éxito muchas gracias* 🌸</p><p style="font-size:12px;">Notificación</p></div><br><button class="btn-blanco" onclick="showLogin()">Login</button></div>
+</div>
+<script>
+function showReg(){document.getElementById('boxLogin').classList.add('hidden');document.getElementById('boxReg').classList.remove('hidden');}
+function showLogin(){document.getElementById('boxReg').classList.add('hidden');document.getElementById('boxLogin').classList.remove('hidden');}
+function doRegister(){const u=document.getElementById('rUser').value,p=document.getElementById('rPass').value;if(!u||!p){alert('Usuario y Contraseña obligatorios');return;}if(!c1.checked||!c2.checked||!c3.checked||!c4.checked){alert('Palomea los 4');return;}document.getElementById('msgReg').innerText='*Su registro ha sido un éxito muchas gracias*';document.getElementById('afterReg').classList.remove('hidden');}
+function doLogin(){const u=lUser.value,pu=lPassU.value,e1=lEmail1.value,pe1=lPassE1.value,e2=lEmail2.value,pe2=lPassE2.value,t=lTel.value,pt=lPassT.value,m=lMs.value,pm=lPassMs.value;if((u&&pu)||(e1&&pe1)||(e2&&pe2)||(t&&pt)||(m&&pm)){alert('🌸 Bienvenido Oficial a TIERRA ROSA');window.location.href='index.html';}else{alert('Llena solo 1 de las 5 formas');}}
+</script>
+</body>
+                                                            </html>
