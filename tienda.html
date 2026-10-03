@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIERRA ROSA Tienda 200 Pro 3HD</title>
+<style>
+:root{--beige:#F5EDE0;--arena:#E8DCC8;--crema:#C9B99A;--cafe:#5C3D2E;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:var(--beige);color:var(--cafe);}
+.btn{background:white;border:2.5px solid var(--crema);padding:11px;border-radius:12px;font-weight:800;width:100%;cursor:pointer;}
+#header{position:sticky;top:0;z-index:50;background:#FFFEFB;border-bottom:2px solid var(--arena);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;}
+.icon{font-size:22px;padding:8px 12px;background:var(--beige);border:2px solid var(--crema);border-radius:10px;cursor:pointer;}
+.circle{width:46px;height:46px;border-radius:50%;background:var(--beige);border:2.5px solid var(--crema);display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden;}
+.circle img{width:100%;height:100%;object-fit:cover;}
+#side{position:fixed;top:0;left:-310px;width:290px;height:100vh;background:white;z-index:100;transition:.3s;padding:20px;}#side.open{left:0;}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:90;display:none;}#ov.show{display:block;}
+.searchBig{width:100%;padding:20px 20px 20px 55px;border-radius:18px;border:2.5px solid var(--cafe);font-size:17px;background:white;box-shadow:0 8px 25px rgba(92,61,46,.15);}
+.input{width:100%;padding:11px;border:2px solid var(--crema);border-radius:11px;background:white;margin:4px 0;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}@media(min-width:900px){.grid{grid-template-columns:1fr 1fr 1fr 1fr;}}
+.prod{background:white;border-radius:18px;overflow:hidden;border:2px solid var(--arena);box-shadow:0 8px 20px rgba(92,61,46,.12);position:relative;}
+.badge{position:absolute;top:8px;left:8px;background:var(--cafe);color:white;font-size:8px;padding:4px 8px;border-radius:20px;font-weight:700;}
+.disc{position:absolute;top:8px;right:8px;background:#D96C6C;color:white;font-size:9px;padding:4px 8px;border-radius:20px;}
+.drawBox{height:210px;background:linear-gradient(145deg,#F5EDE0 0%,#E8DCC8 40%,#C9B99A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;}
+.draw3D{width:92px;height:92px;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:46px;box-shadow:0 14px 28px rgba(92,61,46,.28), inset 0 5px 12px rgba(255,255,255,.9), inset 0 -7px 14px rgba(92,61,46,.18);transform:rotateX(10deg) rotateY(-12deg);}
+.logoPill{background:white;border:2px solid var(--cafe);padding:3px 10px;border-radius:20px;font-weight:900;font-size:9px;letter-spacing:1px;margin-top:8px;}
+</style>
+</head>
+<body>
+<header id="header">
+<div style="display:flex;align-items:center;gap:10px;"><div class="icon" onclick="tog()">☰</div><div style="display:flex;align-items:center;gap:10px;"><div class="circle">🌸</div><div><h2 style="font-size:13px;letter-spacing:2px;">TIERRA ROSA</h2><span style="font-size:9px;opacity:.7;">BELLEZA QUE NACE DE LA TIERRA</span></div></div></div>
+<div style="display:flex;align-items:center;gap:10px;">🛒<span id="cn" style="background:var(--cafe);color:white;border-radius:50%;padding:2px 7px;font-size:11px;">0</span>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+<div class="circle" id="avB" style="width:54px;height:54px;">👤</div>
+<button class="btn" style="font-size:9px;padding:6px;" onclick="document.getElementById('f').click()">Botón Subir Avatar o Fotografía</button>
+<button class="btn" style="font-size:9px;padding:6px;background:var(--cafe);color:white;" onclick="alert('[Guardar] OK')">[Guardar]</button>
+<input type="file" id="f" hidden accept="image/*" onchange="up(event)">
+</div></div>
+</header>
+<div id="ov" onclick="tog()"></div>
+<nav id="side"><div style="display:flex;align-items:center;gap:10px;"><div class="circle">🌸</div><div><h2 style="font-size:14px;">TIERRA ROSA</h2><span style="font-size:10px;">BELLEZA QUE NACE DE LA TIERRA</span></div></div><br><a href="#" style="display:block;padding:12px;background:var(--beige);border-radius:12px;text-decoration:none;color:var(--cafe);font-weight:700;">🛍️ Tienda</a><br><a href="acerca-de.html" style="display:block;padding:12px;background:var(--cafe);color:white;border-radius:12px;text-decoration:none;">📖 Acerca de - Funcionando</a><br><button class="btn" onclick="location.href='index.html'">Ir a index.html Login</button></nav>
 
+<main style="padding:12px;max-width:1300px;margin:auto;">
+<div style="background:white;border-radius:16px;padding:16px;border:1.5px solid var(--arena);">
+<b>Quiero solamente el icono de perfil 👤editar en el icono</b><br><br>
+Descripción<textarea class="input" style="height:70px;" placeholder="Descripción"></textarea><button class="btn" onclick="alert('Guardado')">Botón Guardar</button><br><br>
+6 Links Webs<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;"><input class="input" placeholder="Web 1"><input class="input" placeholder="Web 2"><input class="input" placeholder="Web 3"><input class="input" placeholder="Web 4"><input class="input" placeholder="Web 5"><input class="input" placeholder="Web 6"></div><button class="btn" onclick="alert('Webs OK')">Botón Guardar</button><br><br>
+6 Links R. Sociales<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;"><input class="input" placeholder="Social 1"><input class="input" placeholder="2"><input class="input" placeholder="3"><input class="input" placeholder="4"><input class="input" placeholder="5"><input class="input" placeholder="6"></div><button class="btn" onclick="alert('Social OK')">Botón Guardar</button><br><br>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;"><div>Ocupación<input class="input" placeholder="Ocupación"></div><div>E-mail<input class="input" placeholder="E-mail"></div><div>Teléfono<input class="input" placeholder="Teléfono"></div></div><br><button class="btn" style="background:var(--cafe);color:white;padding:16px;">Botón [Guardar]</button>
+</div>
+
+<div style="position:relative;margin:16px 0;"><span style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:20px;">🔍</span><input id="s" class="searchBig" placeholder="Buscador grande justo debajo de la Marca" oninput="buscar()"></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:10px;"><b id="info">200 Productos 3HD Modernos</b><b style="font-size:11px;">🛒 <span id="c2">0</span></b></div>
+<div class="grid" id="grid"></div>
+</main>
+<script>
+const productos=[
+["💄","Labial Mate Betabel Bambú","¿Buscas un labial que no reseque y dure 12H?","linear-gradient(145deg,#FFD6D6,#FF8A8A)"],
+["🌸","Rubor Compacto Rosa Tierra","¿Tu rubor actual se ve falso? Prueba acabado natural bambú","linear-gradient(145deg,#FFD9E8,#FF9BC1)"],
+["🥑","Sérum Aguacate Orgánico","¿Piel opaca? Este sérum revive con aguacate prensado frío","linear-gradient(145deg,#D6FFD6,#8AFF8A)"],
+["🧴","Base Líquida Bambú HD","¿Base que no tapa poros? Fórmula 98% natural","linear-gradient(145deg,#D6E8FF,#8AB8FF)"],
+["✨","Polvo Traslúcido 3HD","¿Brillo no deseado? Polvo bambú matifica sin acartonar","linear-gradient(145deg,#FFF5CC,#FFE07A)"],
+["💫","Iluminador Dorado Tierra","¿Quieres brillo sin glitter? Iluminador mineral","linear-gradient(145deg,#FFE8CC,#FFC17A)"],
+["☀️","Bronzer Mineral Durango","¿Bronzer naranja? Este es tono arena cálido real","linear-gradient(145deg,#FFEDCC,#FFB86A)"],
+["✒️","Delineador Negro Bambú","¿Delineador que se corre? Punta precisa 24H","linear-gradient(145deg,#E8D6FF,#B88AFF)"],
+["💋","Gloss Fresa Natural","¿Labios partidos? Gloss con aceite argán","linear-gradient(145deg,#FFCCDD,#FF7A9E)"],
+["🧼","Crema Hidratante 24H","¿Piel tirante? Crema betabel + avena calma","linear-gradient(145deg,#DDFFEE,#7AFFB8)"]
+];
+let all=[],filt=[],cart=0;
+function gen(){
+for(let i=0;i<200;i++){
+let b=productos[i%productos.length];
+let id=String(i+1).padStart(3,'0');
+all.push({logo:`TR-${b[1].substring(0,3).toUpperCase()}-${id}`,name:`${b[1]} ${id}`,emoji:b[0],bg:b[3],desc:b[2],price:99+(i%280),off:15+(i%35)});
+}filt=[...all];
+}
+function render(){
+const g=document.getElementById('grid');g.innerHTML='';
+filt.forEach(p=>{
+let fin=Math.round(p.price*(1-p.off/100));
+g.innerHTML+=`<div class="prod"><span class="badge">Nuevo Lanzamiento</span><span class="disc">-${p.off}%</span>
+<div class="drawBox"><div class="draw3D" style="background:${p.bg}">${p.emoji}</div><div class="logoPill">${p.logo}</div></div>
+<div style="padding:10px;">
+<b style="font-size:12px;">${p.name}</b><br>
+<span style="font-size:10px;opacity:.6;">Nuevo Lanzamiento • ${p.logo}</span><br>
+<p style="font-size:10px;margin:6px 0;line-height:1.4;background:var(--beige);padding:6px;border-radius:8px;">❓ ${p.desc}</p>
+<div style="display:flex;gap:6px;margin-top:6px;">
+<div style="flex:1;background:white;border:2px solid var(--cafe);border-radius:10px;padding:7px;text-align:center;font-weight:900;font-size:11px;pointer-events:none;">$${fin} MXN<br><s style="font-size:9px;opacity:.4;">$${p.price}</s> -${p.off}%</div>
+<button class="btn" style="width:auto;font-size:10px;" onclick="add()">🛒</button>
+</div></div></div>`;
+});
+document.getElementById('info').innerText=`${filt.length} Productos de Maquillaje Belleza y Cosmética 3HD Modernos - Sin Imagenes`;
+}
+function buscar(){let q=document.getElementById('s').value.toLowerCase();filt=all.filter(p=>p.name.toLowerCase().includes(q));render();}
+function tog(){document.getElementById('side').classList.toggle('open');document.getElementById('ov').classList.toggle('show');}
+function up(e){let file=e.target.files[0];if(!file)return;let r=new FileReader();r.onload=ev=>{document.getElementById('avB').innerHTML=`<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;};r.readAsDataURL(file);}
+function add(){cart++;document.getElementById('cn').innerText=cart;document.getElementById('c2').innerText=cart;}
+gen();render();
+if(!localStorage.getItem('tr_user')){/* si quieres obligar login descomenta: location.href='index.html'; */}
+</script>
+</body>
+  </html>
