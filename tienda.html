@@ -3,506 +3,1480 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tienda | TIERRA ROSA</title>
+
+<title>TIERRA ROSA - TIENDA</title>
+
 <style>
-:root{--oro:#d4af37;--negro:#080808;--blanco:#fff;--arena:#e9d8b7}
-*{box-sizing:border-box}
-body{margin:0;background:var(--negro);color:var(--oro);font-family:Arial,sans-serif}
-button,input,select,textarea{font:inherit}
-button{background:white;color:#000;border:0;border-radius:9px;padding:11px 15px;font-weight:bold;cursor:pointer}
-button:hover{background:var(--oro)}
-input,select,textarea{width:100%;padding:12px;border:1px solid var(--oro);border-radius:8px;background:#151515;color:white;margin:6px 0 12px}
-header{position:sticky;top:0;z-index:10;background:#080808;border-bottom:1px solid var(--oro);padding:12px}
-.barra{display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap}
-.izquierda,.derecha{display:flex;align-items:center;gap:10px}
-.icono{width:43px;height:43px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:white;color:#000;font-size:25px;border:2px solid var(--oro);flex-shrink:0}
-.marca{font-size:20px;font-weight:bold;letter-spacing:2px}
-.eslogan{font-size:12px;margin-top:4px}
-main{max-width:1400px;margin:auto;padding:18px}
-h1,h2{text-align:center}
-h1{font-size:30px}
-.busqueda{max-width:900px;margin:25px auto}
-.busqueda input{font-size:20px;padding:17px}
-.filtros{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px}
-.info{text-align:center;line-height:1.7;margin:15px auto;max-width:900px}
-.catalogo{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:14px}
-.producto{border:1px solid var(--oro);border-radius:12px;overflow:hidden;background:#111;display:flex;flex-direction:column}
-.producto img{width:100%;height:185px;object-fit:cover;background:#222}
-.detalle{padding:11px;display:flex;flex-direction:column;gap:8px;flex:1}
-.nombre{font-weight:bold;line-height:1.3;min-height:38px}
-.precio{font-size:19px;font-weight:bold}
-.antes{text-decoration:line-through;color:#aaa;font-size:12px}
-.etiqueta{font-size:11px;background:var(--oro);color:#000;padding:5px 7px;border-radius:5px;align-self:flex-start;font-weight:bold}
-.producto button{margin-top:auto}
-.panel{display:none;position:fixed;z-index:30;inset:0;background:#000d;overflow:auto;padding:15px}
-.contenido{max-width:650px;margin:20px auto;background:#111;border:1px solid var(--oro);border-radius:15px;padding:20px}
-.cerrar{float:right}
-.foto-perfil{width:105px;height:105px;object-fit:cover;border-radius:50%;border:2px solid var(--oro);display:block;margin:15px auto}
-.seccion{border-top:1px solid #705b20;margin-top:20px;padding-top:12px}
-.carrito-item{border-bottom:1px solid #55451b;padding:10px 0}
-.pie{text-align:center;padding:35px 15px;line-height:1.8}
-.oculto{display:none!important}
-@media(max-width:450px){
- main{padding:12px}
- .marca{font-size:16px}
- .catalogo{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .producto img{height:145px}
- .detalle{padding:8px}
- button{padding:10px}
+
+*{
+    box-sizing:border-box;
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#000;
+    color:#D4AF37;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/* ==================================================
+   BARRA SUPERIOR
+================================================== */
+
+.topbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    width:100%;
+
+    background:#000;
+
+    border-bottom:2px solid #D4AF37;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px 14px;
+}
+
+/* BARRAS */
+
+.menu-button{
+    background:#fff;
+    color:#000;
+
+    border:none;
+    border-radius:8px;
+
+    width:48px;
+    height:48px;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+}
+
+.menu-button:hover{
+    background:#D4AF37;
+}
+
+/* ROSA */
+
+.logo{
+    width:52px;
+    height:52px;
+
+    border:2px solid #D4AF37;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    flex-shrink:0;
+}
+
+/* MARCA */
+
+.brand{
+    flex:1;
+
+    min-width:0;
+
+    text-align:left;
+}
+
+.brand-name{
+    font-size:22px;
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    white-space:nowrap;
+}
+
+.brand-slogan{
+    font-size:12px;
+
+    white-space:nowrap;
+
+    margin-top:3px;
+}
+
+/* CARRITO */
+
+.cart-button{
+    background:#fff;
+    color:#000;
+
+    border:none;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+}
+
+.cart-button:hover{
+    background:#D4AF37;
+}
+
+/* PERFIL */
+
+.profile-button{
+    width:52px;
+    height:52px;
+
+    border:2px solid #D4AF37;
+
+    border-radius:50%;
+
+    background:#000;
+
+    color:#D4AF37;
+
+    font-size:27px;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    padding:0;
+
+    flex-shrink:0;
+}
+
+.profile-button img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:none;
+}
+
+.profile-button:hover{
+    background:#D4AF37;
+    color:#000;
+}
+
+/* ==================================================
+   BUSCADOR
+================================================== */
+
+.search-area{
+    padding:20px 14px 10px;
+
+    max-width:1400px;
+
+    margin:auto;
+}
+
+.search{
+    width:100%;
+
+    height:58px;
+
+    background:#111;
+
+    border:2px solid #D4AF37;
+
+    border-radius:14px;
+
+    color:#D4AF37;
+
+    font-size:20px;
+
+    padding:0 20px;
+
+    outline:none;
+}
+
+.search::placeholder{
+    color:#D4AF37;
+    opacity:.8;
+}
+
+/* ==================================================
+   TITULO TIENDA
+================================================== */
+
+.store-title{
+    text-align:center;
+
+    padding:20px 10px;
+}
+
+.store-title h1{
+    margin:0;
+
+    font-size:32px;
+
+    letter-spacing:3px;
+}
+
+.store-title p{
+    margin:8px 0;
+
+    font-size:17px;
+}
+
+/* ==================================================
+   ACERCA DE
+================================================== */
+
+.about-link{
+    text-align:center;
+
+    margin:5px 0 20px;
+}
+
+.about-link a{
+    color:#D4AF37;
+
+    font-size:18px;
+
+    text-decoration:underline;
+}
+
+.about-link a:hover{
+    color:#fff;
+}
+
+/* ==================================================
+   MARCAS
+================================================== */
+
+.brands{
+    text-align:center;
+
+    border-top:1px solid #D4AF37;
+    border-bottom:1px solid #D4AF37;
+
+    padding:18px 10px;
+
+    margin-bottom:20px;
+}
+
+.brands h2{
+    margin:0 0 10px;
+
+    font-size:20px;
+}
+
+.brand-item{
+    display:inline-block;
+
+    margin:5px 10px;
+
+    font-weight:bold;
+
+    font-size:18px;
+}
+
+.mexico{
+    margin-top:8px;
+
+    font-size:15px;
+}
+
+/* ==================================================
+   PRODUCTOS
+================================================== */
+
+.products{
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:10px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(190px,1fr));
+
+    gap:16px;
+}
+
+/* TARJETA */
+
+.product{
+    background:#080808;
+
+    border:1px solid #D4AF37;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:.2s;
+
+    min-width:0;
+}
+
+.product:hover{
+    transform:translateY(-3px);
+
+    box-shadow:0 0 15px rgba(212,175,55,.3);
+}
+
+/* IMAGEN */
+
+.product-image{
+    width:100%;
+
+    height:190px;
+
+    background:#111;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+/* FALLBACK */
+
+.image-fallback{
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#D4AF37;
+
+    background:#111;
+
+    text-align:center;
+
+    padding:10px;
+
+    font-size:15px;
+}
+
+.image-fallback span{
+    font-size:45px;
+    margin-bottom:8px;
+}
+
+/* INFORMACIÓN */
+
+.product-info{
+    padding:12px;
+}
+
+.product-name{
+    font-weight:bold;
+
+    font-size:16px;
+
+    min-height:38px;
+}
+
+.product-brand{
+    font-size:13px;
+
+    margin-top:5px;
+}
+
+.price{
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-top:9px;
+}
+
+.old-price{
+    font-size:13px;
+
+    text-decoration:line-through;
+
+    opacity:.7;
+
+    margin-left:5px;
+}
+
+/* DESCUENTO */
+
+.discount{
+    position:absolute;
+
+    top:8px;
+    right:8px;
+
+    background:#fff;
+
+    color:#000;
+
+    border-radius:7px;
+
+    padding:5px 7px;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+/* ETIQUETAS */
+
+.labels{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+
+    margin-top:9px;
+}
+
+.label{
+    border:1px solid #D4AF37;
+
+    border-radius:5px;
+
+    padding:4px 6px;
+
+    font-size:11px;
+}
+
+.label.new{
+    background:#D4AF37;
+
+    color:#000;
+}
+
+/* BOTÓN */
+
+.buy-button{
+    width:100%;
+
+    margin-top:10px;
+
+    padding:10px;
+
+    background:#fff;
+
+    color:#000;
+
+    border:none;
+
+    border-radius:7px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.buy-button:hover{
+    background:#D4AF37;
+}
+
+/* ==================================================
+   PANEL PERFIL
+================================================== */
+
+.profile-panel{
+    display:none;
+
+    position:fixed;
+
+    z-index:2000;
+
+    top:0;
+    right:0;
+
+    width:100%;
+    max-width:430px;
+
+    height:100vh;
+
+    overflow-y:auto;
+
+    background:#000;
+
+    border-left:2px solid #D4AF37;
+
+    padding:20px;
+
+    box-shadow:-5px 0 20px rgba(0,0,0,.8);
+}
+
+.profile-panel.active{
+    display:block;
+}
+
+/* FLECHA */
+
+.close-profile{
+    background:#fff;
+
+    color:#000;
+
+    border:none;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    margin-bottom:15px;
+}
+
+.close-profile:hover{
+    background:#D4AF37;
+}
+
+.profile-title{
+    text-align:center;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+}
+
+/* FOTO */
+
+.profile-photo{
+    width:120px;
+    height:120px;
+
+    margin:0 auto 15px;
+
+    border:2px solid #D4AF37;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:50px;
+
+    overflow:hidden;
+}
+
+.profile-photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:none;
+}
+
+.profile-panel input,
+.profile-panel textarea,
+.profile-panel select{
+
+    width:100%;
+
+    background:#111;
+
+    color:#D4AF37;
+
+    border:1px solid #D4AF37;
+
+    border-radius:8px;
+
+    padding:11px;
+
+    margin:6px 0 10px;
+
+    font-size:15px;
+
+    outline:none;
+}
+
+.profile-panel textarea{
+    min-height:100px;
+
+    resize:vertical;
+}
+
+.profile-panel label{
+    display:block;
+
+    text-align:left;
+
+    margin-top:10px;
+
+    font-weight:bold;
+}
+
+/* BOTONES PERFIL */
+
+.profile-save,
+.logout{
+    width:100%;
+
+    background:#fff;
+
+    color:#000;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    margin:7px 0 15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.profile-save:hover{
+    background:#D4AF37;
+}
+
+.logout{
+    background:#fff;
+}
+
+.logout:hover{
+    background:#D4AF37;
+}
+
+/* ==================================================
+   CARRITO
+================================================== */
+
+.cart-panel{
+    display:none;
+
+    position:fixed;
+
+    z-index:1800;
+
+    top:72px;
+
+    right:12px;
+
+    width:310px;
+
+    max-height:70vh;
+
+    overflow:auto;
+
+    background:#000;
+
+    border:2px solid #D4AF37;
+
+    border-radius:12px;
+
+    padding:18px;
+}
+
+.cart-panel.active{
+    display:block;
+}
+
+.cart-panel h2{
+    margin-top:0;
+}
+
+.cart-item{
+    border-bottom:1px solid #D4AF37;
+
+    padding:10px 0;
+
+    font-size:14px;
+}
+
+/* ==================================================
+   MENÚ
+================================================== */
+
+.menu-panel{
+    display:none;
+
+    position:fixed;
+
+    z-index:1700;
+
+    top:72px;
+
+    left:10px;
+
+    width:250px;
+
+    background:#000;
+
+    border:2px solid #D4AF37;
+
+    border-radius:12px;
+
+    padding:15px;
+}
+
+.menu-panel.active{
+    display:block;
+}
+
+.menu-panel a{
+    display:block;
+
+    color:#D4AF37;
+
+    text-decoration:none;
+
+    padding:12px 5px;
+
+    border-bottom:1px solid #333;
+}
+
+.menu-panel a:hover{
+    color:#fff;
+}
+
+/* ==================================================
+   PIE
+================================================== */
+
+footer{
+    text-align:center;
+
+    padding:35px 10px;
+
+    border-top:1px solid #D4AF37;
+
+    margin-top:30px;
+}
+
+/* ==================================================
+   MÓVIL
+================================================== */
+
+@media(max-width:600px){
+
+    .topbar{
+        gap:7px;
+        padding:8px;
+    }
+
+    .menu-button{
+        width:40px;
+        height:40px;
+        font-size:21px;
+    }
+
+    .logo{
+        width:42px;
+        height:42px;
+        font-size:23px;
+    }
+
+    .brand-name{
+        font-size:16px;
+    }
+
+    .brand-slogan{
+        font-size:9px;
+    }
+
+    .cart-button{
+        width:42px;
+        height:42px;
+        font-size:20px;
+    }
+
+    .profile-button{
+        width:44px;
+        height:44px;
+        font-size:23px;
+    }
+
+    .search{
+        height:52px;
+        font-size:17px;
+    }
+
+    .products{
+        grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+        gap:10px;
+
+        padding:8px;
+    }
+
+    .product-image{
+        height:160px;
+    }
+
+    .product-name{
+        font-size:14px;
+    }
+
+    .price{
+        font-size:17px;
+    }
+
+    .buy-button{
+        font-size:13px;
+    }
+
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
-  <div class="barra">
-    <div class="izquierda">
-      <button aria-label="Abrir menú" onclick="abrirMenu()">☰</button>
-      <div class="icono">🌸</div>
-      <div>
-        <div class="marca">TIERRA ROSA</div>
-        <div class="eslogan">Belleza que nace de la Tierra</div>
-      </div>
+
+<!-- ==================================================
+     BARRA SUPERIOR
+================================================== -->
+
+<header class="topbar">
+
+    <!-- BARRAS -->
+    <button
+        class="menu-button"
+        onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <!-- ROSA -->
+    <div class="logo">
+        🌸
     </div>
-    <div class="derecha">
-      <button onclick="abrirCarrito()" aria-label="Carrito">🛒 <span id="cuentaCarrito">0</span></button>
-      <button onclick="abrirPerfil()" aria-label="Perfil">
-        <img id="miniFoto" alt="Perfil" style="width:25px;height:25px;object-fit:cover;border-radius:50%;vertical-align:middle">
+
+    <!-- MARCA -->
+    <div class="brand">
+
+        <div class="brand-name">
+            TIERRA ROSA
+        </div>
+
+        <div class="brand-slogan">
+            Belleza que nace de la Tierra
+        </div>
+
+    </div>
+
+    <!-- CARRITO -->
+    <button
+        class="cart-button"
+        onclick="toggleCart()">
+        🛒
+    </button>
+
+    <!-- PERFIL -->
+    <button
+        class="profile-button"
+        onclick="openProfile()"
+        id="profileButton">
+
         👤
-      </button>
-    </div>
-  </div>
+
+        <img
+            id="profileButtonImage"
+            alt="Perfil">
+
+    </button>
+
 </header>
 
-<main>
-  <h1>TIENDA DE BELLEZA</h1>
-  <div class="info">
-    <strong>Maquillaje y cosméticos de belleza</strong><br>
-    Natural · Consciente · Real<br>
-    Nutre, protege e ilumina tu belleza.
-  </div>
 
-  <div class="busqueda">
-    <input id="buscar" type="search" placeholder="🔎 Buscar maquillaje, cosméticos, cuidado facial..." oninput="filtrar()">
-  </div>
+<!-- ==================================================
+     MENÚ
+================================================== -->
 
-  <div class="filtros">
-    <button onclick="categoria='Todos';filtrar()">Todos</button>
-    <button onclick="categoria='Maquillaje';filtrar()">Maquillaje</button>
-    <button onclick="categoria='Rostro';filtrar()">Rostro</button>
-    <button onclick="categoria='Ojos';filtrar()">Ojos</button>
-    <button onclick="categoria='Labios';filtrar()">Labios</button>
-    <button onclick="categoria='Uñas';filtrar()">Uñas</button>
-    <button onclick="categoria='Cuidado';filtrar()">Cuidado de la piel</button>
-    <button onclick="categoria='Cabello';filtrar()">Cabello</button>
-  </div>
+<div
+    class="menu-panel"
+    id="menuPanel">
 
-  <p class="info" id="contador">Preparando catálogo...</p>
-  <section class="catalogo" id="catalogo"></section>
-  <button id="verMas" style="display:block;margin:25px auto" onclick="mostrarMas()">Ver más productos</button>
+    <a href="tienda.html">
+        TIENDA
+    </a>
+
+    <a href="acerca-de.html">
+        ACERCA-DE
+    </a>
+
+    <a href="index.html">
+        INICIO
+    </a>
+
+</div>
+
+
+<!-- ==================================================
+     BUSCADOR
+================================================== -->
+
+<div class="search-area">
+
+    <input
+        class="search"
+        id="search"
+        type="search"
+        placeholder="Buscar productos, maquillaje, cosméticos..."
+        oninput="searchProducts()">
+
+</div>
+
+
+<!-- ==================================================
+     TIENDA
+================================================== -->
+
+<section class="store-title">
+
+    <h1>
+        TIENDA
+    </h1>
+
+    <p>
+        Belleza que nace de la Tierra
+    </p>
+
+</section>
+
+
+<!-- ACERCA DE -->
+
+<div class="about-link">
+
+    <a href="acerca-de.html">
+        ACERCA-DE
+    </a>
+
+</div>
+
+
+<!-- ==================================================
+     MARCAS
+================================================== -->
+
+<section class="brands">
+
+    <h2>
+        TIERRA ROSA
+    </h2>
+
+    <div>
+        Belleza que nace de la Tierra
+    </div>
+
+    <div class="brand-item">
+        TITANES
+    </div>
+
+    <div class="brand-item">
+        SPEAKING
+    </div>
+
+    <div class="mexico">
+        Hecho en México 2026
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     PRODUCTOS
+================================================== -->
+
+<main
+    class="products"
+    id="products">
 </main>
 
-<div class="pie">
-  <div class="icono" style="margin:auto">🌸</div>
-  <h2>TIERRA ROSA</h2>
-  Belleza que nace de la Tierra
-  <p><a href="acerca-de.html" style="color:#d4af37">Acerca de Tierra Rosa</a></p>
+
+<!-- ==================================================
+     CARRITO
+================================================== -->
+
+<div
+    class="cart-panel"
+    id="cartPanel">
+
+    <h2>
+        🛒 Carrito
+    </h2>
+
+    <div id="cartItems">
+        El carrito está vacío.
+    </div>
+
 </div>
 
-<!-- MENÚ -->
-<div class="panel" id="panelMenu">
- <div class="contenido">
-  <button class="cerrar" onclick="cerrarPaneles()">✕ Cerrar</button>
-  <h2>MENÚ</h2>
-  <button onclick="location.href='index.html'">Inicio</button>
-  <button onclick="location.href='acerca-de.html'">Acerca de</button>
-  <button onclick="abrirPerfil()">Mi perfil</button>
-  <button onclick="abrirCarrito()">Mi carrito</button>
-  <button onclick="cerrarPaneles()">Seguir comprando</button>
- </div>
-</div>
 
-<!-- PERFIL EDITABLE -->
-<div class="panel" id="panelPerfil">
- <div class="contenido">
-  <button class="cerrar" onclick="cerrarPaneles()">↑ Cerrar</button>
-  <h2>MI PERFIL</h2>
-  <p class="info">Edita tus datos y guarda tus cambios en este dispositivo.</p>
+<!-- ==================================================
+     PERFIL
+================================================== -->
 
-  <img id="vistaFoto" class="foto-perfil" alt="Fotografía de perfil">
+<aside
+    class="profile-panel"
+    id="profilePanel">
 
-  <label>Subir foto de perfil</label>
-  <input id="fotoArchivo" type="file" accept="image/*">
-  <button onclick="guardarFoto()">Guardar foto</button>
+    <!-- FLECHA ARRIBA -->
 
-  <div class="seccion">
-   <label>Descripción</label>
-   <textarea id="descripcion" rows="3" placeholder="Escribe una descripción"></textarea>
-   <button onclick="guardarCampo('descripcion')">Guardar</button>
-  </div>
+    <button
+        class="close-profile"
+        onclick="closeProfile()">
 
-  <div class="seccion">
-   <h3>6 enlaces web</h3>
-   <div id="webs"></div>
-   <button onclick="guardarEnlaces('web')">Guardar</button>
-  </div>
+        ↑
 
-  <div class="seccion">
-   <h3>6 enlaces de redes sociales</h3>
-   <div id="redes"></div>
-   <button onclick="guardarEnlaces('red')">Guardar</button>
-  </div>
+    </button>
 
-  <div class="seccion">
-   <label>Nombre completo</label>
-   <input id="nombreCompleto" placeholder="Nombre completo">
+    <div class="profile-title">
+        👤 PERFIL
+    </div>
 
-   <label>País</label>
-   <select id="pais">
-    <option value="">Selecciona tu país</option>
-    <option>México</option><option>Argentina</option><option>Bolivia</option>
-    <option>Brasil</option><option>Canadá</option><option>Chile</option>
-    <option>Colombia</option><option>Costa Rica</option><option>Cuba</option>
-    <option>Ecuador</option><option>El Salvador</option><option>España</option>
-    <option>Estados Unidos</option><option>Guatemala</option><option>Honduras</option>
-    <option>Panamá</option><option>Paraguay</option><option>Perú</option>
-    <option>República Dominicana</option><option>Uruguay</option><option>Venezuela</option>
-    <option>Alemania</option><option>Australia</option><option>China</option>
-    <option>Francia</option><option>India</option><option>Italia</option>
-    <option>Japón</option><option>Reino Unido</option><option>Otro</option>
-   </select>
 
-   <label>E-mail</label>
-   <input id="email" type="email" placeholder="correo@ejemplo.com">
+    <!-- FOTO -->
 
-   <label>Teléfono</label>
-   <input id="telefono" type="tel" placeholder="Número de teléfono">
+    <div class="profile-photo">
 
-   <label>Ocupación</label>
-   <input id="ocupacion" placeholder="Tu ocupación">
+        👤
 
-   <label>Zona horaria mundial</label>
-   <select id="zona">
-    <option value="America/Mexico_City">México — Ciudad de México</option>
-    <option value="America/Tijuana">México — Tijuana</option>
-    <option value="America/Cancun">México — Cancún</option>
-    <option value="America/Bogota">Colombia — Bogotá</option>
-    <option value="America/Lima">Perú — Lima</option>
-    <option value="America/Santiago">Chile — Santiago</option>
-    <option value="America/Argentina/Buenos_Aires">Argentina — Buenos Aires</option>
-    <option value="America/Sao_Paulo">Brasil — São Paulo</option>
-    <option value="America/New_York">Estados Unidos — Nueva York</option>
-    <option value="America/Los_Angeles">Estados Unidos — Los Ángeles</option>
-    <option value="America/Toronto">Canadá — Toronto</option>
-    <option value="Europe/Madrid">España — Madrid</option>
-    <option value="Europe/London">Reino Unido — Londres</option>
-    <option value="Europe/Paris">Francia — París</option>
-    <option value="Europe/Berlin">Alemania — Berlín</option>
-    <option value="Asia/Tokyo">Japón — Tokio</option>
-    <option value="Asia/Shanghai">China — Shanghái</option>
-    <option value="Asia/Kolkata">India — Calcuta</option>
-    <option value="Australia/Sydney">Australia — Sídney</option>
-    <option value="UTC">UTC — Tiempo universal coordinado</option>
-   </select>
+        <img
+            id="profileImage"
+            alt="Foto de perfil">
 
-   <button onclick="guardarPerfil()">Guardar</button>
-  </div>
+    </div>
 
-  <button onclick="cerrarSesion()">Cerrar sesión</button>
-  <button onclick="cerrarPaneles()">Volver a la tienda</button>
- </div>
-</div>
 
-<!-- CARRITO -->
-<div class="panel" id="panelCarrito">
- <div class="contenido">
-  <button class="cerrar" onclick="cerrarPaneles()">✕ Cerrar</button>
-  <h2>🛒 MI CARRITO</h2>
-  <div id="productosCarrito"></div>
-  <h3 id="totalCarrito">Total: $0.00 MXN</h3>
-  <p class="info">Este carrito es una demostración local. Para cobrar pedidos se necesita integrar una plataforma de pagos.</p>
-  <button onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button onclick="cerrarPaneles()">Seguir comprando</button>
- </div>
-</div>
+    <label>
+        Subir foto
+    </label>
+
+    <input
+        type="file"
+        id="photoInput"
+        accept="image/*">
+
+    <button
+        class="profile-save"
+        onclick="savePhoto()">
+
+        Guardar foto
+
+    </button>
+
+
+    <!-- DESCRIPCIÓN -->
+
+    <label>
+        Descripción
+    </label>
+
+    <textarea
+        id="description"
+        placeholder="Escribe tu descripción..."></textarea>
+
+    <button
+        class="profile-save"
+        onclick="saveDescription()">
+
+        Guardar
+
+    </button>
+
+
+    <!-- 6 LINKS WEB -->
+
+    <label>
+        Link Web 1
+    </label>
+    <input
+        id="web1"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link Web 2
+    </label>
+    <input
+        id="web2"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link Web 3
+    </label>
+    <input
+        id="web3"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link Web 4
+    </label>
+    <input
+        id="web4"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link Web 5
+    </label>
+    <input
+        id="web5"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link Web 6
+    </label>
+    <input
+        id="web6"
+        type="url"
+        placeholder="https://...">
+
+    <button
+        class="profile-save"
+        onclick="saveWebLinks()">
+
+        Guardar
+
+    </button>
+
+
+    <!-- 6 REDES SOCIALES -->
+
+    <label>
+        Link de Red Social 1
+    </label>
+    <input
+        id="social1"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link de Red Social 2
+    </label>
+    <input
+        id="social2"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link de Red Social 3
+    </label>
+    <input
+        id="social3"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link de Red Social 4
+    </label>
+    <input
+        id="social4"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link de Red Social 5
+    </label>
+    <input
+        id="social5"
+        type="url"
+        placeholder="https://...">
+
+    <label>
+        Link de Red Social 6
+    </label>
+    <input
+        id="social6"
+        type="url"
+        placeholder="https://...">
+
+    <button
+        class="profile-save"
+        onclick="saveSocialLinks()">
+
+        Guardar
+
+    </button>
+
+
+    <!-- DATOS -->
+
+    <label>
+        País
+    </label>
+
+    <input
+        id="country"
+        type="text"
+        placeholder="País">
+
+
+    <label>
+        E-mail
+    </label>
+
+    <input
+        id="email"
+        type="email"
+        placeholder="E-mail">
+
+
+    <label>
+        Teléfono
+    </label>
+
+    <input
+        id="phone"
+        type="tel"
+        placeholder="Teléfono">
+
+
+    <label>
+        Ocupación
+    </label>
+
+    <input
+        id="occupation"
+        type="text"
+        placeholder="Ocupación">
+
+
+    <label>
+        Nombre Completo
+    </label>
+
+    <input
+        id="fullName"
+        type="text"
+        placeholder="Nombre Completo">
+
+
+    <label>
+        País
+    </label>
+
+    <input
+        id="country2"
+        type="text"
+        placeholder="País">
+
+
+    <!-- ZONA HORARIA -->
+
+    <label>
+        Zona Horaria Mundial por País
+    </label>
+
+    <select id="timezone">
+
+        <option value="">
+            Selecciona tu zona horaria
+        </option>
+
+        <option>
+            México - Ciudad de México
+        </option>
+
+        <option>
+            México - Tijuana
+        </option>
+
+        <option>
+            México - Chihuahua
+        </option>
+
+        <option>
+            México - Monterrey
+        </option>
+
+        <option>
+            Estados Unidos - Nueva York
+        </option>
+
+        <option>
+            Estados Unidos - Los Ángeles
+        </option>
+
+        <option>
+            Canadá - Toronto
+        </option>
+
+        <option>
+            Brasil - São Paulo
+        </option>
+
+        <option>
+            Argentina - Buenos Aires
+        </option>
+
+        <option>
+            Colombia - Bogotá
+        </option>
+
+        <option>
+            Perú - Lima
+        </option>
+
+        <option>
+            Chile - Santiago
+        </option>
+
+        <option>
+            España - Madrid
+        </option>
+
+        <option>
+            Reino Unido - Londres
+        </option>
+
+        <option>
+            Francia - París
+        </option>
+
+        <option>
+            Alemania - Berlín
+        </option>
+
+        <option>
+            Italia - Roma
+        </option>
+
+        <option>
+            Portugal - Lisboa
+        </option>
+
+        <option>
+            Turquía - Estambul
+        </option>
+
+        <option>
+            Egipto - El Cairo
+        </option>
+
+        <option>
+            Sudáfrica - Johannesburgo
+        </option>
+
+        <option>
+            India - Nueva Delhi
+        </option>
+
+        <option>
+            China - Pekín
+        </option>
+
+        <option>
+            Japón - Tokio
+        </option>
+
+        <option>
+            Corea del Sur - Seúl
+        </option>
+
+        <option>
+            Australia - Sídney
+        </option>
+
+        <option>
+            Nueva Zelanda - Auckland
+        </option>
+
+    </select>
+
+
+    <button
+        class="profile-save"
+        onclick="saveProfile()">
+
+        Guardar
+
+    </button>
+
+
+    <button
+        class="logout"
+        onclick="logout()">
+
+        Cerrar Sesión
+
+    </button>
+
+</aside>
+
+
+<!-- ==================================================
+     PIE
+================================================== -->
+
+<footer>
+
+    TIERRA ROSA<br>
+    Belleza que nace de la Tierra<br><br>
+
+    TITANES · SPEAKING<br>
+
+    Hecho en México 2026
+
+</footer>
+
 
 <script>
-const nombres = {
- "Maquillaje": [
-  "Base de maquillaje","Corrector de ojeras","Polvo compacto","Polvo traslúcido",
-  "Rubor en polvo","Rubor líquido","Iluminador facial","Bronceador facial",
-  "Contorno en crema","Prebase facial","Fijador de maquillaje","Paleta de rostro",
-  "BB cream","CC cream","Base hidratante","Base mate","Base luminosa",
-  "Corrector iluminador","Polvo mineral","Spray fijador"
- ],
- "Ojos": [
-  "Máscara de pestañas","Delineador líquido","Delineador en lápiz","Paleta de sombras",
-  "Sombras individuales","Primer de ojos","Gel para cejas","Lápiz para cejas",
-  "Máscara para cejas","Pestañas postizas","Pegamento para pestañas",
-  "Rizador de pestañas","Iluminador de lagrimal","Delineador en gel",
-  "Sombras brillantes","Sombras mate","Pestañas individuales","Sérum de pestañas"
- ],
- "Labios": [
-  "Labial mate","Labial cremoso","Brillo labial","Bálsamo labial",
-  "Delineador de labios","Tinta para labios","Aceite labial","Labial líquido",
-  "Labial satinado","Mascarilla labial","Exfoliante labial","Gloss transparente"
- ],
- "Uñas": [
-  "Esmalte de uñas","Esmalte en gel","Base para uñas","Top coat",
-  "Quitaesmalte","Aceite para cutículas","Crema para manos","Uñas postizas",
-  "Pegamento para uñas","Lima de uñas","Tratamiento fortalecedor","Decoración para uñas"
- ],
- "Cuidado": [
-  "Limpiador facial","Agua micelar","Tónico facial","Sérum de vitamina C",
-  "Sérum de ácido hialurónico","Crema hidratante","Protector solar facial",
-  "Mascarilla facial","Exfoliante facial","Crema de noche","Contorno de ojos",
-  "Bálsamo limpiador","Gel facial","Bruma hidratante","Crema para manos",
-  "Desmaquillante","Agua termal","Tratamiento facial"
- ],
- "Cabello": [
-  "Champú","Acondicionador","Mascarilla capilar","Aceite para cabello",
-  "Sérum capilar","Crema para peinar","Protector térmico","Gel fijador",
-  "Spray para cabello","Mousse capilar","Exfoliante de cuero cabelludo",
-  "Tratamiento reparador"
- ],
- "Herramientas": [
-  "Brocha para base","Set de brochas","Esponja de maquillaje","Espejo compacto",
-  "Organizador de cosméticos","Neceser de maquillaje","Pinzas para cejas",
-  "Aplicador de sombras","Sacapuntas cosmético","Diadema facial",
-  "Limpiador de brochas","Estuche de belleza"
- ]
-};
 
-const categorias = Object.keys(nombres);
-let productos = [];
-let categoria = "Todos";
-let visibles = 0;
-let carrito = JSON.parse(localStorage.getItem("tr_carrito") || "[]");
+/* ==================================================
+   LISTA DE IMÁGENES EXACTA
+================================================== */
 
-function crearCatalogo(){
- let id=1;
- for(let vuelta=0;vuelta<10;vuelta++){
-  categorias.forEach(cat=>{
-   nombres[cat].forEach(nombre=>{
-    if(id<=500){
-     const precio=49+((id*37)%650);
-     const descuento=(id%4===0)?15:((id%7===0)?20:0);
-     productos.push({
-      id, categoria:cat,
-      nombre: nombre + (vuelta ? " — Edición " + (vuelta+1) : ""),
-      precio, descuento,
-      etiqueta: id%9===0?"NUEVO LANZAMIENTO":(descuento?"OFERTA":"DISPONIBLE"),
-      foto: "https://loremflickr.com/500/500/cosmetics,makeup,beauty?lock="+id
-     });
-     id++;
-    }
-   });
-  });
- }
- productos=productos.slice(0,500);
-}
+const imageFiles = [
 
-function dinero(n){return n.toLocaleString("es-MX",{style:"currency",currency:"MXN"});}
-
-function precioFinal(p){return Math.round(p.precio*(1-p.descuento/100)*100)/100;}
-
-function crearTarjeta(p){
- const tarjeta=document.createElement("article");
- tarjeta.className="producto";
- tarjeta.innerHTML=`
-  <img src="${p.foto}" alt="${p.nombre}" loading="lazy"
-       onerror="this.onerror=null;this.src='https://placehold.co/500x500/171717/D4AF37?text=TIERRA+ROSA'">
-  <div class="detalle">
-   <span class="etiqueta">${p.etiqueta}</span>
-   <div class="nombre">${p.nombre}</div>
-   <small>${p.categoria}</small>
-   ${p.descuento?`<span class="etiqueta">${p.descuento}% DE DESCUENTO</span>`:""}
-   <div class="precio">${dinero(precioFinal(p))}</div>
-   ${p.descuento?`<div class="antes">${dinero(p.precio)}</div>`:""}
-   <button onclick="agregarCarrito(${p.id})">Agregar al carrito</button>
-  </div>`;
- return tarjeta;
-}
-
-function filtrar(){
- const texto=document.getElementById("buscar").value.toLowerCase().trim();
- const lista=productos.filter(p=>
-  (categoria==="Todos" ||
-   p.categoria===categoria ||
-   (categoria==="Maquillaje" && ["Ojos","Labios"].includes(p.categoria))) &&
-  (p.nombre.toLowerCase().includes(texto) ||
-   p.categoria.toLowerCase().includes(texto))
- );
- const catalogo=document.getElementById("catalogo");
- catalogo.innerHTML="";
- visibles=Math.min(30,lista.length);
- lista.slice(0,visibles).forEach(p=>catalogo.appendChild(crearTarjeta(p)));
- document.getElementById("contador").textContent=
-  "Mostrando "+visibles+" de "+lista.length+" productos coincidentes. Catálogo: 500 fichas.";
- document.getElementById("verMas").style.display=visibles<lista.length?"block":"none";
- document.getElementById("verMas").dataset.total=lista.length;
-}
-
-function mostrarMas(){
- const texto=document.getElementById("buscar").value.toLowerCase().trim();
- const lista=productos.filter(p=>
-  (categoria==="Todos" || p.categoria===categoria ||
-   (categoria==="Maquillaje" && ["Ojos","Labios"].includes(p.categoria))) &&
-  (p.nombre.toLowerCase().includes(texto) || p.categoria.toLowerCase().includes(texto))
- );
- const anterior=visibles;
- visibles=Math.min(visibles+30,lista.length);
- const catalogo=document.getElementById("catalogo");
- lista.slice(anterior,visibles).forEach(p=>catalogo.appendChild(crearTarjeta(p)));
- document.getElementById("contador").textContent=
-  "Mostrando "+visibles+" de "+lista.length+" productos coincidentes. Catálogo: 500 fichas.";
- document.getElementById("verMas").style.display=visibles<lista.length?"block":"none";
-}
-
-function agregarCarrito(id){
- const p=productos.find(x=>x.id===id);
- const existente=carrito.find(x=>x.id===id);
- if(existente)existente.cantidad++;
- else carrito.push({id:p.id,nombre:p.nombre,precio:precioFinal(p),cantidad:1});
- guardarCarrito();
- alert("Producto agregado al carrito.");
-}
-
-function guardarCarrito(){
- localStorage.setItem("tr_carrito",JSON.stringify(carrito));
- document.getElementById("cuentaCarrito").textContent=
-  carrito.reduce((s,p)=>s+p.cantidad,0);
- mostrarCarrito();
-}
-
-function abrirCarrito(){
- cerrarPaneles();
- document.getElementById("panelCarrito").style.display="block";
- mostrarCarrito();
-}
-
-function mostrarCarrito(){
- const caja=document.getElementById("productosCarrito");
- if(!caja)return;
- caja.innerHTML="";
- let total=0;
- carrito.forEach(p=>{
-  total+=p.precio*p.cantidad;
-  const div=document.createElement("div");
-  div.className="carrito-item";
-  div.textContent=p.nombre+" × "+p.cantidad+" — "+dinero(p.precio*p.cantidad);
-  caja.appendChild(div);
- });
- if(!carrito.length)caja.textContent="Tu carrito está vacío.";
- document.getElementById("totalCarrito").textContent="Total: "+dinero(total)+" MXN";
-}
-
-function vaciarCarrito(){
- carrito=[];
- guardarCarrito();
-}
-
-function abrirMenu(){
- cerrarPaneles();
- document.getElementById("panelMenu").style.display="block";
-}
-function abrirPerfil(){
- cerrarPaneles();
- document.getElementById("panelPerfil").style.display="block";
- cargarPerfil();
-}
-function cerrarPaneles(){
- document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
-}
-
-function guardarCampo(id){
- localStorage.setItem("tr_"+id,document.getElementById(id).value);
- alert("Información guardada en este dispositivo.");
-}
-
-function guardarPerfil(){
- ["nombreCompleto","pais","email","telefono","ocupacion","zona","descripcion"].forEach(id=>{
-  localStorage.setItem("tr_"+id,document.getElementById(id).value);
- });
- alert("Perfil guardado correctamente.");
-}
-
-function guardarFoto(){
- const archivo=document.getElementById("fotoArchivo").files[0];
- if(!archivo){alert("Selecciona una fotografía primero.");return;}
- if(archivo.size>2*1024*1024){
-  alert("La fotografía debe pesar menos de 2 MB.");return;
- }
- const lector=new FileReader();
- lector.onload=()=>{
-  try{
-   localStorage.setItem("tr_foto",lector.result);
-   cargarFoto();
-   alert("Fotografía guardada.");
-  }catch(e){
-   alert("No hay espacio suficiente en el almacenamiento del navegador.");
-  }
- };
- lector.readAsDataURL(archivo);
-}
-
-function cargarFoto(){
- const foto=localStorage.getItem("tr_foto");
- const mini=document.getElementById("miniFoto");
- const vista=document.getElementById("vistaFoto");
- const defecto="https://placehold.co/150x150/171717/D4AF37?text=Perfil";
- mini.src=foto||defecto;
- vista.src=foto||defecto;
-}
-
-function cargarPerfil(){
- ["nombreCompleto","pais","email","telefono","ocupacion","zona","descripcion"].forEach(id=>{
-  const valor=localStorage.getItem("tr_"+id);
-  if(valor!==null)document.getElementById(id).value=valor;
- });
- cargarFoto();
-}
-
-function crearCamposEnlaces(tipo){
- const caja=document.getElementById(tipo==="web"?"webs":"redes");
- const lista=tipo==="web"
-  ?["Sitio web 1","Sitio web 2","Sitio web 3","Sitio web 4","Sitio web 5","Sitio web 6"]
-  :["Red social 1","Red social 2","Red social 3","Red social 4","Red social 5","Red social 6"];
- lista.forEach((nombre,i)=>{
-  const id="tr_"+tipo+"_"+i;
-  const label=document.createElement("label");
-  label.textContent=nombre;
-  const input=document.createElement("input");
-  input.type="url";
-  input.id=id;
-  input.placeholder="https://...";
-  input.value=localStorage.getItem(id)||"";
-  caja.appendChild(label);
-  caja.appendChild(input);
- });
-}
-
-function guardarEnlaces(tipo){
- for(let i=0;i<6;i++){
-  const id="tr_"+tipo+"_"+i;
-  const campo=document.getElementById(id);
-  localStorage.setItem(id,campo.value.trim());
- }
- alert("Enlaces guardados en este dispositivo.");
-}
-
-function cerrarSesion(){
- cerrarPaneles();
- alert("Has cerrado el panel de perfil en esta tienda.");
-}
-
-crearCatalogo();
-filtrar();
-guardarCarrito();
-crearCamposEnlaces("web");
-crearCamposEnlaces("red");
-cargarPerfil();
-</script>
-
-</body>
-    </html>
+    "images (1).jpeg",
+    "images (2).jpeg",
+    "images (3).jpeg",
+    "images (4).jpeg",
+    "images (5).jpeg",
+    "images (7).jpeg",
+    "images (8).jpeg",
+    "images (9).jpeg",
+    "i
