@@ -1,346 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>No tienes una cuenta | TIERRA ROSA</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIERRA ROSA NEGRO DORADO BORDES AMARILLOS BOTON GRANDE</title>
 <style>
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    background:#000000;
-    color:#D4AF37;
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.7;
-}
-
-header{
-    background:#000000;
-    border-bottom:1px solid #D4AF37;
-    padding:12px;
-}
-
-.barra{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:#ffffff;
-    color:#000000;
-    border:2px solid #D4AF37;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    flex-shrink:0;
-}
-
-.marca{
-    font-size:20px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.eslogan{
-    font-size:12px;
-}
-
-.contenedor{
-    width:92%;
-    max-width:1000px;
-    margin:auto;
-    padding:30px 0 50px;
-}
-
-h1{
-    text-align:center;
-    font-size:34px;
-    margin-bottom:30px;
-}
-
-h2{
-    border-bottom:1px solid #D4AF37;
-    padding-bottom:8px;
-    margin-top:35px;
-}
-
-.caja{
-    background:#090909;
-    border:1px solid #D4AF37;
-    border-radius:14px;
-    padding:20px;
-    margin:18px 0;
-}
-
-.lista{
-    padding-left:22px;
-}
-
-.lista li{
-    margin-bottom:10px;
-}
-
-.boton-inicio{
-    display:block;
-    width:100%;
-    background:#ffffff;
-    color:#000000;
-    border:0;
-    border-radius:9px;
-    padding:15px;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:30px;
-}
-
-.boton-inicio:hover{
-    background:#D4AF37;
-}
-
-footer{
-    border-top:1px solid #D4AF37;
-    text-align:center;
-    padding:30px 15px;
-}
-
-@media(max-width:600px){
-
-    h1{
-        font-size:28px;
-    }
-
-    .marca{
-        font-size:16px;
-    }
-
-}
+:root{--negro:#000;--negro2:#111;--dorado:#D4AF37;--amarillo:#FFFF00;--oro:#FFD700;--blanco:#FFF;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:var(--negro);color:var(--dorado);padding:14px;}
+.card{background:var(--negro2);border-radius:22px;padding:22px;max-width:620px;margin:16px auto;border:3px solid var(--amarillo);box-shadow:0 0 30px rgba(255,255,0,.35),0 0 15px rgba(212,175,55,.4);}
+.circle{width:88px;height:88px;border-radius:50%;background:#000;border:4px solid var(--amarillo);display:flex;align-items:center;justify-content:center;font-size:44px;margin:auto;box-shadow:0 0 25px var(--amarillo);}
+.input{width:100%;padding:16px;border:3px solid var(--amarillo);border-radius:14px;margin:7px 0;background:#000;color:var(--oro);font-size:15px;}
+.input::placeholder{color:#C5A100;}
+.btn-big{width:100%;padding:18px;background:var(--blanco);border:4px solid var(--amarillo);border-radius:16px;font-weight:900;cursor:pointer;margin-top:8px;color:#000;font-size:16px;letter-spacing:1px;box-shadow:0 6px 20px rgba(255,255,255,.25);}
+.btn-big:hover{background:var(--oro);border-color:var(--oro);box-shadow:0 0 22px var(--oro);}
+.link-word{display:block;padding:14px 6px;color:var(--oro);text-decoration:underline;font-weight:900;font-size:16px;cursor:pointer;border:2.5px solid var(--amarillo);border-radius:12px;margin:8px 0;background:#000;text-align:center;}
+.link-word:hover{background:var(--amarillo);color:#000;text-decoration:none;box-shadow:0 0 15px var(--amarillo);}
+.title{color:var(--oro);text-align:center;letter-spacing:5px;text-shadow:0 0 12px var(--oro);font-size:26px;}
+.sub{color:var(--dorado);text-align:center;font-size:13px;letter-spacing:3px;font-weight:800;}
+.label{color:var(--oro);font-weight:900;font-size:14px;margin-top:18px;display:block;border-left:4px solid var(--amarillo);padding-left:10px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}@media(max-width:500px){.grid2{grid-template-columns:1fr;}}
 </style>
 </head>
-
 <body>
 
-<header>
-
-    <div class="barra">
-
-        <div class="logo">🌸</div>
-
-        <div>
-            <div class="marca">TIERRA ROSA</div>
-            <div class="eslogan">
-                Belleza que nace de la Tierra
-            </div>
-        </div>
-
-    </div>
-
-</header>
-
-
-<main class="contenedor">
-
-    <h1>NO TIENES UNA CUENTA</h1>
-
-
-    <div class="caja">
-
-        <p>
-            Bienvenido a <strong>TIERRA ROSA</strong>.
-            Si todavía no tienes una cuenta, puedes conocer primero
-            nuestra aplicación y después decidir si deseas registrarte.
-        </p>
-
-        <p>
-            Crear una cuenta te permitirá preparar tu perfil y utilizar
-            las diferentes funciones que Tierra Rosa pone a disposición
-            de sus usuarios.
-        </p>
-
-    </div>
-
-
-    <h2>¿Qué es una cuenta de Tierra Rosa?</h2>
-
-    <div class="caja">
-
-        <p>
-            Una cuenta es un espacio personal dentro de la aplicación
-            que puede utilizarse para organizar determinada información
-            del usuario y configurar las funciones disponibles.
-        </p>
-
-        <p>
-            El registro está pensado para que puedas proporcionar tus
-            datos de manera organizada y posteriormente utilizar las
-            opciones de Tierra Rosa.
-        </p>
-
-    </div>
-
-
-    <h2>¿Por qué registrarte?</h2>
-
-    <div class="caja">
-
-        <ul class="lista">
-
-            <li>Crear tu perfil.</li>
-
-            <li>Personalizar tu información.</li>
-
-            <li>Guardar determinadas configuraciones.</li>
-
-            <li>Agregar enlaces web.</li>
-
-            <li>Agregar enlaces de redes sociales.</li>
-
-            <li>Utilizar las funciones disponibles de la aplicación.</li>
-
-            <li>Conocer las novedades y futuros proyectos de Tierra Rosa.</li>
-
-        </ul>
-
-    </div>
-
-
-    <h2>Información para el registro</h2>
-
-    <div class="caja">
-
-        <p>
-            Durante el registro pueden solicitarse datos como:
-        </p>
-
-        <ul class="lista">
-
-            <li>Nombre.</li>
-
-            <li>Apellidos.</li>
-
-            <li>Usuario.</li>
-
-            <li>Contraseña.</li>
-
-            <li>Correo electrónico.</li>
-
-            <li>Teléfono.</li>
-
-            <li>Apodo.</li>
-
-            <li>Fecha de nacimiento.</li>
-
-            <li>Edad.</li>
-
-            <li>Ciudad.</li>
-
-            <li>Estado.</li>
-
-            <li>País.</li>
-
-        </ul>
-
-    </div>
-
-
-    <h2>Recomendaciones</h2>
-
-    <div class="caja">
-
-        <p>
-            Antes de crear tu cuenta, verifica que los datos que
-            introduzcas sean correctos.
-        </p>
-
-        <p>
-            Utiliza un correo electrónico al que tengas acceso y
-            protege tus contraseñas. No compartas contraseñas,
-            códigos de recuperación ni códigos de verificación
-            con otras personas.
-        </p>
-
-        <p>
-            También es recomendable leer los avisos de privacidad
-            y las condiciones correspondientes antes de aceptar
-            cualquier autorización.
-        </p>
-
-    </div>
-
-
-    <h2>Tu información</h2>
-
-    <div class="caja">
-
-        <p>
-            Tierra Rosa busca que el usuario tenga claridad sobre
-            la información que proporciona y las funciones que
-            utiliza.
-        </p>
-
-        <p>
-            No proporciones información que no sea necesaria para
-            la función que deseas utilizar.
-        </p>
-
-    </div>
-
-
-    <h2>¿Todavía no estás listo?</h2>
-
-    <div class="caja">
-
-        <p>
-            No hay problema. Puedes regresar a la página principal,
-            conocer las diferentes secciones de Tierra Rosa y
-            posteriormente decidir si deseas crear una cuenta.
-        </p>
-
-    </div>
-
-
-    <!-- BOTÓN INICIO -->
-
-    <button
-        class="boton-inicio"
-        onclick="window.location.href='index.html'">
-
-        INICIO
-
-    </button>
-
-</main>
-
-
-<footer>
-
-    <div class="logo" style="margin:auto;">
-        🌸
-    </div>
-
-    <h3>TIERRA ROSA</h3>
-
-    <p>
-        Belleza que nace de la Tierra
-    </p>
-
-    <p>
-        © 2026 Tierra Rosa
-    </p>
-
-</footer>
-
+<div class="card" style="text-align:center;">
+<div class="circle">🌸</div>
+<h1 class="title" style="margin-top:14px;">TIERRA ROSA</h1>
+<p class="sub">Belleza que nace de la Tierra</p>
+<h2 class="title" style="margin-top:18px;font-size:22px;">INICIAR SESIÓN</h2>
+</div>
+
+<div class="card">
+<span class="label">Usuario Contraseña</span>
+<input class="input" id="u1" placeholder="Usuario">
+<input class="input" id="p1" type="password" placeholder="Contraseña">
+<button class="btn-big" onclick="go()">Botón Login</button>
+
+<span class="label">Teléfono Usuario Contraseña</span>
+<input class="input" placeholder="Teléfono">
+<input class="input" placeholder="Usuario">
+<input class="input" type="password" placeholder="Contraseña">
+<button class="btn-big" onclick="go()">Botón Login</button>
+
+<span class="label">1er Correo Electrónico Usuario Contraseña</span>
+<input class="input" placeholder="1er Correo Electrónico">
+<input class="input" placeholder="Usuario">
+<input class="input" type="password" placeholder="Contraseña">
+<button class="btn-big" onclick="go()">Botón Login</button>
+
+<span class="label">2do Correcto Electrónico Usuario Contraseña</span>
+<input class="input" placeholder="2do Correcto Electrónico">
+<input class="input" placeholder="Usuario">
+<input class="input" type="password" placeholder="Contraseña">
+<button class="btn-big" onclick="go()">Botón Login</button>
+
+<span class="label">Microsoft Usuario Contraseña</span>
+<input class="input" placeholder="Microsoft">
+<input class="input" placeholder="Usuario">
+<input class="input" type="password" placeholder="Contraseña">
+<button class="btn-big" onclick="go()">Botón Login</button>
+
+<span class="label">Drive (solo) Contraseña</span>
+<input class="input" placeholder="Drive (solo)">
+<input class="input" type="password" placeholder="Contraseña">
+<button class="btn-big" onclick="go()">Botón Login</button>
+
+<span class="label">Netacad (solo) Contraseña</span>
+<input class="input" placeholder="Netacad (solo)">
+<input class="input" type="password" placeholder="Contraseña">
+<button class="btn-big" onclick="go()">Botón Login</button>
+
+<span class="label">Outlook (solo) Contraseña</span>
+<input class="input" placeholder="Outlook (solo)">
+<input class="input" type="password" placeholder="Contraseña">
+<button class="btn-big" onclick="go()">Botón Login</button>
+
+<br><br>
+<p style="color:var(--oro);font-weight:900;text-align:center;border:2.5px solid var(--amarillo);padding:12px;border-radius:12px;background:#000;">Esto último son enlaces de páginas no quiero botones simplemente el enlace para darle click funcionable y ver el contenido de cada página cada cosa es un Link - CORREGIDO ENLACES FUNCIONABLES</p>
+
+<div style="margin-top:14px;">
+<a class="link-word" href="necesitas-ayuda.html">Necesitas ayuda?</a>
+<a class="link-word" href="no-tienes-una-cuenta.html">No tienes una Cuenta?</a>
+<a class="link-word" href="registrarme-aqui.html">Registrarme Aquí</a>
+<a class="link-word" href="acceso-con-un-click.html">Acceso con un Click</a>
+<a class="link-word" href="como-obtener-mi-enlace.html">Cómo obtener mi Enlace</a>
+<a class="link-word" href="autorizacion.html">Autorización</a>
+</div>
+
+<br><br>
+<span class="label" style="text-align:center;font-size:16px;border:none;padding:0;">Otras Formas de Iniciar Sesión</span>
+<div class="grid2">
+<button class="btn-big" onclick="social('Google')">Botón Google</button>
+<button class="btn-big" onclick="social('GitHub')">Botón GitHub</button>
+<button class="btn-big" onclick="social('Vercel')">Botón Vercel</button>
+<button class="btn-big" onclick="social('Netlify')">Botón Netlify</button>
+<button class="btn-big" onclick="social('Render')">Botón Render</button>
+<button class="btn-big" onclick="social('Claro')">Botón Claro</button>
+<button class="btn-big" onclick="social('Word')">Botón Word</button>
+<button class="btn-big" onclick="social('Files')">Botón Files</button>
+<button class="btn-big" onclick="social('Copa Fácil')">Botón Copa Fácil</button>
+<button class="btn-big" onclick="social('Spotify')">Botón Spotify</button>
+<button class="btn-big" onclick="social('Facebook')">Botón Facebook</button>
+<button class="btn-big" onclick="social('Steam')">Botón Steam</button>
+<button class="btn-big" onclick="social('Bluesky')">Botón Bluesky</button>
+<button class="btn-big" onclick="social('XBOX')">Botón XBOX</button>
+<button class="btn-big" onclick="social('Apple TV')">Botón Apple TV</button>
+<button class="btn-big" onclick="social('LinkedIn')">Botón LinkedIn</button>
+<button class="btn-big" onclick="social('Tik Tok')">Botón Tik Tok</button>
+<button class="btn-big" onclick="social('Canva')">Botón Canva</button>
+<button class="btn-big" onclick="social('Pinterest')">Botón Pinterest</button>
+<button class="btn-big" onclick="social('Threads')">Botón Threads</button>
+<button class="btn-big" onclick="social('Duolingo')">Botón Duolingo</button>
+<button class="btn-big" onclick="social('Termux')">Botón Termux</button>
+<button class="btn-big" onclick="social('YouTube')">Botón YouTube</button>
+<button class="btn-big" onclick="social('EA')">Botón EA</button>
+<button class="btn-big" onclick="social('Acode')">Botón Acode</button>
+<button class="btn-big" onclick="social('Twitch')">Botón Twitch</button>
+<button class="btn-big" onclick="social('Instagram')">Botón Instagram</button>
+<button class="btn-big" onclick="social('Snapchat')">Botón Snapchat</button>
+<button class="btn-big" onclick="social('Telegram')">Botón Telegram</button>
+<button class="btn-big" onclick="social('Titanes')">Botón Titanes</button>
+<button class="btn-big" onclick="social('Speaking')">Botón Speaking</button>
+<button class="btn-big" onclick="social('Tierra Rosa')">Botón Tierra Rosa</button>
+</div>
+</div>
+
+<script>
+function go(){let u=document.getElementById('u1').value||'titan'; if(!u.trim()){alert('Escribe Usuario');return;} localStorage.setItem('tr_user',u); location.href='tienda.html';}
+function social(red){let en=JSON.parse(localStorage.getItem('tr_enlaces')||'{}'); let cl=JSON.parse(localStorage.getItem('tr_click_enlaces')||'{}'); let link=cl[red]||en[red]; if(!link &&!localStorage.getItem('tr_autorizado')){alert('Para Botón '+red+' ve a Cómo obtener mi Enlace y Autorización TITAN'); location.href='como-obtener-mi-enlace.html'; return;} localStorage.setItem('tr_user','ok'); location.href='tienda.html';}
+</script>
 </body>
-</html>
+    </html>
