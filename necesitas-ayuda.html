@@ -4,159 +4,412 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Necesitas Ayuda - TIERRA ROSA</title>
+<title>Necesitas Ayuda | TIERRA ROSA</title>
 
 <style>
-    * {
-        box-sizing: border-box;
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#000;
+    color:#D4AF37;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.7;
+}
+
+header{
+    position:sticky;
+    top:0;
+    background:#000;
+    border-bottom:1px solid #D4AF37;
+    padding:12px;
+    z-index:10;
+}
+
+.barra{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#fff;
+    color:#000;
+    border:2px solid #D4AF37;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+.marca{
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.eslogan{
+    font-size:12px;
+}
+
+.contenedor{
+    width:92%;
+    max-width:1000px;
+    margin:auto;
+    padding:30px 0 50px;
+}
+
+h1{
+    text-align:center;
+    font-size:34px;
+}
+
+h2{
+    border-bottom:1px solid #D4AF37;
+    padding-bottom:8px;
+    margin-top:35px;
+}
+
+.caja{
+    border:1px solid #D4AF37;
+    border-radius:14px;
+    padding:20px;
+    margin:20px 0;
+    background:#090909;
+}
+
+button{
+    width:100%;
+    background:#fff;
+    color:#000;
+    border:0;
+    border-radius:9px;
+    padding:14px;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+button:hover{
+    background:#D4AF37;
+}
+
+.lista{
+    padding-left:22px;
+}
+
+.lista li{
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    border-top:1px solid #D4AF37;
+    padding:30px 15px;
+}
+
+@media(max-width:600px){
+    h1{
+        font-size:28px;
     }
 
-    body {
-        margin: 0;
-        padding: 20px;
-        background: #000000;
-        color: #D4AF37;
-        font-family: Arial, Helvetica, sans-serif;
+    .marca{
+        font-size:16px;
     }
-
-    .contenedor {
-        width: 100%;
-        max-width: 700px;
-        margin: auto;
-    }
-
-    .logo {
-        width: 100px;
-        height: 100px;
-        margin: 10px auto 20px;
-        border-radius: 50%;
-        background: #ffffff;
-        border: 4px solid #D4AF37;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 52px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 25px;
-    }
-
-    .contenido {
-        border: 2px solid #D4AF37;
-        border-radius: 15px;
-        padding: 22px;
-        line-height: 1.7;
-        font-size: 17px;
-    }
-
-    .contenido h2 {
-        text-align: center;
-        margin-top: 0;
-    }
-
-    .contenido p {
-        margin-bottom: 18px;
-    }
-
-    ul {
-        text-align: left;
-        padding-left: 25px;
-    }
-
-    li {
-        margin-bottom: 10px;
-    }
-
-    .inicio {
-        display: block;
-        width: 100%;
-        margin-top: 25px;
-        padding: 14px;
-        background: #ffffff;
-        color: #000000;
-        text-decoration: none;
-        text-align: center;
-        font-weight: bold;
-        border-radius: 9px;
-        font-size: 17px;
-    }
-
-    .inicio:hover {
-        background: #eeeeee;
-    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="contenedor">
+<header>
 
-    <div class="logo">🌸</div>
+    <div class="barra">
 
-    <h1>NECESITAS AYUDA</h1>
+        <div class="logo">🌸</div>
 
-    <div class="contenido">
-
-        <h2>Centro de Ayuda TIERRA ROSA</h2>
-
-        <p>
-            Bienvenido al espacio de ayuda de <strong>TIERRA ROSA</strong>.
-            En esta sección encontrarás información para resolver dudas
-            relacionadas con el acceso y el funcionamiento de la aplicación.
-        </p>
-
-        <p>
-            Si tienes problemas para iniciar sesión, revisa primero que tu
-            usuario, contraseña, teléfono o correo electrónico estén escritos
-            correctamente.
-        </p>
-
-        <p>
-            Si utilizas una de las opciones de acceso mediante otra plataforma,
-            verifica que tengas activa tu cuenta y que hayas autorizado el
-            acceso correspondiente.
-        </p>
-
-        <p>
-            Si olvidaste tu contraseña, utiliza las opciones de recuperación
-            disponibles en el servicio correspondiente. TIERRA ROSA no debe
-            solicitarte contraseñas de otros servicios fuera de sus mecanismos
-            oficiales de autenticación.
-        </p>
-
-        <h2>¿Qué puedo hacer?</h2>
-
-        <ul>
-            <li>Revisar que mi usuario esté escrito correctamente.</li>
-            <li>Comprobar mi contraseña antes de intentar nuevamente.</li>
-            <li>Verificar mi conexión a Internet.</li>
-            <li>Comprobar que mi correo electrónico sea correcto.</li>
-            <li>Revisar que mi teléfono esté escrito correctamente.</li>
-            <li>Utilizar el método de recuperación de cuenta correspondiente.</li>
-            <li>Intentar nuevamente después de unos minutos si existe un problema temporal.</li>
-        </ul>
-
-        <p>
-            <strong>Seguridad:</strong> nunca compartas tu contraseña con otras
-            personas. Utiliza únicamente páginas y métodos oficiales para
-            recuperar tus cuentas.
-        </p>
-
-        <p>
-            Si necesitas asistencia adicional, puedes regresar a la página
-            principal y consultar las diferentes opciones de acceso disponibles.
-        </p>
+        <div>
+            <div class="marca">TIERRA ROSA</div>
+            <div class="eslogan">
+                Belleza que nace de la Tierra
+            </div>
+        </div>
 
     </div>
 
-    <a class="inicio" href="index.html">
-        INICIO
-    </a>
+</header>
+
+<div class="contenedor">
+
+<h1>NECESITAS AYUDA</h1>
+
+<div class="caja">
+
+<p>
+Bienvenido al centro de ayuda de <strong>TIERRA ROSA</strong>.
+En esta sección encontrarás información para orientarte sobre
+el funcionamiento de la aplicación, tu cuenta, la tienda y
+las diferentes opciones disponibles.
+</p>
+
+<p>
+Si tienes algún problema, revisa primero la información de esta
+página antes de volver a intentarlo.
+</p>
 
 </div>
 
+
+<h2>¿Cómo puedo iniciar sesión?</h2>
+
+<div class="caja">
+
+<p>
+Para iniciar sesión puedes utilizar las opciones disponibles
+en la página principal de Tierra Rosa.
+</p>
+
+<p>
+Dependiendo de la configuración de la aplicación podrás utilizar
+usuario y contraseña o los enlaces de acceso disponibles.
+</p>
+
+<p>
+Recuerda no compartir tus contraseñas con otras personas.
+</p>
+
+</div>
+
+
+<h2>¿Cómo puedo crear una cuenta?</h2>
+
+<div class="caja">
+
+<p>
+Si todavía no tienes una cuenta, selecciona la opción
+<strong>Registrarme Aquí</strong>.
+</p>
+
+<p>
+Completa los datos solicitados y guarda la información.
+Revisa que tu correo electrónico, teléfono y demás datos
+estén escritos correctamente.
+</p>
+
+</div>
+
+
+<h2>¿Olvidaste tus datos de acceso?</h2>
+
+<div class="caja">
+
+<p>
+Si no recuerdas tus datos de acceso, utiliza las opciones
+de recuperación disponibles en la aplicación.
+</p>
+
+<p>
+Por seguridad, Tierra Rosa no debe solicitarte que publiques
+una contraseña en redes sociales, comentarios o mensajes públicos.
+</p>
+
+</div>
+
+
+<h2>¿Cómo funciona la tienda?</h2>
+
+<div class="caja">
+
+<p>
+En la tienda puedes buscar productos de maquillaje,
+cosméticos, cuidado de la piel, cabello, uñas y otras
+categorías relacionadas con belleza.
+</p>
+
+<ul class="lista">
+<li>Utiliza el buscador para encontrar productos.</li>
+<li>Consulta las categorías disponibles.</li>
+<li>Revisa el precio mostrado.</li>
+<li>Observa las promociones y descuentos.</li>
+<li>Agrega productos al carrito.</li>
+</ul>
+
+</div>
+
+
+<h2>¿Cómo funciona mi perfil?</h2>
+
+<div class="caja">
+
+<p>
+El perfil permite guardar información personal que tú decidas
+proporcionar a la aplicación.
+</p>
+
+<p>
+Puedes agregar fotografía, descripción, enlaces web,
+redes sociales, país, correo electrónico, teléfono,
+ocupación y zona horaria.
+</p>
+
+<p>
+Antes de compartir información personal, asegúrate de
+comprender para qué será utilizada.
+</p>
+
+</div>
+
+
+<h2>¿Qué hago si una imagen no aparece?</h2>
+
+<div class="caja">
+
+<p>
+Algunas imágenes de una página web pueden depender de una
+conexión a Internet o de un servidor externo.
+</p>
+
+<p>
+Si una imagen no aparece correctamente:
+</p>
+
+<ul class="lista">
+<li>Comprueba tu conexión a Internet.</li>
+<li>Actualiza la página.</li>
+<li>Comprueba que el enlace de la imagen sea correcto.</li>
+<li>Intenta abrir nuevamente la página.</li>
+</ul>
+
+</div>
+
+
+<h2>¿Qué hago si un botón no funciona?</h2>
+
+<div class="caja">
+
+<p>
+Comprueba primero que el archivo correspondiente se encuentre
+en la misma carpeta que la página.
+</p>
+
+<p>
+Por ejemplo, si un botón apunta a:
+</p>
+
+<p>
+<strong>index.html</strong>
+</p>
+
+<p>
+ese archivo debe existir exactamente con ese nombre.
+</p>
+
+<p>
+En Acode también debes comprobar que no hayas cambiado
+accidentalmente el nombre del archivo.
+</p>
+
+</div>
+
+
+<h2>¿Qué hago si un enlace de una red social no funciona?</h2>
+
+<div class="caja">
+
+<p>
+Los enlaces de redes sociales pertenecen a servicios externos.
+Si una cuenta cambia su nombre de usuario, privacidad o dirección,
+el enlace puede dejar de funcionar.
+</p>
+
+<p>
+En ese caso, comprueba el enlace directamente en la plataforma
+correspondiente y actualízalo en Tierra Rosa.
+</p>
+
+</div>
+
+
+<h2>Seguridad</h2>
+
+<div class="caja">
+
+<ul class="lista">
+<li>No compartas contraseñas.</li>
+<li>No publiques códigos de recuperación.</li>
+<li>No entregues códigos de verificación a desconocidos.</li>
+<li>Comprueba que estás utilizando sitios oficiales.</li>
+<li>No proporciones información personal innecesaria.</li>
+<li>Utiliza contraseñas diferentes para servicios importantes.</li>
+</ul>
+
+</div>
+
+
+<h2>Privacidad</h2>
+
+<div class="caja">
+
+<p>
+Tierra Rosa debe utilizar la información de los usuarios de
+manera responsable y explicar claramente qué información se
+recopila, para qué se utiliza y cómo puede administrarse.
+</p>
+
+<p>
+Antes de autorizar el uso de información personal, revisa
+las condiciones y políticas correspondientes.
+</p>
+
+</div>
+
+
+<h2>¿Necesitas más ayuda?</h2>
+
+<div class="caja">
+
+<p>
+Si una función no funciona correctamente, revisa nuevamente
+los datos introducidos y la conexión a Internet.
+</p>
+
+<p>
+También puedes regresar a la página principal para acceder
+nuevamente a las diferentes opciones de Tierra Rosa.
+</p>
+
+</div>
+
+
+<button onclick="window.location.href='index.html'">
+    Inicio
+</button>
+
+</div>
+
+<footer>
+
+    <div class="logo" style="margin:auto;">🌸</div>
+
+    <h3>TIERRA ROSA</h3>
+
+    <p>
+        Belleza que nace de la Tierra
+    </p>
+
+    <p>
+        © 2026 Tierra Rosa
+    </p>
+
+</footer>
+
 </body>
-</html>
+   </html>
