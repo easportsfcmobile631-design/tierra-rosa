@@ -1,83 +1,365 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIERRA ROSA - Login Principal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TIERRA ROSA</title>
+
 <style>
-:root{--beige:#F5EDE0;--arena:#E8DCC8;--crema:#C9B99A;--cafe:#5C3D2E;}
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
-body{background:var(--beige);color:var(--cafe);padding:12px;}
-.card{background:#FFFEFB;border-radius:20px;padding:20px;border:2.5px solid var(--arena);max-width:560px;margin:14px auto;box-shadow:0 12px 30px rgba(92,61,46,.12);}
-.circle{width:76px;height:76px;border-radius:50%;background:var(--beige);border:3px solid var(--crema);display:flex;align-items:center;justify-content:center;font-size:38px;margin:auto;}
-.input{width:100%;padding:12px;border:2px solid var(--crema);border-radius:11px;margin:5px 0;background:white;}
-.btn{width:100%;padding:13px;background:white;border:2.5px solid var(--crema);border-radius:12px;font-weight:900;cursor:pointer;margin-top:6px;}
-.btn:hover{background:var(--cafe);color:white;}
-.btn-cafe{width:100%;padding:16px;background:var(--cafe);color:white;border:none;border-radius:14px;font-weight:900;cursor:pointer;margin-top:10px;}
-.sep{height:2px;background:var(--beige);margin:14px 0;}
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        padding: 20px 12px 40px;
+        background: #000000;
+        color: #D4AF37;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 650px;
+        margin: auto;
+    }
+
+    /* ICONO */
+    .logo {
+        width: 105px;
+        height: 105px;
+        margin: 10px auto 18px;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 55px;
+        border: 4px solid #D4AF37;
+        box-shadow: 0 0 20px rgba(212,175,55,0.35);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 32px;
+        letter-spacing: 2px;
+        color: #D4AF37;
+    }
+
+    .slogan {
+        margin: 8px 0 30px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    h2 {
+        margin-top: 35px;
+        margin-bottom: 20px;
+        font-size: 22px;
+        color: #D4AF37;
+    }
+
+    .login-box {
+        border: 1px solid #D4AF37;
+        border-radius: 15px;
+        padding: 18px;
+        margin: 15px 0;
+    }
+
+    .login-title {
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    input {
+        width: 100%;
+        padding: 13px;
+        margin: 7px 0;
+        border: 2px solid #D4AF37;
+        border-radius: 8px;
+        background: #111111;
+        color: #D4AF37;
+        font-size: 16px;
+        outline: none;
+    }
+
+    input::placeholder {
+        color: #b99b32;
+    }
+
+    button {
+        width: 100%;
+        padding: 13px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 9px;
+        background: #ffffff;
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.02);
+        background: #eeeeee;
+    }
+
+    .help {
+        margin: 30px 0 10px;
+        font-weight: bold;
+        font-size: 17px;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .link-button {
+        display: block;
+        width: 100%;
+        padding: 13px;
+        background: #ffffff;
+        color: #000000;
+        text-decoration: none;
+        border-radius: 9px;
+        font-weight: bold;
+        border: none;
+    }
+
+    .access-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .access-grid button {
+        margin: 0;
+        min-height: 52px;
+        font-size: 14px;
+    }
+
+    .footer {
+        margin-top: 35px;
+        padding-top: 20px;
+        border-top: 1px solid #D4AF37;
+        font-size: 14px;
+    }
+
+    @media (max-width: 400px) {
+        body {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        h1 {
+            font-size: 27px;
+        }
+
+        .access-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 </head>
+
 <body>
-<div class="card" style="text-align:center;">
-<div class="circle">🌸</div>
-<h1 style="letter-spacing:6px;margin-top:8px;">TIERRA ROSA</h1>
-<p style="font-size:11px;letter-spacing:3px;opacity:.7;">BELLEZA QUE NACE DE LA TIERRA</p>
+
+<div class="app">
+
+    <!-- ICONO -->
+    <div class="logo">🌸</div>
+
+    <h1>TIERRA ROSA</h1>
+
+    <div class="slogan">
+        Belleza que nace de la Tierra
+    </div>
+
+    <!-- INICIAR SESIÓN -->
+    <h2>INICIAR SESIÓN</h2>
+
+    <!-- ACCESO PRINCIPAL -->
+    <div class="login-box">
+        <div class="login-title">Usuario y Contraseña</div>
+
+        <input type="text" placeholder="Usuario">
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="login('Usuario')">Login</button>
+    </div>
+
+    <!-- TELÉFONO -->
+    <div class="login-box">
+        <div class="login-title">Teléfono</div>
+
+        <input type="text" placeholder="Usuario">
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="login('Teléfono')">Login</button>
+    </div>
+
+    <!-- 1ER CORREO -->
+    <div class="login-box">
+        <div class="login-title">1er Correo Electrónico</div>
+
+        <input type="email" placeholder="Usuario">
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="login('1er Correo Electrónico')">Login</button>
+    </div>
+
+    <!-- 2DO CORREO -->
+    <div class="login-box">
+        <div class="login-title">2do Correo Electrónico</div>
+
+        <input type="email" placeholder="Usuario">
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="login('2do Correo Electrónico')">Login</button>
+    </div>
+
+    <!-- MICROSOFT -->
+    <div class="login-box">
+        <div class="login-title">Microsoft</div>
+
+        <input type="text" placeholder="Usuario">
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="login('Microsoft')">Login</button>
+    </div>
+
+    <!-- DRIVE -->
+    <div class="login-box">
+        <div class="login-title">Drive</div>
+
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="login('Drive')">Login</button>
+    </div>
+
+    <!-- NETACAD -->
+    <div class="login-box">
+        <div class="login-title">Netacad</div>
+
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="login('Netacad')">Login</button>
+    </div>
+
+    <!-- OUTLOOK -->
+    <div class="login-box">
+        <div class="login-title">Outlook</div>
+
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="login('Outlook')">Login</button>
+    </div>
+
+    <!-- AYUDA -->
+    <div class="help">
+        ¿Necesitas ayuda?
+    </div>
+
+    <div class="links">
+
+        <a href="#" class="link-button"
+           onclick="mensaje('Registrarme Aquí')">
+            ¿No tienes una Cuenta? — Registrarme Aquí
+        </a>
+
+        <a href="#" class="link-button"
+           onclick="mensaje('Acceso con un Click')">
+            Acceso con un Click
+        </a>
+
+        <a href="#" class="link-button"
+           onclick="mensaje('Cómo obtener mi Enlace')">
+            Cómo obtener mi Enlace
+        </a>
+
+        <a href="#" class="link-button"
+           onclick="mensaje('Autorización')">
+            Autorización
+        </a>
+
+    </div>
+
+    <!-- OTRAS FORMAS -->
+    <h2>Otras Formas de Iniciar Sesión</h2>
+
+    <div class="access-grid">
+
+        <button onclick="servicio('Google')">Google</button>
+        <button onclick="servicio('GitHub')">GitHub</button>
+        <button onclick="servicio('Vercel')">Vercel</button>
+        <button onclick="servicio('Netlify')">Netlify</button>
+        <button onclick="servicio('Render')">Render</button>
+        <button onclick="servicio('Claro')">Claro</button>
+        <button onclick="servicio('Word')">Word</button>
+        <button onclick="servicio('Files')">Files</button>
+        <button onclick="servicio('Copa Fácil')">Copa Fácil</button>
+        <button onclick="servicio('Spotify')">Spotify</button>
+        <button onclick="servicio('Facebook')">Facebook</button>
+        <button onclick="servicio('Steam')">Steam</button>
+        <button onclick="servicio('Bluesky')">Bluesky</button>
+        <button onclick="servicio('XBOX')">XBOX</button>
+        <button onclick="servicio('Apple TV')">Apple TV</button>
+        <button onclick="servicio('LinkedIn')">LinkedIn</button>
+        <button onclick="servicio('TikTok')">TikTok</button>
+        <button onclick="servicio('Canva')">Canva</button>
+        <button onclick="servicio('Pinterest')">Pinterest</button>
+        <button onclick="servicio('Threads')">Threads</button>
+        <button onclick="servicio('Duolingo')">Duolingo</button>
+        <button onclick="servicio('Termux')">Termux</button>
+        <button onclick="servicio('YouTube')">YouTube</button>
+        <button onclick="servicio('EA')">EA</button>
+        <button onclick="servicio('Acode')">Acode</button>
+        <button onclick="servicio('Twitch')">Twitch</button>
+        <button onclick="servicio('Instagram')">Instagram</button>
+        <button onclick="servicio('Snapchat')">Snapchat</button>
+        <button onclick="servicio('Telegram')">Telegram</button>
+        <button onclick="servicio('Titanes')">Titanes</button>
+        <button onclick="servicio('Speaking')">Speaking</button>
+        <button onclick="servicio('Tierra Rosa')">🌸 Tierra Rosa</button>
+
+    </div>
+
+    <div class="footer">
+        TIERRA ROSA<br>
+        Belleza que nace de la Tierra
+    </div>
+
 </div>
 
-<div class="card">
-<h2 style="text-align:center;">Login</h2><br>
-<b>Usuario</b><input class="input" placeholder="Usuario"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
-<div class="sep"></div>
-<b>1er Correo Electrónico</b><input class="input" placeholder="1er Correo Electrónico"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
-<div class="sep"></div>
-<b>2do Correo Electrónico</b><input class="input" placeholder="2do Correo Electrónico"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
-<div class="sep"></div>
-<b>Teléfono</b><input class="input" placeholder="Teléfono"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
-<div class="sep"></div>
-<b>Microsoft</b><input class="input" placeholder="Microsoft"><input class="input" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Boton Login</button>
+<script>
 
-<br><p style="font-size:12px;line-height:1.8;margin-top:14px;"><b>Necesitas ayuda?</b><br>Sigue las pasos y tendrá acceso a entrar a esta maravillosa tienda creada para que tu sientas satisfacción a tu gusto.<br><br><b>No tienes una cuenta?</b><br>Crea una cuenta en Tierra Rosa es fácil y sencillo es súper gratis no se te cobrará nada solamente llena tus datos en el formulario de Registrar y Listo. Solamente acuérdate de su usuario y contraseña que no se te olvide cuando te registres debes guardar tu datos en un lugar seguro 🔐.</p>
-<center><a href="#reg" style="font-weight:900;color:var(--cafe);text-decoration:none;">Registrarme Aquí</a></center>
-</div>
+function login(servicio) {
+    alert("Acceso seleccionado: " + servicio);
+}
 
-<div class="card" id="reg">
-<h3>Crea Una cuenta</h3><br>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-<input class="input" placeholder="1er Nombre"><input class="input" placeholder="2do Nombre">
-<input class="input" placeholder="1er Apellido"><input class="input" placeholder="2do Apellido">
-<input class="input" placeholder="Usuario"><input class="input" placeholder="Contraseña">
-<input class="input" placeholder="Teléfono"><input class="input" placeholder="Contraseña">
-</div>
-1er Correo Electrónico Contraseña<input class="input" placeholder="1er Correo Electrónico"><input class="input" type="password" placeholder="Contraseña">
-2do Correcto Electrónico Contraseña<input class="input" placeholder="2do Correcto Electrónico"><input class="input" type="password" placeholder="Contraseña">
-Microsoft Contraseña<input class="input" placeholder="Microsoft"><input class="input" type="password" placeholder="Contraseña">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-<input class="input" placeholder="Edad"><input class="input" placeholder="Ciudad"><input class="input" placeholder="Estado"><input class="input" placeholder="País">
-<input class="input" placeholder="1er Apodo"><input class="input" type="date">
-</div>
-<p style="font-weight:800;margin-top:12px;font-size:13px;">Novedades de Tierra Rosa - Palomear los siguiente ✓</p>
-<div style="font-size:11px;line-height:2;">
-✓ Aceptas jurar y guardar protesta de tus datos confidenciales.<br>
-✓ Aceptas jurar dices totalmente la verdad<br>
-✓ Aceptas los términos de condiciones además de los avisos de política de privacidad.<br>
-✓ Esta Aplicación trabaja como aplicación Principiante por lo cual deberás mantener el órden y el seguimiento en los eventos noticias rueda de prensa y mucho mas.
-</div><br>
-<b>OTRAS FORMAS OPCIONALES *Cómo un solo Inicio entras* elige la que sea posible. Gracias por tu atención.</b><br><br>
-Iniciar Sesión/Redes Sociales con<br><br>
-Facebook Contraseña<input class="input" placeholder="Facebook Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
-Twitch Contraseña<input class="input" placeholder="Twitch Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
-X Contraseña<input class="input" placeholder="X Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
-Bluesky Contraseña<input class="input" placeholder="Bluesky Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
-Acode Contraseña<input class="input" placeholder="Acode Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
-Spotify Contraseña<input class="input" placeholder="Spotify Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
-Snapchat Contraseña<input class="input" placeholder="Snapchat Contraseña"><button class="btn" onclick="go()">Botón Login</button><br>
-GitHub Contraseña<input class="input" placeholder="GitHub Contraseña"><button class="btn" onclick="go()">Botón Login</button><br><br>
+function servicio(nombre) {
+    alert("Has seleccionado: " + nombre);
+}
 
-<button class="btn" style="padding:16px;" onclick="document.getElementById('ok').style.display='block'">Botón blanco *Registrar*</button>
-<div id="ok" style="display:none;background:var(--beige);border:2px solid var(--cafe);padding:14px;border-radius:12px;margin-top:12px;text-align:center;">
-Notificación<br><b>*Su registro ha sido un éxito muchas gracias*</b><br><br>
-<button class="btn-cafe" onclick="go()">Botón blanco *Login* en automático q este funcionando directo a tienda.html</button>
-</div>
-</div>
-<script>function go(){localStorage.setItem('tr_user','ok');location.href='tienda.html';}</script>
+function mensaje(nombre) {
+    event.preventDefault();
+    alert(nombre);
+}
+
+</script>
+
 </body>
-  </html>
+</html>
