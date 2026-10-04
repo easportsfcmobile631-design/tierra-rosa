@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cómo Obtener Mi Enlace - TIERRA ROSA</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px 12px 50px;
+    background: #000000;
+    color: #D4AF37;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+
+.logo {
+    width: 105px;
+    height: 105px;
+    margin: 10px auto 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 4px solid #D4AF37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.informacion {
+    border: 2px solid #D4AF37;
+    border-radius: 15px;
+    padding: 20px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.informacion p {
+    margin: 8px 0;
+}
+
+.servicio {
+    border: 2px solid #D4AF37;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 14px;
+}
+
+.nombre {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.fila {
+    display: flex;
+    gap: 8px;
+}
+
+input[type="url"] {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 2px solid #D4AF37;
+    border-radius: 8px;
+    background: #111111;
+    color: #D4AF37;
+    font-size: 14px;
+    outline: none;
+}
+
+input[type="url"]:focus {
+    border-color: #ffffff;
+}
+
+input[type="url"]::placeholder {
+    color: #B99B32;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 12px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #eeeeee;
+}
+
+.copiar {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.estado {
+    display: block;
+    min-height: 18px;
+    margin-top: 7px;
+    font-size: 13px;
+}
+
+.controles {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boton-grande {
+    width: 100%;
+    padding: 15px;
+    font-size: 17px;
+}
+
+.exito {
+    text-align: center;
+    min-height: 20px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.inicio {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 9px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+@media (max-width: 430px) {
+
+    .fila {
+        flex-direction: column;
+    }
+
+    .copiar {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="logo">🌸</div>
+
+    <h1>COMO OBTENER MI ENLACE</h1>
+
+    <div class="subtitulo">
+        TIERRA ROSA
+    </div>
+
+    <div class="informacion">
+
+        <p>
+            Copia el enlace de Login Social y pégalo en los espacios
+            correspondientes de los botones de Logins Sociales.
+        </p>
+
+        <p>
+            Después presiona <strong>Guardar</strong>. Ese enlace podrá
+            utilizarse para acceder al servicio con un click.
+        </p>
+
+        <p>
+            También puedes utilizar el botón
+            <strong>Generar Enlaces</strong> para colocar automáticamente
+            las direcciones oficiales de acceso de los servicios.
+        </p>
+
+        <p>
+            El botón <strong>Copiar</strong> permite copiar cada enlace
+            directamente al portapapeles del dispositivo.
+        </p>
+
+    </div>
+
+
+    <!-- GOOGLE -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Google</div>
+        <div class="fila">
+            <input type="url" id="google"
+                   placeholder="Enlace de Google">
+            <button class="copiar"
+                    onclick="copiar('google')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-google" class="estado"></span>
+    </div>
+
+
+    <!-- GITHUB -->
+    <div class="servicio">
+        <div class="nombre">Enlace de GitHub</div>
+        <div class="fila">
+            <input type="url" id="github"
+                   placeholder="Enlace de GitHub">
+            <button class="copiar"
+                    onclick="copiar('github')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-github" class="estado"></span>
+    </div>
+
+
+    <!-- VERCEL -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Vercel</div>
+        <div class="fila">
+            <input type="url" id="vercel"
+                   placeholder="Enlace de Vercel">
+            <button class="copiar"
+                    onclick="copiar('vercel')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-vercel" class="estado"></span>
+    </div>
+
+
+    <!-- NETLIFY -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Netlify</div>
+        <div class="fila">
+            <input type="url" id="netlify"
+                   placeholder="Enlace de Netlify">
+            <button class="copiar"
+                    onclick="copiar('netlify')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-netlify" class="estado"></span>
+    </div>
+
+
+    <!-- RENDER -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Render</div>
+        <div class="fila">
+            <input type="url" id="render"
+                   placeholder="Enlace de Render">
+            <button class="copiar"
+                    onclick="copiar('render')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-render" class="estado"></span>
+    </div>
+
+
+    <!-- CLARO -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Claro</div>
+        <div class="fila">
+            <input type="url" id="claro"
+                   placeholder="Enlace de Claro">
+            <button class="copiar"
+                    onclick="copiar('claro')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-claro" class="estado"></span>
+    </div>
+
+
+    <!-- WORD -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Word</div>
+        <div class="fila">
+            <input type="url" id="word"
+                   placeholder="Enlace de Word">
+            <button class="copiar"
+                    onclick="copiar('word')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-word" class="estado"></span>
+    </div>
+
+
+    <!-- FILES -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Files</div>
+        <div class="fila">
+            <input type="url" id="files"
+                   placeholder="Enlace de Files">
+            <button class="copiar"
+                    onclick="copiar('files')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-files" class="estado"></span>
+    </div>
+
+
+    <!-- COPA FÁCIL -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Copa Fácil</div>
+        <div class="fila">
+            <input type="url" id="copafacil"
+                   placeholder="Enlace de Copa Fácil">
+            <button class="copiar"
+                    onclick="copiar('copafacil')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-copafacil" class="estado"></span>
+    </div>
+
+
+    <!-- SPOTIFY -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Spotify</div>
+        <div class="fila">
+            <input type="url" id="spotify"
+                   placeholder="Enlace de Spotify">
+            <button class="copiar"
+                    onclick="copiar('spotify')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-spotify" class="estado"></span>
+    </div>
+
+
+    <!-- FACEBOOK -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Facebook</div>
+        <div class="fila">
+            <input type="url" id="facebook"
+                   placeholder="Enlace de Facebook">
+            <button class="copiar"
+                    onclick="copiar('facebook')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-facebook" class="estado"></span>
+    </div>
+
+
+    <!-- STEAM -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Steam</div>
+        <div class="fila">
+            <input type="url" id="steam"
+                   placeholder="Enlace de Steam">
+            <button class="copiar"
+                    onclick="copiar('steam')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-steam" class="estado"></span>
+    </div>
+
+
+    <!-- BLUESKY -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Bluesky</div>
+        <div class="fila">
+            <input type="url" id="bluesky"
+                   placeholder="Enlace de Bluesky">
+            <button class="copiar"
+                    onclick="copiar('bluesky')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-bluesky" class="estado"></span>
+    </div>
+
+
+    <!-- XBOX -->
+    <div class="servicio">
+        <div class="nombre">Enlace de XBOX</div>
+        <div class="fila">
+            <input type="url" id="xbox"
+                   placeholder="Enlace de XBOX">
+            <button class="copiar"
+                    onclick="copiar('xbox')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-xbox" class="estado"></span>
+    </div>
+
+
+    <!-- APPLE TV -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Apple TV</div>
+        <div class="fila">
+            <input type="url" id="appletv"
+                   placeholder="Enlace de Apple TV">
+            <button class="copiar"
+                    onclick="copiar('appletv')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-appletv" class="estado"></span>
+    </div>
+
+
+    <!-- LINKEDIN -->
+    <div class="servicio">
+        <div class="nombre">Enlace de LinkedIn</div>
+        <div class="fila">
+            <input type="url" id="linkedin"
+                   placeholder="Enlace de LinkedIn">
+            <button class="copiar"
+                    onclick="copiar('linkedin')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-linkedin" class="estado"></span>
+    </div>
+
+
+    <!-- TIKTOK -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Tik Tok</div>
+        <div class="fila">
+            <input type="url" id="tiktok"
+                   placeholder="Enlace de Tik Tok">
+            <button class="copiar"
+                    onclick="copiar('tiktok')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-tiktok" class="estado"></span>
+    </div>
+
+
+    <!-- CANVA -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Canva</div>
+        <div class="fila">
+            <input type="url" id="canva"
+                   placeholder="Enlace de Canva">
+            <button class="copiar"
+                    onclick="copiar('canva')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-canva" class="estado"></span>
+    </div>
+
+
+    <!-- PINTEREST -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Pinterest</div>
+        <div class="fila">
+            <input type="url" id="pinterest"
+                   placeholder="Enlace de Pinterest">
+            <button class="copiar"
+                    onclick="copiar('pinterest')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-pinterest" class="estado"></span>
+    </div>
+
+
+    <!-- THREADS -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Threads</div>
+        <div class="fila">
+            <input type="url" id="threads"
+                   placeholder="Enlace de Threads">
+            <button class="copiar"
+                    onclick="copiar('threads')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-threads" class="estado"></span>
+    </div>
+
+
+    <!-- DUOLINGO -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Duolingo</div>
+        <div class="fila">
+            <input type="url" id="duolingo"
+                   placeholder="Enlace de Duolingo">
+            <button class="copiar"
+                    onclick="copiar('duolingo')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-duolingo" class="estado"></span>
+    </div>
+
+
+    <!-- TERMUX -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Termux</div>
+        <div class="fila">
+            <input type="url" id="termux"
+                   placeholder="Enlace de Termux">
+            <button class="copiar"
+                    onclick="copiar('termux')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-termux" class="estado"></span>
+    </div>
+
+
+    <!-- YOUTUBE -->
+    <div class="servicio">
+        <div class="nombre">Enlace de YouTube</div>
+        <div class="fila">
+            <input type="url" id="youtube"
+                   placeholder="Enlace de YouTube">
+            <button class="copiar"
+                    onclick="copiar('youtube')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-youtube" class="estado"></span>
+    </div>
+
+
+    <!-- EA -->
+    <div class="servicio">
+        <div class="nombre">Enlace de EA</div>
+        <div class="fila">
+            <input type="url" id="ea"
+                   placeholder="Enlace de EA">
+            <button class="copiar"
+                    onclick="copiar('ea')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-ea" class="estado"></span>
+    </div>
+
+
+    <!-- ACODE -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Acode</div>
+        <div class="fila">
+            <input type="url" id="acode"
+                   placeholder="Enlace de Acode">
+            <button class="copiar"
+                    onclick="copiar('acode')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-acode" class="estado"></span>
+    </div>
+
+
+    <!-- TWITCH -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Twitch</div>
+        <div class="fila">
+            <input type="url" id="twitch"
+                   placeholder="Enlace de Twitch">
+            <button class="copiar"
+                    onclick="copiar('twitch')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-twitch" class="estado"></span>
+    </div>
+
+
+    <!-- INSTAGRAM -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Instagram</div>
+        <div class="fila">
+            <input type="url" id="instagram"
+                   placeholder="Enlace de Instagram">
+            <button class="copiar"
+                    onclick="copiar('instagram')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-instagram" class="estado"></span>
+    </div>
+
+
+    <!-- SNAPCHAT -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Snapchat</div>
+        <div class="fila">
+            <input type="url" id="snapchat"
+                   placeholder="Enlace de Snapchat">
+            <button class="copiar"
+                    onclick="copiar('snapchat')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-snapchat" class="estado"></span>
+    </div>
+
+
+    <!-- TELEGRAM -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Telegram</div>
+        <div class="fila">
+            <input type="url" id="telegram"
+                   placeholder="Enlace de Telegram">
+            <button class="copiar"
+                    onclick="copiar('telegram')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-telegram" class="estado"></span>
+    </div>
+
+
+    <!-- TITANES -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Titanes</div>
+        <div class="fila">
+            <input type="url" id="titanes"
+                   placeholder="Enlace de Titanes">
+            <button class="copiar"
+                    onclick="copiar('titanes')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-titanes" class="estado"></span>
+    </div>
+
+
+    <!-- SPEAKING -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Speaking</div>
+        <div class="fila">
+            <input type="url" id="speaking"
+                   placeholder="Enlace de Speaking">
+            <button class="copiar"
+                    onclick="copiar('speaking')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-speaking" class="estado"></span>
+    </div>
+
+
+    <!-- TIERRA ROSA -->
+    <div class="servicio">
+        <div class="nombre">Enlace de Tierra Rosa</div>
+        <div class="fila">
+            <input type="url" id="tierrarosa"
+                   placeholder="Enlace de Tierra Rosa">
+            <button class="copiar"
+                    onclick="copiar('tierrarosa')">
+                Copiar
+            </button>
+        </div>
+        <span id="estado-tierrarosa" class="estado"></span>
+    </div>
+
+
+    <!-- MENSAJE -->
+    <div id="mensaje" class="exito"></div>
+
+
+    <!-- 4 BOTONES PRINCIPALES -->
+    <div class="controles">
+
+        <button class="boton-grande"
+                onclick="generarEnlaces()">
+            GENERAR ENLACES
+        </button>
+
+        <button class="boton-grande"
+                onclick="guardarEnlaces()">
+            GUARDAR ENLACES
+        </button>
+
+        <button class="boton-grande"
+                onclick="restablecerEnlaces()">
+            RESTABLECER ENLACES
+        </button>
+
+        <button class="boton-grande"
+                onclick="location.href='acceso-con-un-click.html'">
+            ACCESO CON UN CLICK
+        </button>
+
+        <button class="boton-grande"
+                onclick="location.href='autorizacion.html'">
+            AUTORIZACIÓN
+        </button>
+
+    </div>
+
+
+    <!-- INICIO -->
+    <a href="index.html" class="inicio">
+        INICIO
+    </a>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   SERVICIOS
+========================================= */
+
+const servicios = [
+
+    "google",
+    "github",
+    "vercel",
+    "netlify",
+    "render",
+    "claro",
+    "word",
+    "files",
+    "copafacil",
+    "spotify",
+    "facebook",
+    "steam",
+    "bluesky",
+    "xbox",
+    "appletv",
+    "linkedin",
+    "tiktok",
+    "canva",
+    "pinterest",
+    "threads",
+    "duolingo",
+    "termux",
+    "youtube",
+    "ea",
+    "acode",
+    "twitch",
+    "instagram",
+    "snapchat",
+    "telegram",
+    "titanes",
+    "speaking",
+    "tierrarosa"
+
+];
+
+
+/* =========================================
+   ENLACES OFICIALES
+========================================= */
+
+const enlacesOficiales = {
+
+    google:
+        "https://accounts.google.com/",
+
+    github:
+        "https://github.com/login",
+
+    vercel:
+        "https://vercel.com/login",
+
+    netlify:
+        "https://app.netlify.com/login",
+
+    render:
+        "https://dashboard.render.com/login",
+
+    claro:
+        "https://www.claro.com/",
+
+    word:
+        "https://www.office.com/",
+
+    files:
+        "https://www.icloud.com/iclouddrive/",
+
+    copafacil:
+        "",
+
+    spotify:
+        "https://accounts.spotify.com/",
+
+    facebook:
+        "https://www.facebook.com/login/",
+
+    steam:
+        "https://store.steampowered.com/login/",
+
+    bluesky:
+        "https://bsky.app/",
+
+    xbox:
+        "https://account.xbox.com/",
+
+    appletv:
+        "https://tv.apple.com/",
+
+    linkedin:
+        "https://www.linkedin.com/login/",
+
+    tikt
