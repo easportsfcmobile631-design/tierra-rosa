@@ -4,181 +4,343 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>No Tienes Una Cuenta - TIERRA ROSA</title>
+<title>No tienes una cuenta | TIERRA ROSA</title>
 
 <style>
-    * {
-        box-sizing: border-box;
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#000000;
+    color:#D4AF37;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.7;
+}
+
+header{
+    background:#000000;
+    border-bottom:1px solid #D4AF37;
+    padding:12px;
+}
+
+.barra{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#ffffff;
+    color:#000000;
+    border:2px solid #D4AF37;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    flex-shrink:0;
+}
+
+.marca{
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.eslogan{
+    font-size:12px;
+}
+
+.contenedor{
+    width:92%;
+    max-width:1000px;
+    margin:auto;
+    padding:30px 0 50px;
+}
+
+h1{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:30px;
+}
+
+h2{
+    border-bottom:1px solid #D4AF37;
+    padding-bottom:8px;
+    margin-top:35px;
+}
+
+.caja{
+    background:#090909;
+    border:1px solid #D4AF37;
+    border-radius:14px;
+    padding:20px;
+    margin:18px 0;
+}
+
+.lista{
+    padding-left:22px;
+}
+
+.lista li{
+    margin-bottom:10px;
+}
+
+.boton-inicio{
+    display:block;
+    width:100%;
+    background:#ffffff;
+    color:#000000;
+    border:0;
+    border-radius:9px;
+    padding:15px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:30px;
+}
+
+.boton-inicio:hover{
+    background:#D4AF37;
+}
+
+footer{
+    border-top:1px solid #D4AF37;
+    text-align:center;
+    padding:30px 15px;
+}
+
+@media(max-width:600px){
+
+    h1{
+        font-size:28px;
     }
 
-    body {
-        margin: 0;
-        padding: 20px;
-        background: #000000;
-        color: #D4AF37;
-        font-family: Arial, Helvetica, sans-serif;
+    .marca{
+        font-size:16px;
     }
 
-    .contenedor {
-        width: 100%;
-        max-width: 700px;
-        margin: auto;
-    }
-
-    .logo {
-        width: 100px;
-        height: 100px;
-        margin: 10px auto 20px;
-        border-radius: 50%;
-        background: #ffffff;
-        border: 4px solid #D4AF37;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 52px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 25px;
-    }
-
-    .contenido {
-        border: 2px solid #D4AF37;
-        border-radius: 15px;
-        padding: 22px;
-        line-height: 1.7;
-        font-size: 17px;
-    }
-
-    .contenido h2 {
-        text-align: center;
-        margin-top: 0;
-    }
-
-    .contenido p {
-        margin-bottom: 18px;
-    }
-
-    ul {
-        text-align: left;
-        padding-left: 25px;
-    }
-
-    li {
-        margin-bottom: 10px;
-    }
-
-    .registro {
-        border: 1px solid #D4AF37;
-        border-radius: 12px;
-        padding: 18px;
-        margin-top: 20px;
-    }
-
-    .registro h3 {
-        text-align: center;
-        margin-top: 0;
-    }
-
-    .inicio {
-        display: block;
-        width: 100%;
-        margin-top: 25px;
-        padding: 14px;
-        background: #ffffff;
-        color: #000000;
-        text-decoration: none;
-        text-align: center;
-        font-weight: bold;
-        border-radius: 9px;
-        font-size: 17px;
-    }
-
-    .inicio:hover {
-        background: #eeeeee;
-    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="contenedor">
+<header>
 
-    <div class="logo">🌸</div>
+    <div class="barra">
+
+        <div class="logo">🌸</div>
+
+        <div>
+            <div class="marca">TIERRA ROSA</div>
+            <div class="eslogan">
+                Belleza que nace de la Tierra
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="contenedor">
 
     <h1>NO TIENES UNA CUENTA</h1>
 
-    <div class="contenido">
 
-        <h2>Crea tu cuenta en TIERRA ROSA</h2>
+    <div class="caja">
 
         <p>
-            Si todavía no tienes una cuenta, puedes registrarte para comenzar
-            a utilizar las funciones disponibles de <strong>TIERRA ROSA</strong>.
+            Bienvenido a <strong>TIERRA ROSA</strong>.
+            Si todavía no tienes una cuenta, puedes conocer primero
+            nuestra aplicación y después decidir si deseas registrarte.
         </p>
 
         <p>
-            Una cuenta te permitirá disponer de un espacio personal dentro de
-            la aplicación y utilizar las opciones de acceso que estén
-            disponibles.
-        </p>
-
-        <div class="registro">
-
-            <h3>Información para registrarte</h3>
-
-            <p>
-                Durante el registro podrás proporcionar información como:
-            </p>
-
-            <ul>
-                <li>Primer nombre.</li>
-                <li>Segundo nombre.</li>
-                <li>Primer apellido.</li>
-                <li>Segundo apellido.</li>
-                <li>Usuario.</li>
-                <li>Correo electrónico.</li>
-                <li>Teléfono.</li>
-                <li>Ciudad.</li>
-                <li>Estado.</li>
-                <li>País.</li>
-                <li>Contraseña.</li>
-            </ul>
-
-        </div>
-
-        <p>
-            Antes de completar tu registro, revisa cuidadosamente los datos
-            que hayas escrito para evitar errores.
-        </p>
-
-        <p>
-            Utiliza una contraseña segura y evita compartirla con otras
-            personas. La contraseña debe ser personal y mantenerse protegida.
-        </p>
-
-        <p>
-            Si ya tienes una cuenta, no necesitas crear otra. Puedes regresar
-            a la página principal y utilizar una de las opciones de inicio de
-            sesión disponibles.
-        </p>
-
-        <p>
-            <strong>Importante:</strong> el registro definitivo de usuarios
-            requiere un sistema de cuentas conectado a una base de datos o
-            servicio de autenticación. Esta página funciona como información
-            y presentación del proceso.
+            Crear una cuenta te permitirá preparar tu perfil y utilizar
+            las diferentes funciones que Tierra Rosa pone a disposición
+            de sus usuarios.
         </p>
 
     </div>
 
-    <a class="inicio" href="index.html">
-        INICIO
-    </a>
 
-</div>
+    <h2>¿Qué es una cuenta de Tierra Rosa?</h2>
+
+    <div class="caja">
+
+        <p>
+            Una cuenta es un espacio personal dentro de la aplicación
+            que puede utilizarse para organizar determinada información
+            del usuario y configurar las funciones disponibles.
+        </p>
+
+        <p>
+            El registro está pensado para que puedas proporcionar tus
+            datos de manera organizada y posteriormente utilizar las
+            opciones de Tierra Rosa.
+        </p>
+
+    </div>
+
+
+    <h2>¿Por qué registrarte?</h2>
+
+    <div class="caja">
+
+        <ul class="lista">
+
+            <li>Crear tu perfil.</li>
+
+            <li>Personalizar tu información.</li>
+
+            <li>Guardar determinadas configuraciones.</li>
+
+            <li>Agregar enlaces web.</li>
+
+            <li>Agregar enlaces de redes sociales.</li>
+
+            <li>Utilizar las funciones disponibles de la aplicación.</li>
+
+            <li>Conocer las novedades y futuros proyectos de Tierra Rosa.</li>
+
+        </ul>
+
+    </div>
+
+
+    <h2>Información para el registro</h2>
+
+    <div class="caja">
+
+        <p>
+            Durante el registro pueden solicitarse datos como:
+        </p>
+
+        <ul class="lista">
+
+            <li>Nombre.</li>
+
+            <li>Apellidos.</li>
+
+            <li>Usuario.</li>
+
+            <li>Contraseña.</li>
+
+            <li>Correo electrónico.</li>
+
+            <li>Teléfono.</li>
+
+            <li>Apodo.</li>
+
+            <li>Fecha de nacimiento.</li>
+
+            <li>Edad.</li>
+
+            <li>Ciudad.</li>
+
+            <li>Estado.</li>
+
+            <li>País.</li>
+
+        </ul>
+
+    </div>
+
+
+    <h2>Recomendaciones</h2>
+
+    <div class="caja">
+
+        <p>
+            Antes de crear tu cuenta, verifica que los datos que
+            introduzcas sean correctos.
+        </p>
+
+        <p>
+            Utiliza un correo electrónico al que tengas acceso y
+            protege tus contraseñas. No compartas contraseñas,
+            códigos de recuperación ni códigos de verificación
+            con otras personas.
+        </p>
+
+        <p>
+            También es recomendable leer los avisos de privacidad
+            y las condiciones correspondientes antes de aceptar
+            cualquier autorización.
+        </p>
+
+    </div>
+
+
+    <h2>Tu información</h2>
+
+    <div class="caja">
+
+        <p>
+            Tierra Rosa busca que el usuario tenga claridad sobre
+            la información que proporciona y las funciones que
+            utiliza.
+        </p>
+
+        <p>
+            No proporciones información que no sea necesaria para
+            la función que deseas utilizar.
+        </p>
+
+    </div>
+
+
+    <h2>¿Todavía no estás listo?</h2>
+
+    <div class="caja">
+
+        <p>
+            No hay problema. Puedes regresar a la página principal,
+            conocer las diferentes secciones de Tierra Rosa y
+            posteriormente decidir si deseas crear una cuenta.
+        </p>
+
+    </div>
+
+
+    <!-- BOTÓN INICIO -->
+
+    <button
+        class="boton-inicio"
+        onclick="window.location.href='index.html'">
+
+        INICIO
+
+    </button>
+
+</main>
+
+
+<footer>
+
+    <div class="logo" style="margin:auto;">
+        🌸
+    </div>
+
+    <h3>TIERRA ROSA</h3>
+
+    <p>
+        Belleza que nace de la Tierra
+    </p>
+
+    <p>
+        © 2026 Tierra Rosa
+    </p>
+
+</footer>
 
 </body>
-                                         </html>
+   </html>
