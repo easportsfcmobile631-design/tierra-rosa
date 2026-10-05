@@ -1,415 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Necesitas Ayuda | TIERRA ROSA</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NECESITAS AYUDA - TIERRA ROSA</title>
 <style>
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    background:#000;
-    color:#D4AF37;
-    font-family:Arial,Helvetica,sans-serif;
-    line-height:1.7;
-}
-
-header{
-    position:sticky;
-    top:0;
-    background:#000;
-    border-bottom:1px solid #D4AF37;
-    padding:12px;
-    z-index:10;
-}
-
-.barra{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:#fff;
-    color:#000;
-    border:2px solid #D4AF37;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-}
-
-.marca{
-    font-size:20px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.eslogan{
-    font-size:12px;
-}
-
-.contenedor{
-    width:92%;
-    max-width:1000px;
-    margin:auto;
-    padding:30px 0 50px;
-}
-
-h1{
-    text-align:center;
-    font-size:34px;
-}
-
-h2{
-    border-bottom:1px solid #D4AF37;
-    padding-bottom:8px;
-    margin-top:35px;
-}
-
-.caja{
-    border:1px solid #D4AF37;
-    border-radius:14px;
-    padding:20px;
-    margin:20px 0;
-    background:#090909;
-}
-
-button{
-    width:100%;
-    background:#fff;
-    color:#000;
-    border:0;
-    border-radius:9px;
-    padding:14px;
-    font-weight:bold;
-    font-size:16px;
-    cursor:pointer;
-    margin-top:15px;
-}
-
-button:hover{
-    background:#D4AF37;
-}
-
-.lista{
-    padding-left:22px;
-}
-
-.lista li{
-    margin-bottom:10px;
-}
-
-footer{
-    text-align:center;
-    border-top:1px solid #D4AF37;
-    padding:30px 15px;
-}
-
-@media(max-width:600px){
-    h1{
-        font-size:28px;
-    }
-
-    .marca{
-        font-size:16px;
-    }
-}
+:root{--beige:#F5E8D0;--beige3:#FFF8EC;--negro:#000;--blanco:#FFF;--borde:#D9C5A0;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:var(--beige);color:var(--negro);padding:14px;}
+.card{background:var(--beige3);border:3px solid var(--borde);border-radius:24px;padding:20px;max-width:800px;margin:auto;box-shadow:0 8px 30px rgba(0,0,0,.12);}
+.circle{width:80px;height:80px;border-radius:50%;background:var(--blanco);border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:42px;margin:auto;}
+.title{color:var(--negro);text-align:center;letter-spacing:3px;font-weight:900;margin-top:10px;}
+.btn-white{width:100%;padding:14px;background:var(--blanco);border:3px solid var(--negro);border-radius:12px;font-weight:900;color:var(--negro);cursor:pointer;margin-top:12px;box-shadow:0 3px 0 var(--negro);}
+.box{border:2.5px solid var(--borde);border-radius:16px;padding:14px;margin:12px 0;background:var(--blanco);}
+.h{font-weight:900;font-size:13px;margin-bottom:6px;}
+.p{font-size:12px;line-height:1.6;}
 </style>
 </head>
-
 <body>
+<div class="card">
+<div class="circle">🆘</div>
+<h1 class="title">NECESITAS AYUDA</h1>
 
-<header>
-
-    <div class="barra">
-
-        <div class="logo">🌸</div>
-
-        <div>
-            <div class="marca">TIERRA ROSA</div>
-            <div class="eslogan">
-                Belleza que nace de la Tierra
-            </div>
-        </div>
-
-    </div>
-
-</header>
-
-<div class="contenedor">
-
-<h1>NECESITAS AYUDA</h1>
-
-<div class="caja">
-
-<p>
-Bienvenido al centro de ayuda de <strong>TIERRA ROSA</strong>.
-En esta sección encontrarás información para orientarte sobre
-el funcionamiento de la aplicación, tu cuenta, la tienda y
-las diferentes opciones disponibles.
-</p>
-
-<p>
-Si tienes algún problema, revisa primero la información de esta
-página antes de volver a intentarlo.
-</p>
-
+<div class="box">
+<div class="h">¿Olvidaste tu contraseña?</div>
+<p class="p">1. Ve a INICIAR SESIÓN en index.html<br>2. Revisa que tu Usuario y Contraseña estén bien escritos<br>3. Si usas Drive, Netacad u Outlook solo pide Contraseña (modo solo)<br>4. Prueba Acceso con un Click - Botón Guardar tu enlace y luego Login → Tienda</p>
 </div>
 
-
-<h2>¿Cómo puedo iniciar sesión?</h2>
-
-<div class="caja">
-
-<p>
-Para iniciar sesión puedes utilizar las opciones disponibles
-en la página principal de Tierra Rosa.
-</p>
-
-<p>
-Dependiendo de la configuración de la aplicación podrás utilizar
-usuario y contraseña o los enlaces de acceso disponibles.
-</p>
-
-<p>
-Recuerda no compartir tus contraseñas con otras personas.
-</p>
-
+<div class="box">
+<div class="h">Acceso con un Click no entra</div>
+<p class="p">Cuidado son 3 botones independientes: Guardar, Login, Autorizar. Primero debes darle a Guardar tu enlace de Google, GitHub, etc. Luego Autorizar para dar permiso de credenciales. Luego Login para entrar directo a tienda. El enlace es la vinculación de la app que elegiste.</p>
 </div>
 
-
-<h2>¿Cómo puedo crear una cuenta?</h2>
-
-<div class="caja">
-
-<p>
-Si todavía no tienes una cuenta, selecciona la opción
-<strong>Registrarme Aquí</strong>.
-</p>
-
-<p>
-Completa los datos solicitados y guarda la información.
-Revisa que tu correo electrónico, teléfono y demás datos
-estén escritos correctamente.
-</p>
-
+<div class="box">
+<div class="h">ID de tu proyecto</div>
+<p class="p">ID_Client-235.meidvWqo002w8eb8dA<br>Usa banco-de-enlaces.html para ver tus 32 enlaces falsos de proyecto principiante beige arena.</p>
 </div>
 
-
-<h2>¿Olvidaste tus datos de acceso?</h2>
-
-<div class="caja">
-
-<p>
-Si no recuerdas tus datos de acceso, utiliza las opciones
-de recuperación disponibles en la aplicación.
-</p>
-
-<p>
-Por seguridad, Tierra Rosa no debe solicitarte que publiques
-una contraseña en redes sociales, comentarios o mensajes públicos.
-</p>
-
+<div class="box">
+<div class="h">Contacto Tierra Rosa</div>
+<p class="p">Belleza que nace de la Tierra 🌸<br>Correo: ayuda@tierrarosa.fake.local (falso proyecto)<br>WhatsApp: +52 000 000 0000 (falso proyecto)<br>Horario: Lun - Sab 9am a 6pm</p>
 </div>
 
-
-<h2>¿Cómo funciona la tienda?</h2>
-
-<div class="caja">
-
-<p>
-En la tienda puedes buscar productos de maquillaje,
-cosméticos, cuidado de la piel, cabello, uñas y otras
-categorías relacionadas con belleza.
-</p>
-
-<ul class="lista">
-<li>Utiliza el buscador para encontrar productos.</li>
-<li>Consulta las categorías disponibles.</li>
-<li>Revisa el precio mostrado.</li>
-<li>Observa las promociones y descuentos.</li>
-<li>Agrega productos al carrito.</li>
-</ul>
-
+<div class="box">
+<div class="h">Preguntas frecuentes</div>
+<p class="p">- Teléfono / Usuario / Contraseña: es login separado para usuarios con teléfono<br>- 1er Correo y 2do Correo: para cuentas dobles<br>- Microsoft, Drive, Netacad, Outlook: logins rápidos solo con contraseña<br>- INICIAR SESIÓN CON: todos los botones Google a Tierra Rosa van directo a tienda.html si diste Guardar antes</p>
 </div>
 
-
-<h2>¿Cómo funciona mi perfil?</h2>
-
-<div class="caja">
-
-<p>
-El perfil permite guardar información personal que tú decidas
-proporcionar a la aplicación.
-</p>
-
-<p>
-Puedes agregar fotografía, descripción, enlaces web,
-redes sociales, país, correo electrónico, teléfono,
-ocupación y zona horaria.
-</p>
-
-<p>
-Antes de compartir información personal, asegúrate de
-comprender para qué será utilizada.
-</p>
-
+<button class="btn-white" onclick="location.href='index.html'">Botón [Inicio] a index.html</button>
+<p style="text-align:center;font-size:11px;margin-top:10px;font-weight:800;">Gracias por tu preferencia en Tierra Rosa.</p>
 </div>
-
-
-<h2>¿Qué hago si una imagen no aparece?</h2>
-
-<div class="caja">
-
-<p>
-Algunas imágenes de una página web pueden depender de una
-conexión a Internet o de un servidor externo.
-</p>
-
-<p>
-Si una imagen no aparece correctamente:
-</p>
-
-<ul class="lista">
-<li>Comprueba tu conexión a Internet.</li>
-<li>Actualiza la página.</li>
-<li>Comprueba que el enlace de la imagen sea correcto.</li>
-<li>Intenta abrir nuevamente la página.</li>
-</ul>
-
-</div>
-
-
-<h2>¿Qué hago si un botón no funciona?</h2>
-
-<div class="caja">
-
-<p>
-Comprueba primero que el archivo correspondiente se encuentre
-en la misma carpeta que la página.
-</p>
-
-<p>
-Por ejemplo, si un botón apunta a:
-</p>
-
-<p>
-<strong>index.html</strong>
-</p>
-
-<p>
-ese archivo debe existir exactamente con ese nombre.
-</p>
-
-<p>
-En Acode también debes comprobar que no hayas cambiado
-accidentalmente el nombre del archivo.
-</p>
-
-</div>
-
-
-<h2>¿Qué hago si un enlace de una red social no funciona?</h2>
-
-<div class="caja">
-
-<p>
-Los enlaces de redes sociales pertenecen a servicios externos.
-Si una cuenta cambia su nombre de usuario, privacidad o dirección,
-el enlace puede dejar de funcionar.
-</p>
-
-<p>
-En ese caso, comprueba el enlace directamente en la plataforma
-correspondiente y actualízalo en Tierra Rosa.
-</p>
-
-</div>
-
-
-<h2>Seguridad</h2>
-
-<div class="caja">
-
-<ul class="lista">
-<li>No compartas contraseñas.</li>
-<li>No publiques códigos de recuperación.</li>
-<li>No entregues códigos de verificación a desconocidos.</li>
-<li>Comprueba que estás utilizando sitios oficiales.</li>
-<li>No proporciones información personal innecesaria.</li>
-<li>Utiliza contraseñas diferentes para servicios importantes.</li>
-</ul>
-
-</div>
-
-
-<h2>Privacidad</h2>
-
-<div class="caja">
-
-<p>
-Tierra Rosa debe utilizar la información de los usuarios de
-manera responsable y explicar claramente qué información se
-recopila, para qué se utiliza y cómo puede administrarse.
-</p>
-
-<p>
-Antes de autorizar el uso de información personal, revisa
-las condiciones y políticas correspondientes.
-</p>
-
-</div>
-
-
-<h2>¿Necesitas más ayuda?</h2>
-
-<div class="caja">
-
-<p>
-Si una función no funciona correctamente, revisa nuevamente
-los datos introducidos y la conexión a Internet.
-</p>
-
-<p>
-También puedes regresar a la página principal para acceder
-nuevamente a las diferentes opciones de Tierra Rosa.
-</p>
-
-</div>
-
-
-<button onclick="window.location.href='index.html'">
-    Inicio
-</button>
-
-</div>
-
-<footer>
-
-    <div class="logo" style="margin:auto;">🌸</div>
-
-    <h3>TIERRA ROSA</h3>
-
-    <p>
-        Belleza que nace de la Tierra
-    </p>
-
-    <p>
-        © 2026 Tierra Rosa
-    </p>
-
-</footer>
-
 </body>
-   </html>
+</html>
