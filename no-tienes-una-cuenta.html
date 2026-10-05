@@ -1,346 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>No tienes una cuenta | TIERRA ROSA</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NO TIENES UNA CUENTA - TIERRA ROSA</title>
 <style>
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    background:#000000;
-    color:#D4AF37;
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.7;
-}
-
-header{
-    background:#000000;
-    border-bottom:1px solid #D4AF37;
-    padding:12px;
-}
-
-.barra{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:#ffffff;
-    color:#000000;
-    border:2px solid #D4AF37;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    flex-shrink:0;
-}
-
-.marca{
-    font-size:20px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.eslogan{
-    font-size:12px;
-}
-
-.contenedor{
-    width:92%;
-    max-width:1000px;
-    margin:auto;
-    padding:30px 0 50px;
-}
-
-h1{
-    text-align:center;
-    font-size:34px;
-    margin-bottom:30px;
-}
-
-h2{
-    border-bottom:1px solid #D4AF37;
-    padding-bottom:8px;
-    margin-top:35px;
-}
-
-.caja{
-    background:#090909;
-    border:1px solid #D4AF37;
-    border-radius:14px;
-    padding:20px;
-    margin:18px 0;
-}
-
-.lista{
-    padding-left:22px;
-}
-
-.lista li{
-    margin-bottom:10px;
-}
-
-.boton-inicio{
-    display:block;
-    width:100%;
-    background:#ffffff;
-    color:#000000;
-    border:0;
-    border-radius:9px;
-    padding:15px;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:30px;
-}
-
-.boton-inicio:hover{
-    background:#D4AF37;
-}
-
-footer{
-    border-top:1px solid #D4AF37;
-    text-align:center;
-    padding:30px 15px;
-}
-
-@media(max-width:600px){
-
-    h1{
-        font-size:28px;
-    }
-
-    .marca{
-        font-size:16px;
-    }
-
-}
+:root{--beige:#F5E8D0;--beige3:#FFF8EC;--negro:#000;--blanco:#FFF;--borde:#D9C5A0;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:var(--beige);color:var(--negro);padding:14px;}
+.card{background:var(--beige3);border:3px solid var(--borde);border-radius:24px;padding:20px;max-width:800px;margin:auto;box-shadow:0 8px 30px rgba(0,0,0,.12);}
+.circle{width:80px;height:80px;border-radius:50%;background:var(--blanco);border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:42px;margin:auto;}
+.title{color:var(--negro);text-align:center;letter-spacing:3px;font-weight:900;margin-top:10px;}
+.btn-white{width:100%;padding:14px;background:var(--blanco);border:3px solid var(--negro);border-radius:12px;font-weight:900;color:var(--negro);cursor:pointer;margin-top:10px;box-shadow:0 3px 0 var(--negro);}
+.input{width:100%;padding:12px;border:2px solid var(--borde);border-radius:12px;background:var(--blanco);color:var(--negro);margin:6px 0;font-size:13px;}
+.box{border:2.5px solid var(--borde);border-radius:16px;padding:14px;margin:12px 0;background:var(--blanco);}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--negro);color:var(--blanco);padding:12px 22px;border-radius:20px;font-weight:900;display:none;z-index:99;}
 </style>
 </head>
-
 <body>
-
-<header>
-
-    <div class="barra">
-
-        <div class="logo">🌸</div>
-
-        <div>
-            <div class="marca">TIERRA ROSA</div>
-            <div class="eslogan">
-                Belleza que nace de la Tierra
-            </div>
-        </div>
-
-    </div>
-
-</header>
-
-
-<main class="contenedor">
-
-    <h1>NO TIENES UNA CUENTA</h1>
-
-
-    <div class="caja">
-
-        <p>
-            Bienvenido a <strong>TIERRA ROSA</strong>.
-            Si todavía no tienes una cuenta, puedes conocer primero
-            nuestra aplicación y después decidir si deseas registrarte.
-        </p>
-
-        <p>
-            Crear una cuenta te permitirá preparar tu perfil y utilizar
-            las diferentes funciones que Tierra Rosa pone a disposición
-            de sus usuarios.
-        </p>
-
-    </div>
-
-
-    <h2>¿Qué es una cuenta de Tierra Rosa?</h2>
-
-    <div class="caja">
-
-        <p>
-            Una cuenta es un espacio personal dentro de la aplicación
-            que puede utilizarse para organizar determinada información
-            del usuario y configurar las funciones disponibles.
-        </p>
-
-        <p>
-            El registro está pensado para que puedas proporcionar tus
-            datos de manera organizada y posteriormente utilizar las
-            opciones de Tierra Rosa.
-        </p>
-
-    </div>
-
-
-    <h2>¿Por qué registrarte?</h2>
-
-    <div class="caja">
-
-        <ul class="lista">
-
-            <li>Crear tu perfil.</li>
-
-            <li>Personalizar tu información.</li>
-
-            <li>Guardar determinadas configuraciones.</li>
-
-            <li>Agregar enlaces web.</li>
-
-            <li>Agregar enlaces de redes sociales.</li>
-
-            <li>Utilizar las funciones disponibles de la aplicación.</li>
-
-            <li>Conocer las novedades y futuros proyectos de Tierra Rosa.</li>
-
-        </ul>
-
-    </div>
-
-
-    <h2>Información para el registro</h2>
-
-    <div class="caja">
-
-        <p>
-            Durante el registro pueden solicitarse datos como:
-        </p>
-
-        <ul class="lista">
-
-            <li>Nombre.</li>
-
-            <li>Apellidos.</li>
-
-            <li>Usuario.</li>
-
-            <li>Contraseña.</li>
-
-            <li>Correo electrónico.</li>
-
-            <li>Teléfono.</li>
-
-            <li>Apodo.</li>
-
-            <li>Fecha de nacimiento.</li>
-
-            <li>Edad.</li>
-
-            <li>Ciudad.</li>
-
-            <li>Estado.</li>
-
-            <li>País.</li>
-
-        </ul>
-
-    </div>
-
-
-    <h2>Recomendaciones</h2>
-
-    <div class="caja">
-
-        <p>
-            Antes de crear tu cuenta, verifica que los datos que
-            introduzcas sean correctos.
-        </p>
-
-        <p>
-            Utiliza un correo electrónico al que tengas acceso y
-            protege tus contraseñas. No compartas contraseñas,
-            códigos de recuperación ni códigos de verificación
-            con otras personas.
-        </p>
-
-        <p>
-            También es recomendable leer los avisos de privacidad
-            y las condiciones correspondientes antes de aceptar
-            cualquier autorización.
-        </p>
-
-    </div>
-
-
-    <h2>Tu información</h2>
-
-    <div class="caja">
-
-        <p>
-            Tierra Rosa busca que el usuario tenga claridad sobre
-            la información que proporciona y las funciones que
-            utiliza.
-        </p>
-
-        <p>
-            No proporciones información que no sea necesaria para
-            la función que deseas utilizar.
-        </p>
-
-    </div>
-
-
-    <h2>¿Todavía no estás listo?</h2>
-
-    <div class="caja">
-
-        <p>
-            No hay problema. Puedes regresar a la página principal,
-            conocer las diferentes secciones de Tierra Rosa y
-            posteriormente decidir si deseas crear una cuenta.
-        </p>
-
-    </div>
-
-
-    <!-- BOTÓN INICIO -->
-
-    <button
-        class="boton-inicio"
-        onclick="window.location.href='index.html'">
-
-        INICIO
-
-    </button>
-
-</main>
-
-
-<footer>
-
-    <div class="logo" style="margin:auto;">
-        🌸
-    </div>
-
-    <h3>TIERRA ROSA</h3>
-
-    <p>
-        Belleza que nace de la Tierra
-    </p>
-
-    <p>
-        © 2026 Tierra Rosa
-    </p>
-
-</footer>
-
+<div id="toast" class="toast"></div>
+<div class="card">
+<div class="circle">🌸</div>
+<h1 class="title">NO TIENES UNA CUENTA</h1>
+<p style="text-align:center;font-size:12px;margin-top:6px;font-weight:700;">Belleza que nace de la Tierra - Registro Tierra Rosa</p>
+
+<div class="box">
+<p style="font-size:12px;font-weight:800;text-align:center;margin-bottom:8px;">Llename este espacio de información - Crear cuenta principiante</p>
+<input class="input" id="nom" placeholder="Nombre completo">
+<input class="input" id="user" placeholder="Usuario">
+<input class="input" id="tel" placeholder="Teléfono">
+<input class="input" id="mail1" placeholder="1er Correo Electrónico">
+<input class="input" id="mail2" placeholder="2do Correo Electrónico (opcional)">
+<input class="input" id="pass" type="password" placeholder="Contraseña">
+<input class="input" id="pass2" type="password" placeholder="Repetir Contraseña">
+<button class="btn-white" onclick="registrar()">Botón Registrarme</button>
+<p style="font-size:10px;text-align:center;margin-top:8px;">Al registrarte aceptas que es proyecto principiante beige arena con ID_Client-235.meidvWqo002w8eb8dA y enlaces falsos NO REALES</p>
+</div>
+
+<div class="box">
+<p style="font-size:12px;line-height:1.6;"><b>¿Qué obtienes?</b><br>
+- Acceso a tienda.html directo<br>
+- Banco de Enlaces con 32 apps<br>
+- Acceso con un Click Guardar + Login + Autorizar<br>
+- Inicio de sesión con Google, GitHub, Vercel, Netlify, Render, Claro, Word, Files, Copa Fácil, Spotify, Facebook, Steam, Bluesky, XBOX, Apple TV, LinkedIn, Tik Tok, Canva, Pinterest, Threads, Duolingo, Termux, YouTube, EA, Acode, Twitch, Instagram, Snapchat, Telegram, Titanes, Speaking, Tierra Rosa</p>
+</div>
+
+<button class="btn-white" onclick="location.href='index.html'">Botón [Inicio] a index.html</button>
+</div>
+
+<script>
+function toast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500);}
+function registrar(){
+let u=document.getElementById('user').value.trim();
+let p=document.getElementById('pass').value.trim();
+let p2=document.getElementById('pass2').value.trim();
+if(!u||!p){toast('Llena Usuario y Contraseña');return;}
+if(p!==p2){toast('Contraseñas no coinciden');return;}
+localStorage.setItem('tr_user','ok');
+localStorage.setItem('tr_registrado',u);
+toast('Cuenta '+u+' creada ✓ Yendo a tienda');
+setTimeout(()=>location.href='tienda.html',800);
+}
+</script>
 </body>
-   </html>
+</html>
