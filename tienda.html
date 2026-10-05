@@ -1,174 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIENDA - TIERRA ROSA</title>
-<style>
-:root{--beige:#F5E8D0;--beige3:#FFF8EC;--negro:#000;--blanco:#FFF;--borde:#D9C5A0;--oro:#8a6d3b;}
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
-body{background:var(--beige);color:var(--negro);}
-.header{position:sticky;top:0;z-index:20;background:var(--beige3);border-bottom:3px solid var(--borde);padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.left{display:flex;align-items:center;gap:10px;}
-.bar{font-size:26px;cursor:pointer;background:var(--blanco);border:2.5px solid var(--negro);border-radius:10px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;}
-.circle{width:44px;height:44px;border-radius:50%;background:var(--blanco);border:2.5px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;}
-.brand{line-height:1.1;}
-.brand b{letter-spacing:2px;font-size:14px;display:block;}
-.brand span{font-size:9px;letter-spacing:1px;opacity:.7;font-weight:700;}
-.right{display:flex;align-items:center;gap:8px;}
-.cart{font-size:22px;background:var(--blanco);border:2.5px solid var(--negro);border-radius:10px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;}
-.cart i{position:absolute;top:-6px;right:-6px;background:var(--negro);color:var(--blanco);font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;}
-.profile{width:44px;height:44px;border-radius:50%;background:var(--blanco);border:2.5px solid var(--negro);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;overflow:hidden;}
-.profile img{width:100%;height:100%;object-fit:cover;}
-.search-wrap{padding:12px;background:var(--beige3);border-bottom:3px solid var(--borde);}
-.search{width:100%;padding:16px 18px;border:3px solid var(--negro);border-radius:16px;background:var(--blanco);color:var(--negro);font-size:14px;font-weight:700;outline:none;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:14px;}
-.card2{background:var(--blanco);border:2.5px solid var(--borde);border-radius:18px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.1);}
-.card2 img{width:100%;height:160px;object-fit:cover;background:#eee;display:block;}
-.info{padding:10px;}
-.price{font-weight:900;font-size:14px;}
-.meta{font-size:10px;margin-top:4px;line-height:1.4;}
-.badge{display:inline-block;background:var(--negro);color:var(--blanco);font-size:9px;padding:3px 7px;border-radius:20px;margin:2px 2px 0 0;font-weight:800;}
-.btn-white{width:100%;padding:10px;background:var(--blanco);border:2.5px solid var(--negro);border-radius:10px;font-weight:900;color:var(--negro);cursor:pointer;margin-top:8px;font-size:11px;box-shadow:0 2px 0 var(--negro);}
-.menu{position:fixed;top:0;left:-100%;width:78%;max-width:320px;height:100%;background:var(--beige3);border-right:3px solid var(--borde);z-index:50;transition:.3s;padding:18px;}
-.menu.open{left:0;}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:40;}
-.overlay.show{display:block;}
-.perfil-modal{position:fixed;top:0;right:-100%;width:92%;max-width:420px;height:100%;background:var(--beige3);border-left:3px solid var(--borde);z-index:60;transition:.3s;overflow:auto;padding:16px;}
-.perfil-modal.open{right:0;}
-.input{width:100%;padding:11px;border:2px solid var(--borde);border-radius:10px;background:var(--blanco);color:var(--negro);font-size:11px;margin:5px 0;}
-.up{position:absolute;top:10px;right:10px;background:var(--blanco);border:2px solid var(--negro);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:900;}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--negro);color:var(--blanco);padding:12px 22px;border-radius:20px;font-weight:900;display:none;z-index:99;}
-</style>
-</head>
-<body>
-<div id="toast" class="toast"></div>
-<div id="overlay" class="overlay" onclick="closeAll()"></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TIENDA - TIERRA ROSA</title><style>:root{--beige:#F5E8D0;--beige2:#E6D3A8;--beige3:#FFF8EC;--negro:#000;--blanco:#FFF;--borde:#D9C5A0}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--beige);font-family:system-ui;color:var(--negro)}.top{position:sticky;top:0;z-index:100;background:var(--blanco);border-bottom:3px solid var(--negro);display:flex;align-items:center;gap:8px;padding:8px 10px}.icon{width:38px;height:38px;border-radius:50%;border:2px solid var(--negro);display:grid;place-items:center;background:var(--beige3);cursor:pointer;font-weight:900}.brand{flex:1;line-height:1}.brand b{font-size:12px;letter-spacing:1px}.brand span{font-size:9px;display:block}.buscador-wrap{background:var(--blanco);padding:10px;border-bottom:3px solid var(--borde)}.buscador-wrap input{width:100%;padding:14px;border:3px solid var(--negro);border-radius:12px;background:var(--beige3);font-size:14px;outline:none}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}.card{background:var(--blanco);border:3px solid var(--negro);border-radius:14px;overflow:hidden;box-shadow:0 3px 0 var(--negro)}.card img{width:100%;height:135px;object-fit:cover;display:block;background:var(--beige2)}.info{padding:8px}.btn{width:100%;margin-top:6px;padding:10px;background:var(--blanco);border:2px solid var(--negro);border-radius:8px;font-weight:900;font-size:11px;cursor:pointer}#menu{position:fixed;top:0;left:-100%;width:80%;max-width:320px;height:100%;background:var(--blanco);border-right:3px solid var(--negro);z-index:200;transition:.3s;overflow:auto;padding:10px}#menu.open{left:0}#menu a{display:block;padding:10px 8px;border-bottom:1px solid var(--borde);font-size:12px;text-decoration:none;color:var(--negro)}#perfilModal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;place-items:center;z-index:300;padding:12px}#perfilModal.open{display:grid}.perfilBox{background:var(--beige3);border:3px solid var(--negro);border-radius:18px;padding:14px;width:100%;max-width:420px;max-height:92vh;overflow:auto;position:relative}.perfilBox input,.perfilBox textarea,.perfilBox select{width:100%;padding:10px;margin:6px 0;border:2px solid var(--negro);border-radius:8px;font-size:12px}.dots{position:absolute;top:10px;right:12px;font-size:22px;cursor:pointer;border:2px solid #000;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;background:#fff}.menuDots{position:absolute;top:45px;right:12px;background:#fff;border:3px solid #000;border-radius:12px;padding:6px;display:none;z-index:10;width:190px}.menuDots.open{display:block}.menuDots button{width:100%;padding:10px;border:2px solid #000;border-radius:8px;margin:4px 0;font-weight:900;font-size:11px;background:#fff;cursor:pointer}.marcas{text-align:center;padding:12px;font-size:10px;letter-spacing:2px;font-weight:900;border-top:3px dashed var(--borde);margin-top:10px}</style></head><body>
 
-<!-- HEADER EN ORDEN EXACTO QUE PEDISTE -->
-<div class="header">
-<div class="left">
-<div class="bar" onclick="openMenu()">☰</div>
-<div class="circle">🌸</div>
+<div class="top">
+<div class="icon" onclick="document.getElementById('menu').classList.toggle('open')">☰</div>
+<div class="icon">🌸</div>
 <div class="brand"><b>TIERRA ROSA</b><span>Belleza que nace de la Tierra</span></div>
-</div>
-<div class="right">
-<div class="cart" onclick="toast('Carrito 0 productos')">🛒<i id="cartNum">0</i></div>
-<div class="profile" onclick="openPerfil()" id="profileBtn">👤</div>
-</div>
+<div class="icon" onclick="alert('Carrito '+carrito.length)">🛒<sup id="cartN">0</sup></div>
+<div class="icon" onclick="document.getElementById('perfilModal').classList.add('open')">👤</div>
 </div>
 
-<!-- BUSCADOR DEBAJO DE LA MARCA EN GRANDE -->
-<div class="search-wrap">
-<div style="display:flex;justify-content:flex-end;margin-bottom:6px;"><span style="cursor:pointer;font-weight:900;" onclick="document.getElementById('busc').value='';render()">↑ flecha arriba para limpiar buscador</span></div>
-<input id="busc" class="search" placeholder="🔍 Buscar en Tierra Rosa... images, marcas TITANES SPEAKING" oninput="render()">
+<div id="menu">
+<div style="display:flex;justify-content:space-between"><b>TIENDA</b><span style="cursor:pointer" onclick="this.parentElement.parentElement.classList.remove('open')">✕</span></div>
+<a href="acerca-de.html">Acerca de</a><a href="configuracion.html">Configuración</a><a href="parametros.html">Parámetros</a><a href="actualizacion-del-sistema.html">Actualización del Sistema</a><a href="administracion-del-sistema.html">Administración del Sistema</a><a href="usuarios.html">Usuarios</a><a href="cuentas.html">Cuentas</a><a href="google.html">Google</a><a href="acerca-de-la-aplicacion.html">Acerca de la Aplicación</a><a href="bienestar-digital-y-controles-parentales.html">Bienestar Digital</a><a href="atajos-y-accesibilidad.html">Atajos y Accesibilidad</a><a href="modo-ultra-juego.html">Modo Ultra Juego</a><a href="ubicacion.html">Ubicación</a><a href="privacidad.html">Privacidad</a><a href="contrasena.html">Contraseña</a><a href="seguridad.html">Seguridad</a><a href="ram-y-almacenamiento.html">RAM y Almacenamiento</a><a href="bateria.html">Batería</a><a href="sonido-y-vibracion.html">Sonido y Vibración</a><a href="efectos-dinamicos.html">Efectos Dinámicos</a><a href="pantalla-y-brillo.html">Pantalla y Brillo</a><a href="mas-conexiones.html">Más Conexiones</a><a href="bluetooth.html">Bluetooth</a><a href="wifi-y-datos-moviles.html">Wi-fi y Datos Móviles</a><a href="informacion-del-software.html">Información del Software</a><a href="estado.html">Estado</a><a href="informacion-legal.html">Información Legal</a><a href="servicio-al-cliente.html">Servicio al Cliente</a><a href="version-del-sistema-operativo.html">Versión del Sistema</a><a href="servicio-de-garantia.html">Servicio de Garantía</a><a href="centros-de-servicios.html">Centros de Servicios</a><a href="derechos-del-autor.html">Derechos del Autor</a><a href="declaracion-de-privacidad.html">Declaración de privacidad</a><a href="codigo-abierto.html">Código Abierto</a><a href="noticias.html">Noticias</a><a href="eventos.html">Eventos</a><a href="rueda-de-prensa.html">Rueda de Prensa</a><a href="belleza.html">Belleza</a><a href="cosmeticos.html">Cosméticos</a><a href="maquillaje.html">Maquillaje</a><a href="tarjeta-de-regalo.html">Tarjeta de Regalo</a>
+<button class="btn" style="background:#000;color:#fff;margin-top:12px" onclick="location.href='index.html'">[Iniciar Sesión] → index.html</button>
 </div>
 
-<!-- GRID DE IMAGENES 1 A 83 VISIBLES SI O SI -->
+<div class="buscador-wrap"><input id="buscador" placeholder="Tienda Tierra Rosa belleza y Cosméticos" oninput="filtrar(this.value)"></div>
 <div class="grid" id="grid"></div>
+<div class="marcas">TIERRA ROSA<br>Belleza que nace de la Tierra<br><br>TITANES SPEAKING<br>Hecho en México 2026<br>ID_Client-235</div>
 
-<div style="text-align:center;padding:20px;font-weight:900;font-size:12px;">
-TIERRA ROSA<br>Belleza que nace de la Tierra<br>TITANES | SPEAKING<br>Hecho en México 2026<br>ID_Client-235.meidvWqo002w8eb8dA
+<div id="perfilModal" onclick="if(event.target==this)this.classList.remove('open')">
+<div class="perfilBox">
+<div class="dots" onclick="document.getElementById('menuDots').classList.toggle('open')">⋮</div>
+<div id="menuDots" class="menuDots">
+<button onclick="compartirPerfil()">🔗 Compartir enlace de perfil</button>
+<button onclick="document.getElementById('menuDots').classList.remove('open')">✕ Cerrar</button>
 </div>
+<div style="display:flex;justify-content:space-between;align-items:center"><b>👤 Perfil editable</b><span style="cursor:pointer" onclick="document.getElementById('perfilModal').classList.remove('open')">↑</span></div>
 
-<!-- MENU LATERAL IZQUIERDO -->
-<div id="menu" class="menu">
-<div style="display:flex;justify-content:space-between;align-items:center;"><b>MENU</b><span style="cursor:pointer;font-size:20px;" onclick="closeAll()">✕</span></div>
-<div style="margin-top:16px;display:grid;gap:10px;">
-<button class="btn-white" onclick="location.href='index.html'">Inicio index.html</button>
-<button class="btn-white" onclick="location.href='acercade.html'">ACERCA-DE acerca-de.html</button>
-<button class="btn-white" onclick="location.href='banco-de-enlaces.html'">Banco de Enlaces</button>
-<button class="btn-white" onclick="location.href='acceso-con-un-click.html'">Acceso con un Click</button>
-<button class="btn-white" onclick="location.href='necesitas-ayuda.html'">Necesitas Ayuda?</button>
-<button class="btn-white" onclick="location.href='no-tienes-una-cuenta.html'">No tienes una Cuenta</button>
-<button class="btn-white" onclick="location.href='registrarme-aqui.html'">Registrarme Aquí</button>
-</div>
-</div>
+<center><div id="fotoPrev" style="width:84px;height:84px;border-radius:50%;border:3px solid #000;background:var(--beige2);display:grid;place-items:center;overflow:hidden;margin:10px 0">👤</div>
+<input type="file" id="fotoInput" accept="image/*"><button class="btn" onclick="guardarFoto()">Botón Guardar foto</button></center>
 
-<!-- PERFIL EDITABLE CIRCULAR -->
-<div id="perfilModal" class="perfil-modal">
-<div style="display:flex;justify-content:space-between;align-items:center;"><b>Perfil 👤 Editable</b><span style="cursor:pointer;font-size:20px;" onclick="closeAll()">↑</span></div>
+<textarea id="desc" placeholder="Descripción"></textarea><button class="btn" onclick="guardar('desc')">Botón Guardar Descripción</button>
+<textarea id="bio" placeholder="Biografía"></textarea><button class="btn" onclick="guardar('bio')">Botón Guardar Biografía</button>
+<input id="nombre" placeholder="Nombre Completo"><input id="edad" placeholder="Edad"><input id="apodo" placeholder="Apodo">
+<input id="sec" placeholder="Secundaria Escribir"><input id="uni" placeholder="Universidad Escribir">
+<button class="btn" onclick="guardarVarios(['nombre','edad','apodo','sec','uni'])">Botón Guardar Datos Personales</button>
 
-<div style="text-align:center;margin-top:14px;position:relative;">
-<div class="profile" style="width:90px;height:90px;margin:auto;font-size:40px;" id="profileBig">👤</div>
-<label class="up" for="fileFoto">📷</label>
-<input type="file" id="fileFoto" hidden accept="image/*" onchange="previewFoto(event)">
-<button class="btn-white" style="margin-top:10px;" onclick="guardarFoto()">Botón Guardar foto</button>
-</div>
+<input id="web1" placeholder="Link Web 1"><input id="web2" placeholder="Link Web 2"><input id="web3" placeholder="Link Web 3"><input id="web4" placeholder="Link Web 4"><input id="web5" placeholder="Link Web 5"><input id="web6" placeholder="Link Web 6"><button class="btn" onclick="guardarWebs()">Botón Guardar 6 Webs</button>
 
-<div style="border:2.5px solid var(--borde);border-radius:14px;padding:12px;margin-top:14px;background:var(--blanco);">
-<div style="font-weight:900;font-size:12px;">Dentro del icono de perfil circular va la descripción</div>
-<textarea id="desc" class="input" rows="3" placeholder="Descripción perfil..."></textarea>
-<button class="btn-white" onclick="guardarDesc()">Botón Guardar</button>
-</div>
+<input id="red1" placeholder="Red Social 1"><input id="red2" placeholder="Red Social 2"><input id="red3" placeholder="Red Social 3"><input id="red4" placeholder="Red Social 4"><input id="red5" placeholder="Red Social 5"><input id="red6" placeholder="Red Social 6"><button class="btn" onclick="guardarRedes()">Botón Guardar 6 Redes</button>
 
-<div style="border:2.5px solid var(--borde);border-radius:14px;padding:12px;margin-top:12px;background:var(--blanco);">
-<div style="font-weight:900;font-size:12px;">6 Links Webs</div>
-<input class="input" id="web1" placeholder="Web 1"><input class="input" id="web2" placeholder="Web 2"><input class="input" id="web3" placeholder="Web 3">
-<input class="input" id="web4" placeholder="Web 4"><input class="input" id="web5" placeholder="Web 5"><input class="input" id="web6" placeholder="Web 6">
-<button class="btn-white" onclick="guardarWebs()">Botón Guardar</button>
-</div>
-
-<div style="border:2.5px solid var(--borde);border-radius:14px;padding:12px;margin-top:12px;background:var(--blanco);">
-<div style="font-weight:900;font-size:12px;">6 Links de Redes Sociales</div>
-<input class="input" id="red1" placeholder="Red Social 1"><input class="input" id="red2" placeholder="Red Social 2"><input class="input" id="red3" placeholder="Red Social 3">
-<input class="input" id="red4" placeholder="Red Social 4"><input class="input" id="red5" placeholder="Red Social 5"><input class="input" id="red6" placeholder="Red Social 6">
-<button class="btn-white" onclick="guardarRedes()">Botón Guardar</button>
-</div>
-
-<div style="border:2.5px solid var(--borde);border-radius:14px;padding:12px;margin-top:12px;background:var(--blanco);">
-<div style="font-weight:900;font-size:12px;">Datos</div>
-<input class="input" id="pais1" placeholder="País E-mail">
-<input class="input" id="telefono" placeholder="Teléfono">
-<input class="input" id="ocupacion" placeholder="Ocupación">
-<input class="input" id="nombreC" placeholder="Nombre Completo">
-<input class="input" id="pais2" placeholder="País">
-<select id="zona" class="input"><option>Zona horaria mundial por país</option><option>America/Mexico_City GMT-6</option><option>America/Bogota GMT-5</option><option>America/New_York GMT-4</option><option>Europe/Madrid GMT+2</option><option>Asia/Tokyo GMT+9</option></select>
-<button class="btn-white" onclick="guardarDatos()">Botón Guardar</button>
-<button class="btn-white" style="margin-top:10px;background:#000;color:#fff;" onclick="cerrarSesion()">Botón Cerrar Sesión</button>
-</div>
-</div>
+<input id="pais" placeholder="País"><input id="email" placeholder="E-mail"><input id="tel" placeholder="Teléfono"><input id="ocu" placeholder="Ocupación"><input id="idioma" placeholder="Idioma">
+<select id="zona"><option value="">Zona horaria mundial por país</option><option>México GMT-6</option><option>España GMT+1</option><option>USA Este GMT-5</option><option>Argentina GMT-3</option><option>Colombia GMT-5</option><option>Chile GMT-4</option><option>Perú GMT-5</option></select>
+<button class="btn" onclick="guardarTodo()">Botón Guardar</button>
+<button class="btn" style="background:#000;color:#fff" onclick="localStorage.clear();location.href='index.html'">Botón Cerrar Sesión</button>
+</div></div>
 
 <script>
-const imagenes=[
-"images (1).jpeg","images (2).jpeg","images (3).jpeg","images (4).jpeg","images (4).jpeg","images (5).jpeg","images (5).jpeg","images (7).jpeg","images (8).jpeg","images (9).jpeg","images (10).jpeg","images (11).jpeg","images (12).jpeg","images (13).jpeg","images (14).jpeg","images (15).jpeg","images (16).jpeg","images (17).jpeg","images (18).jpeg","images (19).jpeg","images (20).jpeg","images (21).jpeg","images (22).jpeg","images (23).jpeg","images (24).jpeg","images (25).jpeg","images (26).jpeg","images (27).jpeg","images (28).jpeg","images (29).jpeg","images (30).jpeg","images (31).jpeg","images (32).jpeg","images (33).jpeg","images (34).jpeg","images (35).jpeg","images (36).jpeg","images (37).jpeg","images (38).jpeg","images (39).jpeg","images (40).jpeg","images (41).jpeg","images (42).jpeg","images (43).jpeg","images (44).jpeg","images (45).jpeg","images (46).jpeg","images (47).jpeg","images (48).jpeg","images (49).jpeg","images (50).jpeg","images (51).jpeg","images (52).jpeg","images (53).jpeg","images (54).jpeg","images (55).jpeg","images (56).jpeg","images (57).jpeg","images (58).jpeg","images (59).jpeg","images (60).jpeg","images (61).jpeg","images (62).jpeg","images (63).jpeg","images (64).jpeg","images (65).jpeg","images (66).jpeg","images (67).jpeg","images (68).jpeg","images (69).jpeg","images (70).jpeg","images (71).jpeg","images (72).jpeg","images (73).jpeg","images (74).jpeg","images (75).jpeg","images (76).jpeg","images (77).jpeg","images (78).jpeg","images (79).jpeg","images (80).jpeg","images (69).jpeg","images (81).jpeg","images (82).jpeg","images (83).jpeg","images.jpeg","images.jpg","140020.jpg"
-];
-function toast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2200);}
-function openMenu(){document.getElementById('menu').classList.add('open');document.getElementById('overlay').classList.add('show');}
-function openPerfil(){document.getElementById('perfilModal').classList.add('open');document.getElementById('overlay').classList.add('show');}
-function closeAll(){document.getElementById('menu').classList.remove('open');document.getElementById('perfilModal').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
-function render(){
-let q=document.getElementById('busc').value.toLowerCase();
-let cont=document.getElementById('grid'); cont.innerHTML='';
-let filtradas=imagenes.filter(n=>n.toLowerCase().includes(q));
-filtradas.forEach((nombre,i)=>{
-let precio=(Math.random()*900+100).toFixed(0);
-let desc=Math.floor(Math.random()*60+5);
-let seed=nombre.replace(/[^a-z0-9]/gi,'');
-let src1=nombre; // intenta tu archivo local real
-let src2=`https://picsum.photos/seed/${seed}TIERRAROSA/400/400`; // respaldo visible si o si
-cont.innerHTML+=`<div class="card2">
-<img src="${src1}" onerror="this.onerror=null;this.src='${src2}'" alt="${nombre}">
-<div class="info">
-<div class="price">$${precio} <span style="color:green;">${desc}% OFF</span></div>
-<div class="meta">${nombre}<br>TIERRA ROSA Belleza que nace de la Tierra<br>TITANES SPEAKING<br><span class="badge">nuevo lanzamiento</span><span class="badge">destacado</span><span class="badge">Hecho en México 2026</span></div>
-<button class="btn-white" onclick="addCart()">🛒 Agregar $${precio}</button>
-</div>
-</div>`;
-});
-}
-let cart=0; function addCart(){cart++; document.getElementById('cartNum').innerText=cart; toast('Agregado al carrito 🛒');}
-function previewFoto(e){let file=e.target.files[0]; if(!file) return; let r=new FileReader(); r.onload=()=>{document.getElementById('profileBig').innerHTML=`<img src="${r.result}">`; document.getElementById('profileBtn').innerHTML=`<img src="${r.result}">`; localStorage.setItem('tr_foto',r.result);}; r.readAsDataURL(file);}
-function guardarFoto(){toast('Foto Guardada ✓');}
-function guardarDesc(){localStorage.setItem('tr_desc',document.getElementById('desc').value); toast('Descripción Guardada ✓');}
-function guardarWebs(){let o={};for(let i=1;i<=6;i++)o['web'+i]=document.getElementById('web'+i).value; localStorage.setItem('tr_webs',JSON.stringify(o)); toast('6 Links Webs Guardados ✓');}
-function guardarRedes(){let o={};for(let i=1;i<=6;i++)o['red'+i]=document.getElementById('red'+i).value; localStorage.setItem('tr_redes',JSON.stringify(o)); toast('6 Links Redes Guardados ✓');}
-function guardarDatos(){let o={pais1:document.getElementById('pais1').value,telefono:document.getElementById('telefono').value,ocupacion:document.getElementById('ocupacion').value,nombreC:document.getElementById('nombreC').value,pais2:document.getElementById('pais2').value,zona:document.getElementById('zona').value}; localStorage.setItem('tr_datos',JSON.stringify(o)); toast('Datos Guardados ✓');}
-function cerrarSesion(){localStorage.removeItem('tr_user'); toast('Sesión Cerrada'); setTimeout(()=>location.href='index.html',700);}
-window.onload=()=>{
-render();
-let foto=localStorage.getItem('tr_foto'); if(foto){document.getElementById('profileBig').innerHTML=`<img src="${foto}">`; document.getElementById('profileBtn').innerHTML=`<img src="${foto}">`;}
-if(!localStorage.getItem('tr_user')){toast('Inicia sesión primero');}
-};
-</script>
-</body>
-    </html>
+let carrito=[]; let imgs=["images (1).jpeg","images (2).jpeg","images (3).jpeg","images (4).jpeg","images (4).jpeg","images (5).jpeg","images (5).jpeg","images (7).jpeg","images (8).jpeg","images (9).jpeg","images (10).jpeg","images (11).jpeg","images (12).jpeg","images (13).jpeg","images (14).jpeg","images (15).jpeg","images (16).jpeg","images (17).jpeg","images (18).jpeg","images (19).jpeg","images (20).jpeg","images (21).jpeg","images (22).jpeg","images (23).jpeg","images (24).jpeg","images (25).jpeg","images (26).jpeg","images (27).jpeg","images (28).jpeg","images (29).jpeg","images (30).jpeg","images (31).jpeg","images (32).jpeg","images (33).jpeg","images (34).jpeg","images (35).jpeg","images (36).jpeg","images (37).jpeg","images (38).jpeg","images (39).jpeg","images (40).jpeg","images (41).jpeg","images (42).jpeg","images (43).jpeg","images (44).jpeg","images (45).jpeg","images (46).jpeg","images (47).jpeg","images (48).jpeg","images (49).jpeg","images (50).jpeg","images (51).jpeg","images (52).jpeg","images (53).jpeg","images (54).jpeg","images (55).jpeg","images (56).jpeg","images (57).jpeg","images (58).jpeg","images (59).jpeg","images (60).jpeg","images (61).jpeg","images (62).jpeg","images (63).jpeg","images (64).jpeg","images (65).jpeg","images (66).jpeg","images (67).jpeg","images (68).jpeg","images (69).jpeg","images (70).jpeg","images (71).jpeg","images (72).jpeg","images (73).jpeg","images (74).jpeg","images (75).jpeg","images (76).jpeg","images (77).jpeg","images (78).jpeg","images (79).jpeg","images (80).jpeg","images (69).jpeg","images (81).jpeg","images (82).jpeg","images (83).jpeg","images.jpeg","images.jpg","140020.jpg","descarga.webp","descarga (1).webp","descarga (2).webp","descarga (3).webp","descarga (4).webp","descarga (5).webp","images (84).jpeg","images (85).jpeg","images (1).jpg","images (86).jpeg","images (87).jpeg","images (88).jpeg","images (89).jpeg","images (90).jpeg","images (91).jpeg","images (92).jpeg","images (93).jpeg","images (94).jpeg","images (95).jpeg","images (96).jpeg","images (97).jpeg","images (98).jpeg","images (99).jpeg","images (100).jpeg","images-2026-10-05T153318.504.jpeg","images-2026-10-05T153322.968.jpeg","images-2026-10-05T153328.961.jpeg","images-2026-10-05T153334.445.jpeg","images-2026-10-05T153338.172.jpeg","images-2026-10-05T153340.951.jpeg","images-2026-10-05T153345.456.jpeg","images-2026-10-05T153351.460.jpeg","images-2026-10-05T153357.456.jpeg","images-2026-10-05T153400.260.jpeg","images-2026-10-05T153400.393.jpeg","images-2026-10-05T153407.477.jpeg","images-2026-10-05T153411.543.jpeg","images-2026-10-05T153416.555.jpeg","images-2026-10-05T153426.775.jpeg","images-2026-10-05T153432.327.jpeg","images-2026-10-05T153436.371.jpeg","images-2026-10-05T153439.292.jpeg","images-2026-10-05T153538.272.jpeg","images-2026-10-05T153516.955.jpeg","images-2026-10-05T153531.109.jpeg","images-2026-10-05T153545.000.jpeg","images-2026-10-05T153559.387.jpeg","images-2026-10-05T153602.832.jpeg","images-2026-10-05T153613.211.jpeg","images-2026-10-05T153617.215.jpeg"];
+let grid=document.getElementById('grid');
+function render(lista){grid.innerHTML='';lista.forEach((src,i)=>{let p=Math.floor(Math.random()*450+90);let d=Math.floor(Math.random()*60+5);let div=document.createElement('div');div.className='card';div.innerHTML=`<img src="${src}" onerror="this.src='https://picsum.photos/seed/tr${i}/400/400'" alt="TIERRA ROSA"><div class="info"><b>TIERRA ROSA #${i+1}</b><small>Belleza que nace de la Tierra</small><br><small>$${p} -${d}% ${i%3==0?'Nuevo lanzamiento':i%3==1?'Destacado':''}</small><button class="btn" onclick="carrito.push('${src}');document.getElementById('cartN').innerText=carrito.length">🛒 $ ${p}</button></div>`;grid.appendChild(div);});}
+function filtrar(t){render(t==''?imgs:imgs.filter(s=>s.toLowerCase().includes(t.toLowerCase())));} render(imgs);
+function guardarFoto(){let f=document.getElementById('fotoInput');if(f.files[0]){let r=new FileReader();r.onload=e=>{document.getElementById('fotoPrev').innerHTML=`<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover">`;localStorage.setItem('foto',e.target.result)};r.readAsDataURL(f.files[0]);alert('Foto guardada')}}
+function guardar(k){localStorage.setItem(k,document.getElementById(k).value);alert('Guardado '+k)}
+function guardarVarios(arr){arr.forEach(id=>localStorage.setItem(id,document.getElementById(id).value));alert('Datos guardados')}
+function guardarWebs(){for(let i=1;i<=6;i++)localStorage.setItem('web'+i,document.getElementById('web'+i).value);alert('6 Webs guardadas')}
+function guardarRedes(){for(let i=1;i<=6;i++)localStorage.setItem('red'+i,document.getElementById('red'+i).value);alert('6 Redes guardadas')}
+function guardarTodo(){['pais','email','tel','ocu','idioma','zona','desc','bio','nombre','edad','apodo','sec','uni'].forEach(id=>{let el=document.getElementById(id);if(el)localStorage.setItem(id,el.value)});alert('Todo guardado')}
+async function compartirPerfil(){let url=location.href+'#perfil-'+(localStorage.getItem('nombre')||'tierra-rosa'); let texto='Mira mi perfil en TIERRA ROSA 🌸 '+url; if(navigator.share){try{await navigator.share({title:'Perfil TIERRA ROSA',text:texto,url:url});}catch(e){copiar(url)}} else {copiar(url)} }
+function copiar(texto){navigator.clipboard.writeText(texto).then(()=>alert('🔗 Enlace de perfil copiado: '+texto)).catch(()=>{prompt('Copia tu enlace de perfil:',texto)})}
+</script></body></html>
