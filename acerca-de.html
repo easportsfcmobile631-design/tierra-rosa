@@ -1,936 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Acerca de | TIERRA ROSA</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACERCA DE - TIERRA ROSA</title>
 <style>
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    background:#000;
-    color:#D4AF37;
-    font-family:Arial,Helvetica,sans-serif;
-    line-height:1.7;
-}
-
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:#000;
-    border-bottom:1px solid #D4AF37;
-    padding:10px;
-}
-
-.barra{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    background:#fff;
-    color:#000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    border:2px solid #D4AF37;
-    flex-shrink:0;
-}
-
-.marca{
-    font-size:21px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.eslogan{
-    font-size:12px;
-}
-
-button{
-    background:#fff;
-    color:#000;
-    border:0;
-    border-radius:9px;
-    padding:11px 18px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#D4AF37;
-    color:#000;
-}
-
-.boton-regresar{
-    margin-left:auto;
-}
-
-.contenedor{
-    width:92%;
-    max-width:1100px;
-    margin:auto;
-    padding:25px 0 50px;
-}
-
-h1{
-    text-align:center;
-    font-size:35px;
-    margin:10px 0 30px;
-}
-
-h2{
-    border-bottom:1px solid #D4AF37;
-    padding-bottom:8px;
-    margin-top:35px;
-}
-
-h3{
-    color:#E7C967;
-}
-
-.caja{
-    border:1px solid #D4AF37;
-    border-radius:13px;
-    padding:20px;
-    margin:18px 0;
-    background:#090909;
-}
-
-.centrado{
-    text-align:center;
-}
-
-.fundadores{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-}
-
-.persona{
-    border:1px solid #D4AF37;
-    padding:18px;
-    border-radius:12px;
-    text-align:center;
-}
-
-.marca-box{
-    text-align:center;
-    border:1px solid #D4AF37;
-    border-radius:12px;
-    padding:18px;
-}
-
-.lista{
-    padding-left:22px;
-}
-
-.lista li{
-    margin-bottom:7px;
-}
-
-.biografia{
-    border-left:4px solid #D4AF37;
-    padding-left:18px;
-}
-
-.info-contacto{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:15px;
-}
-
-.contacto{
-    border:1px solid #D4AF37;
-    border-radius:10px;
-    padding:15px;
-}
-
-.redes{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:10px;
-}
-
-.red{
-    width:100%;
-    text-decoration:none;
-    display:block;
-    text-align:center;
-}
-
-input,textarea{
-    width:100%;
-    padding:13px;
-    background:#111;
-    color:#fff;
-    border:1px solid #D4AF37;
-    border-radius:8px;
-    margin:7px 0 12px;
-}
-
-textarea{
-    min-height:120px;
-    resize:vertical;
-}
-
-.suscripcion{
-    max-width:650px;
-    margin:auto;
-}
-
-.exito{
-    display:none;
-    border:1px solid #D4AF37;
-    padding:15px;
-    margin-top:15px;
-    border-radius:10px;
-    text-align:center;
-}
-
-footer{
-    border-top:1px solid #D4AF37;
-    padding:30px 15px;
-    text-align:center;
-}
-
-@media(max-width:600px){
-    .marca{
-        font-size:16px;
-    }
-
-    .eslogan{
-        font-size:10px;
-    }
-
-    h1{
-        font-size:28px;
-    }
-
-    .boton-regresar{
-        padding:9px 11px;
-        font-size:12px;
-    }
-}
+:root{--beige:#F5E8D0;--beige3:#FFF8EC;--negro:#000;--blanco:#FFF;--borde:#D9C5A0;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:var(--beige);color:var(--negro);padding:14px;}
+.card{background:var(--beige3);border:3px solid var(--borde);border-radius:24px;padding:18px;max-width:900px;margin:auto;box-shadow:0 8px 30px rgba(0,0,0,.12);}
+.circle{width:86px;height:86px;border-radius:50%;background:var(--blanco);border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:40px;margin:auto;}
+.title{color:var(--negro);text-align:center;letter-spacing:3px;font-weight:900;margin-top:10px;font-size:22px;}
+.sub{text-align:center;font-size:11px;font-weight:700;margin-top:4px;opacity:.8;}
+.box{border:2.5px solid var(--borde);border-radius:16px;padding:14px;margin:12px 0;background:var(--blanco);}
+.h{font-weight:900;font-size:13px;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
+.p{font-size:11.5px;line-height:1.7;white-space:pre-wrap;}
+.btn-white{width:100%;padding:13px;background:var(--blanco);border:2.8px solid var(--negro);border-radius:12px;font-weight:900;color:var(--negro);cursor:pointer;margin-top:10px;box-shadow:0 2px 0 var(--negro);font-size:12px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}@media(max-width:650px){.grid2{grid-template-columns:1fr;}}
+.input{width:100%;padding:12px;border:2px solid var(--borde);border-radius:12px;background:var(--beige3);color:var(--negro);font-size:12px;margin:6px 0;}
+.link{color:var(--negro);font-weight:800;word-break:break-all;font-size:11px;text-decoration:underline;}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--negro);color:var(--blanco);padding:12px 22px;border-radius:20px;font-weight:900;display:none;z-index:99;}
 </style>
 </head>
-
 <body>
+<div id="toast" class="toast"></div>
+<div class="card">
+<div class="circle">🌸</div>
+<h1 class="title">ACERCA DE</h1>
+<p class="sub">TIERRA ROSA Belleza que nace de la Tierra</p>
 
-<header>
-    <div class="barra">
-
-        <div class="logo">🌸</div>
-
-        <div>
-            <div class="marca">TIERRA ROSA</div>
-            <div class="eslogan">Belleza que nace de la Tierra</div>
-        </div>
-
-        <button class="boton-regresar" onclick="regresar()">
-            ← Regresar
-        </button>
-
-    </div>
-</header>
-
-<div class="contenedor">
-
-<h1>ACERCA DE TIERRA ROSA</h1>
-
-<div class="caja centrado">
-    <h2>TIERRA ROSA</h2>
-
-    <p>
-        <strong>Belleza que nace de la Tierra</strong>
-    </p>
-
-    <p>
-        Tierra Rosa es un proyecto enfocado en belleza, cosméticos,
-        innovación, diseño, tecnología y emprendimiento.
-        Buscamos construir una propuesta moderna que combine creatividad,
-        herramientas digitales y una visión responsable hacia el futuro.
-    </p>
+<div class="box">
+<div class="h">Fundadores</div>
+<p class="p">Jesús Eduardo Martínez Carrillo y Jair Valenciana
+Equipo fundador de Tierra Rosa, TITANES y SPEAKING. Proyecto iniciado con visión de emprendimiento digital hecho en México.</p>
 </div>
 
-
-<h2>Fundadores</h2>
-
-<div class="fundadores">
-
-    <div class="persona">
-        <h3>Jesús Eduardo Martínez Carrillo</h3>
-        <p>Fundador</p>
-    </div>
-
-    <div class="persona">
-        <h3>Jair Valenciana</h3>
-        <p>Fundador</p>
-    </div>
-
+<div class="box">
+<div class="h">Marcas</div>
+<p class="p"><b>TITANES</b>
+<b>SPEAKING</b>
+Colaboración con las Marcas
+Explicación en texto: Tierra Rosa nace como paraguas de belleza natural, TITANES aporta la fuerza, disciplina y profesionalismo, SPEAKING aporta comunicación, idiomas, voz y marketing. Juntas crean ecosistema de productos y aprendizaje.</p>
 </div>
 
-
-<h2>Marcas</h2>
-
-<div class="fundadores">
-
-    <div class="marca-box">
-        <h3>TITANES</h3>
-        <p>
-            Marca y proyecto asociado con una visión de crecimiento,
-            creatividad, innovación y desarrollo de nuevas propuestas.
-        </p>
-    </div>
-
-    <div class="marca-box">
-        <h3>SPEAKING</h3>
-        <p>
-            Proyecto enfocado en comunicación, expresión, aprendizaje
-            y desarrollo de habilidades para conectar ideas y personas.
-        </p>
-    </div>
-
+<div class="box">
+<div class="h">TITANES - Descripción</div>
+<p class="p">TITANES es marca de poder, superación y competencia. Representa el esfuerzo, el entrenamiento y la mentalidad ganadora. 6 renglones: 1) Fuerza mental. 2) Disciplina diaria. 3) Trabajo en equipo. 4) Resiliencia ante la caída. 5) Objetivo claro. 6) Legado que inspira.</p>
 </div>
 
-
-<h2>Colaboración con las Marcas</h2>
-
-<div class="caja">
-
-<p>
-La colaboración entre Tierra Rosa, TITANES y SPEAKING busca reunir
-diferentes áreas de conocimiento y creatividad para desarrollar
-proyectos digitales y comerciales.
-
-</p>
-
-<p>
-La colaboración permite integrar ideas relacionadas con belleza,
-marketing, comunicación, diseño, programación, codificación y
-emprendimiento.
-
-</p>
-
-<p>
-El objetivo es aprovechar las fortalezas de cada proyecto para crear
-propuestas innovadoras, mejorar la presencia digital y desarrollar
-nuevos productos, servicios y experiencias.
-</p>
-
+<div class="box">
+<div class="h">SPEAKING - Descripción</div>
+<p class="p">SPEAKING es marca de voz, idioma y conexión global. Enseña a expresarse, comunicar valor y vender ideas. 6 renglones: 1) Comunicación efectiva. 2) Inglés y español para negocios. 3) Oratoria y confianza. 4) Marketing de contenido. 5) Educación accesible. 6) Puente entre culturas.</p>
 </div>
 
-
-<h2>TITANES</h2>
-
-<div class="caja">
-
-<p>
-TITANES representa una propuesta de emprendimiento orientada al
-desarrollo, crecimiento, disciplina, creatividad y construcción de
-proyectos con visión de futuro.
-</p>
-
-<p>
-Su participación dentro de Tierra Rosa busca aportar ideas,
-organización y una perspectiva de crecimiento para nuevos proyectos.
-</p>
-
+<div class="grid2">
+<div class="box"><div class="h">Propuesta de Valor</div><p class="p">Belleza natural + tecnología + educación. Productos con historia, precios justos, descuentos, nuevo lanzamiento y destacado. Hecho en México 2026 con calidad exportación. 6 renglones: calidad, precio, historia, soporte, innovación, comunidad.</p></div>
+<div class="box"><div class="h">Protección al Futuro</div><p class="p">Datos guardados local, sin nube externa. Proyecto principiante seguro con enlaces falsos NO REALES. Sostenibilidad en empaques y procesos. 6 renglones: privacidad, ecología, ahorro, durabilidad, educación, legado.</p></div>
+<div class="box"><div class="h">Filosofía del entendimiento</div><p class="p">Entender antes de vender. Escuchar al cliente, tierra y cultura. Empatía como base del diseño y código. 6 renglones: escucha, respeto, claridad, paciencia, aprendizaje, acción.</p></div>
+<div class="box"><div class="h">Marketing</div><p class="p">Marketing honesto, orgánico y de comunidad. Redes reales del fundador, no bots. Contenido que educa. 6 renglones: redes, contenido, SEO, comunidad, email, colaboraciones.</p></div>
+<div class="box"><div class="h">Diseño</div><p class="p">Beige claro arena cálido / crema tostado, letras negro, botones blancos. Circular 🌸 minimalista. 6 renglones: beige arena, tipografía clara, botones blancos, iconos, responsive, accesible.</p></div>
+<div class="box"><div class="h">Programación</div><p class="p">HTML, CSS, JS vanilla, localStorage para 32 enlaces falsos, login, tienda. 6 renglones: frontend puro, sin framework, guardado local, validación 65 chars, rojo si espacio blanco, modular.</p></div>
+<div class="box"><div class="h">Codificación</div><p class="p">Código limpio, comentado, con ID_Client-235.meidvWqo002w8eb8dA como identificador. 6 renglones: orden, nombres claros, IDs, funciones guardar, login, autorizar.</p></div>
+<div class="box"><div class="h">Historia</div><p class="p">Nace 02/10/2026 en Lerdo Durango. Idea de Eduardo inspirado en tierra rosa del desierto. 6 renglones: inspiración, boceto, beige, primer login, tienda 83 imágenes, hoy.</p></div>
+<div class="box"><div class="h">Profesionalismo</div><p class="p">Compromiso, entrega a tiempo, soporte por correo y teléfono. 6 renglones: puntualidad, comunicación, calidad, mejora continua, ética, respeto.</p></div>
+<div class="box"><div class="h">Creencias del Emprendimiento</div><p class="p">Creer es crear. Emprender con fe, familia y trabajo. 6 renglones: fe, trabajo, familia, educación, persistencia, compartir.</p></div>
 </div>
 
-
-<h2>SPEAKING</h2>
-
-<div class="caja">
-
-<p>
-SPEAKING representa una propuesta relacionada con la comunicación,
-el aprendizaje y la capacidad de expresar ideas de manera clara.
-</p>
-
-<p>
-Su colaboración puede contribuir al desarrollo de contenidos,
-comunicación de marca, presentación de proyectos y conexión con
-nuevas comunidades.
-</p>
-
+<div class="box">
+<div class="h">Biografía de Eduardo - 10 Renglones</div>
+<p class="p">1. Soy Jesús Eduardo Martínez Carrillo, fundador de Tierra Rosa.
+2. Originario de Lerdo Durango, México, apasionado por tecnología y belleza.
+3. Creador de marcas TITANES y SPEAKING como ecosistema.
+4. Desarrollador web principiante, gamer FC Mobile, creador de contenido.
+5. Creo en el emprendimiento con valores y protección al futuro.
+6. Trabajo en programación, marketing y diseño beige arena.
+7. Mi objetivo es crear tienda real con 83 productos visibles.
+8. Colaboro con Jair Valenciana para expandir visión.
+9. Mis redes son mi portafolio real y honesto.
+10. Gracias por confiar en Tierra Rosa, belleza que nace de la tierra.</p>
 </div>
 
-
-<h2>Propuesta de Valor</h2>
-
-<div class="caja">
-
-<p>
-Tierra Rosa busca ofrecer una experiencia digital y comercial que
-combine belleza, tecnología, creatividad y atención a las personas.
-</p>
-
-<ul class="lista">
-<li>Diseño moderno.</li>
-<li>Experiencia digital.</li>
-<li>Catálogo de productos de belleza.</li>
-<li>Innovación.</li>
-<li>Creatividad.</li>
-<li>Emprendimiento.</li>
-<li>Comunicación.</li>
-<li>Desarrollo tecnológico.</li>
-</ul>
-
+<div class="box">
+<div class="h">Objetivo Misión Visión Valores Propósito Metas Futuros Proyectos</div>
+<p class="p"><b>Objetivo:</b> Lanzar tienda Tierra Rosa funcional y estética.
+<b>Misión:</b> Ofrecer belleza natural con tecnología accesible.
+<b>Visión:</b> Ser marca mexicana reconocida 2026-2030.
+<b>Valores:</b> Honestidad, trabajo, respeto, tierra, innovación.
+<b>Propósito:</b> Inspirar a jóvenes a emprender desde cero.
+<b>Metas:</b> 83 productos, 32 accesos 1 click, registro 65 chars.
+<b>Futuros Proyectos:</b> App móvil, versión TITANES gym, SPEAKING academy.</p>
 </div>
 
-
-<h2>Protección al Futuro</h2>
-
-<div class="caja">
-
-<p>
-La protección al futuro significa construir proyectos responsables,
-aprender continuamente, utilizar la tecnología de manera adecuada
-y desarrollar propuestas que puedan crecer con el tiempo.
-</p>
-
+<div class="box">
+<div class="h">Contacto Directo</div>
+<p class="p"><b>Correcto Electrónico:</b> martineztitanjesuseduardo@gmail.com
+<b>Teléfono:</b> 867 164 0909 y 871 483 8555
+<b>Ubicación:</b> Lerdo Durango
+<b>Fecha de nacimiento de la marca Tierra Rosa:</b> 02/10/2026
+ID_Client-235.meidvWqo002w8eb8dA</p>
 </div>
 
-
-<h2>Filosofía del Entendimiento</h2>
-
-<div class="caja">
-
-<p>
-Nuestra filosofía parte de escuchar, comprender, aprender y mejorar.
-Las ideas pueden crecer cuando existe comunicación, respeto,
-colaboración y disposición para aprender de los demás.
-</p>
-
+<div class="box">
+<div class="h">Comentarios y Sugerencias / Suscríbete</div>
+<input class="input" id="mailSub" placeholder="Escribe el correo Electrónico">
+<button class="btn-white" onclick="suscribir()">Suscríbete</button>
+<textarea class="input" id="com" rows="3" placeholder="Comentarios y Sugerencias"></textarea>
+<button class="btn-white" onclick="enviarCom()">Enviar Comentario</button>
 </div>
 
-
-<h2>Marketing</h2>
-
-<div class="caja">
-
-<p>
-El marketing es una herramienta fundamental para comunicar el valor
-de Tierra Rosa, conocer las necesidades de las personas, presentar
-productos y desarrollar estrategias de crecimiento.
-</p>
-
-</div>
-
-
-<h2>Diseño</h2>
-
-<div class="caja">
-
-<p>
-El diseño permite convertir ideas en experiencias visuales.
-Tierra Rosa busca utilizar una identidad elegante, moderna y
-reconocible mediante una combinación de elementos naturales,
-tecnológicos y contemporáneos.
-</p>
-
-</div>
-
-
-<h2>Programación</h2>
-
-<div class="caja">
-
-<p>
-La programación permite construir las funciones digitales de la
-aplicación y desarrollar herramientas que faciliten la navegación,
-organización de información y experiencia del usuario.
-</p>
-
-</div>
-
-
-<h2>Codificación</h2>
-
-<div class="caja">
-
-<p>
-La codificación permite transformar las ideas en páginas web,
-interfaces y sistemas funcionales. HTML, CSS y JavaScript forman
-parte de las herramientas utilizadas para construir la experiencia
-digital de Tierra Rosa.
-</p>
-
-</div>
-
-
-<h2>Historia</h2>
-
-<div class="caja">
-
-<p>
-Tierra Rosa nace como una propuesta de emprendimiento y desarrollo
-digital orientada al mundo de la belleza y los cosméticos.
-</p>
-
-<p>
-La idea busca unir creatividad, tecnología, marketing, diseño y
-emprendimiento para construir una marca con identidad propia.
-</p>
-
-<p>
-La fecha establecida para el nacimiento de la marca es:
-<strong>02/10/2026</strong>.
-</p>
-
-</div>
-
-
-<h2>Profesionalismo</h2>
-
-<div class="caja">
-
-<p>
-El profesionalismo representa responsabilidad, respeto, aprendizaje,
-organización, compromiso y búsqueda constante de mejores resultados.
-</p>
-
-</div>
-
-
-<h2>Creencias del Emprendimiento</h2>
-
-<div class="caja">
-
-<p>
-Creemos que una buena idea puede convertirse en un proyecto cuando
-existe esfuerzo, aprendizaje, perseverancia y disposición para
-mejorar.
-</p>
-
-<p>
-El emprendimiento también implica aceptar errores, aprender de ellos
-y continuar construyendo nuevas oportunidades.
-</p>
-
-</div>
-
-
-<h2>Biografía de Eduardo</h2>
-
-<div class="caja biografia">
-
-<p>
-Jesús Eduardo Martínez Carrillo es uno de los fundadores de Tierra Rosa.
-</p>
-
-<p>
-1. Es una persona interesada en aprender y desarrollar nuevos proyectos.</p>
-
-<p>
-2. Tiene interés por el marketing y el mundo de los negocios.</p>
-
-<p>
-3. También muestra interés por la tecnología y el desarrollo web.</p>
-
-<p>
-4. Busca aprender programación y codificación mediante proyectos prácticos.</p>
-
-<p>
-5. Considera importante desarrollar habilidades de comunicación.</p>
-
-<p>
-6. Tiene interés en el diseño y la creación de experiencias digitales.</p>
-
-<p>
-7. Busca desarrollar proyectos de emprendimiento con visión de futuro.</p>
-
-<p>
-8. Considera que aprender continuamente es fundamental para crecer.</p>
-
-<p>
-9. Tierra Rosa representa una oportunidad para combinar sus intereses.</p>
-
-<p>
-10. Su objetivo es continuar desarrollando conocimientos y nuevos proyectos.</p>
-
-</div>
-
-
-<h2>Temas de Desarrollo</h2>
-
-<div class="caja">
-
-<p>Marketing y estrategias de comunicación.</p>
-<p>Diseño y experiencia visual.</p>
-<p>Programación y desarrollo web.</p>
-<p>Codificación y tecnología.</p>
-<p>Emprendimiento y negocios.</p>
-<p>Belleza, cosméticos e innovación.</p>
-
-</div>
-
-
-<h2>Objetivo</h2>
-
-<div class="caja">
-<p>
-Crear una marca y plataforma digital relacionada con belleza y
-cosméticos que pueda crecer mediante innovación, tecnología,
-marketing y colaboración.
+<div class="box">
+<div class="h">Consulta mis Redes Sociales</div>
+<p class="p">
+<b>GitHub:</b> <a class="link" href="https://github.com/easportsfcmobile631-design" target="_blank">https://github.com/easportsfcmobile631-design</a>
+<b>Facebook:</b> <a class="link" href="https://www.facebook.com/share/18fACYD7pv/" target="_blank">https://www.facebook.com/share/18fACYD7pv/</a>
+<b>Spotify:</b> <a class="link" href="https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link" target="_blank">Spotify</a>
+<b>YouTube:</b> <a class="link" href="https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY" target="_blank">https://youtube.com/@fcmobileeasports-g7o</a>
+<b>Twitch:</b> <a class="link" href="https://www.twitch.tv/easportsfcmobile631?sr=a" target="_blank">https://www.twitch.tv/easportsfcmobile631</a>
+<b>X:</b> <a class="link" href="https://x.com/eduardomar47137?s=09" target="_blank">https://x.com/eduardomar47137</a>
+<b>WhatsApp:</b> <a class="link" href="https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B" target="_blank">https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B</a>
+<b>Telegram:</b> <a class="link" href="https://t.me/Nadia98968999" target="_blank">t.me/Nadia98968999</a>
+<b>Instagram:</b> <a class="link" href="https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw" target="_blank">https://www.instagram.com/zuzukieduardomartinez</a>
+<b>Copa Fácil:</b> <a class="link" href="https://copafacil.com/-4y21q" target="_blank">https://copafacil.com/-4y21q</a>
+<b>Messenger:</b> <a class="link" href="https://m.me/zusuki.eduardo.martinez" target="_blank">https://m.me/zusuki.eduardo.martinez</a>
+<b>Wenbsites.co.in:</b> <a class="link" href="https://websites.co.in/refer/749809" target="_blank">https://websites.co.in/refer/749809</a>
+<b>Steam:</b> <a class="link" href="https://steamcommunity.com/profiles/76561199837311518/" target="_blank">Steam Profile</a>
+<b>Bluesky:</b> <a class="link" href="https://bsky.app/profile/jemart03.bsky.social" target="_blank">https://bsky.app/profile/jemart03.bsky.social</a>
+<b>Threads:</b> <a class="link" href="https://www.threads.com/@zuzukieduardomartinez" target="_blank">https://www.threads.com/@zuzukieduardomartinez</a>
+<b>Tik Tok:</b> <a class="link" href="https://www.tiktok.com/@rebelde.de.corazn5" target="_blank">Tik Tok</a>
+<b>Acode:</b> <a class="link" href="https://acode.app/profile" target="_blank">https://acode.app/profile</a>
+<b>Render:</b> <a class="link" href="https://dashboard.render.com/" target="_blank">https://dashboard.render.com/</a>
+<b>Netlify:</b> <a class="link" href="https://app.netlify.com/teams/easportsfcmobile631-design/projects" target="_blank">Netlify</a>
+<b>Vercel:</b> <a class="link" href="https://vercel.com/martineztitanjesuseduardo" target="_blank">https://vercel.com/martineztitanjesuseduardo</a>
+<b>Snapchat:</b> <a class="link" href="https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX" target="_blank">Snapchat</a>
+<b>Duolingo:</b> <a class="link" href="https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link" target="_blank">Duolingo</a>
+<b>Websites:</b> <a class="link" href="https://websites.co.in/refer/749809" target="_blank">https://websites.co.in/refer/749809</a>
 </p>
 </div>
 
-
-<h2>Misión</h2>
-
-<div class="caja">
-<p>
-Desarrollar una experiencia de belleza moderna, accesible y creativa,
-ofreciendo productos, información y herramientas digitales que
-ayuden a las personas a encontrar opciones de belleza.
-</p>
+<button class="btn-white" style="padding:16px;" onclick="location.href='tienda.html'">Botón [Regresar] a la barra Superior - TIENDA</button>
+<button class="btn-white" onclick="location.href='index.html'">Botón [Inicio] a index.html</button>
 </div>
-
-
-<h2>Visión</h2>
-
-<div class="caja">
-<p>
-Convertir a Tierra Rosa en una propuesta reconocible de belleza,
-tecnología y emprendimiento, con capacidad de crecer y desarrollar
-nuevos proyectos.
-</p>
-</div>
-
-
-<h2>Valores</h2>
-
-<div class="caja">
-<ul class="lista">
-<li>Responsabilidad</li>
-<li>Respeto</li>
-<li>Honestidad</li>
-<li>Creatividad</li>
-<li>Innovación</li>
-<li>Profesionalismo</li>
-<li>Colaboración</li>
-<li>Aprendizaje</li>
-<li>Compromiso</li>
-<li>Perseverancia</li>
-</ul>
-</div>
-
-
-<h2>Propósito</h2>
-
-<div class="caja">
-<p>
-Crear una propuesta que conecte belleza, creatividad, tecnología,
-comunicación y emprendimiento.
-</p>
-</div>
-
-
-<h2>Metas</h2>
-
-<div class="caja">
-<ul class="lista">
-<li>Desarrollar la tienda digital.</li>
-<li>Ampliar el catálogo de productos.</li>
-<li>Mejorar la experiencia del usuario.</li>
-<li>Crear nuevos contenidos.</li>
-<li>Fortalecer la identidad de Tierra Rosa.</li>
-<li>Desarrollar nuevas herramientas digitales.</li>
-</ul>
-</div>
-
-
-<h2>Futuros Proyectos</h2>
-
-<div class="caja">
-<ul class="lista">
-<li>Nuevas categorías de belleza.</li>
-<li>Nuevas herramientas para la aplicación.</li>
-<li>Mayor catálogo de productos.</li>
-<li>Integración de servicios digitales.</li>
-<li>Nuevos proyectos de marketing.</li>
-<li>Colaboraciones con otras marcas.</li>
-<li>Nuevas experiencias para usuarios.</li>
-</ul>
-</div>
-
-
-<h2>Correcto Electrónico</h2>
-
-<div class="caja centrado">
-<p>
-<strong>martineztitanjesuseduardo@gmail.com</strong>
-</p>
-</div>
-
-
-<h2>Teléfono</h2>
-
-<div class="caja centrado">
-<p>867 164 0909</p>
-<p>871 483 8555</p>
-</div>
-
-
-<h2>Ubicación</h2>
-
-<div class="caja centrado">
-<p>Lerdo, Durango, México</p>
-</div>
-
-
-<h2>Fecha de nacimiento de la marca Tierra Rosa</h2>
-
-<div class="caja centrado">
-<h3>02/10/2026</h3>
-</div>
-
-
-<h2>Comentarios y Sugerencias</h2>
-
-<div class="caja suscripcion">
-
-<label>Tu comentario o sugerencia</label>
-
-<textarea id="comentario"
-placeholder="Escribe aquí tus comentarios o sugerencias..."></textarea>
-
-<button onclick="guardarComentario()">
-Enviar comentario
-</button>
-
-<div id="mensajeComentario" class="exito">
-Gracias por tu comentario y sugerencia para Tierra Rosa.
-</div>
-
-</div>
-
-
-<h2>Suscríbete</h2>
-
-<div class="caja suscripcion">
-
-<label>Escribe el correo Electrónico</label>
-
-<input
-id="correoSuscripcion"
-type="email"
-placeholder="correo@ejemplo.com">
-
-<button onclick="suscribirse()">
-Suscribirme
-</button>
-
-<div id="mensajeSuscripcion" class="exito">
-Tu correo fue guardado correctamente en este dispositivo.
-</div>
-
-</div>
-
-
-<h2>Consulta mis Redes Sociales</h2>
-
-<div class="redes">
-
-<a class="red" href="https://github.com/easportsfcmobile631-design" target="_blank">
-<button>GitHub</button>
-</a>
-
-<a class="red" href="https://www.facebook.com/share/18fACYD7pv/" target="_blank">
-<button>Facebook</button>
-</a>
-
-<a class="red" href="https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link" target="_blank">
-<button>Spotify</button>
-</a>
-
-<a class="red" href="https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY" target="_blank">
-<button>YouTube</button>
-</a>
-
-<a class="red" href="https://www.twitch.tv/easportsfcmobile631?sr=a" target="_blank">
-<button>Twitch</button>
-</a>
-
-<a class="red" href="https://x.com/eduardomar47137?s=09" target="_blank">
-<button>X</button>
-</a>
-
-<a class="red" href="https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B" target="_blank">
-<button>WhatsApp</button>
-</a>
-
-<a class="red" href="https://t.me/Nadia98968999" target="_blank">
-<button>Telegram</button>
-</a>
-
-<a class="red" href="https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw" target="_blank">
-<button>Instagram</button>
-</a>
-
-<a class="red" href="https://copafacil.com/-4y21q" target="_blank">
-<button>Copa Fácil</button>
-</a>
-
-<a class="red" href="https://m.me/zusuki.eduardo.martinez" target="_blank">
-<button>Messenger</button>
-</a>
-
-<a class="red" href="https://websites.co.in/refer/749809" target="_blank">
-<button>Websites.co.in</button>
-</a>
-
-<a class="red" href="https://steamcommunity.com/profiles/76561199837311518/" target="_blank">
-<button>Steam</button>
-</a>
-
-<a class="red" href="https://bsky.app/profile/jemart03.bsky.social" target="_blank">
-<button>Bluesky</button>
-</a>
-
-<a class="red" href="https://www.threads.com/@zuzukieduardomartinez" target="_blank">
-<button>Threads</button>
-</a>
-
-<a class="red" href="https://www.tiktok.com/@rebelde.de.corazn5?_r=1&_d=eeamgk995if3kh&sec_uid=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&share_author_id=7646631851419239445&sharer_language=es&source=h5_m&u_code=f3l814548l21ii&timestamp=1790848216&user_id=7646631851419239445&sec_user_id=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7615113577812821781&share_link_id=4cf9b900-7336-4b5d-9101-4844923c84af&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" target="_blank">
-<button>Tik Tok</button>
-</a>
-
-<a class="red" href="https://acode.app/profile" target="_blank">
-<button>Acode</button>
-</a>
-
-<a class="red" href="https://dashboard.render.com/" target="_blank">
-<button>Render</button>
-</a>
-
-<a class="red" href="https://app.netlify.com/teams/easportsfcmobile631-design/projects" target="_blank">
-<button>Netlify</button>
-</a>
-
-<a class="red" href="https://vercel.com/martineztitanjesuseduardo" target="_blank">
-<button>Vercel</button>
-</a>
-
-<a class="red" href="https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX" target="_blank">
-<button>Snapchat</button>
-</a>
-
-<a class="red" href="https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link" target="_blank">
-<button>Duolingo</button>
-</a>
-
-<a class="red" href="https://websites.co.in/refer/749809" target="_blank">
-<button>Websites</button>
-</a>
-
-</div>
-
-</div>
-
-
-<footer>
-
-<div class="logo" style="margin:auto;">🌸</div>
-
-<h3>TIERRA ROSA</h3>
-
-<p>
-Belleza que nace de la Tierra
-</p>
-
-<p>
-© 2026 Tierra Rosa
-</p>
-
-</footer>
-
 
 <script>
-
-function regresar(){
-
-    if(document.referrer &&
-       document.referrer.includes(location.hostname)){
-
-        history.back();
-
-    }else{
-
-        window.location.href="tienda.html";
-
-    }
-
-}
-
-
-function guardarComentario(){
-
-    const comentario =
-        document.getElementById("comentario").value.trim();
-
-    if(comentario===""){
-
-        alert("Escribe un comentario o sugerencia.");
-
-        return;
-    }
-
-    localStorage.setItem(
-        "tierraRosaComentario",
-        comentario
-    );
-
-    document.getElementById(
-        "mensajeComentario"
-    ).style.display="block";
-
-}
-
-
-function suscribirse(){
-
-    const correo =
-        document.getElementById("correoSuscripcion").value.trim();
-
-    if(correo==="" || !correo.includes("@")){
-
-        alert("Escribe un correo electrónico válido.");
-
-        return;
-    }
-
-    localStorage.setItem(
-        "tierraRosaSuscriptor",
-        correo
-    );
-
-    document.getElementById(
-        "mensajeSuscripcion"
-    ).style.display="block";
-
-}
-
+function toast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500);}
+function suscribir(){let v=document.getElementById('mailSub').value.trim(); if(!v){toast('Escribe correo');return;} localStorage.setItem('tr_sus',v); toast('Suscrito '+v+' ✓');}
+function enviarCom(){let v=document.getElementById('com').value.trim(); if(!v){toast('Escribe comentario');return;} localStorage.setItem('tr_com',v); toast('Comentario guardado ✓ Gracias');}
 </script>
-
 </body>
-  </html>
+    </html>
