@@ -1,6 +1,6 @@
-🌹 *TIERRA ROSA*
+**🌹 **TIERRA ROSA**
 
-*Belleza que nace de la Tierra*
+**Belleza que nace de la Tierra**
 
 Natural · Consciente · Real
 
