@@ -1,848 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Registrarme Aquí - TIERRA ROSA</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REGISTRARME AQUÍ - TIERRA ROSA</title>
 <style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 20px 12px 50px;
-    background: #000000;
-    color: #D4AF37;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.contenedor {
-    width: 100%;
-    max-width: 700px;
-    margin: auto;
-}
-
-.logo {
-    width: 105px;
-    height: 105px;
-    margin: 10px auto 20px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 4px solid #D4AF37;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 55px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-.subtitulo {
-    text-align: center;
-    font-size: 21px;
-    font-weight: bold;
-    margin-bottom: 25px;
-}
-
-.informacion {
-    border: 2px solid #D4AF37;
-    border-radius: 15px;
-    padding: 20px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.informacion p {
-    margin: 8px 0;
-}
-
-.formulario {
-    width: 100%;
-}
-
-.seccion {
-    border: 2px solid #D4AF37;
-    border-radius: 15px;
-    padding: 18px;
-    margin-bottom: 18px;
-}
-
-.titulo-seccion {
-    font-size: 19px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 13px;
-    border-radius: 8px;
-    border: 2px solid #D4AF37;
-    background: #111111;
-    color: #D4AF37;
-    font-size: 16px;
-    outline: none;
-}
-
-input::placeholder {
-    color: #B99B32;
-}
-
-input:focus,
-select:focus {
-    border-color: #ffffff;
-}
-
-.password-error {
-    border-color: red !important;
-    color: red !important;
-}
-
-.aviso-rojo {
-    color: red;
-    font-size: 13px;
-    margin-top: 5px;
-    display: none;
-}
-
-button {
-    width: 100%;
-    padding: 13px;
-    margin-top: 12px;
-    border: none;
-    border-radius: 9px;
-    background: #ffffff;
-    color: #000000;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #eeeeee;
-}
-
-.terminos {
-    text-align: left;
-    line-height: 1.6;
-}
-
-.termino {
-    margin-bottom: 15px;
-    border-bottom: 1px solid #D4AF37;
-    padding-bottom: 12px;
-}
-
-.termino label {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.termino input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-top: 3px;
-    flex-shrink: 0;
-}
-
-.registrar {
-    margin-top: 25px;
-    font-size: 19px;
-}
-
-.exito {
-    display: none;
-    border: 2px solid #D4AF37;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 25px;
-    text-align: center;
-    line-height: 1.7;
-}
-
-.exito h2 {
-    margin-top: 0;
-}
-
-.inicio {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    margin-top: 20px;
-    background: #ffffff;
-    color: #000000;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 9px;
-    font-weight: bold;
-    font-size: 17px;
-}
-
-.contador {
-    text-align: right;
-    font-size: 12px;
-    margin-top: 4px;
-}
-
-@media (max-width: 400px) {
-    h1 {
-        font-size: 26px;
-    }
-
-    .subtitulo {
-        font-size: 19px;
-    }
-}
+:root{--beige:#F5E8D0;--beige3:#FFF8EC;--negro:#000;--blanco:#FFF;--borde:#D9C5A0;--rojo:#ff2a2a;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:var(--beige);color:var(--negro);padding:14px;}
+.card{background:var(--beige3);border:3px solid var(--borde);border-radius:24px;padding:18px;max-width:880px;margin:auto;box-shadow:0 8px 30px rgba(0,0,0,.12);}
+.circle{width:80px;height:80px;border-radius:50%;background:var(--blanco);border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:42px;margin:auto;}
+.title{color:var(--negro);text-align:center;letter-spacing:3px;font-weight:900;margin-top:10px;font-size:22px;}
+.sub{text-align:center;font-size:12px;font-weight:700;margin-top:6px;}
+.section{border:2.5px solid var(--borde);border-radius:16px;padding:14px;margin:12px 0;background:var(--blanco);}
+.h{font-weight:900;font-size:12px;margin-bottom:8px;letter-spacing:1px;}
+.row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin:6px 0;}
+.input{width:100%;padding:12px;border:2px solid var(--borde);border-radius:12px;background:var(--beige3);color:var(--negro);font-size:12px;outline:none;}
+.input.red{border-color:var(--rojo);background:#ffe5e5;box-shadow:0 0 6px var(--rojo);}
+.btn-white{padding:11px 14px;background:var(--blanco);border:2.8px solid var(--negro);border-radius:12px;font-weight:900;color:var(--negro);cursor:pointer;white-space:nowrap;font-size:11px;box-shadow:0 2px 0 var(--negro);}
+.btn-white:active{transform:translateY(1px);}
+.term{font-size:11px;line-height:1.5;margin:8px 0;}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--negro);color:var(--blanco);padding:12px 22px;border-radius:20px;font-weight:900;display:none;z-index:99;}
 </style>
 </head>
-
 <body>
-
-<div class="contenedor">
-
-    <!-- LOGO -->
-    <div class="logo">🌸</div>
-
-    <h1>REGISTRARME AQUÍ</h1>
-
-    <div class="subtitulo">
-        Crea una Cuenta Gratis
-    </div>
-
-    <!-- INFORMACIÓN -->
-    <div class="informacion">
-
-        <p>
-            En cada contraseña se tiene permitido hasta
-            <strong>65 caracteres</strong>.
-        </p>
-
-        <p>
-            Si dejas espacios en blanco dentro de una contraseña,
-            el campo se marcará en <strong style="color:red;">rojo</strong>.
-        </p>
-
-        <p>
-            Te recomendamos llenar todo el formulario para que tus datos
-            queden completos.
-        </p>
-
-        <p>
-            Crear una cuenta es fácil y sencillo. Una vez registrado,
-            podrás iniciar sesión todas las veces que sean necesarias.
-        </p>
-
-    </div>
-
-    <form id="registroForm" class="formulario">
-
-        <!-- NOMBRES -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                Datos personales
-            </div>
-
-            <label for="primerNombre">1er Nombre</label>
-            <input
-                type="text"
-                id="primerNombre"
-                placeholder="Escribe tu primer nombre"
-            >
-            <button type="button" onclick="guardar('1er Nombre')">
-                Guardar
-            </button>
-
-            <label for="segundoNombre">2do Nombre</label>
-            <input
-                type="text"
-                id="segundoNombre"
-                placeholder="Escribe tu segundo nombre"
-            >
-            <button type="button" onclick="guardar('2do Nombre')">
-                Guardar
-            </button>
-
-            <label for="primerApellido">1er Apellido</label>
-            <input
-                type="text"
-                id="primerApellido"
-                placeholder="Escribe tu primer apellido"
-            >
-            <button type="button" onclick="guardar('1er Apellido')">
-                Guardar
-            </button>
-
-            <label for="segundoApellido">2do Apellido</label>
-            <input
-                type="text"
-                id="segundoApellido"
-                placeholder="Escribe tu segundo apellido"
-            >
-            <button type="button" onclick="guardar('2do Apellido')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- USUARIO Y CONTRASEÑA -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                Usuario y Contraseña
-            </div>
-
-            <label for="usuario">Usuario</label>
-            <input
-                type="text"
-                id="usuario"
-                placeholder="Escribe tu usuario"
-            >
-
-            <label for="contrasena">Contraseña</label>
-            <input
-                type="password"
-                id="contrasena"
-                maxlength="65"
-                placeholder="Máximo 65 caracteres"
-                oninput="validarPassword(this)"
-            >
-
-            <div class="contador" id="contadorContrasena">
-                0 / 65
-            </div>
-
-            <div class="aviso-rojo" id="avisoContrasena">
-                La contraseña no puede contener espacios.
-            </div>
-
-            <button type="button" onclick="guardar('Usuario y Contraseña')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- TELÉFONO -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                Teléfono
-            </div>
-
-            <label for="telefonoUsuario">Usuario</label>
-            <input
-                type="text"
-                id="telefonoUsuario"
-                placeholder="Usuario del teléfono"
-            >
-
-            <label for="telefonoPassword">Contraseña</label>
-            <input
-                type="password"
-                id="telefonoPassword"
-                maxlength="65"
-                placeholder="Máximo 65 caracteres"
-                oninput="validarPassword(this)"
-            >
-
-            <div class="aviso-rojo">
-                La contraseña no puede contener espacios.
-            </div>
-
-            <button type="button" onclick="guardar('Teléfono')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- 1ER CORREO -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                1er Correo Electrónico
-            </div>
-
-            <label for="correo1Usuario">Usuario</label>
-            <input
-                type="email"
-                id="correo1Usuario"
-                placeholder="Primer correo electrónico"
-            >
-
-            <label for="correo1Password">Contraseña</label>
-            <input
-                type="password"
-                id="correo1Password"
-                maxlength="65"
-                placeholder="Máximo 65 caracteres"
-                oninput="validarPassword(this)"
-            >
-
-            <div class="aviso-rojo">
-                La contraseña no puede contener espacios.
-            </div>
-
-            <button type="button" onclick="guardar('1er Correo Electrónico')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- 2DO CORREO -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                2do Correo Electrónico
-            </div>
-
-            <label for="correo2Usuario">Usuario</label>
-            <input
-                type="email"
-                id="correo2Usuario"
-                placeholder="Segundo correo electrónico"
-            >
-
-            <label for="correo2Password">Contraseña</label>
-            <input
-                type="password"
-                id="correo2Password"
-                maxlength="65"
-                placeholder="Máximo 65 caracteres"
-                oninput="validarPassword(this)"
-            >
-
-            <div class="aviso-rojo">
-                La contraseña no puede contener espacios.
-            </div>
-
-            <button type="button" onclick="guardar('2do Correo Electrónico')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- MICROSOFT -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                Microsoft
-            </div>
-
-            <label for="microsoftUsuario">Usuario</label>
-            <input
-                type="text"
-                id="microsoftUsuario"
-                placeholder="Usuario Microsoft"
-            >
-
-            <label for="microsoftPassword">Contraseña</label>
-            <input
-                type="password"
-                id="microsoftPassword"
-                maxlength="65"
-                placeholder="Máximo 65 caracteres"
-                oninput="validarPassword(this)"
-            >
-
-            <div class="aviso-rojo">
-                La contraseña no puede contener espacios.
-            </div>
-
-            <button type="button" onclick="guardar('Microsoft')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- DRIVE -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                Drive
-            </div>
-
-            <label for="drivePassword">Contraseña</label>
-            <input
-                type="password"
-                id="drivePassword"
-                maxlength="65"
-                placeholder="Máximo 65 caracteres"
-                oninput="validarPassword(this)"
-            >
-
-            <div class="aviso-rojo">
-                La contraseña no puede contener espacios.
-            </div>
-
-            <button type="button" onclick="guardar('Drive')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- NETACAD -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                Netacad
-            </div>
-
-            <label for="netacadPassword">Contraseña</label>
-            <input
-                type="password"
-                id="netacadPassword"
-                maxlength="65"
-                placeholder="Máximo 65 caracteres"
-                oninput="validarPassword(this)"
-            >
-
-            <div class="aviso-rojo">
-                La contraseña no puede contener espacios.
-            </div>
-
-            <button type="button" onclick="guardar('Netacad')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- OUTLOOK -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                Outlook
-            </div>
-
-            <label for="outlookPassword">Contraseña</label>
-            <input
-                type="password"
-                id="outlookPassword"
-                maxlength="65"
-                placeholder="Máximo 65 caracteres"
-                oninput="validarPassword(this)"
-            >
-
-            <div class="aviso-rojo">
-                La contraseña no puede contener espacios.
-            </div>
-
-            <button type="button" onclick="guardar('Outlook')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- INFORMACIÓN ADICIONAL -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                Información adicional
-            </div>
-
-            <label for="apodo">
-                1er Apodo
-            </label>
-
-            <input
-                type="text"
-                id="apodo"
-                placeholder="Escribe tu apodo"
-            >
-
-            <label for="fechaNacimiento">
-                Fecha de Nacimiento
-            </label>
-
-            <input
-                type="date"
-                id="fechaNacimiento"
-            >
-
-            <label for="edad">
-                Edad
-            </label>
-
-            <input
-                type="number"
-                id="edad"
-                min="1"
-                max="120"
-                placeholder="Escribe tu edad"
-            >
-
-            <label for="ciudad">
-                Ciudad
-            </label>
-
-            <input
-                type="text"
-                id="ciudad"
-                placeholder="Ciudad"
-            >
-
-            <label for="estado">
-                Estado
-            </label>
-
-            <input
-                type="text"
-                id="estado"
-                placeholder="Estado"
-            >
-
-            <label for="pais">
-                País
-            </label>
-
-            <input
-                type="text"
-                id="pais"
-                placeholder="País"
-            >
-
-            <button type="button" onclick="guardar('Información adicional')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- TÉRMINOS -->
-        <div class="seccion">
-
-            <div class="titulo-seccion">
-                4 Términos y Condiciones de la App
-            </div>
-
-            <div class="terminos">
-
-                <div class="termino">
-                    <label>
-                        <input type="checkbox" class="terminoCheck">
-                        <span>
-                            1. Acepto utilizar TIERRA ROSA de manera
-                            responsable y proporcionar información correcta
-                            durante el registro.
-                        </span>
-                    </label>
-                </div>
-
-                <div class="termino">
-                    <label>
-                        <input type="checkbox" class="terminoCheck">
-                        <span>
-                            2. Me comprometo a proteger mis datos de acceso
-                            y no compartir mis contraseñas con otras personas.
-                        </span>
-                    </label>
-                </div>
-
-                <div class="termino">
-                    <label>
-                        <input type="checkbox" class="terminoCheck">
-                        <span>
-                            3. Comprendo que las funciones de la aplicación
-                            pueden cambiar, actualizarse o mejorar con el tiempo.
-                        </span>
-                    </label>
-                </div>
-
-                <div class="termino">
-                    <label>
-                        <input type="checkbox" class="terminoCheck">
-                        <span>
-                            4. Acepto revisar la información y las condiciones
-                            correspondientes antes de completar mi registro.
-                        </span>
-                    </label>
-                </div>
-
-            </div>
-
-            <button type="button" onclick="guardar('Términos y Condiciones')">
-                Guardar
-            </button>
-
-        </div>
-
-        <!-- REGISTRAR -->
-        <button
-            type="button"
-            class="registrar"
-            onclick="registrarCuenta()">
-            REGISTRAR
-        </button>
-
-    </form>
-
-    <!-- MENSAJE DE ÉXITO -->
-    <div class="exito" id="mensajeExito">
-
-        <div class="logo" style="width:75px;height:75px;font-size:38px;">
-            🌸
-        </div>
-
-        <h2>Registro exitoso</h2>
-
-        <p>
-            Se guardaron los registros en este formulario.
-            Muchas gracias por confiar en <strong>TIERRA ROSA</strong>.
-        </p>
-
-        <p>
-            Su registro fue un éxito y agradecemos su comprensión
-            y apoyo a TIERRA ROSA.
-        </p>
-
-        <a href="index.html" class="inicio">
-            INICIO
-        </a>
-
-    </div>
-
+<div id="toast" class="toast"></div>
+<div class="card">
+<div class="circle">🌸</div>
+<h1 class="title">REGISTRARME AQUÍ</h1>
+<p class="sub">Crea una Cuenta Gratis<br><span style="font-size:10px;font-weight:600;">En cada contraseña se tiene permitido hasta 65 caracteres y se marcará en rojo si dejan espacios en blanco te recomiendo que llenes todo el formulario.<br>Crear una cuenta es fácil y sencillo de crearla y te queda a iniciar sesión todas las veces que sean necesarias.</span></p>
+
+<div class="section">
+<div class="h">1er Nombre</div>
+<div class="row"><input class="input" id="n1" placeholder="1er Nombre" oninput="check(this)"><button class="btn-white" onclick="guardar('n1','1er Nombre')">Botón Guardar</button></div>
+
+<div class="h">2do Nombre</div>
+<div class="row"><input class="input" id="n2" placeholder="2do Nombre" oninput="check(this)"><button class="btn-white" onclick="guardar('n2','2do Nombre')">Botón Guardar</button></div>
+
+<div class="h">1er Apellido</div>
+<div class="row"><input class="input" id="a1" placeholder="1er Apellido" oninput="check(this)"><button class="btn-white" onclick="guardar('a1','1er Apellido')">Botón Guardar</button></div>
+
+<div class="h">2do Apellido</div>
+<div class="row"><input class="input" id="a2" placeholder="2do Apellido" oninput="check(this)"><button class="btn-white" onclick="guardar('a2','2do Apellido')">Botón Guardar</button></div>
+</div>
+
+<div class="section">
+<div class="h">Usuario Contraseña</div>
+<div class="row"><input class="input" id="u0" placeholder="Usuario" oninput="check(this)"><button class="btn-white" onclick="guardar('u0','Usuario')">Botón Guardar</button></div>
+<div class="row"><input class="input" id="p0" type="password" maxlength="65" placeholder="Contraseña max 65" oninput="checkPass(this)"><button class="btn-white" onclick="guardar('p0','Contraseña')">Botón Guardar</button></div>
+</div>
+
+<div class="section">
+<div class="h">Teléfono Usuario Contraseña</div>
+<div class="row"><input class="input" id="tel" placeholder="Teléfono" oninput="check(this)"><button class="btn-white" onclick="guardar('tel','Teléfono')">Botón Guardar</button></div>
+<div class="row"><input class="input" id="u_tel" placeholder="Usuario" oninput="check(this)"><button class="btn-white" onclick="guardar('u_tel','Usuario Tel')">Botón Guardar</button></div>
+<div class="row"><input class="input" id="p_tel" type="password" maxlength="65" placeholder="Contraseña max 65" oninput="checkPass(this)"><button class="btn-white" onclick="guardar('p_tel','Pass Tel')">Botón Guardar</button></div>
+</div>
+
+<div class="section">
+<div class="h">1er Correo Electrónico Usuario Contraseña</div>
+<div class="row"><input class="input" id="m1" placeholder="1er Correo Electrónico" oninput="check(this)"><button class="btn-white" onclick="guardar('m1','1er Correo')">Botón Guardar</button></div>
+<div class="row"><input class="input" id="u_m1" placeholder="Usuario" oninput="check(this)"><button class="btn-white" onclick="guardar('u_m1','Usuario Mail1')">Botón Guardar</button></div>
+<div class="row"><input class="input" id="p_m1" type="password" maxlength="65" placeholder="Contraseña max 65" oninput="checkPass(this)"><button class="btn-white" onclick="guardar('p_m1','Pass Mail1')">Botón Guardar</button></div>
+</div>
+
+<div class="section">
+<div class="h">2do Correcto Electrónico Usuario Contraseña</div>
+<div class="row"><input class="input" id="m2" placeholder="2do Correo" oninput="check(this)"><button class="btn-white" onclick="guardar('m2','2do Correo')">Botón Guardar</button></div>
+<div class="row"><input class="input" id="u_m2" placeholder="Usuario" oninput="check(this)"><button class="btn-white" onclick="guardar('u_m2','Usuario Mail2')">Botón Guardar</button></div>
+<div class="row"><input class="input" id="p_m2" type="password" maxlength="65" placeholder="Contraseña max 65" oninput="checkPass(this)"><button class="btn-white" onclick="guardar('p_m2','Pass Mail2')">Botón Guardar</button></div>
+</div>
+
+<div class="section">
+<div class="h">Microsoft Usuario Contraseña</div>
+<div class="row"><input class="input" id="u_ms" placeholder="Microsoft Usuario" oninput="check(this)"><button class="btn-white" onclick="guardar('u_ms','Microsoft Usuario')">Botón Guardar</button></div>
+<div class="row"><input class="input" id="p_ms" type="password" maxlength="65" placeholder="Contraseña max 65" oninput="checkPass(this)"><button class="btn-white" onclick="guardar('p_ms','Microsoft Pass')">Botón Guardar</button></div>
+</div>
+
+<div class="section">
+<div class="h">Drive (solo) Contraseña</div>
+<div class="row"><input class="input" id="p_drive" type="password" maxlength="65" placeholder="Contraseña max 65" oninput="checkPass(this)"><button class="btn-white" onclick="guardar('p_drive','Drive Pass')">Botón Guardar</button></div>
+
+<div class="h">Netacad (solo) Contraseña</div>
+<div class="row"><input class="input" id="p_neta" type="password" maxlength="65" placeholder="Contraseña max 65" oninput="checkPass(this)"><button class="btn-white" onclick="guardar('p_neta','Netacad Pass')">Botón Guardar</button></div>
+
+<div class="h">Outlook (solo) Contraseña</div>
+<div class="row"><input class="input" id="p_out" type="password" maxlength="65" placeholder="Contraseña max 65" oninput="checkPass(this)"><button class="btn-white" onclick="guardar('p_out','Outlook Pass')">Botón Guardar</button></div>
+</div>
+
+<div class="section">
+<div class="h">1er Apodo Fecha de Nacimiento Edad Ciudad Estado País</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+<input class="input" id="apodo" placeholder="1er Apodo" oninput="check(this)">
+<input class="input" id="fecha" type="date" oninput="check(this)">
+<input class="input" id="edad" placeholder="Edad" oninput="check(this)">
+<input class="input" id="ciudad" placeholder="Ciudad" oninput="check(this)">
+<input class="input" id="estado" placeholder="Estado" oninput="check(this)">
+<input class="input" id="pais" placeholder="País" oninput="check(this)">
+</div>
+<button class="btn-white" style="width:100%;margin-top:10px;" onclick="guardarGrupo()">Agrega</button>
+</div>
+
+<div class="section">
+<div class="h">4 Términos y Condiciones de la App</div>
+<div class="term"><input type="checkbox" id="t1"> <b>1.</b> Acepto que este es proyecto principiante beige con enlaces falsos NO REALES ID_Client-235</div>
+<div class="term"><input type="checkbox" id="t2"> <b>2.</b> Acepto que mis datos se guardan solo en localStorage del navegador para pruebas</div>
+<div class="term"><input type="checkbox" id="t3"> <b>3.</b> Acepto no usar contraseñas reales, solo de prueba max 65 caracteres sin espacios en blanco</div>
+<div class="term"><input type="checkbox" id="t4"> <b>4.</b> Acepto que Tierra Rosa Belleza que nace de la Tierra es marca de proyecto estudiantil</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;">
+<button class="btn-white" onclick="guardarTodo()">Botón [Guardar]</button>
+<button class="btn-white" onclick="registrarFinal()">Botón [Registrar]</button>
+</div>
+</div>
+
+<div id="msgOk" style="display:none;" class="section">
+<p style="text-align:center;font-weight:900;font-size:14px;">Se guardaron los registros en este formulario muchas gracias por confiar en Tierra Rosa.<br>Su Registro fue un éxito y agradecemos su comprensión y apoyo a Tierra Rosa.</p>
+</div>
+
+<button class="btn-white" style="width:100%;padding:16px;margin-top:10px;" onclick="location.href='index.html'">Botón [Inicio] a index.html</button>
 </div>
 
 <script>
-
-/* ==========================================
-   VALIDACIÓN DE CONTRASEÑAS
-   Máximo 65 caracteres y sin espacios
-========================================== */
-
-function validarPassword(campo) {
-
-    if (campo.value.length > 65) {
-        campo.value = campo.value.substring(0, 65);
-    }
-
-    let aviso = campo.parentElement.querySelector(".aviso-rojo");
-
-    if (campo.value.includes(" ")) {
-
-        campo.classList.add("password-error");
-
-        if (aviso) {
-            aviso.style.display = "block";
-        }
-
-    } else {
-
-        campo.classList.remove("password-error");
-
-        if (aviso) {
-            aviso.style.display = "none";
-        }
-    }
-
-    if (campo.id === "contrasena") {
-
-        document.getElementById("contadorContrasena").textContent =
-            campo.value.length + " / 65";
-    }
+function toast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500);}
+function check(el){if(el.value.trim()===''||el.value.includes(' ')){el.classList.add('red');}else{el.classList.remove('red');} if(el.value.trim()===''){el.classList.add('red');}}
+function checkPass(el){check(el); if(el.value.length>65){el.value=el.value.slice(0,65); toast('Max 65 caracteres');} if(el.value.includes(' ')){el.classList.add('red'); toast('Sin espacios en blanco');}}
+function guardar(id,label){let el=document.getElementById(id);if(el.value.trim()===''){el.classList.add('red'); toast(label+' vacío - rojo'); return;} if(el.value.includes(' ')){el.classList.add('red');} let data=JSON.parse(localStorage.getItem('tr_registro')||'{}'); data[id]=el.value.trim(); localStorage.setItem('tr_registro',JSON.stringify(data)); toast(label+' Guardado ✓');}
+function guardarGrupo(){let ids=['apodo','fecha','edad','ciudad','estado','pais']; let data=JSON.parse(localStorage.getItem('tr_registro')||'{}'); let vacio=false; ids.forEach(id=>{let el=document.getElementById(id); if(el.value.trim()===''){el.classList.add('red'); vacio=true;} else {data[id]=el.value.trim();}}); localStorage.setItem('tr_registro',JSON.stringify(data)); if(vacio){toast('Llena todo - se marca rojo');} else {toast('Datos Agrega Guardados ✓');}}
+function guardarTodo(){let inputs=document.querySelectorAll('.input'); let data=JSON.parse(localStorage.getItem('tr_registro')||'{}'); let vacios=0; inputs.forEach(el=>{ if(el.value.trim()===''){el.classList.add('red'); vacios++;} else {data[el.id]=el.value.trim();}}); localStorage.setItem('tr_registro',JSON.stringify(data)); if(vacios>0){toast(vacios+' campos vacíos marcados rojo');} else {toast('Todo Guardado ✓');}}
+function registrarFinal(){
+let t1=document.getElementById('t1').checked, t2=document.getElementById('t2').checked, t3=document.getElementById('t3').checked, t4=document.getElementById('t4').checked;
+if(!t1||!t2||!t3||!t4){toast('Marca los 4 Términos');return;}
+let inputs=document.querySelectorAll('.input'); let falta=false;
+inputs.forEach(el=>{ if(el.value.trim()===''){el.classList.add('red'); falta=true;}});
+if(falta){toast('Llena todo formulario - rojo');return;}
+guardarTodo();
+localStorage.setItem('tr_user','ok');
+document.getElementById('msgOk').style.display='block';
+toast('Registro éxito Tierra Rosa 🌸');
+setTimeout(()=>location.href='tienda.html',1200);
 }
-
-
-/* ==========================================
-   BOTONES GUARDAR
-========================================== */
-
-function guardar(nombre) {
-
-    alert("Se guardó correctamente: " + nombre);
-}
-
-
-/* ==========================================
-   REGISTRAR CUENTA
-========================================== */
-
-function registrarCuenta() {
-
-    let campos = document.querySelectorAll(
-        "#registroForm input:not([type='checkbox'])"
-    );
-
-    let contrasenas = document.querySelectorAll(
-        "input[type='password']"
-    );
-
-    let error = false;
-
-    /* Revisar contraseñas */
-
-    contrasenas.forEach(function(campo) {
-
-        if (campo.value.includes(" ")) {
-
-            campo.classList.add("password-error");
-
-            let aviso = campo.parentElement.querySelector(".aviso-rojo");
-
-            if (aviso) {
-                aviso.style.display = "block";
-            }
-
-            error = true;
-        }
-    });
-
-
-    /* Revisar términos */
-
-    let terminos = document.querySelectorAll(".terminoCheck");
-
-    terminos.forEach(function(termino) {
-
-        if (!termino.checked) {
-            error = true;
-        }
-
-    });
-
-
-    if (error) {
-
-        alert(
-            "Revisa el formulario.\n\n" +
-            "Completa los datos necesarios, " +
-            "corrige las contraseñas que tengan espacios " +
-            "y acepta los 4 términos y condiciones."
-        );
-
-        return;
-    }
-
-
-    /* Mostrar registro exitoso */
-
-    document.getElementById("registroForm").style.display = "none";
-
-    document.getElementById("mensajeExito").style.display = "block";
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
 </script>
-
 </body>
-  </html>
+    </html>
