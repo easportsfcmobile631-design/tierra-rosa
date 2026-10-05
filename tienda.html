@@ -2,190 +2,173 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIENDA - TIERRA ROSA NEGRO AMARILLO BLANCO</title>
+<title>TIENDA - TIERRA ROSA</title>
 <style>
-:root{--negro:#000;--negro2:#111;--dorado:#D4AF37;--oro:#FFD700;--amarillo:#FFFF00;--blanco:#FFF;}
+:root{--beige:#F5E8D0;--beige3:#FFF8EC;--negro:#000;--blanco:#FFF;--borde:#D9C5A0;--oro:#8a6d3b;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
-body{background:var(--negro);color:var(--dorado);}
-#top{position:sticky;top:0;z-index:99;background:#000;border-bottom:4px solid var(--amarillo);padding:10px 12px;display:flex;align-items:center;gap:12px;}
-.iconBar{font-size:22px;padding:10px 14px;background:var(--blanco);border:3px solid var(--amarillo);border-radius:12px;cursor:pointer;color:#000;font-weight:900;}
-.circle{width:48px;height:48px;min-width:48px;border-radius:50%;background:#000;border:3px solid var(--amarillo);display:flex;align-items:center;justify-content:center;font-size:24px;overflow:hidden;cursor:pointer;box-shadow:0 0 15px rgba(255,255,0,.5);}
-.circle img{width:100%;height:100%;object-fit:cover;}
-.marca{flex:1;line-height:1.1;cursor:pointer;}
-.marca h2{color:var(--oro);font-size:14px;letter-spacing:2px;}
-.marca span{color:var(--dorado);font-size:10px;}
-.rightTop{display:flex;align-items:center;gap:12px;}
-.cart{font-size:26px;position:relative;cursor:pointer;color:var(--oro);}
-.badge{position:absolute;top:-8px;right:-8px;background:var(--amarillo);color:#000;border-radius:50%;padding:2px 7px;font-size:11px;font-weight:900;border:2px solid #000;}
-
-#side{position:fixed;top:0;left:-320px;width:300px;height:100vh;background:#111;z-index:120;transition:.35s;border-right:4px solid var(--amarillo);padding:22px;}
-#side.open{left:0;}
-#ov{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:110;display:none;}#ov.show{display:block;}
-
-#profileOv{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:115;display:none;}#profileOv.show{display:block;}
-#profileBox{position:fixed;top:70px;right:10px;width:400px;max-width:96vw;max-height:88vh;overflow-y:auto;background:#111;border:4px solid var(--amarillo);border-radius:20px;z-index:125;display:none;padding:16px;box-shadow:0 20px 60px #000;}
-#profileBox.open{display:block;}
-.arrowUp{position:absolute;top:-14px;right:30px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:14px solid var(--amarillo);}
-
-.input{width:100%;padding:12px;border:3px solid var(--amarillo);border-radius:12px;background:#000;color:var(--oro);margin:5px 0;font-size:13px;}
-.btn-white{width:100%;padding:14px;background:var(--blanco);border:3px solid var(--amarillo);border-radius:14px;font-weight:900;color:#000;cursor:pointer;margin-top:8px;font-size:14px;}
-.btn-white:hover{background:var(--oro);}
-
-.searchWrap{max-width:1200px;margin:16px auto;padding:0 12px;position:relative;}
-.searchBig{width:100%;padding:22px 20px 22px 60px;border-radius:18px;border:4px solid var(--amarillo);font-size:20px;background:#000;color:var(--oro);box-shadow:0 0 25px rgba(255,255,0,.3);}
-
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;max-width:1300px;margin:auto;}@media(min-width:700px){.grid{grid-template-columns:1fr 1fr 1fr;}}@media(min-width:1100px){.grid{grid-template-columns:1fr 1fr 1fr 1fr;}}
-.prod{background:#111;border-radius:18px;overflow:hidden;border:3px solid var(--amarillo);position:relative;}
-.badgeNew{position:absolute;top:8px;left:8px;background:var(--oro);color:#000;font-size:9px;padding:5px 9px;border-radius:20px;font-weight:900;z-index:2;border:2px solid #000;}
-.badgeOff{position:absolute;top:8px;right:8px;background:var(--blanco);color:#000;font-size:10px;padding:5px 9px;border-radius:20px;font-weight:900;z-index:2;border:2px solid var(--amarillo);}
-.badgeDest{position:absolute;bottom:92px;left:8px;background:var(--amarillo);color:#000;font-size:8px;padding:4px 8px;border-radius:20px;font-weight:900;z-index:2;}
-.imgBox{height:240px;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.imgBox img{width:100%;height:100%;object-fit:cover;}
-.foot{text-align:center;padding:20px;color:var(--oro);border-top:4px solid var(--amarillo);margin-top:20px;background:#111;}
+body{background:var(--beige);color:var(--negro);}
+.header{position:sticky;top:0;z-index:20;background:var(--beige3);border-bottom:3px solid var(--borde);padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.left{display:flex;align-items:center;gap:10px;}
+.bar{font-size:26px;cursor:pointer;background:var(--blanco);border:2.5px solid var(--negro);border-radius:10px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;}
+.circle{width:44px;height:44px;border-radius:50%;background:var(--blanco);border:2.5px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;}
+.brand{line-height:1.1;}
+.brand b{letter-spacing:2px;font-size:14px;display:block;}
+.brand span{font-size:9px;letter-spacing:1px;opacity:.7;font-weight:700;}
+.right{display:flex;align-items:center;gap:8px;}
+.cart{font-size:22px;background:var(--blanco);border:2.5px solid var(--negro);border-radius:10px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;}
+.cart i{position:absolute;top:-6px;right:-6px;background:var(--negro);color:var(--blanco);font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;}
+.profile{width:44px;height:44px;border-radius:50%;background:var(--blanco);border:2.5px solid var(--negro);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;overflow:hidden;}
+.profile img{width:100%;height:100%;object-fit:cover;}
+.search-wrap{padding:12px;background:var(--beige3);border-bottom:3px solid var(--borde);}
+.search{width:100%;padding:16px 18px;border:3px solid var(--negro);border-radius:16px;background:var(--blanco);color:var(--negro);font-size:14px;font-weight:700;outline:none;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:14px;}
+.card2{background:var(--blanco);border:2.5px solid var(--borde);border-radius:18px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.1);}
+.card2 img{width:100%;height:160px;object-fit:cover;background:#eee;display:block;}
+.info{padding:10px;}
+.price{font-weight:900;font-size:14px;}
+.meta{font-size:10px;margin-top:4px;line-height:1.4;}
+.badge{display:inline-block;background:var(--negro);color:var(--blanco);font-size:9px;padding:3px 7px;border-radius:20px;margin:2px 2px 0 0;font-weight:800;}
+.btn-white{width:100%;padding:10px;background:var(--blanco);border:2.5px solid var(--negro);border-radius:10px;font-weight:900;color:var(--negro);cursor:pointer;margin-top:8px;font-size:11px;box-shadow:0 2px 0 var(--negro);}
+.menu{position:fixed;top:0;left:-100%;width:78%;max-width:320px;height:100%;background:var(--beige3);border-right:3px solid var(--borde);z-index:50;transition:.3s;padding:18px;}
+.menu.open{left:0;}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:40;}
+.overlay.show{display:block;}
+.perfil-modal{position:fixed;top:0;right:-100%;width:92%;max-width:420px;height:100%;background:var(--beige3);border-left:3px solid var(--borde);z-index:60;transition:.3s;overflow:auto;padding:16px;}
+.perfil-modal.open{right:0;}
+.input{width:100%;padding:11px;border:2px solid var(--borde);border-radius:10px;background:var(--blanco);color:var(--negro);font-size:11px;margin:5px 0;}
+.up{position:absolute;top:10px;right:10px;background:var(--blanco);border:2px solid var(--negro);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:900;}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--negro);color:var(--blanco);padding:12px 22px;border-radius:20px;font-weight:900;display:none;z-index:99;}
 </style>
 </head>
 <body>
+<div id="toast" class="toast"></div>
+<div id="overlay" class="overlay" onclick="closeAll()"></div>
 
-<div id="top">
-<div class="iconBar" onclick="toggleSide()">☰</div>
-<div class="circle" onclick="location.href='tienda.html'">🌸</div>
-<div class="marca" onclick="location.href='tienda.html'"><h2>TIERRA ROSA</h2><span>belleza que nace de la tierra</span></div>
-<div class="rightTop">
-<div class="cart" onclick="alert('Carrito '+cart+' productos')">🛒<span class="badge" id="cartN">0</span></div>
-<div class="circle" id="avatarTop" onclick="openProfile()" style="width:56px;height:56px;">👤</div>
+<!-- HEADER EN ORDEN EXACTO QUE PEDISTE -->
+<div class="header">
+<div class="left">
+<div class="bar" onclick="openMenu()">☰</div>
+<div class="circle">🌸</div>
+<div class="brand"><b>TIERRA ROSA</b><span>Belleza que nace de la Tierra</span></div>
+</div>
+<div class="right">
+<div class="cart" onclick="toast('Carrito 0 productos')">🛒<i id="cartNum">0</i></div>
+<div class="profile" onclick="openPerfil()" id="profileBtn">👤</div>
 </div>
 </div>
 
-<div id="ov" onclick="toggleSide()"></div>
-<nav id="side">
-<div style="display:flex;align-items:center;gap:12px;"><div class="circle">🌸</div><div><h2 style="color:var(--oro);font-size:15px;">TIERRA ROSA</h2><span style="font-size:11px;color:var(--dorado);">belleza que nace de la tierra</span></div></div><br>
-<a href="acerca-de.html" style="display:block;padding:16px;background:var(--blanco);color:#000;border-radius:14px;text-decoration:none;text-align:center;font-weight:900;border:3px solid var(--amarillo);">ACERCA-DE</a>
-<br><br><button class="btn-white" onclick="location.href='index.html'">Inicio a index.html</button>
-</nav>
-
-<div id="profileOv" onclick="closeProfile()"></div>
-<div id="profileBox">
-<div class="arrowUp"></div>
-<div style="display:flex;justify-content:space-between;align-items:center;">
-<b style="color:var(--oro);">Perfil 👤 editable</b><span style="cursor:pointer;font-size:20px;color:var(--amarillo);" onclick="closeProfile()">⬆️ flecha arriba para salir</span>
+<!-- BUSCADOR DEBAJO DE LA MARCA EN GRANDE -->
+<div class="search-wrap">
+<div style="display:flex;justify-content:flex-end;margin-bottom:6px;"><span style="cursor:pointer;font-weight:900;" onclick="document.getElementById('busc').value='';render()">↑ flecha arriba para limpiar buscador</span></div>
+<input id="busc" class="search" placeholder="🔍 Buscar en Tierra Rosa... images, marcas TITANES SPEAKING" oninput="render()">
 </div>
 
-<div style="text-align:center;margin-top:14px;">
-<div class="circle" id="bigAvatar" style="width:100px;height:100px;margin:auto;font-size:50px;">👤</div><br>
-<input type="file" id="fileIn" hidden accept="image/*" onchange="uploadFoto(event)">
-<p style="color:var(--oro);font-weight:800;font-size:12px;">subir foto</p>
-<button class="btn-white" onclick="document.getElementById('fileIn').click()">subir foto</button>
-<button class="btn-white" onclick="guardarFoto()">Botón Guardar foto</button>
-</div>
-
-<hr style="margin:16px 0;border:1.5px solid var(--amarillo);">
-<b style="color:var(--oro);">Dentro del icono de perfil circular va la descripción</b>
-<textarea class="input" id="desc" style="height:80px;" placeholder="Descripción"></textarea>
-<button class="btn-white" onclick="saveSimple('desc')">botón Guardar</button>
-
-<br><br><b style="color:var(--oro);">6 Links Webs</b><div id="webs"></div>
-
-<br><b style="color:var(--oro);">6 Links de Redes Sociales</b><div id="sociales"></div>
-
-<br><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-<div style="color:var(--oro);font-size:12px;font-weight:800;">País<input class="input" id="pais" placeholder="País"></div>
-<div style="color:var(--oro);font-size:12px;font-weight:800;">E-mail<input class="input" id="email" placeholder="E-mail"></div>
-<div style="color:var(--oro);font-size:12px;font-weight:800;">Teléfono<input class="input" id="tel" placeholder="Teléfono"></div>
-<div style="color:var(--oro);font-size:12px;font-weight:800;">Ocupación<input class="input" id="ocup" placeholder="Ocupación"></div>
-</div>
-<div style="color:var(--oro);font-size:12px;font-weight:800;">Nombre Completo<input class="input" id="nombre" placeholder="Nombre Completo"></div>
-<div style="color:var(--oro);font-size:12px;font-weight:800;">País
-<select id="paisSelect" class="input" onchange="setTZ()">
-<option value="">Menu desplegable de zona horaria mundial por país</option>
-<option value="America/Mexico_City - México -06:00">México - America/Mexico_City -06:00</option>
-<option value="America/Bogota - Colombia -05:00">Colombia - Bogota -05:00</option>
-<option value="America/Lima - Perú -05:00">Perú - Lima -05:00</option>
-<option value="America/Santiago - Chile -04:00">Chile - Santiago -04:00</option>
-<option value="America/Argentina/Buenos_Aires - Argentina -03:00">Argentina -03:00</option>
-<option value="America/New_York - USA Este -04:00">USA Este -04:00</option>
-<option value="America/Los_Angeles - USA Oeste -07:00">USA Oeste -07:00</option>
-<option value="Europe/Madrid - España +02:00">España +02:00</option>
-<option value="Europe/London - UK +01:00">UK +01:00</option>
-<option value="Asia/Tokyo - Japón +09:00">Japón +09:00</option>
-</select>
-<input class="input" id="tz" placeholder="Zona horaria">
-</div>
-<button class="btn-white" onclick="guardarPerfil()">Botón Guardar</button>
-<button class="btn-white" style="background:var(--amarillo);" onclick="cerrarSesion()">Botón Cerrar Sesión</button>
-</div>
-
-<div class="searchWrap">
-<span style="position:absolute;left:28px;top:50%;transform:translateY(-50%);font-size:26px;color:var(--amarillo);">🔍</span>
-<input id="search" class="searchBig" placeholder="buscador debe estar debajo de la Marca en grande - Busca TIERRA ROSA" oninput="buscar()">
-</div>
-
-<div style="padding:0 14px;max-width:1300px;margin:auto;display:flex;justify-content:space-between;color:var(--oro);font-weight:900;"><span id="info">0 productos</span><span>🛒 <span id="c2">0</span></span></div>
-
+<!-- GRID DE IMAGENES 1 A 83 VISIBLES SI O SI -->
 <div class="grid" id="grid"></div>
 
-<div class="foot">
-<h2 style="color:var(--oro);">TIERRA ROSA</h2>
-<p>Belleza que nace de la Tierra</p>
-<p style="margin-top:8px;"><b>TITANES</b> | <b>SPEAKING</b> | Hecho en México 2026</p>
+<div style="text-align:center;padding:20px;font-weight:900;font-size:12px;">
+TIERRA ROSA<br>Belleza que nace de la Tierra<br>TITANES | SPEAKING<br>Hecho en México 2026<br>ID_Client-235.meidvWqo002w8eb8dA
+</div>
+
+<!-- MENU LATERAL IZQUIERDO -->
+<div id="menu" class="menu">
+<div style="display:flex;justify-content:space-between;align-items:center;"><b>MENU</b><span style="cursor:pointer;font-size:20px;" onclick="closeAll()">✕</span></div>
+<div style="margin-top:16px;display:grid;gap:10px;">
+<button class="btn-white" onclick="location.href='index.html'">Inicio index.html</button>
+<button class="btn-white" onclick="location.href='acercade.html'">ACERCA-DE acerca-de.html</button>
+<button class="btn-white" onclick="location.href='banco-de-enlaces.html'">Banco de Enlaces</button>
+<button class="btn-white" onclick="location.href='acceso-con-un-click.html'">Acceso con un Click</button>
+<button class="btn-white" onclick="location.href='necesitas-ayuda.html'">Necesitas Ayuda?</button>
+<button class="btn-white" onclick="location.href='no-tienes-una-cuenta.html'">No tienes una Cuenta</button>
+<button class="btn-white" onclick="location.href='registrarme-aqui.html'">Registrarme Aquí</button>
+</div>
+</div>
+
+<!-- PERFIL EDITABLE CIRCULAR -->
+<div id="perfilModal" class="perfil-modal">
+<div style="display:flex;justify-content:space-between;align-items:center;"><b>Perfil 👤 Editable</b><span style="cursor:pointer;font-size:20px;" onclick="closeAll()">↑</span></div>
+
+<div style="text-align:center;margin-top:14px;position:relative;">
+<div class="profile" style="width:90px;height:90px;margin:auto;font-size:40px;" id="profileBig">👤</div>
+<label class="up" for="fileFoto">📷</label>
+<input type="file" id="fileFoto" hidden accept="image/*" onchange="previewFoto(event)">
+<button class="btn-white" style="margin-top:10px;" onclick="guardarFoto()">Botón Guardar foto</button>
+</div>
+
+<div style="border:2.5px solid var(--borde);border-radius:14px;padding:12px;margin-top:14px;background:var(--blanco);">
+<div style="font-weight:900;font-size:12px;">Dentro del icono de perfil circular va la descripción</div>
+<textarea id="desc" class="input" rows="3" placeholder="Descripción perfil..."></textarea>
+<button class="btn-white" onclick="guardarDesc()">Botón Guardar</button>
+</div>
+
+<div style="border:2.5px solid var(--borde);border-radius:14px;padding:12px;margin-top:12px;background:var(--blanco);">
+<div style="font-weight:900;font-size:12px;">6 Links Webs</div>
+<input class="input" id="web1" placeholder="Web 1"><input class="input" id="web2" placeholder="Web 2"><input class="input" id="web3" placeholder="Web 3">
+<input class="input" id="web4" placeholder="Web 4"><input class="input" id="web5" placeholder="Web 5"><input class="input" id="web6" placeholder="Web 6">
+<button class="btn-white" onclick="guardarWebs()">Botón Guardar</button>
+</div>
+
+<div style="border:2.5px solid var(--borde);border-radius:14px;padding:12px;margin-top:12px;background:var(--blanco);">
+<div style="font-weight:900;font-size:12px;">6 Links de Redes Sociales</div>
+<input class="input" id="red1" placeholder="Red Social 1"><input class="input" id="red2" placeholder="Red Social 2"><input class="input" id="red3" placeholder="Red Social 3">
+<input class="input" id="red4" placeholder="Red Social 4"><input class="input" id="red5" placeholder="Red Social 5"><input class="input" id="red6" placeholder="Red Social 6">
+<button class="btn-white" onclick="guardarRedes()">Botón Guardar</button>
+</div>
+
+<div style="border:2.5px solid var(--borde);border-radius:14px;padding:12px;margin-top:12px;background:var(--blanco);">
+<div style="font-weight:900;font-size:12px;">Datos</div>
+<input class="input" id="pais1" placeholder="País E-mail">
+<input class="input" id="telefono" placeholder="Teléfono">
+<input class="input" id="ocupacion" placeholder="Ocupación">
+<input class="input" id="nombreC" placeholder="Nombre Completo">
+<input class="input" id="pais2" placeholder="País">
+<select id="zona" class="input"><option>Zona horaria mundial por país</option><option>America/Mexico_City GMT-6</option><option>America/Bogota GMT-5</option><option>America/New_York GMT-4</option><option>Europe/Madrid GMT+2</option><option>Asia/Tokyo GMT+9</option></select>
+<button class="btn-white" onclick="guardarDatos()">Botón Guardar</button>
+<button class="btn-white" style="margin-top:10px;background:#000;color:#fff;" onclick="cerrarSesion()">Botón Cerrar Sesión</button>
+</div>
 </div>
 
 <script>
-let cart=0;
-function toggleSide(){document.getElementById('side').classList.toggle('open');document.getElementById('ov').classList.toggle('show');}
-function openProfile(){document.getElementById('profileBox').classList.add('open');document.getElementById('profileOv').classList.add('show'); cargarLinks();}
-function closeProfile(){document.getElementById('profileBox').classList.remove('open');document.getElementById('profileOv').classList.remove('show');}
-function uploadFoto(e){let f=e.target.files[0]; if(!f) return; let r=new FileReader(); r.onload=ev=>{let d=ev.target.result; document.getElementById('bigAvatar').innerHTML=`<img src="${d}">`; document.getElementById('avatarTop').innerHTML=`<img src="${d}">`; localStorage.setItem('tr_avatar_temp',d);}; r.readAsDataURL(f);}
-function guardarFoto(){let d=localStorage.getItem('tr_avatar_temp'); if(!d){alert('Primero subir foto');return;} localStorage.setItem('tr_avatar',d); alert('Foto Guardada ✓');}
-function saveSimple(id){localStorage.setItem('tr_'+id,document.getElementById(id).value); alert('Guardado ✓');}
-function guardarPerfil(){let data={pais:document.getElementById('pais').value,email:document.getElementById('email').value,tel:document.getElementById('tel').value,ocup:document.getElementById('ocup').value,nombre:document.getElementById('nombre').value,tz:document.getElementById('tz').value,desc:document.getElementById('desc').value}; localStorage.setItem('tr_perfil',JSON.stringify(data)); alert('Guardado ✓');}
-function cerrarSesion(){localStorage.removeItem('tr_user'); location.href='index.html';}
-function setTZ(){document.getElementById('tz').value=document.getElementById('paisSelect').value;}
-function cargarLinks(){
-let w=document.getElementById('webs'); let s=document.getElementById('sociales');
-let sw=JSON.parse(localStorage.getItem('tr_webs')||'{}'); let ss=JSON.parse(localStorage.getItem('tr_sociales')||'{}');
-w.innerHTML=''; for(let i=1;i<=6;i++){w.innerHTML+=`<div style="display:grid;grid-template-columns:1fr auto;gap:6px;margin:5px 0;"><input class="input" id="web${i}" placeholder="Links Web ${i}" value="${sw['web'+i]||''}"><button class="btn-white" style="width:auto;padding:8px;" onclick="guardarLink('web${i}','tr_webs')">Botón Guardar</button></div>`;}
-s.innerHTML=''; for(let i=1;i<=6;i++){s.innerHTML+=`<div style="display:grid;grid-template-columns:1fr auto;gap:6px;margin:5px 0;"><input class="input" id="soc${i}" placeholder="Red Social ${i}" value="${ss['soc'+i]||''}"><button class="btn-white" style="width:auto;padding:8px;" onclick="guardarLink('soc${i}','tr_sociales')">Botón Guardar</button></div>`;}
-let av=localStorage.getItem('tr_avatar'); if(av){document.getElementById('bigAvatar').innerHTML=`<img src="${av}">`; document.getElementById('avatarTop').innerHTML=`<img src="${av}">`;}
-}
-function guardarLink(id,key){let v=document.getElementById(id).value; let o=JSON.parse(localStorage.getItem(key)||'{}'); o[id]=v; localStorage.setItem(key,JSON.stringify(o)); alert(id+' Guardado');}
-
-// TUS IMAGENES EXACTAS - deben estar subidas con mismo nombre en repo
 const imagenes=[
 "images (1).jpeg","images (2).jpeg","images (3).jpeg","images (4).jpeg","images (4).jpeg","images (5).jpeg","images (5).jpeg","images (7).jpeg","images (8).jpeg","images (9).jpeg","images (10).jpeg","images (11).jpeg","images (12).jpeg","images (13).jpeg","images (14).jpeg","images (15).jpeg","images (16).jpeg","images (17).jpeg","images (18).jpeg","images (19).jpeg","images (20).jpeg","images (21).jpeg","images (22).jpeg","images (23).jpeg","images (24).jpeg","images (25).jpeg","images (26).jpeg","images (27).jpeg","images (28).jpeg","images (29).jpeg","images (30).jpeg","images (31).jpeg","images (32).jpeg","images (33).jpeg","images (34).jpeg","images (35).jpeg","images (36).jpeg","images (37).jpeg","images (38).jpeg","images (39).jpeg","images (40).jpeg","images (41).jpeg","images (42).jpeg","images (43).jpeg","images (44).jpeg","images (45).jpeg","images (46).jpeg","images (47).jpeg","images (48).jpeg","images (49).jpeg","images (50).jpeg","images (51).jpeg","images (52).jpeg","images (53).jpeg","images (54).jpeg","images (55).jpeg","images (56).jpeg","images (57).jpeg","images (58).jpeg","images (59).jpeg","images (60).jpeg","images (61).jpeg","images (62).jpeg","images (63).jpeg","images (64).jpeg","images (65).jpeg","images (66).jpeg","images (67).jpeg","images (68).jpeg","images (69).jpeg","images (70).jpeg","images (71).jpeg","images (72).jpeg","images (73).jpeg","images (74).jpeg","images (75).jpeg","images (76).jpeg","images (77).jpeg","images (78).jpeg","images (79).jpeg","images (80).jpeg","images (69).jpeg","images (81).jpeg","images (82).jpeg","images (83).jpeg","images.jpeg","images.jpg","140020.jpg"
 ];
-
-let productos=imagenes.map((img,i)=>{
-let price=199 + (i*13)%500;
-let off=15 + (i*7)%50;
-let final=Math.round(price*(1-off/100));
-return {src:img, name:`Producto ${i+1} TIERRA ROSA - Belleza que nace de la Tierra`, price, off, final, destacado:(i%7===0)};
-});
-
-let filtrados=[...productos];
-function render(list){
-let g=document.getElementById('grid'); g.innerHTML='';
-list.forEach((p,i)=>{
-g.innerHTML+=`<div class="prod">
-<span class="badgeNew">nuevo lanzamiento</span>
-<span class="badgeOff">-${p.off}%</span>
-${p.destacado?'<span class="badgeDest">destacado</span>':''}
-<div class="imgBox"><img src="${p.src}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x400/000000/FFD700?text=TIERRA+ROSA+${i+1}';"></div>
-<div style="padding:10px;">
-<b style="font-size:11px;color:var(--oro);">${p.name}</b><br>
-<span style="font-size:9px;color:var(--dorado);">TITANES • SPEAKING • Hecho en México 2026</span>
-<div style="display:flex;gap:6px;margin-top:8px;align-items:center;">
-<div style="flex:1;background:#000;border:2.5px solid var(--amarillo);border-radius:12px;padding:8px;text-align:center;font-weight:900;font-size:13px;color:var(--oro);">$${p.final} MXN<br><s style="font-size:9px;color:var(--dorado);">$${p.price}</s> ${p.off}%</div>
-<button class="btn-white" style="width:auto;padding:10px 12px;margin:0;" onclick="addCart()">$ precios</button>
+function toast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2200);}
+function openMenu(){document.getElementById('menu').classList.add('open');document.getElementById('overlay').classList.add('show');}
+function openPerfil(){document.getElementById('perfilModal').classList.add('open');document.getElementById('overlay').classList.add('show');}
+function closeAll(){document.getElementById('menu').classList.remove('open');document.getElementById('perfilModal').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
+function render(){
+let q=document.getElementById('busc').value.toLowerCase();
+let cont=document.getElementById('grid'); cont.innerHTML='';
+let filtradas=imagenes.filter(n=>n.toLowerCase().includes(q));
+filtradas.forEach((nombre,i)=>{
+let precio=(Math.random()*900+100).toFixed(0);
+let desc=Math.floor(Math.random()*60+5);
+let seed=nombre.replace(/[^a-z0-9]/gi,'');
+let src1=nombre; // intenta tu archivo local real
+let src2=`https://picsum.photos/seed/${seed}TIERRAROSA/400/400`; // respaldo visible si o si
+cont.innerHTML+=`<div class="card2">
+<img src="${src1}" onerror="this.onerror=null;this.src='${src2}'" alt="${nombre}">
+<div class="info">
+<div class="price">$${precio} <span style="color:green;">${desc}% OFF</span></div>
+<div class="meta">${nombre}<br>TIERRA ROSA Belleza que nace de la Tierra<br>TITANES SPEAKING<br><span class="badge">nuevo lanzamiento</span><span class="badge">destacado</span><span class="badge">Hecho en México 2026</span></div>
+<button class="btn-white" onclick="addCart()">🛒 Agregar $${precio}</button>
 </div>
-</div></div>`;
+</div>`;
 });
-document.getElementById('info').innerText=list.length+' imágenes visibles sí o sí';
 }
-function buscar(){let q=document.getElementById('search').value.toLowerCase(); filtrados=productos.filter(p=>p.name.toLowerCase().includes(q)); render(filtrados);}
-function addCart(){cart++; document.getElementById('cartN').innerText=cart; document.getElementById('c2').innerText=cart;}
-
-render(productos);
-cargarLinks();
+let cart=0; function addCart(){cart++; document.getElementById('cartNum').innerText=cart; toast('Agregado al carrito 🛒');}
+function previewFoto(e){let file=e.target.files[0]; if(!file) return; let r=new FileReader(); r.onload=()=>{document.getElementById('profileBig').innerHTML=`<img src="${r.result}">`; document.getElementById('profileBtn').innerHTML=`<img src="${r.result}">`; localStorage.setItem('tr_foto',r.result);}; r.readAsDataURL(file);}
+function guardarFoto(){toast('Foto Guardada ✓');}
+function guardarDesc(){localStorage.setItem('tr_desc',document.getElementById('desc').value); toast('Descripción Guardada ✓');}
+function guardarWebs(){let o={};for(let i=1;i<=6;i++)o['web'+i]=document.getElementById('web'+i).value; localStorage.setItem('tr_webs',JSON.stringify(o)); toast('6 Links Webs Guardados ✓');}
+function guardarRedes(){let o={};for(let i=1;i<=6;i++)o['red'+i]=document.getElementById('red'+i).value; localStorage.setItem('tr_redes',JSON.stringify(o)); toast('6 Links Redes Guardados ✓');}
+function guardarDatos(){let o={pais1:document.getElementById('pais1').value,telefono:document.getElementById('telefono').value,ocupacion:document.getElementById('ocupacion').value,nombreC:document.getElementById('nombreC').value,pais2:document.getElementById('pais2').value,zona:document.getElementById('zona').value}; localStorage.setItem('tr_datos',JSON.stringify(o)); toast('Datos Guardados ✓');}
+function cerrarSesion(){localStorage.removeItem('tr_user'); toast('Sesión Cerrada'); setTimeout(()=>location.href='index.html',700);}
+window.onload=()=>{
+render();
+let foto=localStorage.getItem('tr_foto'); if(foto){document.getElementById('profileBig').innerHTML=`<img src="${foto}">`; document.getElementById('profileBtn').innerHTML=`<img src="${foto}">`;}
+if(!localStorage.getItem('tr_user')){toast('Inicia sesión primero');}
+};
 </script>
 </body>
     </html>
