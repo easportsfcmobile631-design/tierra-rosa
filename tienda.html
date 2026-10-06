@@ -1,134 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TIENDA - TIERRA ROSA</title>
 <style>
-:root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#D9C5A0;--negro:#000;--blanco:#fff}
+:root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#D9C5A0}
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:var(--beige);color:var(--negro)}
-.top{position:sticky;top:0;z-index:50;background:var(--beige2);border-bottom:3px solid var(--borde);display:flex;align-items:center;justify-content:space-between;padding:10px 12px;gap:8px}
-.left{display:flex;align-items:center;gap:10px}
-.icon-menu{font-size:24px;cursor:pointer;font-weight:900}
-.circle{width:42px;height:42px;border-radius:50%;background:var(--blanco);border:2px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:22px}
-.brand{line-height:1}
-.brand b{letter-spacing:2px;font-size:15px}
-.brand span{display:block;font-size:9px;letter-spacing:1px;opacity:.7}
-.right{display:flex;align-items:center;gap:12px;font-size:22px}
-.search-wrap{padding:12px;max-width:900px;margin:auto}
-.search{width:100%;padding:14px 16px;border-radius:14px;border:3px solid var(--borde);background:var(--blanco);outline:none;font-size:14px}
-.grid{max-width:900px;margin:auto;padding:0 12px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:600px){.grid{grid-template-columns:1fr 1fr}}
-.card-prod{background:var(--blanco);border:2px solid var(--borde);border-radius:16px;overflow:hidden}
-.card-prod img{width:100%;height:160px;object-fit:cover;background:#eee}
-.info{padding:8px}
-.price{font-weight:900}
-.badge{font-size:10px;background:var(--negro);color:var(--blanco);padding:3px 6px;border-radius:6px;margin-right:4px}
-.btn{width:100%;padding:10px;background:var(--blanco);border:2.5px solid var(--negro);border-radius:10px;font-weight:900;cursor:pointer;margin-top:6px}
-.menu{position:fixed;top:0;left:-100%;width:78%;max-width:300px;height:100%;background:var(--beige2);border-right:3px solid var(--borde);z-index:99;transition:.3s;padding:14px;overflow:auto}
+body{background:var(--beige);color:#000}
+.top{position:sticky;top:0;z-index:99;background:var(--beige2);border-bottom:3px solid var(--borde);display:flex;align-items:center;gap:6px;padding:7px 8px}
+.cir{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--borde);display:flex;align-items:center;justify-content:center}
+.brand{font-weight:900;font-size:11px;letter-spacing:.5px;line-height:1}
+.search{flex:1;max-width:130px;padding:6px 8px;border:1.5px solid #d0d7de;background:#fff;border-radius:6px;font-size:12px;outline:none;color:#000}
+.icon{font-size:18px;cursor:pointer;padding:2px}
+.welcome{max-width:950px;margin:10px auto;padding:10px;text-align:center;font-weight:800;font-size:11px;border:2px dashed var(--borde);border-radius:10px;background:var(--beige2)}
+.grid{max-width:950px;margin:auto;padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:#fff;border:2px solid var(--borde);border-radius:12px;overflow:hidden}
+.card img{width:100%;height:155px;object-fit:cover;display:block;background:#eee}
+.tcard{display:flex;justify-content:space-between;align-items:center;padding:5px 7px;background:#fff}
+.b2{background:#fff;color:#000;border:1.5px solid #000;padding:2px 5px;border-radius:4px;font-size:8px;font-weight:900}
+.info{padding:6px}
+.badge{background:#000;color:#fff;padding:2px 5px;border-radius:4px;font-size:8px;margin-right:2px;display:inline-block}
+.price{font-weight:900;font-size:12px;margin:3px 0}
+.btn{background:#fff;color:#000;border:2px solid #000;border-radius:6px;padding:7px;width:100%;font-weight:900;font-size:10px;cursor:pointer;margin-top:3px}
+.menu{position:fixed;top:0;left:-100%;width:82%;max-width:320px;height:100%;background:var(--beige2);border-right:3px solid var(--borde);z-index:100;transition:.3s;padding:14px;overflow:auto;font-size:11px;line-height:2.1;color:#000}
 .menu.open{left:0}
-.menu h3{font-size:13px;margin:12px 0 4px;letter-spacing:1px}
-.menu div{padding:8px 0;border-bottom:1px solid var(--borde);font-size:13px;cursor:pointer}
-.perfil{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:100;overflow:auto}
-.perfil.open{display:flex;justify-content:center;align-items:flex-start;padding:20px}
-.perfil-box{background:var(--beige2);width:100%;max-width:500px;border-radius:18px;border:3px solid var(--borde);padding:16px}
-.perfil-head{display:flex;justify-content:space-between;align-items:center}
-.input{width:100%;padding:11px;border:2px solid var(--borde);border-radius:10px;margin:5px 0;background:var(--blanco)}
+.perfil{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;z-index:101;padding:10px;overflow:auto}
+.perfil.open{display:flex;justify-content:center}
+.box{background:var(--beige2);width:100%;max-width:520px;border:3px solid var(--borde);border-radius:14px;padding:12px;height:fit-content}
+.inp{width:100%;padding:9px;border:2px solid var(--borde);border-radius:8px;margin:4px 0;background:#fff;color:#000;font-size:11px}
 </style>
 </head>
 <body>
 
 <div class="top">
-  <div class="left">
-    <span class="icon-menu" onclick="toggleMenu()">☰</span>
-    <div class="circle">🌸</div>
-    <div class="brand"><b>TIERRA ROSA</b><span>Belleza que nace de la tierra</span></div>
-  </div>
-  <div class="right">
-    <span onclick="alert('Carrito vacío')">🛒</span>
-    <span onclick="openPerfil()" style="border:2px solid #000;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:#fff;cursor:pointer">👤</span>
-  </div>
+<span class="icon" onclick="toggleMenu()">☰</span>
+<div class="cir">🌸</div>
+<div class="brand">TIERRA<br>ROSA</div>
+<input id="buscador" class="search" placeholder="Buscar..." oninput="filtrar()">
+<span class="icon" onclick="compartirApp()" title="Compartir APP">⋮</span>
+<span class="icon">🛒</span>
+<span class="icon" onclick="openPerfil()" style="border:2px solid #000;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:#fff">👤</span>
 </div>
 
-<div class="search-wrap">
-  <input id="buscador" class="search" placeholder="Tienda Tierra Rosa belleza y Cosméticos" oninput="filtrar()">
-</div>
+<div class="welcome">Bienvenido a tu Tienda Tierra Rosa Creada y Fundada por Jesús Eduardo Martínez Carrillo y Jair Valenciana Speaking Market Laguna.</div>
 
 <div class="grid" id="grid"></div>
 
-<div style="text-align:center;padding:20px;font-weight:900;font-size:12px;letter-spacing:1px">
-TIERRA ROSA<br>Belleza que nace de la Tierra<br><br>TITANES SPEAKING<br>Hecho en México 2026<br><br>
-<button class="btn" style="max-width:200px" onclick="location.href='index.html'">Botón [Iniciar Sesión] vuelve a index</button>
+<div style="text-align:center;padding:18px;font-weight:900;font-size:10px;line-height:1.5">
+TIERRA ROSA<br>Asociación de esta Empresa Tienda en línea de productos de Maquillaje Belleza y Cosméticos con<br>TITANES<br>SPEAKING<br>Hecho en México 2026<br><br>
+<button class="btn" style="max-width:200px" onclick="location.href='index.html'">Botón [Iniciar Sesión]</button>
+<button class="btn" style="max-width:200px" onclick="location.href='tienda.html'">Botón [Tienda]</button>
 </div>
 
-<!-- MENU LATERAL -->
-<div class="menu" id="menu">
-<b>TIENDA</b> <span style="float:right;cursor:pointer" onclick="toggleMenu()">✕</span>
-<h3>Configuración</h3>
-<div>Acerca de</div><div>Configuración</div><div>Parámetros</div><div>Actualización del Sistema</div><div>Administración del Sistema</div><div>Usuarios</div><div>Cuentas</div><div>Google</div><div>Acerca de la Aplicación</div><div>Bienestar Digital y Controles Parentales</div><div>Atajos y Accesibilidad</div><div>Modo Ultra Juego</div><div>Ubicación</div><div>Privacidad</div><div>Contraseña</div><div>Seguridad</div><div>RAM y Almacenamiento</div><div>Batería</div><div>Sonido y Vibración</div><div>Efectos Dinámicos</div><div>Pantalla y Brillo</div><div>Más Conexiones</div><div>Bluetooth</div><div>Wi-fi y Datos Móviles</div><div>Información del Software</div><div>Estado</div><div>Información Legal</div><div>Servicio al Cliente</div><div>Versión del Sistema Operativo</div><div>Servicio de Garantía</div><div>Centros de Servicios</div><div>Derechos del Autor</div><div>Declaración de privacidad</div><div>Código Abierto</div><div>Noticias</div><div>Eventos</div><div>Rueda de Prensa</div><div>Belleza</div><div>Cosméticos</div><div>Maquillaje</div><div>Tarjeta de Regalo</div>
+<div class="menu" id="menu"><b>TIENDA</b> <span style="float:right;cursor:pointer" onclick="toggleMenu()">✕</span><br><br>
+Acerca de<br>Configuración<br>Parámetros<br>Actualización del Sistema<br>Administración del Sistema<br>Usuarios<br>Cuentas<br>Google<br>Acerca de la Aplicación<br>Bienestar Digital y Controles Parentales<br>Atajos y Accesibilidad<br>Modo Ultra Juego<br>Ubicación<br>Privacidad<br>Contraseña<br>Seguridad<br>RAM y Almacenamiento<br>Batería<br>Sonido y Vibración<br>Efectos Dinámicos<br>Pantalla y Brillo<br>Más Conexiones<br>Bluetooth<br>Wi-fi y Datos Móviles<br>Información del Software<br>Estado<br>Información Legal<br>Servicio al Cliente<br>Versión del Sistema Operativo<br>Servicio de Garantía<br>Centros de Servicios<br>Derechos del Autor<br>Declaración de privacidad<br>Código Abierto<br>Noticias<br>Eventos<br>Rueda de Prensa<br>Belleza<br>Cosméticos<br>Maquillaje<br>Tarjeta de Regalo
 </div>
 
-<!-- PERFIL -->
-<div class="perfil" id="perfil">
-<div class="perfil-box">
-  <div class="perfil-head">
-    <b>Perfil 👤</b>
-    <div style="display:flex;gap:12px;align-items:center">
-      <span style="cursor:pointer" onclick="compartirPerfil()">⋮ compartir</span>
-      <span style="cursor:pointer" onclick="closePerfil()">✕</span>
-    </div>
-  </div>
-
-  <div style="text-align:center;margin:10px 0">
-    <img id="fotoPrev" src="" style="width:90px;height:90px;border-radius:50%;border:3px solid #D9C5A0;object-fit:cover;display:none">
-    <div id="fotoIcon" style="width:90px;height:90px;border-radius:50%;border:3px solid #D9C5A0;display:flex;align-items:center;justify-content:center;margin:auto;background:#fff;font-size:40px">👤</div>
-    <input type="file" id="fotoInput" accept="image/*" style="margin-top:8px">
-    <button class="btn" onclick="guardarFoto()">Botón Guardar foto</button>
-  </div>
-
-  <input class="input" placeholder="Descripción"><button class="btn">Botón Guardar</button>
-  <input class="input" placeholder="Biografía"><button class="btn">Botón Guardar</button>
-  <input class="input" placeholder="Nombre Completo"><input class="input" placeholder="Edad"><input class="input" placeholder="Apodo"><input class="input" placeholder="Secundaria Escribir"><input class="input" placeholder="Universidad Escribir">
-  <input class="input" placeholder="Link Web 1"><input class="input" placeholder="Link Web 2"><input class="input" placeholder="Link Web 3"><input class="input" placeholder="Link Web 4"><input class="input" placeholder="Link Web 5"><input class="input" placeholder="Link Web 6"><button class="btn">Botón Guardar</button>
-  <input class="input" placeholder="Link Red Social 1"><input class="input" placeholder="Link Red Social 2"><input class="input" placeholder="Link Red Social 3"><input class="input" placeholder="Link Red Social 4"><input class="input" placeholder="Link Red Social 5"><input class="input" placeholder="Link Red Social 6"><button class="btn">Botón Guardar</button>
-  <input class="input" placeholder="País E-mail"><input class="input" placeholder="Teléfono"><input class="input" placeholder="Ocupación"><input class="input" placeholder="Idioma">
-  <select class="input"><option>Zona horaria mundial por país</option><option>México GMT-6</option><option>España GMT+1</option><option>USA GMT-5</option></select>
-  <button class="btn">Botón Guardar</button>
-  <button class="btn" style="background:#000;color:#fff" onclick="location.href='index.html'">Botón Cerrar Sesión</button>
+<div class="perfil" id="perfil"><div class="box">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<b>Perfil 👤</b>
+<div style="display:flex;gap:8px;align-items:center">
+<span onclick="compartirPerfil()" style="cursor:pointer;font-size:9px;font-weight:900;border:2px solid #000;background:#fff;padding:5px 8px;border-radius:7px">⋮ compartir enlace de perfil</span>
+<span onclick="closePerfil()" style="cursor:pointer;font-weight:900;font-size:18px">✕</span>
 </div>
 </div>
+<div style="text-align:center;margin:8px 0"><img id="prev" style="width:80px;height:80px;border-radius:50%;display:none;margin:auto;object-fit:cover;border:3px solid #D9C5A0"><div id="ico" style="width:80px;height:80px;border-radius:50%;border:3px solid #D9C5A0;display:flex;align-items:center;justify-content:center;margin:auto;background:#fff;font-size:32px">👤</div><input type="file" id="file" accept="image/*" style="font-size:10px;margin-top:6px"><button class="btn">Botón Guardar foto</button></div>
+<label style="font-size:9px;font-weight:900">Descripción</label><input class="inp"><button class="btn">Botón Guardar</button>
+<label style="font-size:9px;font-weight:900">Biografía</label><input class="inp"><button class="btn">Botón Guardar</button>
+<label style="font-size:9px;font-weight:900">Nombre Completo Edad Apodo Escribir</label><input class="inp" placeholder="Nombre Completo"><input class="inp" placeholder="Edad"><input class="inp" placeholder="Apodo"><button class="btn" style="display:none">Guardar</button>
+<label style="font-size:9px;font-weight:900">6 Links Webs</label><input class="inp" placeholder="Web 1"><input class="inp" placeholder="Web 2"><input class="inp" placeholder="Web 3"><input class="inp" placeholder="Web 4"><input class="inp" placeholder="Web 5"><input class="inp" placeholder="Web 6"><button class="btn">Botón Guardar</button>
+<label style="font-size:9px;font-weight:900">6 Links de Redes Sociales</label><input class="inp" placeholder="Red 1"><input class="inp" placeholder="Red 2"><input class="inp" placeholder="Red 3"><input class="inp" placeholder="Red 4"><input class="inp" placeholder="Red 5"><input class="inp" placeholder="Red 6"><button class="btn">Botón Guardar</button>
+<input class="inp" placeholder="País E-mail"><input class="inp" placeholder="Teléfono"><input class="inp" placeholder="Ocupación"><input class="inp" placeholder="Idioma">
+<select class="inp"><option>Menu desplegable de Zona horaria mundial por país</option><option>México GMT-6</option><option>USA GMT-5</option><option>Colombia GMT-5</option><option>España GMT+1</option><option>Argentina GMT-3</option></select><button class="btn">Botón Guardar</button>
+<button class="btn" style="background:#000;color:#fff" onclick="location.href='index.html'">Botón Cerrar Sesión</button>
+<button class="btn" onclick="location.href='tienda.html'">Botón [Tienda] regresar a tienda.html</button>
+</div></div>
 
 <script>
-let productos=[
-"images (1).jpeg","images (2).jpeg","images (3).jpeg","images (4).jpeg","images (5).jpeg","images (7).jpeg","images (8).jpeg","images (9).jpeg","images (10).jpeg","images (11).jpeg","images (12).jpeg","images (13).jpeg","images (14).jpeg","images (15).jpeg","images (16).jpeg","images (20).jpeg","images (30).jpeg","images (40).jpeg","images (50).jpeg","images (60).jpeg","images.jpeg","140020.jpg"
-];
-function render(lista){
- let g=document.getElementById('grid');g.innerHTML='';
- lista.forEach(src=>{
-  g.innerHTML+=`<div class="card-prod"><img src="${src}" onerror="this.src='https://via.placeholder.com/300x300?text=TIERRA+ROSA'"><div class="info"><span class="badge">-20%</span><span class="badge">Nuevo</span><span class="badge">Destacado</span><div class="price">$299 MXN</div><button class="btn">Agregar 🛒</button></div></div>`;
+let lista=[];
+for(let i=1;i<=27;i++) lista.push(`images (${i}).jpeg`);
+let grid=document.getElementById('grid');
+function render(arr){
+ grid.innerHTML='';
+ arr.forEach(s=>{
+  let n=parseInt(s.match(/\d+/)[0]);
+  grid.innerHTML+=`
+  <div class="card" id="producto-${n}">
+    <div class="tcard"><span><span class="b2">TITANES</span> <span class="b2">SPEAKING</span></span><span style="cursor:pointer;font-size:20px;font-weight:900;padding:0 4px" onclick="compartirProducto(${n})">⋮</span></div>
+    <img loading="eager" src="${s}" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x300/F5E8D0/000000?text=images+(${n}).jpeg'">
+    <div class="info">
+      <div><span class="badge">-${10+n%40}%</span><span class="badge">Nuevo lanzamiento</span><span class="badge">Destacado</span></div>
+      <div class="price">$${120+n*3} MXN</div>
+      <div style="font-size:8px;opacity:.7">${s} • TIERRA ROSA</div>
+      <button class="btn">$ precios % de descuento</button>
+    </div>
+  </div>`;
  });
 }
-render(productos);
-function filtrar(){
- let t=document.getElementById('buscador').value.toLowerCase();
- let f=productos.filter(p=>p.toLowerCase().includes(t) || "tierra rosa belleza cosméticos".includes(t));
- render(f);
-}
+render(lista);
+function filtrar(){let q=document.getElementById('buscador').value.toLowerCase();if(!q){render(lista);return}let f=lista.filter(x=>x.toLowerCase().includes(q));render(f)}
 function toggleMenu(){document.getElementById('menu').classList.toggle('open')}
 function openPerfil(){document.getElementById('perfil').classList.add('open')}
 function closePerfil(){document.getElementById('perfil').classList.remove('open')}
-document.getElementById('fotoInput').addEventListener('change',function(e){
- let file=e.target.files[0]; if(!file)return;
- let url=URL.createObjectURL(file);
- document.getElementById('fotoPrev').src=url; document.getElementById('fotoPrev').style.display='block'; document.getElementById('fotoIcon').style.display='none';
-});
-function guardarFoto(){alert('Foto guardada ✓')}
-function compartirPerfil(){
- let link=location.href;
- if(navigator.share){navigator.share({title:'TIERRA ROSA - Mi Perfil',url:link})}
- else {navigator.clipboard.writeText(link); alert('Enlace copiado: '+link)}
-}
+document.getElementById('file').addEventListener('change',e=>{let f=e.target.files[0];if(!f)return;let u=URL.createObjectURL(f);let p=document.getElementById('prev');p.src=u;p.style.display='block';document.getElementById('ico').style.display='none'});
+function compartirApp(){let l=location.href;if(navigator.share)navigator.share({title:'TIERRA ROSA App',url:l});else{navigator.clipboard.writeText(l);alert('Link APP copiado: '+l)}}
+function compartirPerfil(){let l=location.href.split('#')[0]+'#perfil';if(navigator.share)navigator.share({title:'Mi Perfil TIERRA ROSA',url:l});else{navigator.clipboard.writeText(l);alert('Link PERFIL copiado: '+l)}}
+function compartirProducto(n){let l=location.href.split('#')[0]+`#producto-${n}`;if(navigator.share)navigator.share({title:`TIERRA ROSA Producto ${n}`,text:`TITANES SPEAKING`,url:l});else{navigator.clipboard.writeText(l);alert(`Link producto ${n} copiado: `+l)}}
 </script>
 </body>
-                                                                                                                         </html>
+                                                                                   </html>
