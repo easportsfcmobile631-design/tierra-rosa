@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TIERRA ROSA</title>
 <style>
 :root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#D9C5A0}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
 body{background:var(--beige);color:#000}
 .wrap{max-width:430px;margin:auto;padding:12px}
-.top{text-align:center;padding:16px 0}
-.icon{width:84px;height:84px;border-radius:50%;background:#fff;border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto}
-h1{font-size:26px;letter-spacing:2px;font-weight:900;margin-top:8px}
-h2{font-size:15px;margin-top:12px;letter-spacing:1px}
+.top{text-align:center;padding:18px 0}
+.icon{width:90px;height:90px;border-radius:50%;background:#fff;border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:46px;margin:0 auto}
+h1{font-size:28px;font-weight:900;letter-spacing:2px;margin-top:10px;color:#000}
+h2{font-size:15px;font-weight:900;margin-top:12px;letter-spacing:1px;color:#000}
 .card{background:var(--beige2);border:3px solid var(--borde);border-radius:14px;padding:12px;margin:12px 0}
-.lab{font-size:11px;font-weight:900;margin:7px 0 2px;display:block}
-.inp{width:100%;padding:11px;border:2px solid var(--borde);border-radius:9px;background:#fff;color:#000;font-size:12px}
-.btn{background:#fff;color:#000;border:2px solid #000;border-radius:9px;padding:11px;width:100%;font-weight:900;cursor:pointer;margin-top:9px;font-size:12px}
-.link-text{font-size:13.5px;font-weight:800;color:#000;text-align:center;padding:6px 0;cursor:pointer}
-.link-text:active{opacity:.6}
-.sep{text-align:center;font-weight:900;margin:14px 0;font-size:12px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.mini{background:#fff;color:#000;border:2px solid #000;border-radius:10px;padding:10px 3px;text-align:center;font-weight:900;font-size:9.5px;cursor:pointer}
-.foot{text-align:center;font-size:10px;font-weight:800;margin:20px 0;line-height:1.5}
+.lab{display:block;font-size:11px;font-weight:900;margin:8px 0 3px;color:#000}
+.inp{width:100%;padding:12px;border:2px solid var(--borde);border-radius:9px;background:#fff;color:#000;font-size:13px}
+.btn{width:100%;padding:12px;background:#fff;color:#000;border:2px solid #000;border-radius:9px;font-weight:900;font-size:12px;cursor:pointer;margin-top:10px}
+.btn:active{transform:scale(.97);background:#000;color:#fff}
+.enlaces{text-align:center;margin:20px 0;line-height:2.5}
+.enlaces a{display:block;color:#000;font-size:14px;font-weight:700;text-decoration:underline}
+.sep{text-align:center;font-weight:900;font-size:13px;margin:18px 0;color:#000}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mini{background:#fff;color:#000;border:2px solid #000;border-radius:11px;padding:12px 2px;text-align:center;font-weight:900;font-size:9.5px;cursor:pointer}
+.mini:active{background:#000;color:#fff}
+.foot{text-align:center;font-size:11px;font-weight:800;margin:22px 0;color:#000;line-height:1.6}
 </style>
 </head>
 <body>
 <div class="wrap">
+
 <div class="top">
 <div class="icon">🌸</div>
 <h1>TIERRA ROSA</h1>
@@ -83,20 +87,12 @@ h2{font-size:15px;margin-top:12px;letter-spacing:1px}
 <button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
+<!-- ENLACES TEXTO NEGRO COMO PEDISTE -->
 <div class="enlaces">
-
-    <a href="necesitas-ayuda.html">¿Necesitas ayuda?</a>
-
-    <a href="no-tienes-una-cuenta.html">¿No tienes una Cuenta?</a>
-
-    <a href="registrarme-aqui.html">Registrarme Aquí</a>
-
-    <a href="acceso-con-un-click.html">Acceso con un Click</a>
-
+<a href="registro.html">Registrarme Aquí?</a>
+<a href="tienda.html">Acceso con un Click?</a>
 </div>
 
-
-    
 <div class="sep">Ó<br>INICIAR SESIÓN CON UN CLICK</div>
 
 <div class="grid">
@@ -131,10 +127,13 @@ h2{font-size:15px;margin-top:12px;letter-spacing:1px}
 <div class="mini" onclick="location.href='tienda.html'">Telegram</div>
 <div class="mini" onclick="location.href='tienda.html'">Titanes</div>
 <div class="mini" onclick="location.href='tienda.html'">Speaking</div>
-<div class="mini" onclick="location.href='tienda.html'">TierraRosa</div>
+<div class="mini" onclick="location.href='tienda.html'">FreeFire</div>
+<div class="mini" onclick="location.href='tienda.html'">Amazon</div>
+<div class="mini" onclick="location.href='tienda.html'">FCMobile</div>
 </div>
 
 <div class="foot">Gracias por tu preferencia en Tierra Rosa.<br>TIERRA ROSA - Hecho en México 2026</div>
+
 </div>
 </body>
     </html>
