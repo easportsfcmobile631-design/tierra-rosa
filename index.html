@@ -1,149 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIERRA ROSA - Belleza que nace de la Tierra</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="TIERRA ROSA">
-<link rel="apple-touch-icon" href="images.jpeg">  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIERRA ROSA</title>
 <style>
-:root{
---beige:#F5E8D0; /* Beige claro tono arena cálido / crema tostado */
---beige2:#EADDC1;
---beige3:#FFF8EC;
---negro:#000000;
---blanco:#FFFFFF;
---borde:#D9C5A0;
-}
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui, -apple-system, Segoe UI;}
-body{background:var(--beige);color:var(--negro);padding:14px;}
-.card{background:var(--beige3);border:3px solid var(--borde);border-radius:24px;padding:20px;max-width:860px;margin:auto;box-shadow:0 8px 30px rgba(0,0,0,.12);}
-.circle{width:86px;height:86px;border-radius:50%;background:var(--blanco);border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:44px;margin:auto;box-shadow:0 4px 15px rgba(0,0,0,.1);}
-.title{color:var(--negro);text-align:center;letter-spacing:4px;font-weight:900;font-size:26px;margin-top:12px;}
-.sub{color:var(--negro);text-align:center;font-size:13px;letter-spacing:2px;margin-top:4px;font-weight:600;opacity:.8;}
-.section{border:3px solid var(--borde);border-radius:18px;padding:14px;margin:12px 0;background:var(--blanco);}
-.h2{color:var(--negro);font-weight:900;font-size:14px;text-align:center;letter-spacing:1px;margin-bottom:10px;}
-.input{width:100%;padding:13px;border:2px solid var(--borde);border-radius:12px;background:var(--beige3);color:var(--negro);font-size:13px;margin:6px 0;outline:none;}
-.input::placeholder{color:#8a7d68;}
-.btn-white{width:100%;padding:13px;background:var(--blanco);border:3px solid var(--negro);border-radius:12px;font-weight:900;color:var(--negro);cursor:pointer;margin-top:8px;font-size:13px;letter-spacing:1px;box-shadow:0 3px 0 var(--negro);}
-.btn-white:active{transform:translateY(2px);box-shadow:0 1px 0 var(--negro);}
-.grid-social{display:grid;grid-template-columns:1fr 1fr;gap:10px;}@media(max-width:600px){.grid-social{grid-template-columns:1fr;}}
-.social-btn{padding:12px;background:var(--blanco);border:2.5px solid var(--negro);border-radius:12px;font-weight:800;color:var(--negro);cursor:pointer;font-size:12px;text-align:center;box-shadow:0 2px 0 var(--negro);}
-.social-btn:hover{background:var(--beige);}
-.link{color:var(--negro);font-weight:900;text-decoration:underline;cursor:pointer;}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--negro);color:var(--blanco);padding:12px 22px;border-radius:20px;font-weight:900;display:none;z-index:99;border:2px solid var(--blanco);}
-.small{font-size:11px;text-align:center;color:var(--negro);margin-top:6px;line-height:1.5;}
+:root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#D9C5A0}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:var(--beige);color:#000}
+.wrap{max-width:430px;margin:auto;padding:12px}
+.top{text-align:center;padding:16px 0}
+.icon{width:84px;height:84px;border-radius:50%;background:#fff;border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto}
+h1{font-size:26px;letter-spacing:2px;font-weight:900;margin-top:8px}
+h2{font-size:15px;margin-top:12px;letter-spacing:1px}
+.card{background:var(--beige2);border:3px solid var(--borde);border-radius:14px;padding:12px;margin:12px 0}
+.lab{font-size:11px;font-weight:900;margin:7px 0 2px;display:block}
+.inp{width:100%;padding:11px;border:2px solid var(--borde);border-radius:9px;background:#fff;color:#000;font-size:12px}
+.btn{background:#fff;color:#000;border:2px solid #000;border-radius:9px;padding:11px;width:100%;font-weight:900;cursor:pointer;margin-top:9px;font-size:12px}
+.btn:active{transform:scale(.97)}
+.links{text-align:center;font-size:12px;font-weight:700;margin:10px 0;line-height:1.8}
+.sep{text-align:center;font-weight:900;margin:14px 0;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.mini{background:#fff;color:#000;border:2px solid #000;border-radius:10px;padding:10px 3px;text-align:center;font-weight:900;font-size:9.5px;cursor:pointer}
+.mini:active{background:#000;color:#fff}
+.foot{text-align:center;font-size:10px;font-weight:800;margin:20px 0;line-height:1.5}
 </style>
 </head>
 <body>
-<div id="toast" class="toast"></div>
+<div class="wrap">
+<div class="top">
+<div class="icon">🌸</div>
+<h1>TIERRA ROSA</h1>
+<h2>INICIAR SESIÓN</h2>
+</div>
+
 <div class="card">
-<div class="circle">🌸</div>
-<h1 class="title">TIERRA ROSA</h1>
-<p class="sub">Belleza que nace de la Tierra</p>
-
-<!-- INICIAR SESIÓN PRINCIPAL -->
-<div class="section">
-<div class="h2">INICIAR SESIÓN</div>
-<input class="input" id="u1" placeholder="Usuario">
-<input class="input" id="p1" type="password" placeholder="Contraseña">
-<button class="btn-white" onclick="loginGen('Principal')">Botón Login</button>
+<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="go()">Login</button>
 </div>
 
-<!-- Teléfono -->
-<div class="section">
-<div class="h2">Teléfono</div>
-<input class="input" id="tel" placeholder="Teléfono">
-<input class="input" id="u_tel" placeholder="Usuario">
-<input class="input" id="p_tel" type="password" placeholder="Contraseña">
-<button class="btn-white" onclick="loginGen('Teléfono')">Botón Login</button>
+<div class="card">
+<span class="lab">Teléfono</span><input class="inp" placeholder="Teléfono">
+<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="go()">Login</button>
 </div>
 
-<!-- 1er Correo -->
-<div class="section">
-<div class="h2">1er Correo Electrónico</div>
-<input class="input" id="mail1" placeholder="1er Correo Electrónico">
-<input class="input" id="u_mail1" placeholder="Usuario">
-<input class="input" id="p_mail1" type="password" placeholder="Contraseña">
-<button class="btn-white" onclick="loginGen('1er Correo')">Botón Login</button>
+<div class="card">
+<span class="lab">1er Correo Electrónico</span><input class="inp" placeholder="Correo">
+<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="go()">Login</button>
 </div>
 
-<!-- 2do Correo -->
-<div class="section">
-<div class="h2">2do Correo Electrónico</div>
-<input class="input" id="mail2" placeholder="2do Correcto Electrónico">
-<input class="input" id="u_mail2" placeholder="Usuario">
-<input class="input" id="p_mail2" type="password" placeholder="Contraseña">
-<button class="btn-white" onclick="loginGen('2do Correo')">Botón Login</button>
+<div class="card">
+<span class="lab">2do Correo Electrónico</span><input class="inp" placeholder="Correo">
+<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="go()">Login</button>
 </div>
 
-<!-- Microsoft -->
-<div class="section">
-<div class="h2">Microsoft</div>
-<input class="input" id="u_ms" placeholder="Microsoft Usuario">
-<input class="input" id="p_ms" type="password" placeholder="Contraseña">
-<button class="btn-white" onclick="loginGen('Microsoft')">Botón Login</button>
+<div class="card">
+<span class="lab">Microsoft Usuario</span><input class="inp" placeholder="Microsoft Usuario">
+<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="go()">Login</button>
 </div>
 
-<!-- Drive -->
-<div class="section">
-<div class="h2">Drive (solo)</div>
-<input class="input" id="p_drive" type="password" placeholder="Contraseña">
-<button class="btn-white" onclick="loginGen('Drive')">Botón Login</button>
+<div class="card">
+<span class="lab">Drive (solo)</span><input class="inp" placeholder="Drive">
+<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="go()">Login</button>
 </div>
 
-<!-- Netacad -->
-<div class="section">
-<div class="h2">Netacad (solo)</div>
-<input class="input" id="p_netacad" type="password" placeholder="Contraseña">
-<button class="btn-white" onclick="loginGen('Netacad')">Botón Login</button>
+<div class="card">
+<span class="lab">Netacad (solo)</span><input class="inp" placeholder="Netacad">
+<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="go()">Login</button>
 </div>
 
-<!-- Outlook -->
-<div class="section">
-<div class="h2">Outlook (solo)</div>
-<input class="input" id="p_outlook" type="password" placeholder="Contraseña">
-<button class="btn-white" onclick="loginGen('Outlook')">Botón Login</button>
+<div class="card">
+<span class="lab">Outlook (solo)</span><input class="inp" placeholder="Outlook">
+<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="go()">Login</button>
 </div>
 
-<div class="section" style="text-align:center;">
-<p class="small"><span class="link" onclick="location.href='ayuda.html'">Necesitas ayuda?</span></p>
-<p class="small">No tienes una Cuenta? <span class="link" onclick="location.href='registro.html'">Registrarme Aquí</span></p>
-<button class="btn-white" style="margin-top:12px;" onclick="location.href='acceso-con-un-click.html'">Acceso con un Click</button>
+<div class="links">
+Necesitas ayuda?<br>
+No tienes una Cuenta?<br>
+Registrarme Aquí?<br>
+Acceso con un Click?
 </div>
 
-<!-- INICIAR SESIÓN CON -->
-<div class="section">
-<div class="h2">INICIAR SESIÓN CON<br><span style="font-size:10px;font-weight:600;">Estos botones van directo a tu tienda.</span></div>
-<div class="grid-social" id="socialGrid"></div>
+<div class="sep">Ó<br>INICIAR SESIÓN CON UN CLICK</div>
+
+<div class="grid">
+<div class="mini" onclick="go()">Google</div>
+<div class="mini" onclick="go()">GitHub</div>
+<div class="mini" onclick="go()">Vercel</div>
+<div class="mini" onclick="go()">Netlify</div>
+<div class="mini" onclick="go()">Render</div>
+<div class="mini" onclick="go()">Claro</div>
+<div class="mini" onclick="go()">Word</div>
+<div class="mini" onclick="go()">Files</div>
+<div class="mini" onclick="go()">Copa Fácil</div>
+<div class="mini" onclick="go()">Spotify</div>
+<div class="mini" onclick="go()">Facebook</div>
+<div class="mini" onclick="go()">Steam</div>
+<div class="mini" onclick="go()">Bluesky</div>
+<div class="mini" onclick="go()">XBOX</div>
+<div class="mini" onclick="go()">Apple TV</div>
+<div class="mini" onclick="go()">LinkedIn</div>
+<div class="mini" onclick="go()">Tik Tok</div>
+<div class="mini" onclick="go()">Canva</div>
+<div class="mini" onclick="go()">Pinterest</div>
+<div class="mini" onclick="go()">Threads</div>
+<div class="mini" onclick="go()">Duolingo</div>
+<div class="mini" onclick="go()">Termux</div>
+<div class="mini" onclick="go()">YouTube</div>
+<div class="mini" onclick="go()">EA</div>
+<div class="mini" onclick="go()">Acode</div>
+<div class="mini" onclick="go()">Twitch</div>
+<div class="mini" onclick="go()">Instagram</div>
+<div class="mini" onclick="go()">Snapchat</div>
+<div class="mini" onclick="go()">Telegram</div>
+<div class="mini" onclick="go()">Titanes</div>
+<div class="mini" onclick="go()">Speaking</div>
+<div class="mini" onclick="go()">TierraRosa</div>
 </div>
 
-<p class="small" style="margin-top:14px;font-weight:800;">Gracias por tu preferencia en Tierra Rosa.</p>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;">
-<button class="btn-white" onclick="location.href='banco-de-enlaces.html'">Banco de Enlaces</button>
-<button class="btn-white" onclick="location.href='acceso-con-un-click.html'">Acceso 1 Click</button>
-</div>
+<div class="foot">Gracias por tu preferencia en Tierra Rosa.<br>TIERRA ROSA - Hecho en México 2026</div>
 </div>
 
 <script>
-const redes=["Google","GitHub","Vercel","Netlify","Render","Claro","Word","Files","Copa Fácil","Spotify","Facebook","Steam","Bluesky","XBOX","Apple TV","LinkedIn","Tik Tok","Canva","Pinterest","Threads","Duolingo","Termux","YouTube","EA","Acode","Twitch","Instagram","Snapchat","Telegram","Titanes","Speaking","Tierra Rosa"];
-function toast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2600);}
-function loginGen(origen){localStorage.setItem('tr_user','ok');localStorage.setItem('tr_login_origen',origen);toast('Login '+origen+' ✓ Entrando a tienda');setTimeout(()=>location.href='tienda.html',600);}
-function renderSocial(){
-let cont=document.getElementById('socialGrid');
-cont.innerHTML='';
-redes.forEach(nombre=>{
-let btn=document.createElement('button');
-btn.className='social-btn';
-btn.innerText='Botón '+nombre;
-btn.onclick=()=>{localStorage.setItem('tr_user','ok');localStorage.setItem('tr_last_social',nombre);toast('Botón '+nombre+' → Tienda');setTimeout(()=>location.href='tienda.html',500);};
-cont.appendChild(btn);
-});
-}
-window.onload=renderSocial;
+function go(){ location.href='tienda.html'; }
 </script>
 </body>
     </html>
