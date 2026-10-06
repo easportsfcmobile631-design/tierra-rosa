@@ -9,109 +9,104 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:var(--beige);color:#000}
 .wrap{max-width:430px;margin:auto;padding:12px}
-.top{text-align:center;padding:16px 0}
-.icon{width:84px;height:84px;border-radius:50%;background:#fff;border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto}
-h1{font-size:22px;font-weight:900;letter-spacing:1px;margin-top:10px;color:#000}
-.card{background:var(--beige2);border:3px solid var(--borde);border-radius:14px;padding:12px;margin:12px 0}
-.lab{display:block;font-size:11px;font-weight:900;margin:8px 0 3px;color:#000}
-.inp{width:100%;padding:11px;border:2px solid var(--borde);border-radius:9px;background:#fff;color:#000;font-size:12px;margin-bottom:6px}
-.btn{width:100%;padding:11px;background:#fff;color:#000;border:2px solid #000;border-radius:9px;font-weight:900;font-size:12px;cursor:pointer;margin-top:8px}
-.btn2{background:#000;color:#fff;border:2px solid #000}
-.btn:active{transform:scale(.97)}
-.row{display:flex;gap:7px}
-.row .inp{flex:1}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.terms{font-size:10px;font-weight:700;line-height:1.5;background:#fff;border:2px solid var(--borde);border-radius:10px;padding:10px;height:90px;overflow-y:auto;text-align:left}
-.foot{text-align:center;font-size:11px;font-weight:800;margin:20px 0}
+.top{text-align:center;padding:12px}
+.icon{width:78px;height:78px;border-radius:50%;background:#fff;border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:38px;margin:auto}
+h1{font-size:19px;font-weight:900;margin-top:6px}
+.card{background:var(--beige2);border:3px solid var(--borde);border-radius:13px;padding:10px;margin:10px 0}
+.lab{font-size:10px;font-weight:900;display:block;margin:6px 0 2px}
+.inp{width:100%;padding:10px;border:2px solid var(--borde);border-radius:8px;background:#fff;color:#000;font-size:11px;margin-bottom:3px}
+.row{display:flex;gap:6px;align-items:center}
+.btn{background:#fff;color:#000;border:2px solid #000;border-radius:8px;padding:10px;font-weight:900;font-size:10px;cursor:pointer;width:100%;margin-top:6px}
+.btnS{width:80px;flex-shrink:0;margin:0}
+.btnN{background:#000;color:#fff}
+.btn:active{transform:scale(.96)}
+.ok{font-size:9px;font-weight:800;color:green}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="top">
-<div class="icon">🌸</div>
-<h1>REGISTRARME AQUÍ</h1>
+<div class="top"><div class="icon">🌸</div><h1>REGISTRARME AQUÍ</h1></div>
+
+<div class="card">
+<span class="lab">1er Nombre</span><div class="row"><input id="n1" class="inp" placeholder="1er Nombre"><button class="btn btnS" onclick="g('n1')">Guardar</button></div><span id="m_n1" class="ok"></span>
+<span class="lab">2do Nombre</span><div class="row"><input id="n2" class="inp" placeholder="2do Nombre"><button class="btn btnS" onclick="g('n2')">Guardar</button></div><span id="m_n2" class="ok"></span>
+<span class="lab">1er Apellido</span><div class="row"><input id="a1" class="inp" placeholder="1er Apellido"><button class="btn btnS" onclick="g('a1')">Guardar</button></div><span id="m_a1" class="ok"></span>
+<span class="lab">2do Apellido</span><div class="row"><input id="a2" class="inp" placeholder="2do Apellido"><button class="btn btnS" onclick="g('a2')">Guardar</button></div><span id="m_a2" class="ok"></span>
 </div>
 
 <div class="card">
-<span class="lab">1er Nombre</span>
-<div class="row"><input class="inp" placeholder="1er Nombre"><button class="btn" style="width:90px;margin:0">Guardar</button></div>
-<span class="lab">2do Nombre</span>
-<div class="row"><input class="inp" placeholder="2do Nombre"><button class="btn" style="width:90px;margin:0">Guardar</button></div>
-<span class="lab">1er Apellido</span>
-<div class="row"><input class="inp" placeholder="1er Apellido"><button class="btn" style="width:90px;margin:0">Guardar</button></div>
-<span class="lab">2do Apellido</span>
-<div class="row"><input class="inp" placeholder="2do Apellido"><button class="btn" style="width:90px;margin:0">Guardar</button></div>
+<span class="lab">Usuario</span><input id="u0" class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input id="p0" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="g2('up0','u0,p0')">Guardar</button><span id="m_up0" class="ok"></span>
+
+<span class="lab">Teléfono</span><input id="tel" class="inp" placeholder="Teléfono">
+<span class="lab">Usuario</span><input id="u1" class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input id="p1" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="g2('up1','tel,u1,p1')">Guardar</button><span id="m_up1" class="ok"></span>
 </div>
 
 <div class="card">
-<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="alert('Usuario Guardado')">Guardar</button>
-<span class="lab">Teléfono</span><input class="inp" placeholder="Teléfono">
-<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="alert('Teléfono Guardado')">Guardar</button>
+<span class="lab">1er Correo Electrónico</span><input id="c1" class="inp" placeholder="Correo">
+<span class="lab">Usuario</span><input id="c1u" class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input id="c1p" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="g2('correo1','c1,c1u,c1p')">Guardar</button><span id="m_correo1" class="ok"></span>
+
+<span class="lab">2do Correo Electrónico</span><input id="c2" class="inp" placeholder="Correo">
+<span class="lab">Usuario</span><input id="c2u" class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input id="c2p" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="g2('correo2','c2,c2u,c2p')">Guardar</button><span id="m_correo2" class="ok"></span>
 </div>
 
 <div class="card">
-<span class="lab">1er Correo Electrónico</span><input class="inp" placeholder="Correo">
-<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn">Guardar</button>
+<span class="lab">Microsoft Usuario</span><input id="msu" class="inp" placeholder="Microsoft Usuario">
+<span class="lab">Contraseña</span><input id="msp" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="g2('ms','msu,msp')">Guardar</button><span id="m_ms" class="ok"></span>
 
-<span class="lab">2do Correo Electrónico</span><input class="inp" placeholder="Correo">
-<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn">Guardar</button>
+<span class="lab">Drive (solo)</span><input id="dru" class="inp" placeholder="Drive">
+<span class="lab">Contraseña</span><input id="drp" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="g2('drive','dru,drp')">Guardar</button><span id="m_drive" class="ok"></span>
+
+<span class="lab">Netacad (solo)</span><input id="neu" class="inp" placeholder="Netacad">
+<span class="lab">Contraseña</span><input id="nep" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="g2('netacad','neu,nep')">Guardar</button><span id="m_netacad" class="ok"></span>
+
+<span class="lab">Outlook (solo)</span><input id="ouu" class="inp" placeholder="Outlook">
+<span class="lab">Contraseña</span><input id="oup" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="g2('outlook','ouu,oup')">[Guardar]</button><span id="m_outlook" class="ok"></span>
 </div>
 
 <div class="card">
-<span class="lab">Microsoft Usuario</span><input class="inp" placeholder="Microsoft">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn">Guardar</button>
-
-<span class="lab">Drive (solo)</span><input class="inp" placeholder="Drive">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn">Guardar</button>
-
-<span class="lab">Netacad (solo)</span><input class="inp" placeholder="Netacad">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn">Guardar</button>
-
-<span class="lab">Outlook (solo)</span><input class="inp" placeholder="Outlook">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn">Guardar</button>
-</div>
-
-<div class="card">
-<span class="lab">1er Apodo</span><input class="inp" placeholder="Apodo">
-<span class="lab">Fecha de Nacimiento</span><input class="inp" type="date">
-<div class="grid2">
-<div><span class="lab">Edad</span><input class="inp" placeholder="Edad"></div>
-<div><span class="lab">Ciudad</span><input class="inp" placeholder="Ciudad"></div>
-<div><span class="lab">Estado</span><input class="inp" placeholder="Estado"></div>
-<div><span class="lab">País</span><input class="inp" placeholder="País"></div>
-</div>
-<button class="btn" onclick="alert('Datos agregados')">Agrega</button>
+<span class="lab">1er Apodo Fecha de Nacimiento Edad Ciudad Estado País</span>
+<input id="apodo" class="inp" placeholder="1er Apodo">
+<input id="fecha" class="inp" type="date">
+<input id="edad" class="inp" placeholder="Edad">
+<input id="ciudad" class="inp" placeholder="Ciudad">
+<input id="estado" class="inp" placeholder="Estado">
+<input id="pais" class="inp" placeholder="País">
+<button class="btn" onclick="g2('perfil','apodo,fecha,edad,ciudad,estado,pais')">Agrega</button><span id="m_perfil" class="ok"></span>
 </div>
 
 <div class="card">
 <span class="lab">5 Términos y Condiciones de la App</span>
-<div class="terms">
-1. Tus datos están protegidos en Tierra Rosa.<br>
-2. No compartimos contraseñas con terceros.<br>
-3. Al registrarte aceptas el uso responsable de la app.<br>
-4. Puedes borrar tu cuenta en cualquier momento.<br>
-5. Tierra Rosa es una app hecha en México para ti.
+<div style="font-size:9px;background:#fff;border:2px solid #D9C5A0;border-radius:8px;padding:8px;height:80px;overflow:auto">
+1. Datos protegidos en Tierra Rosa.<br>2. No compartimos contraseñas.<br>3. Uso responsable.<br>4. Puedes borrar cuenta cuando quieras.<br>5. App hecha en México 2026.
 </div>
-<label style="font-size:11px;font-weight:900;margin-top:8px;display:flex;gap:6px"><input type="checkbox"> Acepto Términos y Condiciones</label>
-<button class="btn">Guardar</button>
+<label style="font-size:10px;font-weight:900"><input type="checkbox" id="check"> Acepto</label>
+<button class="btn" onclick="gTerm()">[Guardar]</button><span id="m_term" class="ok"></span>
 </div>
 
-<button class="btn btn2" style="margin-top:14px" onclick="location.href='tienda.html'">Registrar</button>
-<button class="btn" onclick="location.href='index.html'">Iniciar Sesión</button>
+<button class="btn btnN" onclick="registrar()">[Registrar]</button>
+<button class="btn" onclick="iniciar()">[Iniciar Sesión]</button>
 
-<div class="foot">Gracias por tu preferencia en Tierra Rosa.</div>
+<div style="text-align:center;font-size:10px;font-weight:800;margin:12px">Gracias por tu preferencia en Tierra Rosa.</div>
 </div>
+
+<script>
+function g(id){let v=document.getElementById(id).value.trim();if(!v){alert('Escribe '+id);return}localStorage.setItem(id,v);document.getElementById('m_'+id).innerText='✓ Guardado';alert('Guardado ✅');}
+function g2(key,ids){let arr=ids.split(',');let vals=[];for(let k of arr){let v=document.getElementById(k).value.trim();if(!v){alert('Llena '+k);return}vals.push(v)}localStorage.setItem(key,vals.join('|'));document.getElementById('m_'+key).innerText='✓ Guardado: '+vals.join(' ');alert(key+' Guardado ✅');}
+function gTerm(){if(!document.getElementById('check').checked){alert('Marca Acepto');return}localStorage.setItem('terminos','si');document.getElementById('m_term').innerText='✓ Términos Guardados';alert('Términos Guardados ✅');}
+function registrar(){if(!localStorage.getItem('n1')||!localStorage.getItem('a1')){alert('Guarda al menos 1er Nombre y 1er Apellido');return}if(localStorage.getItem('terminos')!=='si'){alert('Guarda los Términos');return}localStorage.setItem('registrado','si');alert('REGISTRO EXITOSO TITAN ✅ Bienvenido a Tierra Rosa');location.href='tienda.html';}
+function iniciar(){location.href='index.html';}
+</script>
 </body>
     </html>
