@@ -1,155 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ACCESO CON UN CLICK - TIERRA ROSA</title>
 <style>
-:root{--beige:#F5E8D0;--beige3:#FFF8EC;--negro:#000;--blanco:#FFF;--borde:#D9C5A0;--verde:#1f9d2b;}
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
-body{background:var(--beige);color:var(--negro);padding:14px;}
-.card{background:var(--beige3);border:3px solid var(--borde);border-radius:24px;padding:18px;max-width:900px;margin:auto;box-shadow:0 8px 30px rgba(0,0,0,.12);}
-.circle{width:80px;height:80px;border-radius:50%;background:var(--blanco);border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:42px;margin:auto;}
-.title{color:var(--negro);text-align:center;letter-spacing:3px;font-weight:900;margin-top:10px;}
-.p{font-size:11px;line-height:1.6;text-align:center;margin:10px 0;font-weight:600;}
-.box{border:2.5px solid var(--borde);border-radius:16px;padding:12px;margin:10px 0;background:var(--blanco);}
-.row-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
-.tag{font-weight:900;font-size:12px;}
-.status{font-size:10px;font-weight:900;}
-.input{width:100%;padding:12px;border:2px solid var(--borde);border-radius:12px;background:var(--beige3);color:var(--negro);font-size:10px;margin-bottom:8px;}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}@media(max-width:650px){.grid3{grid-template-columns:1fr;}}
-.btn-white{padding:12px;background:var(--blanco);border:2.8px solid var(--negro);border-radius:12px;font-weight:900;color:var(--negro);cursor:pointer;font-size:11px;box-shadow:0 2px 0 var(--negro);text-align:center;}
-.btn-white.ok{background:#d4ffd6;border-color:var(--verde);color:var(--verde);}
-.btn-white:active{transform:translateY(1px);}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--negro);color:var(--blanco);padding:12px 22px;border-radius:20px;font-weight:900;display:none;z-index:99;}
+:root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#D9C5A0}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:var(--beige);color:#000}
+.wrap{max-width:520px;margin:auto;padding:12px}
+.top{text-align:center;padding:16px 0}
+.icon{width:84px;height:84px;border-radius:50%;background:#fff;border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto}
+h1{font-size:20px;font-weight:900;margin-top:10px;letter-spacing:1px}
+.card{background:var(--beige2);border:3px solid var(--borde);border-radius:14px;padding:12px;margin:12px 0}
+.lab{display:block;font-size:12px;font-weight:900;margin:6px 0 4px}
+.inp{width:100%;padding:11px;border:2px solid var(--borde);border-radius:9px;background:#fff;color:#000;font-size:12px}
+.btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px}
+.btn{background:#fff;color:#000;border:2px solid #000;border-radius:8px;padding:9px;font-weight:900;font-size:10px;cursor:pointer}
+.btn:active{transform:scale(.96);background:#000;color:#fff}
+.btn-ok{background:#000;color:#fff}
+.foot{text-align:center;margin:18px 0}
+.btnInicio{width:100%;max-width:200px;padding:12px;background:#fff;color:#000;border:2px solid #000;border-radius:10px;font-weight:900;cursor:pointer}
 </style>
 </head>
 <body>
-<div id="toast" class="toast"></div>
-<div class="card">
-<div class="circle">🌸</div>
-<h1 class="title">ACCESO CON UN CLICK</h1>
-
-<div class="box">
-<p class="p">
-Copiar enlace y dale click en Guardar en automático con el Link de la App que elegiste se activará el botón para iniciar Sesión en automático.<br>
-El link es el enlace que te dará acceso con un click a iniciar sesión.<br>
-El botón Guardar es para guardar el enlace de red social el otro botón es el icono de la aplicación de Red Social que al darle click funcionará con un acceso con un click directo a Tienda.<br>
-<a href="#" onclick="verComo()" style="color:#000;font-weight:900;">Cómo obtener mi enlace? link</a><br>
-Cuidado que son 3 botones el Guardar el Login y el Autorizar son independientes el Login está vinculado directo a su botón de la página de Iniciar Sesión según la app de la red social.<br>
-El botón Autorizar le autoriza al Login entrar directo a la tienda si entrará directo.<br>
-Es un proceso de compartir permisos y credenciales de la cuenta de red social de la app en la que tu estás registrado.
-</p>
-<p class="p" id="como" style="display:none;background:#F5E8D0;padding:10px;border-radius:10px;border:2px dashed #000;">Cómo obtener mi enlace?<br>1. Ve a banco-de-enlaces.html<br>2. Copia el enlace falso de proyecto (ej: tierra-rosa-proyecto-fake.local/ID_Client-235...)<br>3. Pégalo aquí en añadir enlace<br>4. Dale Guardar -> luego Autorizar -> luego Login → Tienda</p>
+<div class="wrap">
+<div class="top">
+<div class="icon">🌸</div>
+<h1>ACCESO CON UN CLICK</h1>
 </div>
 
 <div id="lista"></div>
 
-<button class="btn-white" style="width:100%;padding:16px;margin-top:14px;" onclick="location.href='index.html'">Botón [Inicio] a index.html</button>
-<p style="text-align:center;font-size:11px;margin-top:10px;font-weight:800;">Gracias por tu preferencia en Tierra Rosa.</p>
+<div class="foot"><button class="btnInicio" onclick="location.href='index.html'">[Inicio]</button></div>
 </div>
 
 <script>
-const datos=[
-["Google","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/google/fake-token-g001-NO-REAL"],
-["GitHub","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/github/fake-token-gh002-NO-REAL"],
-["Vercel","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/vercel/fake-token-vc003-NO-REAL"],
-["Netlify","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/netlify/fake-token-nt004-NO-REAL"],
-["Render","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/render/fake-token-rd005-NO-REAL"],
-["Claro","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/claro/fake-token-cl006-NO-REAL"],
-["Word","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/word/fake-token-wd007-NO-REAL"],
-["Files","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/files/fake-token-fl008-NO-REAL"],
-["Copa Fácil","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/copa-facil/fake-token-cp009-NO-REAL"],
-["Spotify","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/spotify/fake-token-sp010-NO-REAL"],
-["Facebook","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/facebook/fake-token-fb011-NO-REAL"],
-["Steam","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/steam/fake-token-st012-NO-REAL"],
-["Bluesky","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/bluesky/fake-token-bs013-NO-REAL"],
-["XBOX","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/xbox/fake-token-xb014-NO-REAL"],
-["Apple TV","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/apple-tv/fake-token-at015-NO-REAL"],
-["LinkedIn","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/linkedin/fake-token-li016-NO-REAL"],
-["Tik Tok","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/tik-tok/fake-token-tk017-NO-REAL"],
-["Canva","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/canva/fake-token-cv018-NO-REAL"],
-["Pinterest","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/pinterest/fake-token-pt019-NO-REAL"],
-["Threads","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/threads/fake-token-th020-NO-REAL"],
-["Duolingo","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/duolingo/fake-token-dl021-NO-REAL"],
-["Termux","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/termux/fake-token-tm022-NO-REAL"],
-["YouTube","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/youtube/fake-token-yt023-NO-REAL"],
-["EA","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/ea/fake-token-ea024-NO-REAL"],
-["Acode","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/acode/fake-token-ac025-NO-REAL"],
-["Twitch","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/twitch/fake-token-tw026-NO-REAL"],
-["Instagram","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/instagram/fake-token-ig027-NO-REAL"],
-["Snapchat","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/snapchat/fake-token-sc028-NO-REAL"],
-["Telegram","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/telegram/fake-token-tg029-NO-REAL"],
-["Titanes","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/titanes/fake-token-tt030-NO-REAL"],
-["Speaking","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/speaking/fake-token-spk031-NO-REAL"],
-["Tierra Rosa","https://tierra-rosa-proyecto-fake.local/ID_Client-235.meidvWqo002w8eb8dA/tierra-rosa/fake-token-tr032-NO-REAL"]
-];
+const apps=["Google","GitHub","Vercel","Netlify","Render","Claro","Word","Files","Copa Fácil","Spotify","Facebook","Steam","Bluesky","XBOX","Apple TV","LinkedIn","Tik Tok","Canva","Pinterest","Threads","Duolingo","Termux","YouTube","EA","Acode","Twitch","Instagram","Snapchat","Telegram","Titanes","Speaking","FreeFire","Amazon","FC Mobile"];
 
-function toast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500);}
-function verComo(){let e=document.getElementById('como'); e.style.display=e.style.display==='none'?'block':'none';}
-
-function getStore(){return JSON.parse(localStorage.getItem('tr_click_enlaces')||'{}');}
-function getAuth(){return JSON.parse(localStorage.getItem('tr_click_auth')||'{}');}
-
-function render(){
+function crear(){
 let cont=document.getElementById('lista');
-let enlaces=getStore();
-let auths=getAuth();
-cont.innerHTML='';
-datos.forEach(([nombre,defecto],i)=>{
-let valor=enlaces[nombre]||defecto;
-let autorizado=auths[nombre]? '✓ Autorizado' : '○ No autorizado';
-let guardado = enlaces[nombre]? '✓ Guardado' : '○ Sin guardar';
+apps.forEach(name=>{
+let id=name.replace(/\s/g,'_');
+let guardado=localStorage.getItem('link_'+id)||'';
 cont.innerHTML+=`
-<div class="box">
-<div class="row-top"><span class="tag">${i+1}. añadir enlace de ${nombre}</span><span class="status">${guardado} | ${autorizado}</span></div>
-<input class="input" id="link_${i}" value="${valor}">
-<div class="grid3">
-<button class="btn-white ${enlaces[nombre]?'ok':''}" onclick="guardar(${i})">Botón Guardar</button>
-<button class="btn-white" onclick="login(${i})">Botón Login</button>
-<button class="btn-white ${auths[nombre]?'ok':''}" onclick="autorizar(${i})">Botón Autorizar</button>
+<div class="card">
+<span class="lab">añadir enlace de ${name}</span>
+<input id="inp_${id}" class="inp" placeholder="https://${name.toLowerCase().replace(/ /g,'')}.com tu enlace" value="${guardado}">
+<div class="btns">
+<button class="btn" onclick="guardar('${id}','${name}')">Guardar</button>
+<button class="btn" onclick="login('${id}','${name}')">Login</button>
+<button class="btn" onclick="autorizar('${id}','${name}')">Autorizar</button>
 </div>
-<p style="font-size:9px;margin-top:6px;opacity:.7;">Login es la app social vinculada al botón como acceso directo para entrar a la tienda. El enlace es la vinculación de la app que elegiste.</p>
+<span id="msg_${id}" style="font-size:10px;font-weight:800;color:#000;display:block;margin-top:6px"></span>
 </div>`;
 });
 }
 
-function guardar(i){
-let nombre=datos[i][0];
-let val=document.getElementById('link_'+i).value.trim();
-if(!val){toast('Enlace vacío');return;}
-let store=getStore(); store[nombre]=val; localStorage.setItem('tr_click_enlaces',JSON.stringify(store));
-let banco=JSON.parse(localStorage.getItem('tr_banco_enlaces')||'{}'); banco[nombre]=val; localStorage.setItem('tr_banco_enlaces',JSON.stringify(banco));
-let general=JSON.parse(localStorage.getItem('tr_enlaces')||'{}'); general[nombre]=val; localStorage.setItem('tr_enlaces',JSON.stringify(general));
-toast(nombre+' Guardado ✓ Se activó Login');
-render();
+function guardar(id,name){
+let val=document.getElementById('inp_'+id).value.trim();
+if(!val){alert('Escribe el enlace de '+name);return}
+localStorage.setItem('link_'+id,val);
+localStorage.setItem('auth_'+id,'no');
+document.getElementById('msg_'+id).innerText='✓ Guardado: '+val;
+alert(name+' Guardado ✅');
 }
-function autorizar(i){
-let nombre=datos[i][0];
-let store=getStore();
-if(!store[nombre]){toast('Primero Guardar enlace de '+nombre);return;}
-let auth=getAuth(); auth[nombre]=true; localStorage.setItem('tr_click_auth',JSON.stringify(auth));
-toast(nombre+' Autorizado ✓ Permiso para entrar a tienda');
-render();
+function login(id,name){
+let val=document.getElementById('inp_'+id).value.trim() || localStorage.getItem('link_'+id);
+if(!val){alert('Primero guarda el enlace de '+name);return}
+localStorage.setItem('ultimo_login',name);
+document.getElementById('msg_'+id).innerText='→ Login a '+name;
+location.href='tienda.html?login='+id;
 }
-function login(i){
-let nombre=datos[i][0];
-let store=getStore();
-let auth=getAuth();
-if(!store[nombre]){toast('Primero Botón Guardar '+nombre);return;}
-if(!auth[nombre]){toast('Primero Botón Autorizar '+nombre);return;}
-localStorage.setItem('tr_user','ok');
-localStorage.setItem('tr_last_social',nombre);
-toast('Login '+nombre+' → Tienda directa ✓');
-setTimeout(()=>location.href='tienda.html',600);
+function autorizar(id,name){
+let val=localStorage.getItem('link_'+id);
+if(!val){alert('Primero guarda el enlace de '+name);return}
+localStorage.setItem('auth_'+id,'si');
+document.getElementById('msg_'+id).innerText='✓ Autorizado '+name;
+alert(name+' Autorizado ✅ Ahora puedes hacer Login');
 }
 
-window.onload=()=>{
-// si no hay nada, genera falsos
-if(!localStorage.getItem('tr_click_enlaces')){
-let obj={}; datos.forEach(([n,l])=>obj[n]=l); localStorage.setItem('tr_click_enlaces',JSON.stringify(obj));
-}
-render();
-};
+crear();
 </script>
 </body>
 </html>
