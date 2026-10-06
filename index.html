@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TIERRA ROSA</title>
 <style>
 :root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#D9C5A0}
@@ -17,12 +16,11 @@ h2{font-size:15px;margin-top:12px;letter-spacing:1px}
 .lab{font-size:11px;font-weight:900;margin:7px 0 2px;display:block}
 .inp{width:100%;padding:11px;border:2px solid var(--borde);border-radius:9px;background:#fff;color:#000;font-size:12px}
 .btn{background:#fff;color:#000;border:2px solid #000;border-radius:9px;padding:11px;width:100%;font-weight:900;cursor:pointer;margin-top:9px;font-size:12px}
-.btn:active{transform:scale(.97)}
-.links{text-align:center;font-size:12px;font-weight:700;margin:10px 0;line-height:1.8}
+.link-text{font-size:13.5px;font-weight:800;color:#000;text-align:center;padding:6px 0;cursor:pointer}
+.link-text:active{opacity:.6}
 .sep{text-align:center;font-weight:900;margin:14px 0;font-size:12px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .mini{background:#fff;color:#000;border:2px solid #000;border-radius:10px;padding:10px 3px;text-align:center;font-weight:900;font-size:9.5px;cursor:pointer}
-.mini:active{background:#000;color:#fff}
 .foot{text-align:center;font-size:10px;font-weight:800;margin:20px 0;line-height:1.5}
 </style>
 </head>
@@ -37,103 +35,100 @@ h2{font-size:15px;margin-top:12px;letter-spacing:1px}
 <div class="card">
 <span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
 <span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
+<button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
 <div class="card">
 <span class="lab">Teléfono</span><input class="inp" placeholder="Teléfono">
 <span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
 <span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
+<button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
 <div class="card">
 <span class="lab">1er Correo Electrónico</span><input class="inp" placeholder="Correo">
 <span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
 <span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
+<button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
 <div class="card">
 <span class="lab">2do Correo Electrónico</span><input class="inp" placeholder="Correo">
 <span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
 <span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
+<button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
 <div class="card">
 <span class="lab">Microsoft Usuario</span><input class="inp" placeholder="Microsoft Usuario">
 <span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
+<button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
 <div class="card">
 <span class="lab">Drive (solo)</span><input class="inp" placeholder="Drive">
 <span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
+<button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
 <div class="card">
 <span class="lab">Netacad (solo)</span><input class="inp" placeholder="Netacad">
 <span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
+<button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
 <div class="card">
 <span class="lab">Outlook (solo)</span><input class="inp" placeholder="Outlook">
 <span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
+<button class="btn" onclick="location.href='tienda.html'">Login</button>
 </div>
 
-<div class="links">
-Necesitas ayuda?<br>
-No tienes una Cuenta?<br>
-Registrarme Aquí?<br>
-Acceso con un Click?
+<!-- ENLACES SIN BOTON COMO PEDISTE -->
+<div style="margin:16px 0">
+<div class="link-text" onclick="alert('Ayuda Tierra Rosa: contacta a soporte@tierra-rosa.com')">Necesitas ayuda?</div>
+<div class="link-text" onclick="location.href='#registro'">No tienes una Cuenta?</div>
+<div class="link-text" id="registro" onclick="alert('Registro Tierra Rosa')">Registrarme Aquí?</div>
+<div class="link-text" onclick="location.href='tienda.html'">Acceso con un Click?</div>
 </div>
 
 <div class="sep">Ó<br>INICIAR SESIÓN CON UN CLICK</div>
 
 <div class="grid">
-<div class="mini" onclick="go()">Google</div>
-<div class="mini" onclick="go()">GitHub</div>
-<div class="mini" onclick="go()">Vercel</div>
-<div class="mini" onclick="go()">Netlify</div>
-<div class="mini" onclick="go()">Render</div>
-<div class="mini" onclick="go()">Claro</div>
-<div class="mini" onclick="go()">Word</div>
-<div class="mini" onclick="go()">Files</div>
-<div class="mini" onclick="go()">Copa Fácil</div>
-<div class="mini" onclick="go()">Spotify</div>
-<div class="mini" onclick="go()">Facebook</div>
-<div class="mini" onclick="go()">Steam</div>
-<div class="mini" onclick="go()">Bluesky</div>
-<div class="mini" onclick="go()">XBOX</div>
-<div class="mini" onclick="go()">Apple TV</div>
-<div class="mini" onclick="go()">LinkedIn</div>
-<div class="mini" onclick="go()">Tik Tok</div>
-<div class="mini" onclick="go()">Canva</div>
-<div class="mini" onclick="go()">Pinterest</div>
-<div class="mini" onclick="go()">Threads</div>
-<div class="mini" onclick="go()">Duolingo</div>
-<div class="mini" onclick="go()">Termux</div>
-<div class="mini" onclick="go()">YouTube</div>
-<div class="mini" onclick="go()">EA</div>
-<div class="mini" onclick="go()">Acode</div>
-<div class="mini" onclick="go()">Twitch</div>
-<div class="mini" onclick="go()">Instagram</div>
-<div class="mini" onclick="go()">Snapchat</div>
-<div class="mini" onclick="go()">Telegram</div>
-<div class="mini" onclick="go()">Titanes</div>
-<div class="mini" onclick="go()">Speaking</div>
-<div class="mini" onclick="go()">TierraRosa</div>
+<div class="mini" onclick="location.href='tienda.html'">Google</div>
+<div class="mini" onclick="location.href='tienda.html'">GitHub</div>
+<div class="mini" onclick="location.href='tienda.html'">Vercel</div>
+<div class="mini" onclick="location.href='tienda.html'">Netlify</div>
+<div class="mini" onclick="location.href='tienda.html'">Render</div>
+<div class="mini" onclick="location.href='tienda.html'">Claro</div>
+<div class="mini" onclick="location.href='tienda.html'">Word</div>
+<div class="mini" onclick="location.href='tienda.html'">Files</div>
+<div class="mini" onclick="location.href='tienda.html'">Copa Fácil</div>
+<div class="mini" onclick="location.href='tienda.html'">Spotify</div>
+<div class="mini" onclick="location.href='tienda.html'">Facebook</div>
+<div class="mini" onclick="location.href='tienda.html'">Steam</div>
+<div class="mini" onclick="location.href='tienda.html'">Bluesky</div>
+<div class="mini" onclick="location.href='tienda.html'">XBOX</div>
+<div class="mini" onclick="location.href='tienda.html'">Apple TV</div>
+<div class="mini" onclick="location.href='tienda.html'">LinkedIn</div>
+<div class="mini" onclick="location.href='tienda.html'">Tik Tok</div>
+<div class="mini" onclick="location.href='tienda.html'">Canva</div>
+<div class="mini" onclick="location.href='tienda.html'">Pinterest</div>
+<div class="mini" onclick="location.href='tienda.html'">Threads</div>
+<div class="mini" onclick="location.href='tienda.html'">Duolingo</div>
+<div class="mini" onclick="location.href='tienda.html'">Termux</div>
+<div class="mini" onclick="location.href='tienda.html'">YouTube</div>
+<div class="mini" onclick="location.href='tienda.html'">EA</div>
+<div class="mini" onclick="location.href='tienda.html'">Acode</div>
+<div class="mini" onclick="location.href='tienda.html'">Twitch</div>
+<div class="mini" onclick="location.href='tienda.html'">Instagram</div>
+<div class="mini" onclick="location.href='tienda.html'">Snapchat</div>
+<div class="mini" onclick="location.href='tienda.html'">Telegram</div>
+<div class="mini" onclick="location.href='tienda.html'">Titanes</div>
+<div class="mini" onclick="location.href='tienda.html'">Speaking</div>
+<div class="mini" onclick="location.href='tienda.html'">TierraRosa</div>
 </div>
 
 <div class="foot">Gracias por tu preferencia en Tierra Rosa.<br>TIERRA ROSA - Hecho en México 2026</div>
 </div>
-
-<script>
-function go(){ location.href='tienda.html'; }
-</script>
 </body>
     </html>
