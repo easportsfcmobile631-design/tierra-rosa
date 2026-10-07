@@ -1,21 +1,21 @@
 {
-  "name": "TIERRA ROSA - Belleza que nace de la Tierra",
+  "name": "TIERRA ROSA x TITANES x SPEAKING",
   "short_name": "TIERRA ROSA",
-  "description": "TIERRA ROSA - TITANES SPEAKING Hecho en México 2026",
-  "start_url": "/tierra-rosa/",
+  "description": "Tienda en línea de productos de Maquillaje Belleza y Cosméticos - Hecho en México 2026",
+  "start_url": "tienda.html",
   "display": "standalone",
   "background_color": "#F5E8D0",
-  "theme_color": "#000000",
+  "theme_color": "#E9408A",
   "icons": [
     {
-      "src": "images.png",
+      "src": "icon.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     },
     {
-      "src": "images.png",
+      "src": "icon.png",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png"
     }
   ]
 }
