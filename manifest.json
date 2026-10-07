@@ -1,12 +1,12 @@
 {
   "name": "TIERRA ROSA",
   "short_name": "TIERRA ROSA",
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F5E8D0",
   "theme_color": "#F5E8D0",
   "icons": [
-    { "src": "icon-19.jpg", "sizes": "192x192", "type": "image/jpeg" },
-    { "src": "icon-19.jpg", "sizes": "512x512", "type": "image/jpeg" }
+    {"src": "./icon-19.jpg", "sizes": "192x192", "type": "image/jpeg"},
+    {"src": "./icon-19.jpg", "sizes": "512x512", "type": "image/jpeg"}
   ]
 }
