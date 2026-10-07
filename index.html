@@ -4,441 +4,610 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TIERRA ROSA</title>
+<title>Tierra Rosa</title>
+
+<link rel="icon" type="image/jpeg" href="icon-19.jpg">
 
 <style>
-    * {
-        box-sizing: border-box;
+:root{
+    --beige:#E8D5B5;
+    --beige2:#F2E3C7;
+    --negro:#000000;
+    --blanco:#FFFFFF;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--beige);
+    color:var(--negro);
+    font-family:Arial, Helvetica, sans-serif;
+    text-align:center;
+}
+
+/* ENCABEZADO */
+header{
+    padding:25px 15px 20px;
+    border-bottom:2px solid var(--negro);
+}
+
+.logo{
+    width:125px;
+    height:125px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid var(--negro);
+    display:block;
+    margin:0 auto 15px;
+    background:var(--blanco);
+}
+
+h1{
+    margin:5px 0;
+    font-size:34px;
+    letter-spacing:2px;
+}
+
+.subtitulo{
+    font-size:16px;
+    font-weight:bold;
+    margin:5px 0;
+}
+
+/* CONTENEDOR */
+main{
+    width:94%;
+    max-width:850px;
+    margin:auto;
+}
+
+/* TITULOS */
+h2{
+    margin-top:30px;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--negro);
+}
+
+/* LOGIN */
+.login-box{
+    background:var(--beige2);
+    border:2px solid var(--negro);
+    border-radius:18px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.login-form{
+    background:var(--blanco);
+    border:2px solid var(--negro);
+    border-radius:14px;
+    padding:15px;
+    margin:15px 0;
+}
+
+.login-form h3{
+    margin-top:0;
+}
+
+input{
+    width:100%;
+    padding:13px;
+    margin:7px 0;
+    border:2px solid var(--negro);
+    border-radius:8px;
+    background:var(--blanco);
+    color:var(--negro);
+    font-size:16px;
+}
+
+button,
+.app-button{
+    display:inline-block;
+    width:100%;
+    padding:15px 18px;
+    margin-top:10px;
+    background:var(--blanco);
+    color:var(--negro);
+    border:2px solid var(--negro);
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    transition:0.2s;
+}
+
+button:hover,
+.app-button:hover{
+    transform:scale(1.02);
+    background:#f5f5f5;
+}
+
+button:active,
+.app-button:active{
+    transform:scale(.98);
+}
+
+/* ENLACES SIN BOTONES */
+.links{
+    margin:25px 0;
+    padding:20px;
+    border-top:2px solid var(--negro);
+    border-bottom:2px solid var(--negro);
+}
+
+.links a{
+    color:var(--negro);
+    font-weight:bold;
+    text-decoration:underline;
+    margin:8px 12px;
+    display:inline-block;
+}
+
+.links a:hover{
+    text-decoration:none;
+}
+
+/* UN CLICK */
+.one-click{
+    margin-top:25px;
+}
+
+.one-click-title{
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+/* APLICACIONES */
+.apps{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:20px;
+}
+
+.app-button{
+    margin:0;
+    min-height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* INSTALAR */
+.install{
+    margin:35px 0;
+}
+
+.install button{
+    max-width:450px;
+    font-size:19px;
+}
+
+/* PROYECTO */
+.school{
+    border-top:2px solid var(--negro);
+    padding:25px 10px;
+    margin-top:30px;
+    font-weight:bold;
+}
+
+/* CELULAR */
+@media(max-width:500px){
+
+    h1{
+        font-size:28px;
     }
 
-    body {
-        margin: 0;
-        padding: 15px;
-        background: #e8d5b5;
-        color: #000000;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
+    .logo{
+        width:110px;
+        height:110px;
     }
 
-    .app {
-        width: 100%;
-        max-width: 520px;
-        margin: auto;
+    .apps{
+        grid-template-columns:1fr;
     }
 
-    /* ICONO DE LA APP */
-    .app-icon {
-        width: 115px;
-        height: 115px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid #000000;
-        display: block;
-        margin: 10px auto 12px;
-        background: #ffffff;
+    .links a{
+        display:block;
+        margin:13px;
     }
-
-    h1 {
-        margin: 5px 0;
-        font-size: 30px;
-        letter-spacing: 2px;
-    }
-
-    .subtitulo {
-        font-size: 15px;
-        margin-bottom: 25px;
-    }
-
-    h2 {
-        font-size: 21px;
-        margin: 20px 0 12px;
-        border-bottom: 2px solid #000000;
-        padding-bottom: 7px;
-    }
-
-    /* CAJAS DE LOGIN */
-    .login-box {
-        border: 2px solid #000000;
-        padding: 15px;
-        margin: 12px 0;
-        border-radius: 12px;
-        background: rgba(255,255,255,0.20);
-    }
-
-    .login-title {
-        font-weight: bold;
-        margin-bottom: 10px;
-        font-size: 17px;
-    }
-
-    input {
-        width: 100%;
-        padding: 11px;
-        margin: 5px 0;
-        border: 2px solid #000000;
-        border-radius: 8px;
-        background: #ffffff;
-        color: #000000;
-        font-size: 15px;
-        outline: none;
-    }
-
-    input:focus {
-        border-width: 3px;
-    }
-
-    /* TODOS LOS BOTONES BLANCOS */
-    button {
-        background: #ffffff;
-        color: #000000;
-        border: 2px solid #000000;
-        border-radius: 8px;
-        padding: 9px 18px;
-        margin-top: 7px;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    button:hover {
-        transform: scale(1.03);
-    }
-
-    /* ENLACES SIN BOTONES */
-    .enlaces {
-        margin: 25px 0;
-        padding: 15px;
-        border-top: 2px solid #000000;
-        border-bottom: 2px solid #000000;
-    }
-
-    .enlaces a {
-        color: #000000;
-        text-decoration: underline;
-        font-weight: bold;
-        margin: 7px 9px;
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    .enlaces a:hover {
-        font-weight: 900;
-    }
-
-    /* UN CLICK */
-    .un-click {
-        margin-top: 20px;
-    }
-
-    .un-click h2 {
-        border-bottom: none;
-    }
-
-    /* BOTONES PEQUEÑOS */
-    .apps {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px;
-        margin-top: 10px;
-    }
-
-    .app-button {
-        background: #ffffff;
-        color: #000000;
-        border: 1.5px solid #000000;
-        border-radius: 6px;
-        padding: 6px 9px;
-        margin: 0;
-        font-size: 11px;
-        font-weight: bold;
-        min-width: 70px;
-    }
-
-    .app-button:hover {
-        transform: scale(1.04);
-    }
-
-    .proyecto {
-        margin-top: 30px;
-        padding: 15px;
-        border: 2px solid #000000;
-        border-radius: 12px;
-        background: rgba(255,255,255,0.25);
-        font-weight: bold;
-    }
-
-    .mensaje {
-        margin-top: 10px;
-        font-size: 13px;
-    }
-
-    footer {
-        margin-top: 25px;
-        font-size: 12px;
-    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="app">
+<header>
 
-    <!-- ICONO CIRCULAR DE TIERRA ROSA -->
     <img src="icon-19.jpg"
-         alt="Icono Tierra Rosa"
-         class="app-icon">
+         alt="Icono circular de Tierra Rosa"
+         class="logo">
 
     <h1>TIERRA ROSA</h1>
-    <div class="subtitulo">Belleza que nace de la Tierra</div>
+
+    <div class="subtitulo">
+        Belleza que nace de la Tierra
+    </div>
+
+</header>
+
+<main>
+
+<!-- INICIAR SESIÓN -->
+<section class="login-box">
+
+<h2>INICIAR SESIÓN</h2>
+
+<form class="login-form" onsubmit="login(event,'Usuario')">
+    <h3>Usuario</h3>
+
+    <input
+        type="text"
+        id="usuario"
+        placeholder="Usuario"
+        required
+        autocomplete="username">
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Contraseña"
+        required
+        autocomplete="current-password">
+
+    <button type="submit">Login</button>
+</form>
 
 
-    <!-- INICIAR SESIÓN -->
-    <h2>INICIAR SESIÓN</h2>
+<form class="login-form" onsubmit="login(event,'Teléfono')">
+    <h3>Teléfono</h3>
 
-    <div class="login-box">
-        <div class="login-title">Usuario</div>
-        <input type="text" id="usuario" placeholder="Usuario">
-        <input type="password" id="password" placeholder="Contraseña">
-        <button onclick="login('Usuario')">Login</button>
+    <input
+        type="tel"
+        placeholder="Teléfono"
+        required>
+
+    <input
+        type="password"
+        placeholder="Contraseña"
+        required>
+
+    <button type="submit">Login</button>
+</form>
+
+
+<form class="login-form" onsubmit="login(event,'1er Correo Electrónico')">
+    <h3>1er Correo Electrónico</h3>
+
+    <input
+        type="email"
+        placeholder="1er Correo Electrónico"
+        required>
+
+    <input
+        type="password"
+        placeholder="Contraseña"
+        required>
+
+    <button type="submit">Login</button>
+</form>
+
+
+<form class="login-form" onsubmit="login(event,'2do Correo Electrónico')">
+    <h3>2do Correo Electrónico</h3>
+
+    <input
+        type="email"
+        placeholder="2do Correo Electrónico"
+        required>
+
+    <input
+        type="password"
+        placeholder="Contraseña"
+        required>
+
+    <button type="submit">Login</button>
+</form>
+
+
+<form class="login-form" onsubmit="login(event,'Microsoft')">
+    <h3>Microsoft</h3>
+
+    <input
+        type="text"
+        placeholder="Microsoft"
+        required>
+
+    <input
+        type="password"
+        placeholder="Contraseña"
+        required>
+
+    <button type="submit">Login</button>
+</form>
+
+
+<form class="login-form" onsubmit="login(event,'Drive')">
+    <h3>Drive</h3>
+
+    <input
+        type="text"
+        placeholder="Drive"
+        required>
+
+    <input
+        type="password"
+        placeholder="Contraseña"
+        required>
+
+    <button type="submit">Login</button>
+</form>
+
+
+<form class="login-form" onsubmit="login(event,'Netacad')">
+    <h3>Netacad</h3>
+
+    <input
+        type="text"
+        placeholder="Netacad"
+        required>
+
+    <input
+        type="password"
+        placeholder="Contraseña"
+        required>
+
+    <button type="submit">Login</button>
+</form>
+
+
+<form class="login-form" onsubmit="login(event,'Outlook')">
+    <h3>Outlook</h3>
+
+    <input
+        type="email"
+        placeholder="Outlook"
+        required>
+
+    <input
+        type="password"
+        placeholder="Contraseña"
+        required>
+
+    <button type="submit">Login</button>
+</form>
+
+
+<form class="login-form" onsubmit="login(event,'Eduardo')">
+    <h3>Eduardo</h3>
+
+    <input
+        type="text"
+        placeholder="Eduardo"
+        required>
+
+    <input
+        type="password"
+        placeholder="Contraseña"
+        required>
+
+    <button type="submit">Login</button>
+</form>
+
+</section>
+
+
+<!-- ENLACES SIN BOTONES -->
+<section class="links">
+
+    <a href="necesitas-ayuda.html">Necesitas Ayuda</a>
+
+    <a href="noticias.html">Noticias</a>
+
+    <a href="eventos.html">Eventos</a>
+
+    <a href="sociedad.html">Sociedad</a>
+
+    <a href="actualizaciones.html">Actualizaciones</a>
+
+    <a href="fundadores.html">Fundadores</a>
+
+    <a href="registrarme.html">Registrarme</a>
+
+    <a href="un-click.html">Un Click</a>
+
+</section>
+
+
+<!-- UN CLICK -->
+<section class="one-click">
+
+    <div class="one-click-title">
+        O
+    </div>
+
+    <div class="one-click-title">
+        UN CLICK 👌
     </div>
 
 
-    <div class="login-box">
-        <div class="login-title">Teléfono</div>
-        <input type="tel" placeholder="Teléfono">
-        <input type="password" placeholder="Contraseña">
-        <button onclick="login('Teléfono')">Login</button>
-    </div>
+    <div class="apps">
 
+        <a class="app-button" href="https://www.google.com/" target="_blank">Google</a>
 
-    <div class="login-box">
-        <div class="login-title">1er Correo Electrónico</div>
-        <input type="email" placeholder="1er Correo Electrónico">
-        <input type="password" placeholder="Contraseña">
-        <button onclick="login('1er Correo Electrónico')">Login</button>
-    </div>
+        <a class="app-button" href="https://github.com/" target="_blank">GitHub</a>
 
+        <a class="app-button" href="https://vercel.com/" target="_blank">Vercel</a>
 
-    <div class="login-box">
-        <div class="login-title">2do Correo Electrónico</div>
-        <input type="email" placeholder="2do Correo Electrónico">
-        <input type="password" placeholder="Contraseña">
-        <button onclick="login('2do Correo Electrónico')">Login</button>
-    </div>
+        <a class="app-button" href="https://www.netlify.com/" target="_blank">Netlify</a>
 
+        <a class="app-button" href="https://render.com/" target="_blank">Render</a>
 
-    <div class="login-box">
-        <div class="login-title">Microsoft</div>
-        <input type="text" placeholder="Cuenta Microsoft">
-        <input type="password" placeholder="Contraseña">
-        <button onclick="login('Microsoft')">Login</button>
-    </div>
+        <a class="app-button" href="https://www.claro.com/" target="_blank">Claro</a>
 
+        <a class="app-button" href="https://www.microsoft.com/microsoft-365/word" target="_blank">Word Files</a>
 
-    <div class="login-box">
-        <div class="login-title">Drive</div>
-        <input type="text" placeholder="Cuenta Drive">
-        <input type="password" placeholder="Contraseña">
-        <button onclick="login('Drive')">Login</button>
-    </div>
+        <a class="app-button" href="#" onclick="mensaje('Copa Fácil')">Copa Fácil</a>
 
+        <a class="app-button" href="https://www.spotify.com/" target="_blank">Spotify</a>
 
-    <div class="login-box">
-        <div class="login-title">Netacad</div>
-        <input type="text" placeholder="Cuenta Netacad">
-        <input type="password" placeholder="Contraseña">
-        <button onclick="login('Netacad')">Login</button>
-    </div>
+        <a class="app-button" href="https://www.facebook.com/" target="_blank">Facebook</a>
 
+        <a class="app-button" href="https://store.steampowered.com/" target="_blank">Steam</a>
 
-    <div class="login-box">
-        <div class="login-title">Outlook</div>
-        <input type="email" placeholder="Cuenta Outlook">
-        <input type="password" placeholder="Contraseña">
-        <button onclick="login('Outlook')">Login</button>
-    </div>
+        <a class="app-button" href="https://bsky.app/" target="_blank">Bluesky</a>
 
+        <a class="app-button" href="https://www.xbox.com/" target="_blank">XBOX</a>
 
-    <div class="login-box">
-        <div class="login-title">Eduardo</div>
-        <input type="text" placeholder="Usuario Eduardo">
-        <input type="password" placeholder="Contraseña">
-        <button onclick="login('Eduardo')">Login</button>
-    </div>
+        <a class="app-button" href="https://tv.apple.com/" target="_blank">Apple TV</a>
 
+        <a class="app-button" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
 
-    <!-- ENLACES SIN BOTONES -->
-    <div class="enlaces">
+        <a class="app-button" href="https://www.tiktok.com/" target="_blank">TikTok</a>
 
-        <a href="necesitas-ayuda.html">Necesitas Ayuda</a>
+        <a class="app-button" href="https://www.canva.com/" target="_blank">Canva</a>
 
-        <a href="noticias.html">Noticias</a>
+        <a class="app-button" href="https://www.pinterest.com/" target="_blank">Pinterest</a>
 
-        <a href="eventos.html">Eventos</a>
+        <a class="app-button" href="https://www.threads.net/" target="_blank">Threads</a>
 
-        <a href="sociedad.html">Sociedad</a>
+        <a class="app-button" href="https://www.duolingo.com/" target="_blank">Duolingo</a>
 
-        <a href="actualizaciones.html">Actualizaciones</a>
+        <a class="app-button" href="https://termux.com/" target="_blank">Termux</a>
 
-        <a href="fundadores.html">Fundadores</a>
+        <a class="app-button" href="https://www.youtube.com/" target="_blank">YouTube</a>
 
-        <a href="registrarme-aqui.html">Registrarme</a>
+        <a class="app-button" href="https://www.ea.com/" target="_blank">EA</a>
 
-        <a href="acceso-con-un-click.html">Un Click</a>
+        <a class="app-button" href="https://acode.app/" target="_blank">Acode</a>
+
+        <a class="app-button" href="https://www.twitch.tv/" target="_blank">Twitch</a>
+
+        <a class="app-button" href="https://www.instagram.com/" target="_blank">Instagram</a>
+
+        <a class="app-button" href="https://www.snapchat.com/" target="_blank">Snapchat</a>
+
+        <a class="app-button" href="https://telegram.org/" target="_blank">Telegram</a>
+
+        <a class="app-button" href="#" onclick="mensaje('Titanes')">Titanes</a>
+
+        <a class="app-button" href="#" onclick="mensaje('Speaking')">Speaking</a>
+
+        <a class="app-button" href="https://ff.garena.com/" target="_blank">FreeFire</a>
+
+        <a class="app-button" href="https://www.amazon.com/" target="_blank">Amazon</a>
+
+        <a class="app-button" href="https://www.ea.com/games/ea-sports-fc" target="_blank">FCMobile</a>
+
+        <a class="app-button" href="https://discord.com/" target="_blank">Discord</a>
+
+        <a class="app-button" href="https://www.vix.com/" target="_blank">Vix</a>
+
+        <a class="app-button" href="#" onclick="mensaje('Vivo')">Vivo</a>
 
     </div>
 
-
-    <div class="un-click">
-
-        <h2>O</h2>
-
-        <h2>UN CLICK 👌</h2>
-
-        <div class="apps">
-
-            <button class="app-button" onclick="abrir('https://www.google.com')">Google</button>
-
-            <button class="app-button" onclick="abrir('https://github.com')">GitHub</button>
-
-            <button class="app-button" onclick="abrir('https://vercel.com')">Vercel</button>
-
-            <button class="app-button" onclick="abrir('https://www.netlify.com')">Netlify</button>
-
-            <button class="app-button" onclick="abrir('https://render.com')">Render</button>
-
-            <button class="app-button" onclick="abrir('https://www.claro.com')">Claro</button>
-
-            <button class="app-button" onclick="abrir('https://www.microsoft.com')">Word</button>
-
-            <button class="app-button" onclick="abrir('https://www.microsoft.com/microsoft-365')">Files</button>
-
-            <button class="app-button" onclick="abrir('https://www.copafacil.com')">Copa Fácil</button>
-
-            <button class="app-button" onclick="abrir('https://open.spotify.com')">Spotify</button>
-
-            <button class="app-button" onclick="abrir('https://www.facebook.com')">Facebook</button>
-
-            <button class="app-button" onclick="abrir('https://store.steampowered.com')">Steam</button>
-
-            <button class="app-button" onclick="abrir('https://bsky.app')">Bluesky</button>
-
-            <button class="app-button" onclick="abrir('https://www.xbox.com')">XBOX</button>
-
-            <button class="app-button" onclick="abrir('https://tv.apple.com')">Apple TV</button>
-
-            <button class="app-button" onclick="abrir('https://www.linkedin.com')">LinkedIn</button>
-
-            <button class="app-button" onclick="abrir('https://www.tiktok.com')">TikTok</button>
-
-            <button class="app-button" onclick="abrir('https://www.canva.com')">Canva</button>
-
-            <button class="app-button" onclick="abrir('https://www.pinterest.com')">Pinterest</button>
-
-            <button class="app-button" onclick="abrir('https://www.threads.net')">Threads</button>
-
-            <button class="app-button" onclick="abrir('https://www.duolingo.com')">Duolingo</button>
-
-            <button class="app-button" onclick="abrir('https://termux.dev')">Termux</button>
-
-            <button class="app-button" onclick="abrir('https://www.youtube.com')">YouTube</button>
-
-            <button class="app-button" onclick="abrir('https://www.ea.com')">EA</button>
-
-            <button class="app-button" onclick="abrir('https://acode.app')">Acode</button>
-
-            <button class="app-button" onclick="abrir('https://www.twitch.tv')">Twitch</button>
-
-            <button class="app-button" onclick="abrir('https://www.instagram.com')">Instagram</button>
-
-            <button class="app-button" onclick="abrir('https://www.snapchat.com')">Snapchat</button>
-
-            <button class="app-button" onclick="abrir('https://telegram.org')">Telegram</button>
-
-            <button class="app-button" onclick="abrir('#')">Titanes</button>
-
-            <button class="app-button" onclick="abrir('#')">Speaking</button>
-
-            <button class="app-button" onclick="abrir('https://ff.garena.com')">FreeFire</button>
-
-            <button class="app-button" onclick="abrir('https://www.amazon.com')">Amazon</button>
-
-            <button class="app-button" onclick="abrir('#')">FCMobile</button>
-
-            <button class="app-button" onclick="abrir('https://discord.com')">Discord</button>
-
-            <button class="app-button" onclick="abrir('https://www.vix.com')">Vix</button>
-
-            <button class="app-button" onclick="abrir('#')">Vivo</button>
-
-        </div>
-
-    </div>
+</section>
 
 
-    <!-- PROYECTO ESCOLAR -->
-    <div class="proyecto">
+<!-- INSTALAR -->
+<section class="install">
 
-        <div>Es un proyecto escolar</div>
+    <button id="installButton" onclick="instalarApp()">
+        [ INSTALAR ] la aplicación Tierra Rosa
+    </button>
 
-        <div class="mensaje">
-            TIERRA ROSA<br>
-            Proyecto académico y educativo
-        </div>
-
-    </div>
+</section>
 
 
-    <footer>
-        © 2026 TIERRA ROSA
-    </footer>
+<!-- PROYECTO ESCOLAR -->
+<section class="school">
 
-</div>
+    <p>Es un proyecto escolar</p>
+
+    <p>
+        TIERRA ROSA<br>
+        Belleza que nace de la Tierra
+    </p>
+
+</section>
+
+</main>
 
 
 <script>
 
-function login(tipo) {
+/* LOGIN DEMOSTRATIVO */
+function login(event, metodo){
 
-    const usuario = document.getElementById("usuario");
+    event.preventDefault();
 
-    if (tipo === "Usuario") {
-
-        if (usuario.value.trim() === "") {
-
-            alert("Por favor escribe tu usuario.");
-
-        } else {
-
-            alert("Inicio de sesión seleccionado: " + tipo);
-
-        }
-
-    } else {
-
-        alert("Inicio de sesión seleccionado: " + tipo);
-
-    }
-
+    alert(
+        "Inicio de sesión de Tierra Rosa\n\n" +
+        "Método: " + metodo +
+        "\n\nEsta función es una demostración escolar."
+    );
 }
 
 
-function abrir(url) {
+/* MENSAJES PARA ENLACES SIN SITIO OFICIAL */
+function mensaje(nombre){
 
-    if (url === "#") {
+    event.preventDefault();
 
-        alert("Este enlace pertenece al proyecto Tierra Rosa y todavía no tiene una página externa configurada.");
+    alert(
+        nombre +
+        "\n\nEste enlace puede conectarse posteriormente con la página oficial o sistema correspondiente."
+    );
+}
+
+
+/* INSTALACIÓN PWA */
+let deferredPrompt = null;
+
+window.addEventListener("beforeinstallprompt", function(event){
+
+    event.preventDefault();
+
+    deferredPrompt = event;
+
+    document.getElementById("installButton").style.display = "block";
+
+});
+
+
+async function instalarApp(){
+
+    if(deferredPrompt){
+
+        deferredPrompt.prompt();
+
+        const resultado =
+            await deferredPrompt.userChoice;
+
+        deferredPrompt = null;
 
         return;
-
     }
 
-    window.open(url, "_blank");
-
+    alert(
+        "Para instalar Tierra Rosa como aplicación:\n\n" +
+        "1. Abre el menú de tu navegador.\n" +
+        "2. Selecciona 'Agregar a pantalla de inicio' o 'Instalar aplicación'.\n" +
+        "3. Confirma la instalación."
+    );
 }
 
 </script>
 
 </body>
-  </html>
+       </html>
