@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TierraRosa</title>
 <link rel="icon" href="./icon-19.jpg">
-<link rel="apple-touch-icon" href="./icon-19.jpg">
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#F5E8D0">
 <style>
@@ -13,95 +12,102 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black,Arial,sans-serif}
 body{background:var(--beige);color:var(--negro)}
 .top{background:var(--crema);border-bottom:3px solid #000;display:flex;align-items:center;gap:10px;padding:12px;position:sticky;top:0;z-index:10}
-.cir{width:44px;height:44px;border:3px solid #000;border-radius:50%;overflow:hidden;background:#fff}
+.cir{width:46px;height:46px;border:3px solid #000;border-radius:50%;overflow:hidden;background:#fff}
 .cir img{width:100%;height:100%;object-fit:cover;display:block}
-.brand{font-weight:900;font-size:17px}
-.wrap{max-width:500px;margin:auto;padding:12px;padding-bottom:90px}
+.brand{font-weight:900;font-size:18px;letter-spacing:.5px}
+.wrap{max-width:520px;margin:auto;padding:12px;padding-bottom:95px}
 .card{background:var(--crema);border:3px solid #000;border-radius:14px;padding:12px;margin-bottom:12px}
 .tit{border:3px solid #000;background:var(--blanco);border-radius:10px;text-align:center;padding:9px;font-size:12px;font-weight:900;margin-bottom:10px}
 .inp{width:100%;border:2.5px solid #000;background:var(--blanco);border-radius:10px;padding:12px;margin:5px 0;font-size:11px;font-weight:700;outline:none}
-.btn{width:100%;border:3px solid #000;background:var(--blanco);border-radius:10px;padding:12px;margin-top:6px;font-weight:900;cursor:pointer}
+.btn{width:100%;border:3px solid #000;background:var(--blanco);border-radius:10px;padding:13px;margin-top:6px;font-weight:900;cursor:pointer}
 .btnN{background:#000;color:#fff}
-.enlace{width:100%;border:0;border-bottom:2.5px solid #000;background:transparent;padding:14px 4px;font-weight:900;font-size:12px;display:flex;justify-content:space-between;text-align:left;cursor:pointer}
-.enlace:active{background:var(--blanco)}
+.enlace{width:100%;border:0;border-bottom:2.5px solid #000;background:var(--blanco);border-radius:10px;margin:6px 0;padding:14px;font-weight:900;font-size:12px;display:flex;justify-content:space-between;text-align:left;cursor:pointer;border:2.5px solid #000}
 .bigGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.bigBtn{border:3px solid #000;background:var(--blanco);border-radius:10px;padding:14px 6px;font-size:10px;font-weight:900;cursor:pointer}
-.bigBtn:active{background:#000;color:#fff}
+.bigBtn{border:3px solid #000;background:var(--blanco);border-radius:12px;padding:10px 6px;font-size:10px;font-weight:900;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bigBtn img{width:28px;height:28px;object-fit:contain}
 #installBtn{position:fixed;right:14px;bottom:14px;border:3px solid #000;background:#000;color:#fff;border-radius:25px;padding:13px 22px;font-weight:900;font-size:11px;z-index:99;cursor:pointer}
+#viewer{position:fixed;inset:0;background:var(--beige);z-index:100;display:none;flex-direction:column}
+#viewerTop{background:var(--crema);border-bottom:3px solid #000;padding:10px;display:flex;gap:8px;align-items:center}
+#viewerTop button{border:3px solid #000;background:var(--blanco);border-radius:20px;padding:7px 12px;font-size:10px;font-weight:900}
+#viewerFrame{flex:1;border:0;width:100%;background:#fff}
 </style>
 </head>
 <body>
 <div class="top">
-<div class="cir"><img src="./icon-19.jpg" alt="logo"></div>
+<div class="cir"><img src="./icon-19.jpg"></div>
 <div class="brand">TierraRosa</div>
 </div>
 
 <div class="wrap">
 <div class="card">
 <div class="tit">🔑 INICIAR SESIÓN</div>
-<input class="inp" maxlength="75" placeholder="Usuario - 75 caracteres">
-<input class="inp" maxlength="75" type="password" placeholder="Contraseña - 75 caracteres">
+<input class="inp" id="u" maxlength="75" placeholder="Usuario - 75 caracteres">
+<input class="inp" id="p" maxlength="75" type="password" placeholder="Contraseña - 75 caracteres">
 <button class="btn btnN" onclick="location.href='./tienda.html'">Login</button>
 </div>
 
 <div class="card">
 <div class="tit">Enlaces</div>
-<button class="enlace" onclick="location.href='./necesitas-ayuda.html'">Necesitas Ayuda <span>></span></button>
-<button class="enlace" onclick="location.href='./fundadores.html'">Fundadores <span>></span></button>
 <button class="enlace" onclick="location.href='./registrarme.html'">Registrarme <span>></span></button>
-<button class="enlace" onclick="location.href='./tienda.html'">Un Click <span>></span></button>
+<button class="enlace" onclick="location.href='./un-click.html'">Un Click <span>></span></button>
 <div style="text-align:center;font-weight:900;margin:12px 0">O</div>
-<button class="btn btnN" onclick="location.href='./tienda.html'">[Un click] botón</button>
+<button class="btn btnN" onclick="location.href='./un-click.html'">[Un click] botón</button>
 </div>
 
 <div class="card">
-<div class="tit">Consulta mis Redes Sociales</div>
+<div class="tit">Consulta mis Redes Sociales - Icono Real</div>
 <div class="bigGrid" id="grid"></div>
 </div>
 </div>
 
 <button id="installBtn">INSTALAR 📲</button>
 
-<script>
-let deferredPrompt;const installBtn=document.getElementById('installBtn');
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.style.display='block'});
-installBtn.addEventListener('click',async()=>{
-if(deferredPrompt){deferredPrompt.prompt();const r=await deferredPrompt.userChoice;if(r.outcome==='accepted')installBtn.textContent='INSTALADO ✅';deferredPrompt=null}
-else{alert('TierraRosa 🌸\nPara instalar en GitHub:\nChrome > ⋮ > Instalar app')}});
+<div id="viewer">
+<div id="viewerTop"><button onclick="closeViewer()">← Regresar</button><b id="vTitle" style="font-size:11px"></b><button style="margin-left:auto" onclick="openExternal()">Abrir fuera ↗</button></div>
+<iframe id="viewerFrame" src=""></iframe>
+</div>
 
-const redes={
-"Apple TV":"https://www.apple.com/mx/apple-tv/",
-"Discord":"https://discord.com/",
-"XBOX":"https://www.xbox.com/es-MX/",
-"GitHub":"https://github.com/easportsfcmobile631-design",
-"Facebook":"https://www.facebook.com/share/18fACYD7pv/",
-"Spotify":"https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link",
-"YouTube":"https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY",
-"Twitch":"https://www.twitch.tv/easportsfcmobile631?sr=a",
-"X":"https://x.com/eduardomar47137?s=09",
-"WhatsApp":"https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B",
-"Telegram":"https://t.me/Nadia98968999",
-"Instagram":"https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw",
-"Copa Fácil":"https://copafacil.com/-4y21q",
-"Messenger":"https://m.me/zusuki.eduardo.martinez",
-"Wenbsites.co.in":"https://websites.co.in/refer/749809",
-"Steam":"https://steamcommunity.com/profiles/76561199837311518/",
-"Bluesky":"https://bsky.app/profile/jemart03.bsky.social",
-"Threads":"https://www.threads.com/@zuzukieduardomartinez",
-"Tik Tok":"https://www.tiktok.com/@rebelde.de.corazn5",
-"Acode":"https://acode.app/profile",
-"Render":"https://dashboard.render.com/",
-"Netlify":"https://app.netlify.com/teams/easportsfcmobile631-design/projects",
-"Vercel":"https://vercel.com/martineztitanjesuseduardo",
-"Snapchat":"https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX",
-"Duolingo":"https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link",
-"Websites":"https://websites.co.in/refer/749809"
-};
+<script>
+let deferredPrompt,currentUrl="";const installBtn=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});
+installBtn.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.textContent='INSTALADO ✅'}else{alert('TierraRosa 🌸\nChrome > ⋮ > Instalar app')}});
+
+function openInApp(name,url){currentUrl=url;document.getElementById('vTitle').innerText=name;document.getElementById('viewerFrame').src=url;document.getElementById('viewer').style.display='flex'}
+function closeViewer(){document.getElementById('viewer').style.display='none';document.getElementById('viewerFrame').src=''}
+function openExternal(){window.open(currentUrl,'_blank')}
+
+const redes=[
+["Apple TV","https://www.apple.com/mx/apple-tv/","https://www.apple.com/favicon.ico"],
+["Discord","https://discord.com/","https://discord.com/favicon.ico"],
+["XBOX","https://www.xbox.com/es-MX/","https://www.xbox.com/favicon.ico"],
+["GitHub","https://github.com/easportsfcmobile631-design","https://github.com/favicon.ico"],
+["Facebook","https://www.facebook.com/share/18fACYD7pv/","https://www.facebook.com/favicon.ico"],
+["Spotify","https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y","https://open.spotify.com/favicon.ico"],
+["YouTube","https://youtube.com/@fcmobileeasports-g7o","https://www.youtube.com/favicon.ico"],
+["Twitch","https://www.twitch.tv/easportsfcmobile631","https://www.twitch.tv/favicon.ico"],
+["X","https://x.com/eduardomar47137?s=09","https://x.com/favicon.ico"],
+["WhatsApp","https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B","https://www.whatsapp.com/favicon.ico"],
+["Telegram","https://t.me/Nadia98968999","https://telegram.org/favicon.ico"],
+["Instagram","https://www.instagram.com/zuzukieduardomartinez","https://www.instagram.com/favicon.ico"],
+["Copa Fácil","https://copafacil.com/-4y21q","https://copafacil.com/favicon.ico"],
+["Messenger","https://m.me/zusuki.eduardo.martinez","https://www.messenger.com/favicon.ico"],
+["Websites","https://websites.co.in/refer/749809","https://websites.co.in/favicon.ico"],
+["Steam","https://steamcommunity.com/profiles/76561199837311518/","https://steamcommunity.com/favicon.ico"],
+["Bluesky","https://bsky.app/profile/jemart03.bsky.social","https://bsky.app/favicon.ico"],
+["Threads","https://www.threads.com/@zuzukieduardomartinez","https://www.threads.com/favicon.ico"],
+["Tik Tok","https://www.tiktok.com/@rebelde.de.corazn5","https://www.tiktok.com/favicon.ico"],
+["Acode","https://acode.app/profile","https://acode.app/favicon.ico"],
+["Render","https://dashboard.render.com/","https://dashboard.render.com/favicon.ico"],
+["Netlify","https://app.netlify.com/teams/easportsfcmobile631-design/projects","https://www.netlify.com/favicon.ico"],
+["Vercel","https://vercel.com/martineztitanjesuseduardo","https://vercel.com/favicon.ico"],
+["Snapchat","https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX","https://www.snapchat.com/favicon.ico"],
+["Duolingo","https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link","https://www.duolingo.com/favicon.ico"]
+];
 const grid=document.getElementById('grid');
-Object.keys(redes).forEach(name=>{
-let b=document.createElement('button');
-b.className='bigBtn';b.textContent=name;
-b.onclick=()=>window.open(redes[name],'_blank');
+redes.forEach(([name,url,icon])=>{
+let b=document.createElement('button');b.className='bigBtn';
+b.innerHTML=`<img src="${icon}" onerror="this.src='./icon-19.jpg'"><span>${name}</span>`;
+b.onclick=()=>openInApp(name,url);
 grid.appendChild(b);
 });
 </script>
