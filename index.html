@@ -2,612 +2,97 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tierra Rosa</title>
-
-<link rel="icon" type="image/jpeg" href="icon-19.jpg">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIERRA ROSA</title>
+<link rel="icon" href="./icon-19.jpg">
+<link rel="apple-touch-icon" href="./icon-19.jpg">
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#F5E8D0">
 <style>
-:root{
-    --beige:#E8D5B5;
-    --beige2:#F2E3C7;
-    --negro:#000000;
-    --blanco:#FFFFFF;
-}
-
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    background:var(--beige);
-    color:var(--negro);
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:center;
-}
-
-/* ENCABEZADO */
-header{
-    padding:25px 15px 20px;
-    border-bottom:2px solid var(--negro);
-}
-
-.logo{
-    width:125px;
-    height:125px;
-    object-fit:cover;
-    border-radius:50%;
-    border:3px solid var(--negro);
-    display:block;
-    margin:0 auto 15px;
-    background:var(--blanco);
-}
-
-h1{
-    margin:5px 0;
-    font-size:34px;
-    letter-spacing:2px;
-}
-
-.subtitulo{
-    font-size:16px;
-    font-weight:bold;
-    margin:5px 0;
-}
-
-/* CONTENEDOR */
-main{
-    width:94%;
-    max-width:850px;
-    margin:auto;
-}
-
-/* TITULOS */
-h2{
-    margin-top:30px;
-    padding-bottom:10px;
-    border-bottom:2px solid var(--negro);
-}
-
-/* LOGIN */
-.login-box{
-    background:var(--beige2);
-    border:2px solid var(--negro);
-    border-radius:18px;
-    padding:20px;
-    margin-top:20px;
-}
-
-.login-form{
-    background:var(--blanco);
-    border:2px solid var(--negro);
-    border-radius:14px;
-    padding:15px;
-    margin:15px 0;
-}
-
-.login-form h3{
-    margin-top:0;
-}
-
-input{
-    width:100%;
-    padding:13px;
-    margin:7px 0;
-    border:2px solid var(--negro);
-    border-radius:8px;
-    background:var(--blanco);
-    color:var(--negro);
-    font-size:16px;
-}
-
-button,
-.app-button{
-    display:inline-block;
-    width:100%;
-    padding:15px 18px;
-    margin-top:10px;
-    background:var(--blanco);
-    color:var(--negro);
-    border:2px solid var(--negro);
-    border-radius:10px;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    text-decoration:none;
-    transition:0.2s;
-}
-
-button:hover,
-.app-button:hover{
-    transform:scale(1.02);
-    background:#f5f5f5;
-}
-
-button:active,
-.app-button:active{
-    transform:scale(.98);
-}
-
-/* ENLACES SIN BOTONES */
-.links{
-    margin:25px 0;
-    padding:20px;
-    border-top:2px solid var(--negro);
-    border-bottom:2px solid var(--negro);
-}
-
-.links a{
-    color:var(--negro);
-    font-weight:bold;
-    text-decoration:underline;
-    margin:8px 12px;
-    display:inline-block;
-}
-
-.links a:hover{
-    text-decoration:none;
-}
-
-/* UN CLICK */
-.one-click{
-    margin-top:25px;
-}
-
-.one-click-title{
-    font-size:25px;
-    font-weight:bold;
-    margin-bottom:5px;
-}
-
-/* APLICACIONES */
-.apps{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:20px;
-}
-
-.app-button{
-    margin:0;
-    min-height:60px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-/* INSTALAR */
-.install{
-    margin:35px 0;
-}
-
-.install button{
-    max-width:450px;
-    font-size:19px;
-}
-
-/* PROYECTO */
-.school{
-    border-top:2px solid var(--negro);
-    padding:25px 10px;
-    margin-top:30px;
-    font-weight:bold;
-}
-
-/* CELULAR */
-@media(max-width:500px){
-
-    h1{
-        font-size:28px;
-    }
-
-    .logo{
-        width:110px;
-        height:110px;
-    }
-
-    .apps{
-        grid-template-columns:1fr;
-    }
-
-    .links a{
-        display:block;
-        margin:13px;
-    }
-}
+:root{--beige:#F5E8D0;--arena:#EADFC7;--crema:#FFF8EC;--negro:#000;--blanco:#fff}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black,Arial,sans-serif}
+body{background:var(--beige);color:#000}
+.top{background:var(--crema);border-bottom:3px solid #000;display:flex;align-items:center;gap:10px;padding:10px;position:sticky;top:0;z-index:10}
+.cir{width:48px;height:48px;border:3px solid #000;border-radius:50%;overflow:hidden;background:#fff;flex-shrink:0}
+.cir img{width:100%;height:100%;object-fit:cover;display:block}
+.brand{font-weight:900;font-size:14px;line-height:1}
+.inst{margin-left:auto;border:3px solid #000;background:var(--blanco);border-radius:20px;padding:6px 14px;font-weight:900;font-size:10px;cursor:pointer}
+.inst.ok{background:#000;color:#fff}
+.wrap{max-width:480px;margin:auto;padding:12px}
+.card{background:var(--crema);border:3px solid #000;border-radius:14px;padding:12px;margin-bottom:12px}
+.titulo{border:3px solid #000;background:var(--blanco);border-radius:10px;text-align:center;padding:8px;font-size:12px;font-weight:900;margin-bottom:12px}
+.inp{width:100%;border:2.5px solid #000;background:var(--blanco);border-radius:10px;padding:11px;font-size:12px;font-weight:700;margin:5px 0;outline:none}
+.btn{width:100%;border:3px solid #000;background:var(--blanco);border-radius:10px;padding:12px;font-size:12px;font-weight:900;cursor:pointer;margin-top:6px}
+.btnNegro{background:#000;color:#fff}
+.btn:active{transform:scale(.97)}
+.sep{text-align:center;font-weight:900;margin:12px 0}
+.enlace{padding:10px 0;border-bottom:2px solid #000;font-size:11px;font-weight:900;display:flex;justify-content:space-between}
+.enlace:last-child{border:0}
+.bigGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.bigBtn{border:3px solid #000;background:var(--blanco);border-radius:10px;padding:14px 8px;font-size:10px;font-weight:900;text-align:center;cursor:pointer}
+.bigBtn:active{background:#000;color:#fff}
 </style>
 </head>
-
 <body>
-
-<header>
-
-    <img src="icon-19.jpg"
-         alt="Icono circular de Tierra Rosa"
-         class="logo">
-
-    <h1>TIERRA ROSA</h1>
-
-    <div class="subtitulo">
-        Belleza que nace de la Tierra
-    </div>
-
-</header>
-
-<main>
-
-<!-- INICIAR SESIÓN -->
-<section class="login-box">
-
-<h2>INICIAR SESIÓN</h2>
-
-<form class="login-form" onsubmit="login(event,'Usuario')">
-    <h3>Usuario</h3>
-
-    <input
-        type="text"
-        id="usuario"
-        placeholder="Usuario"
-        required
-        autocomplete="username">
-
-    <input
-        type="password"
-        id="password"
-        placeholder="Contraseña"
-        required
-        autocomplete="current-password">
-
-    <button type="submit">Login</button>
-</form>
-
-
-<form class="login-form" onsubmit="login(event,'Teléfono')">
-    <h3>Teléfono</h3>
-
-    <input
-        type="tel"
-        placeholder="Teléfono"
-        required>
-
-    <input
-        type="password"
-        placeholder="Contraseña"
-        required>
-
-    <button type="submit">Login</button>
-</form>
-
-
-<form class="login-form" onsubmit="login(event,'1er Correo Electrónico')">
-    <h3>1er Correo Electrónico</h3>
-
-    <input
-        type="email"
-        placeholder="1er Correo Electrónico"
-        required>
-
-    <input
-        type="password"
-        placeholder="Contraseña"
-        required>
-
-    <button type="submit">Login</button>
-</form>
-
-
-<form class="login-form" onsubmit="login(event,'2do Correo Electrónico')">
-    <h3>2do Correo Electrónico</h3>
-
-    <input
-        type="email"
-        placeholder="2do Correo Electrónico"
-        required>
-
-    <input
-        type="password"
-        placeholder="Contraseña"
-        required>
-
-    <button type="submit">Login</button>
-</form>
-
-
-<form class="login-form" onsubmit="login(event,'Microsoft')">
-    <h3>Microsoft</h3>
-
-    <input
-        type="text"
-        placeholder="Microsoft"
-        required>
-
-    <input
-        type="password"
-        placeholder="Contraseña"
-        required>
-
-    <button type="submit">Login</button>
-</form>
-
-
-<form class="login-form" onsubmit="login(event,'Drive')">
-    <h3>Drive</h3>
-
-    <input
-        type="text"
-        placeholder="Drive"
-        required>
-
-    <input
-        type="password"
-        placeholder="Contraseña"
-        required>
-
-    <button type="submit">Login</button>
-</form>
-
-
-<form class="login-form" onsubmit="login(event,'Netacad')">
-    <h3>Netacad</h3>
-
-    <input
-        type="text"
-        placeholder="Netacad"
-        required>
-
-    <input
-        type="password"
-        placeholder="Contraseña"
-        required>
-
-    <button type="submit">Login</button>
-</form>
-
-
-<form class="login-form" onsubmit="login(event,'Outlook')">
-    <h3>Outlook</h3>
-
-    <input
-        type="email"
-        placeholder="Outlook"
-        required>
-
-    <input
-        type="password"
-        placeholder="Contraseña"
-        required>
-
-    <button type="submit">Login</button>
-</form>
-
-
-<form class="login-form" onsubmit="login(event,'Eduardo')">
-    <h3>Eduardo</h3>
-
-    <input
-        type="text"
-        placeholder="Eduardo"
-        required>
-
-    <input
-        type="password"
-        placeholder="Contraseña"
-        required>
-
-    <button type="submit">Login</button>
-</form>
-
-</section>
-
-
-<!-- ENLACES SIN BOTONES -->
-<section class="links">
-
-    <a href="necesitas-ayuda.html">Necesitas Ayuda</a>
-
-    <a href="noticias.html">Noticias</a>
-
-    <a href="eventos.html">Eventos</a>
-
-    <a href="sociedad.html">Sociedad</a>
-
-    <a href="actualizaciones.html">Actualizaciones</a>
-
-    <a href="fundadores.html">Fundadores</a>
-
-    <a href="registrarme.html">Registrarme</a>
-
-    <a href="un-click.html">Un Click</a>
-
-</section>
-
-
-<!-- UN CLICK -->
-<section class="one-click">
-
-    <div class="one-click-title">
-        O
-    </div>
-
-    <div class="one-click-title">
-        UN CLICK 👌
-    </div>
-
-
-    <div class="apps">
-
-        <a class="app-button" href="https://www.google.com/" target="_blank">Google</a>
-
-        <a class="app-button" href="https://github.com/" target="_blank">GitHub</a>
-
-        <a class="app-button" href="https://vercel.com/" target="_blank">Vercel</a>
-
-        <a class="app-button" href="https://www.netlify.com/" target="_blank">Netlify</a>
-
-        <a class="app-button" href="https://render.com/" target="_blank">Render</a>
-
-        <a class="app-button" href="https://www.claro.com/" target="_blank">Claro</a>
-
-        <a class="app-button" href="https://www.microsoft.com/microsoft-365/word" target="_blank">Word Files</a>
-
-        <a class="app-button" href="#" onclick="mensaje('Copa Fácil')">Copa Fácil</a>
-
-        <a class="app-button" href="https://www.spotify.com/" target="_blank">Spotify</a>
-
-        <a class="app-button" href="https://www.facebook.com/" target="_blank">Facebook</a>
-
-        <a class="app-button" href="https://store.steampowered.com/" target="_blank">Steam</a>
-
-        <a class="app-button" href="https://bsky.app/" target="_blank">Bluesky</a>
-
-        <a class="app-button" href="https://www.xbox.com/" target="_blank">XBOX</a>
-
-        <a class="app-button" href="https://tv.apple.com/" target="_blank">Apple TV</a>
-
-        <a class="app-button" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-
-        <a class="app-button" href="https://www.tiktok.com/" target="_blank">TikTok</a>
-
-        <a class="app-button" href="https://www.canva.com/" target="_blank">Canva</a>
-
-        <a class="app-button" href="https://www.pinterest.com/" target="_blank">Pinterest</a>
-
-        <a class="app-button" href="https://www.threads.net/" target="_blank">Threads</a>
-
-        <a class="app-button" href="https://www.duolingo.com/" target="_blank">Duolingo</a>
-
-        <a class="app-button" href="https://termux.com/" target="_blank">Termux</a>
-
-        <a class="app-button" href="https://www.youtube.com/" target="_blank">YouTube</a>
-
-        <a class="app-button" href="https://www.ea.com/" target="_blank">EA</a>
-
-        <a class="app-button" href="https://acode.app/" target="_blank">Acode</a>
-
-        <a class="app-button" href="https://www.twitch.tv/" target="_blank">Twitch</a>
-
-        <a class="app-button" href="https://www.instagram.com/" target="_blank">Instagram</a>
-
-        <a class="app-button" href="https://www.snapchat.com/" target="_blank">Snapchat</a>
-
-        <a class="app-button" href="https://telegram.org/" target="_blank">Telegram</a>
-
-        <a class="app-button" href="#" onclick="mensaje('Titanes')">Titanes</a>
-
-        <a class="app-button" href="#" onclick="mensaje('Speaking')">Speaking</a>
-
-        <a class="app-button" href="https://ff.garena.com/" target="_blank">FreeFire</a>
-
-        <a class="app-button" href="https://www.amazon.com/" target="_blank">Amazon</a>
-
-        <a class="app-button" href="https://www.ea.com/games/ea-sports-fc" target="_blank">FCMobile</a>
-
-        <a class="app-button" href="https://discord.com/" target="_blank">Discord</a>
-
-        <a class="app-button" href="https://www.vix.com/" target="_blank">Vix</a>
-
-        <a class="app-button" href="#" onclick="mensaje('Vivo')">Vivo</a>
-
-    </div>
-
-</section>
-
-
-<!-- INSTALAR -->
-<section class="install">
-
-    <button id="installButton" onclick="instalarApp()">
-        [ INSTALAR ] la aplicación Tierra Rosa
-    </button>
-
-</section>
-
-
-<!-- PROYECTO ESCOLAR -->
-<section class="school">
-
-    <p>Es un proyecto escolar</p>
-
-    <p>
-        TIERRA ROSA<br>
-        Belleza que nace de la Tierra
-    </p>
-
-</section>
-
-</main>
-
+<div class="top">
+<div class="cir"><img src="./icon-19.jpg" onerror="this.style.display='none'"></div>
+<div class="brand">TIERRA ROSA<br><span style="font-size:9px">x TITANES x SPEAKING</span></div>
+<button class="inst" id="btnInstall">INSTALAR</button>
+</div>
+
+<div class="wrap">
+<div class="card">
+<div class="titulo">TIERRA ROSA - INICIAR SESIÓN</div>
+
+<input class="inp" placeholder="Usuario"><input class="inp" type="password" placeholder="Contraseña"><button class="btn btnNegro" onclick="go()">Login</button>
+<input class="inp" placeholder="Teléfono" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
+<input class="inp" placeholder="1er Correo Electrónico" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
+<input class="inp" placeholder="2do Correo Electrónico" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
+<input class="inp" placeholder="Microsoft" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
+<input class="inp" placeholder="Drive" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
+<input class="inp" placeholder="Netacad" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
+<input class="inp" placeholder="Outlook" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
+<input class="inp" placeholder="Eduardo" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
+</div>
+
+<div class="card">
+<div class="titulo">Enlaces</div>
+<div class="enlace"><span>Necesitas Ayuda</span><span>></span></div>
+<div class="enlace"><span>Noticias</span><span>></span></div>
+<div class="enlace"><span>Eventos</span><span>></span></div>
+<div class="enlace"><span>Sociedad</span><span>></span></div>
+<div class="enlace"><span>Actualizaciones</span><span>></span></div>
+<div class="enlace"><span>Fundadores</span><span>></span></div>
+<div class="enlace"><span>Registrarme</span><span>></span></div>
+<div class="enlace"><span>Un Click</span><span>></span></div>
+<div class="sep">O</div>
+<button class="btn btnNegro" onclick="go()">UN CLICK 👌</button>
+</div>
+
+<div class="card">
+<div class="titulo">Botones Grandes funcionando</div>
+<div class="bigGrid" id="grid"></div>
+</div>
+
+<div style="text-align:center;font-size:8px;font-weight:900;padding:10px">TIERRA ROSA - Beige Claro arena cálido / crema tostado<br>Bordes y texto negro - Botones blancos - icon-19.jpg</div>
+</div>
 
 <script>
-
-/* LOGIN DEMOSTRATIVO */
-function login(event, metodo){
-
-    event.preventDefault();
-
-    alert(
-        "Inicio de sesión de Tierra Rosa\n\n" +
-        "Método: " + metodo +
-        "\n\nEsta función es una demostración escolar."
-    );
-}
-
-
-/* MENSAJES PARA ENLACES SIN SITIO OFICIAL */
-function mensaje(nombre){
-
-    event.preventDefault();
-
-    alert(
-        nombre +
-        "\n\nEste enlace puede conectarse posteriormente con la página oficial o sistema correspondiente."
-    );
-}
-
-
-/* INSTALACIÓN PWA */
-let deferredPrompt = null;
-
-window.addEventListener("beforeinstallprompt", function(event){
-
-    event.preventDefault();
-
-    deferredPrompt = event;
-
-    document.getElementById("installButton").style.display = "block";
-
+let deferredPrompt;
+const btnInstall=document.getElementById('btnInstall');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;btnInstall.classList.add('ok');btnInstall.textContent='INSTALAR 📲'});
+btnInstall.addEventListener('click',async()=>{
+if(deferredPrompt){deferredPrompt.prompt();const r=await deferredPrompt.userChoice;if(r.outcome==='accepted')btnInstall.textContent='INSTALADO ✅';deferredPrompt=null}
+else{alert('Para instalar TIERRA ROSA:\n\nChrome > 3 puntitos > Instalar app\n\nTu icon-19.jpg ya está listo 🌸');}
 });
-
-
-async function instalarApp(){
-
-    if(deferredPrompt){
-
-        deferredPrompt.prompt();
-
-        const resultado =
-            await deferredPrompt.userChoice;
-
-        deferredPrompt = null;
-
-        return;
-    }
-
-    alert(
-        "Para instalar Tierra Rosa como aplicación:\n\n" +
-        "1. Abre el menú de tu navegador.\n" +
-        "2. Selecciona 'Agregar a pantalla de inicio' o 'Instalar aplicación'.\n" +
-        "3. Confirma la instalación."
-    );
-}
-
+const apps=["Google","GitHub","Vercel","Netlify","Render","Claro","Word","Files","Copa Fácil","Spotify","Facebook","Steam","Bluesky","XBOX","Apple TV","LinkedIn","Tik Tok","Canva","Pinterest","Threads","Duolingo","Termux","YouTube","EA","Acode","Twitch","Instagram","Snapchat","Telegram","Titanes","Speaking","FreeFire","Amazon","FCMobile","Discord","Vix","Vivo"];
+const grid=document.getElementById('grid');
+apps.forEach(n=>{
+let b=document.createElement('button');b.className='bigBtn';b.textContent=n;
+b.onclick=()=>{alert(n+' ✅\nBotón grande funcionando\nTIERRA ROSA');if(n==='Acode')location.href='tienda.html'};
+grid.appendChild(b);
+});
+function go(){location.href='tienda.html'}
 </script>
-
 </body>
-       </html>
+    </html>
