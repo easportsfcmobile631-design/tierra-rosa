@@ -2,884 +2,139 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>TIENDA | TIERRA ROSA</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIENDA - TIERRA ROSA</title>
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#000;
-    color:#d4af37;
-    min-height:100vh;
-}
-
-/* =========================
-   BARRA SUPERIOR
-========================= */
-
-.topbar{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    width:100%;
-    min-height:64px;
-    background:#000;
-    border-bottom:1px solid #d4af37;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:8px 10px;
-}
-
-.menu-button,
-.share-button,
-.cart-button,
-.profile-button{
-    background:#fff;
-    color:#000;
-    border:none;
-    cursor:pointer;
-    font-size:22px;
-    min-width:42px;
-    height:42px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.menu-button:hover,
-.share-button:hover,
-.cart-button:hover,
-.profile-button:hover{
-    transform:scale(1.05);
-}
-
-.logo{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:25px;
-    flex-shrink:0;
-}
-
-.brand{
-    font-size:17px;
-    font-weight:bold;
-    white-space:nowrap;
-}
-
-.brand small{
-    display:block;
-    font-size:9px;
-    font-weight:normal;
-}
-
-.search{
-    flex:1;
-    max-width:220px;
-    height:38px;
-    border:1px solid #d4af37;
-    border-radius:20px;
-    background:#fff;
-    color:#000;
-    padding:0 14px;
-    outline:none;
-}
-
-.search::placeholder{
-    color:#555;
-}
-
-.profile-area{
-    position:relative;
-}
-
-.profile-button{
-    font-size:21px;
-}
-
-/* =========================
-   MENÚ LATERAL
-========================= */
-
-.overlay{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    z-index:1100;
-}
-
-.side-menu{
-    position:fixed;
-    top:0;
-    left:-330px;
-    width:310px;
-    max-width:88%;
-    height:100vh;
-    overflow-y:auto;
-    background:#080808;
-    border-right:2px solid #d4af37;
-    z-index:1200;
-    transition:.3s;
-    padding-bottom:30px;
-}
-
-.side-menu.open{
-    left:0;
-}
-
-.menu-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px;
-    border-bottom:1px solid #d4af37;
-}
-
-.menu-header h2{
-    font-size:20px;
-}
-
-.close-menu{
-    background:#fff;
-    color:#000;
-    border:none;
-    border-radius:50%;
-    width:38px;
-    height:38px;
-    font-size:20px;
-}
-
-.menu-item{
-    display:block;
-    width:100%;
-    padding:12px 18px;
-    background:transparent;
-    color:#d4af37;
-    border:none;
-    border-bottom:1px solid #222;
-    text-align:left;
-    cursor:pointer;
-    font-size:14px;
-}
-
-.menu-item:hover{
-    background:#fff;
-    color:#000;
-}
-
-.menu-section{
-    color:#fff;
-    background:#111;
-    padding:10px 18px;
-    font-weight:bold;
-}
-
-/* =========================
-   CONTENIDO
-========================= */
-
-.main{
-    padding:20px 12px 50px;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:8px;
-    font-size:27px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#fff;
-    margin-bottom:22px;
-}
-
-.info{
-    max-width:900px;
-    margin:0 auto 25px;
-    padding:18px;
-    border:1px solid #d4af37;
-    border-radius:15px;
-    text-align:center;
-    line-height:1.6;
-}
-
-.info strong{
-    color:#fff;
-}
-
-/* =========================
-   PRODUCTOS
-========================= */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.product{
-    background:#090909;
-    border:1px solid #d4af37;
-    border-radius:15px;
-    overflow:hidden;
-    position:relative;
-}
-
-.product-image{
-    width:100%;
-    height:260px;
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    display:block;
-}
-
-.product-info{
-    padding:13px;
-}
-
-.product-title{
-    color:#fff;
-    font-size:17px;
-    margin-bottom:7px;
-}
-
-.brand-tags{
-    display:flex;
-    gap:5px;
-    flex-wrap:wrap;
-    margin-bottom:10px;
-}
-
-.tag{
-    background:#fff;
-    color:#000;
-    padding:4px 7px;
-    border-radius:12px;
-    font-size:10px;
-    font-weight:bold;
-}
-
-.price{
-    font-size:22px;
-    font-weight:bold;
-}
-
-.discount{
-    color:#fff;
-    margin-left:7px;
-}
-
-.status{
-    margin-top:8px;
-    color:#d4af37;
-    font-size:13px;
-}
-
-.product-share{
-    position:absolute;
-    top:10px;
-    right:10px;
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    border:none;
-    background:#fff;
-    color:#000;
-    font-size:22px;
-    cursor:pointer;
-}
-
-/* =========================
-   BOTONES
-========================= */
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin:25px 0;
-}
-
-.white-button{
-    background:#fff;
-    color:#000;
-    border:none;
-    padding:12px 20px;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* =========================
-   PERFIL
-========================= */
-
-.profile-panel{
-    display:none;
-    position:fixed;
-    top:70px;
-    right:10px;
-    width:350px;
-    max-width:calc(100% - 20px);
-    max-height:calc(100vh - 85px);
-    overflow-y:auto;
-    background:#080808;
-    border:2px solid #d4af37;
-    border-radius:16px;
-    padding:18px;
-    z-index:1050;
-}
-
-.profile-panel.open{
-    display:block;
-}
-
-.profile-title{
-    text-align:center;
-    margin-bottom:15px;
-}
-
-.profile-photo{
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    margin:0 auto 12px;
-    border:2px solid #d4af37;
-    overflow:hidden;
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.profile-photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.field{
-    margin-bottom:13px;
-}
-
-.field label{
-    display:block;
-    margin-bottom:5px;
-    color:#d4af37;
-    font-size:13px;
-}
-
-.field input,
-.field textarea,
-.field select{
-    width:100%;
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #d4af37;
-    background:#fff;
-    color:#000;
-}
-
-.field textarea{
-    min-height:75px;
-    resize:vertical;
-}
-
-.save-button{
-    background:#fff;
-    color:#000;
-    border:none;
-    border-radius:8px;
-    padding:9px 15px;
-    cursor:pointer;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.profile-link-row{
-    display:flex;
-    gap:5px;
-    margin-bottom:6px;
-}
-
-.profile-link-row input{
-    flex:1;
-}
-
-.profile-share{
-    width:100%;
-    margin-bottom:15px;
-}
-
-/* =========================
-   PIE
-========================= */
-
-footer{
-    border-top:1px solid #d4af37;
-    margin-top:35px;
-    padding:25px 15px;
-    text-align:center;
-    line-height:1.7;
-}
-
-footer strong{
-    color:#fff;
-}
-
-/* =========================
-   RESULTADOS BUSCADOR
-========================= */
-
-.no-results{
-    display:none;
-    text-align:center;
-    color:#fff;
-    padding:30px;
-}
-
-/* =========================
-   MÓVIL
-========================= */
-
-@media(max-width:600px){
-
-    .topbar{
-        gap:5px;
-        padding:7px 6px;
-    }
-
-    .brand{
-        font-size:13px;
-    }
-
-    .brand small{
-        font-size:8px;
-    }
-
-    .search{
-        min-width:70px;
-        max-width:none;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
-
-    .product-image{
-        height:190px;
-    }
-
-    .product-title{
-        font-size:14px;
-    }
-
-    .price{
-        font-size:18px;
-    }
-
-    .product-share{
-        width:34px;
-        height:34px;
-    }
-}
+:root{--beige:#F5E8D0;--beige2:#FFF8EC}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:var(--beige);color:#000}
+.top{position:sticky;top:0;z-index:100;background:var(--beige2);border-bottom:3px solid #000;display:flex;align-items:center;gap:4px;padding:6px 6px}
+.cir{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid #000;display:flex;align-items:center;justify-content:center;font-size:16px}
+.brand{font-weight:900;font-size:9px;line-height:1;flex-shrink:0}
+.buscWrap{flex:1;position:relative;max-width:125px;display:flex;align-items:center}
+.busc{width:100%;padding:6px 20px 6px 6px;border:2px solid #000;border-radius:7px;background:#fff;color:#000;font-size:10px;outline:none}
+.ico{font-size:18px;cursor:pointer;padding:2px;flex-shrink:0}
+.grid{max-width:980px;margin:auto;padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:#fff;border:2px solid #000;border-radius:11px;overflow:hidden}
+.card img{width:100%;height:165px;object-fit:cover;display:block;background:#eee}
+.tcard{display:flex;justify-content:space-between;align-items:center;padding:4px 6px}
+.b2{background:#fff;color:#000;border:1.5px solid #000;padding:2px 5px;border-radius:4px;font-size:7px;font-weight:900}
+.puntos{font-size:22px;font-weight:900;cursor:pointer;padding:0 6px}
+.info{padding:6px}
+.badge{background:#000;color:#fff;padding:2px 5px;border-radius:4px;font-size:7px;margin-right:2px;display:inline-block}
+.price{font-weight:900;font-size:11px;margin:3px 0}
+.btn{width:100%;padding:8px;background:#fff;color:#000;border:2px solid #000;border-radius:8px;font-weight:900;font-size:9px;cursor:pointer;margin-top:5px}
+.btn:active{background:#000;color:#fff}
+.menu{position:fixed;top:0;left:-100%;width:85%;max-width:330px;height:100%;background:var(--beige2);border-right:3px solid #000;z-index:200;transition:.3s;padding:12px;overflow:auto;font-size:10px;line-height:2.4}
+.menu.open{left:0}
+.perfil{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;z-index:300;padding:8px;overflow:auto}
+.perfil.open{display:flex;justify-content:center}
+.box{background:var(--beige2);width:100%;max-width:520px;border:3px solid #000;border-radius:14px;padding:11px;height:fit-content}
+.inp{width:100%;padding:8px;border:2px solid #000;border-radius:7px;background:#fff;color:#000;font-size:10px;margin:3px 0}
+.small{font-size:9px;font-weight:900}
 </style>
 </head>
-
 <body>
 
-<!-- =========================
-     BARRA SUPERIOR
-========================= -->
-
-<header class="topbar">
-
-    <button class="menu-button" onclick="openMenu()">☰</button>
-
-    <div class="logo">🌸</div>
-
-    <div class="brand">
-        TIERRA ROSA
-        <small>Belleza que nace de la Tierra</small>
-    </div>
-
-    <input
-        id="searchInput"
-        class="search"
-        type="search"
-        placeholder="🔎 Buscar"
-        oninput="searchProducts()"
-    >
-
-    <button class="share-button" onclick="shareApplication()" title="Compartir aplicación">⋮</button>
-
-    <button class="cart-button" onclick="showCart()" title="Carrito">🛒</button>
-
-    <div class="profile-area">
-        <button class="profile-button" onclick="toggleProfile()" title="Ver Perfil">👤</button>
-    </div>
-
-</header>
-
-
-<!-- =========================
-     MENÚ LATERAL
-========================= -->
-
-<div id="overlay" class="overlay" onclick="closeMenu()"></div>
-
-<nav id="sideMenu" class="side-menu">
-
-    <div class="menu-header">
-        <h2>TIERRA ROSA</h2>
-        <button class="close-menu" onclick="closeMenu()">×</button>
-    </div>
-
-    <div class="menu-section">Aplicación</div>
-
-    <button class="menu-item">Acerca de</button>
-    <button class="menu-item">Configuración</button>
-    <button class="menu-item">Parámetros</button>
-    <button class="menu-item">Actualización del Sistema</button>
-    <button class="menu-item">Administración del Sistema</button>
-    <button class="menu-item">Usuarios</button>
-    <button class="menu-item">Cuentas</button>
-    <button class="menu-item">Google</button>
-    <button class="menu-item">Acerca de la Aplicación</button>
-    <button class="menu-item">Bienestar Digital y Controles Parentales</button>
-    <button class="menu-item">Atajos y Accesibilidad</button>
-    <button class="menu-item">Modo Ultra Juego</button>
-    <button class="menu-item">Ubicación</button>
-    <button class="menu-item">Privacidad</button>
-    <button class="menu-item">Contraseña</button>
-    <button class="menu-item">Seguridad</button>
-    <button class="menu-item">RAM y Almacenamiento</button>
-    <button class="menu-item">Batería</button>
-    <button class="menu-item">Sonido y Vibración</button>
-    <button class="menu-item">Efectos Dinámicos</button>
-    <button class="menu-item">Pantalla y Brillo</button>
-    <button class="menu-item">Más Conexiones</button>
-    <button class="menu-item">Bluetooth</button>
-    <button class="menu-item">Wi-Fi y Datos Móviles</button>
-    <button class="menu-item">Información del Software</button>
-    <button class="menu-item">Estado</button>
-    <button class="menu-item">Información Legal</button>
-    <button class="menu-item">Servicio al Cliente</button>
-    <button class="menu-item">Versión del Sistema Operativo</button>
-    <button class="menu-item">Servicio de Garantía</button>
-    <button class="menu-item">Centros de Servicios</button>
-    <button class="menu-item">Derechos del Autor</button>
-    <button class="menu-item">Declaración de privacidad</button>
-    <button class="menu-item">Código Abierto</button>
-
-    <div class="menu-section">Noticias</div>
-
-    <button class="menu-item">Noticias</button>
-    <button class="menu-item">Eventos</button>
-    <button class="menu-item">Rueda de Prensa</button>
-
-    <div class="menu-section">TIERRA ROSA</div>
-
-    <button class="menu-item">Belleza</button>
-    <button class="menu-item">Cosméticos</button>
-    <button class="menu-item">Maquillaje</button>
-    <button class="menu-item">Tarjeta de Regalo</button>
-
-    <div class="buttons">
-        <button class="white-button" onclick="login()">Iniciar Sesión</button>
-        <button class="white-button" onclick="closeMenu()">Tienda</button>
-    </div>
-
-</nav>
-
-
-<!-- =========================
-     PERFIL
-========================= -->
-
-<section id="profilePanel" class="profile-panel">
-
-    <h2 class="profile-title">👤 Mi Perfil</h2>
-
-    <div class="profile-photo">
-        <img id="profileImage" alt="Foto de perfil">
-    </div>
-
-    <div class="field">
-        <label>Subir foto</label>
-        <input type="file" id="photoInput" accept="image/*">
-    </div>
-
-    <button class="save-button" onclick="savePhoto()">Guardar foto</button>
-
-    <button class="white-button profile-share" onclick="shareProfile()">
-        ⋮ Compartir enlace de perfil
-    </button>
-
-    <div class="field">
-        <label>Descripción</label>
-        <textarea id="description"></textarea>
-    </div>
-
-    <button class="save-button" onclick="saveProfileField('description')">Guardar</button>
-
-    <div class="field">
-        <label>Biografía</label>
-        <textarea id="biography"></textarea>
-    </div>
-
-    <button class="save-button" onclick="saveProfileField('biography')">Guardar</button>
-
-    <div class="field">
-        <label>Nombre Completo</label>
-        <input id="fullName" type="text">
-    </div>
-
-    <div class="field">
-        <label>Edad</label>
-        <input id="age" type="number">
-    </div>
-
-    <div class="field">
-        <label>Apodo</label>
-        <input id="nickname" type="text">
-    </div>
-
-    <button class="save-button" onclick="saveProfileField('basic')">Guardar</button>
-
-    <h3>16 Links Webs</h3>
-
-    <div id="webLinks"></div>
-
-    <button class="save-button" onclick="saveLinks('web')">Guardar</button>
-
-    <h3>9 Links de Redes Sociales</h3>
-
-    <div id="socialLinks"></div>
-
-    <button class="save-button" onclick="saveLinks('social')">Guardar</button>
-
-    <div class="field">
-        <label>País</label>
-        <input id="country" type="text">
-    </div>
-
-    <div class="field">
-        <label>E-mail</label>
-        <input id="email" type="email">
-    </div>
-
-    <div class="field">
-        <label>Teléfono</label>
-        <input id="phone" type="tel">
-    </div>
-
-    <div class="field">
-        <label>Ocupación</label>
-        <input id="occupation" type="text">
-    </div>
-
-    <div class="field">
-        <label>Idioma</label>
-        <select id="language">
-            <option>Español</option>
-            <option>English</option>
-            <option>Français</option>
-            <option>Português</option>
-            <option>Deutsch</option>
-            <option>Italiano</option>
-            <option>日本語</option>
-            <option>中文</option>
-        </select>
-    </div>
-
-    <div class="field">
-        <label>Zona horaria mundial</label>
-
-        <select id="timezone">
-            <option value="America/Mexico_City">México — Ciudad de México</option>
-            <option value="America/Monterrey">México — Monterrey</option>
-            <option value="America/Chihuahua">México — Chihuahua</option>
-            <option value="America/Tijuana">México — Tijuana</option>
-            <option value="America/New_York">Estados Unidos — Nueva York</option>
-            <option value="America/Chicago">Estados Unidos — Chicago</option>
-            <option value="America/Denver">Estados Unidos — Denver</option>
-            <option value="America/Los_Angeles">Estados Unidos — Los Ángeles</option>
-            <option value="America/Toronto">Canadá — Toronto</option>
-            <option value="America/Vancouver">Canadá — Vancouver</option>
-            <option value="America/Sao_Paulo">Brasil — São Paulo</option>
-            <option value="America/Argentina/Buenos_Aires">Argentina — Buenos Aires</option>
-            <option value="America/Santiago">Chile — Santiago</option>
-            <option value="America/Bogota">Colombia — Bogotá</option>
-            <option value="America/Lima">Perú — Lima</option>
-            <option value="Europe/Madrid">España — Madrid</option>
-            <option value="Europe/London">Reino Unido — Londres</option>
-            <option value="Europe/Paris">Francia — París</option>
-            <option value="Europe/Berlin">Alemania — Berlín</option>
-            <option value="Europe/Rome">Italia — Roma</option>
-            <option value="Europe/Moscow">Rusia — Moscú</option>
-            <option value="Africa/Cairo">Egipto — El Cairo</option>
-            <option value="Asia/Dubai">Emiratos Árabes Unidos — Dubái</option>
-            <option value="Asia/Kolkata">India — Nueva Delhi</option>
-            <option value="Asia/Shanghai">China — Shanghái</option>
-            <option value="Asia/Tokyo">Japón — Tokio</option>
-            <option value="Asia/Seoul">Corea del Sur — Seúl</option>
-            <option value="Asia/Singapore">Singapur</option>
-            <option value="Australia/Sydney">Australia — Sídney</option>
-            <option value="Pacific/Auckland">Nueva Zelanda — Auckland</option>
-        </select>
-    </div>
-
-    <button class="white-button" onclick="saveAllProfile()">Guardar</button>
-    <br><br>
-
-    <button class="white-button" onclick="closeSession()">Cerrar Sesión</button>
-    <button class="white-button" onclick="toggleProfile()">Tienda</button>
-
-</section>
-
-
-<!-- =========================
-     CONTENIDO
-========================= -->
-
-<main class="main">
-
-    <h1 class="title">TIENDA</h1>
-
-    <p class="subtitle">
-        Belleza que nace de la Tierra
-    </p>
-
-    <div class="info">
-
-        <strong>TIERRA ROSA</strong><br>
-
-        Asociación de esta Empresa Tienda en línea de productos
-        de Maquillaje, Belleza y Cosméticos con
-        <strong>TITANES</strong> y <strong>SPEAKING</strong>.
-
-        <br><br>
-
-        <strong>Hecho en México 2026</strong>
-
-    </div>
-
-    <div class="buttons">
-
-        <button class="white-button" onclick="login()">
-            Iniciar Sesión
-        </button>
-
-        <button class="white-button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-            Tienda
-        </button>
-
-    </div>
-
-
-    <section id="products" class="products">
-
-
-        <!-- 1 -->
-
-        <article class="product" data-name="Cosmético Tierra Rosa 1">
-            <button class="product-share" onclick="shareProduct('Cosmético Tierra Rosa 1')">⋮</button>
-
-            <div class="product-image">
-                <img src="images (1).jpeg"
-                     alt="Cosmético Tierra Rosa 1"
-                     loading="eager"
-                     onerror="imageError(this)">
-            </div>
-
-            <div class="product-info">
-                <h2 class="product-title">Cosmético Tierra Rosa 1</h2>
-
-                <div class="brand-tags">
-                    <span class="tag">TITANES</span>
-                    <span class="tag">SPEAKING</span>
-                </div>
-
-                <span class="price">$299 MXN</span>
-                <span class="discount">20% OFF</span>
-
-                <div class="status">
-                    ★ Destacado · Nuevo · Lanzamiento
-                </div>
-            </div>
-        </article>
-
-
-        <!-- 2 -->
-
-        <article class="product" data-name="Cosmético Tierra Rosa 2">
-            <button class="product-share" onclick="shareProduct('Cosmético Tierra Rosa 2')">⋮</button>
-
-            <div class="product-image">
-                <img src="images (2).jpeg"
-                     alt="Cosmético Tierra Rosa 2"
-                     loading="eager"
-                     onerror="imageError(this)">
-            </div>
-
-            <div class="product-info">
-                <h2 class="product-title">Cosmético Tierra Rosa 2</h2>
-                <div class="brand-tags">
-                    <span class="tag">TITANES</span>
-                    <span class="tag">SPEAKING</span>
-                </div>
-                <span class="price">$349 MXN</span>
-                <span class="discount">15% OFF</span>
-                <div class="status">★ Destacado · Nuevo</div>
-            </div>
-        </article>
-
-
-        <!-- 3 -->
-
-        <article class="product" data-name="Cosmético Tierra Rosa 3">
-            <button class="product-share" onclick="shareProduct('Cosmético Tierra Rosa 3')">⋮</button>
-
-            <div class="product-image">
-                <img src="images (3).jpeg"
-                     alt="Cosmético Tierra Rosa 3"
-                     loading="eager"
-                     onerror="imageError(this)">
-            </div>
-
-            <div class="product-info">
-                <h2 class="product-title">Cosmético Tierra Rosa 3</h2>
-                <div class="brand-tags">
-                    <span class="tag">TITANES</span>
-                    <span class="tag">SPEAKING</span>
-         </div>
-     
+<!-- BARRA SUPERIOR -->
+<div class="top">
+<span class="ico" onclick="toggleMenu()">☰</span>
+<div class="cir">🌸</div>
+<div class="brand">TIERRA<br>ROSA</div>
+<div class="buscWrap"><input id="buscador" class="busc" placeholder="Buscar 🔎" oninput="filtrar()"></div>
+<span class="ico" onclick="shareApp()">⋮</span>
+<span class="ico" onclick="alert('Email: soporter@tierrarosa.com')">📧</span>
+<span class="ico">🛒</span>
+<button onclick="openPerfil()" style="display:flex;align-items:center;gap:2px;padding:4px 6px;background:#fff;border:2px solid #000;border-radius:20px;font-size:8px;font-weight:900;cursor:pointer"><span style="width:22px;height:22px;border-radius:50%;background:#fff;border:1px solid #000;display:flex;align-items:center;justify-content:center">👤</span> ver Perfil</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div style="text-align:center;padding:16px;font-weight:900;font-size:10px;line-height:1.6">
+TIERRA ROSA<br>Asociación de esta Empresa Tienda en línea de productos de Maquillaje Belleza y Cosméticos con<br>TITANES<br>SPEAKING<br>Hecho en México 2026
+</div>
+
+<!-- MENU LATERAL -->
+<div class="menu" id="menu"><b>TIENDA</b><span style="float:right;cursor:pointer;font-size:18px" onclick="toggleMenu()">✕</span><br><br>
+Acerca de<br>Configuración<br>Parámetros<br>Actualización del Sistema<br>Administración del Sistema<br>Usuarios<br>Cuentas<br>Google<br>Acerca de la Aplicación<br>Bienestar Digital y Controles Parentales<br>Atajos y Accesibilidad<br>Modo Ultra Juego<br>Ubicación<br>Privacidad<br>Contraseña<br>Seguridad<br>RAM y Almacenamiento<br>Batería<br>Sonido y Vibración<br>Efectos Dinámicos<br>Pantalla y Brillo<br>Más Conexiones<br>Bluetooth<br>Wi-fi y Datos Móviles<br>Información del Software<br>Estado<br>Información Legal<br>Servicio al Cliente<br>Versión del Sistema Operativo<br>Servicio de Garantía<br>Centros de Servicios<br>Derechos del Autor<br>Declaración de privacidad<br>Código Abierto<br>Noticias<br>Eventos<br>Rueda de Prensa<br>Belleza<br>Cosméticos<br>Maquillaje<br>Tarjeta de Regalo<br><br>
+<button class="btn" onclick="location.href='index.html'">Botón [Iniciar Sesión]</button>
+<button class="btn" onclick="toggleMenu()">Botón [Tienda]</button>
+</div>
+
+<!-- PERFIL -->
+<div class="perfil" id="perfil"><div class="box">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+<b>Perfil - Editar</b>
+<div style="display:flex;gap:4px">
+<button class="btn" style="width:auto;padding:5px 7px" onclick="sharePerfil()">⋮ compartir enlace de perfil</button>
+<span onclick="closePerfil()" style="cursor:pointer;font-weight:900;font-size:20px">✕</span>
+</div>
+</div>
+
+<div style="text-align:center">
+<img id="prev" style="width:90px;height:90px;border-radius:50%;border:3px solid #000;object-fit:cover;margin:auto;display:none">
+<div id="icoP" style="width:90px;height:90px;border-radius:50%;border:3px solid #000;display:flex;align-items:center;justify-content:center;margin:auto;background:#fff;font-size:34px">👤</div>
+<input type="file" id="file" accept="image/*" style="font-size:9px;margin:6px 0"><br>
+<button class="btn" onclick="saveFotoPermanente()">Guardar foto</button>
+<span id="msgFoto" class="small" style="color:green"></span>
+</div>
+
+<span class="small">Descripción</span><input id="desc" class="inp"><button class="btn" onclick="saveField('desc')">Botón Guardar</button>
+<span class="small">Biografía</span><input id="bio" class="inp"><button class="btn" onclick="saveField('bio')">Botón Guardar</button>
+<span class="small">Nombre Completo</span><input id="nombre" class="inp">
+<span class="small">Edad</span><input id="edad" class="inp">
+<span class="small">Apodo</span><input id="apodo" class="inp">
+<span class="small">Escribir</span><input id="escribir" class="inp">
+<span class="small">16 Links Webs</span><div id="webs"></div><button class="btn" onclick="saveWebs()">Botón Guardar</button>
+<span class="small">9 Links de Redes Sociales</span><div id="redes"></div><button class="btn" onclick="saveRedes()">Guardar</button>
+<input id="pais" class="inp" placeholder="País"><input id="email" class="inp" placeholder="E-mail"><input id="tel" class="inp" placeholder="Teléfono"><input id="ocup" class="inp" placeholder="Ocupación"><input id="idioma" class="inp" placeholder="Idioma">
+<select id="zona" class="inp"><option>Menu desplegable de Zona horaria mundial por país</option><option>México GMT-6</option><option>USA GMT-5</option><option>España GMT+1</option><option>Argentina GMT-3</option><option>Colombia GMT-5</option></select>
+<button class="btn" onclick="saveFull()">[Guardar]</button>
+<button class="btn" style="background:#000;color:#fff" onclick="location.href='index.html'">[Cerrar Sesión]</button>
+<button class="btn" onclick="closePerfil()">[Tienda]</button>
+</div></div>
+
+<script>
+// CARGA FOTO QUE YA NO SE BORRA
+let savedFoto=localStorage.getItem('foto_perfil_base64');
+if(savedFoto){let p=document.getElementById('prev');p.src=savedFoto;p.style.display='block';document.getElementById('icoP').style.display='none';}
+let tempBase64='';
+document.getElementById('file').addEventListener('change',e=>{
+ let f=e.target.files[0];if(!f)return;
+ let r=new FileReader();r.onload=ev=>{
+  tempBase64=ev.target.result;
+  let p=document.getElementById('prev');p.src=tempBase64;p.style.display='block';document.getElementById('icoP').style.display='none';
+ };r.readAsDataURL(f);
+});
+function saveFotoPermanente(){if(!tempBase64){if(savedFoto){alert('Ya tienes foto guardada ✅');return}alert('Primero elige foto');return}localStorage.setItem('foto_perfil_base64',tempBase64);savedFoto=tempBase64;document.getElementById('msgFoto').innerText='✓ Foto guardada permanente';alert('Foto Guardada y NO SE BORRA ✅');}
+
+// IMAGENES 1-18 EN ORDEN - VISIBLES TODAS
+let lista=[];for(let i=1;i<=18;i++)lista.push(`images (${i}).jpeg`);
+let grid=document.getElementById('grid');
+function render(arr){
+ grid.innerHTML='';
+ arr.forEach(src=>{
+  let n=src.match(/\d+/)[0];
+  grid.innerHTML+=`<div class="card"><div class="tcard"><span><span class="b2">TITANES</span> <span class="b2">SPEAKING</span></span><span class="puntos" onclick="shareProd(${n})">⋮</span></div><img src="${src}" onerror="this.src='https://via.placeholder.com/400x300/F5E8D0/000000?text=${encodeURIComponent(src)}'"><div class="info"><div><span class="badge">-${10+n%25}%</span><span class="badge">Nuevo lanzamiento</span><span class="badge">Destacado</span></div><div class="price">$${119+n*6} MXN</div><button class="btn">$ precios</button></div></div>`;
+ });
+}
+render(lista);
+function filtrar(){let q=document.getElementById('buscador').value.toLowerCase();render(q?lista.filter(x=>x.toLowerCase().includes(q)):lista)}
+function toggleMenu(){document.getElementById('menu').classList.toggle('open')}
+function openPerfil(){document.getElementById('perfil').classList.add('open');cargarDatos()}
+function closePerfil(){document.getElementById('perfil').classList.remove('open')}
+let websDiv=document.getElementById('webs');for(let i=1;i<=16;i++)websDiv.innerHTML+=`<input id="w${i}" class="inp" placeholder="Web ${i}">`;
+let redesDiv=document.getElementById('redes');for(let i=1;i<=9;i++)redesDiv.innerHTML+=`<input id="r${i}" class="inp" placeholder="Red ${i}">`;
+function saveField(id){let v=document.getElementById(id).value;if(!v){alert('Escribe');return}localStorage.setItem(id,v);alert(id+' Guardado ✅')}
+function saveWebs(){let a=[];for(let i=1;i<=16;i++)a.push(document.getElementById('w'+i).value);localStorage.setItem('webs',JSON.stringify(a));alert('16 Webs Guardadas y NO SE BORRAN ✅')}
+function saveRedes(){let a=[];for(let i=1;i<=9;i++)a.push(document.getElementById('r'+i).value);localStorage.setItem('redes',JSON.stringify(a));alert('9 Redes Guardadas y NO SE BORRAN ✅')}
+function saveFull(){let d={pais:document.getElementById('pais').value,email:document.getElementById('email').value,tel:document.getElementById('tel').value,ocup:document.getElementById('ocup').value,idioma:document.getElementById('idioma').value,zona:document.getElementById('zona').value,nombre:document.getElementById('nombre').value,edad:document.getElementById('edad').value,apodo:document.getElementById('apodo').value,escribir:document.getElementById('escribir').value};localStorage.setItem('perfil_full_obj',JSON.stringify(d));alert('TODO Guardado y permanece ✅')}
+function cargarDatos(){try{let d=JSON.parse(localStorage.getItem('perfil_full_obj')||'{}');for(let k in d){if(document.getElementById(k))document.getElementById(k).value=d[k]}let w=JSON.parse(localStorage.getItem('webs')||'[]');w.forEach((v,i)=>{if(document.getElementById('w'+(i+1)))document.getElementById('w'+(i+1)).value=v});let r=JSON.parse(localStorage.getItem('redes')||'[]');r.forEach((v,i)=>{if(document.getElementById('r'+(i+1)))document.getElementById('r'+(i+1)).value=v});let desc=localStorage.getItem('desc');if(desc)document.getElementById('desc').value=desc;let bio=localStorage.getItem('bio');if(bio)document.getElementById('bio').value=bio;}catch(e){}}
+cargarDatos();
+function shareApp(){let l=location.href;if(navigator.share){navigator.share({title:'TIERRA ROSA',url:l})}else{navigator.clipboard.writeText(l);alert('Link APP copiado: '+l)}}
+function sharePerfil(){let l=location.href.split('#')[0]+'#perfil_'+(localStorage.getItem('apodo')||'titan');if(navigator.share){navigator.share({title:'Mi Perfil Tierra Rosa',url:l})}else{navigator.clipboard.writeText(l);alert('Link PERFIL copiado: '+l)}}
+function shareProd(n){let l=location.href.split('#')[0]+'#prod-'+n;if(navigator.share){navigator.share({title:'Producto '+n,url:l})}else{navigator.clipboard.writeText(l);alert('Link Producto '+n+' copiado: '+l)}}
+</script>
+</body>
+</html>
