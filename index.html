@@ -2,114 +2,760 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>TierraRosa</title>
-<link rel="icon" href="./icon-19.jpg">
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#F5E8D0">
+
+<link rel="icon" type="image/jpeg" href="icon-19.jpg">
+
+<!-- Iconos reales de Simple Icons -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/index.min.css">
+
 <style>
-:root{--beige:#F5E8D0;--crema:#FFF8EC;--blanco:#fff;--negro:#000}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black,Arial,sans-serif}
-body{background:var(--beige);color:var(--negro)}
-.top{background:var(--crema);border-bottom:3px solid #000;display:flex;align-items:center;gap:10px;padding:12px;position:sticky;top:0;z-index:10}
-.cir{width:46px;height:46px;border:3px solid #000;border-radius:50%;overflow:hidden;background:#fff}
-.cir img{width:100%;height:100%;object-fit:cover;display:block}
-.brand{font-weight:900;font-size:18px;letter-spacing:.5px}
-.wrap{max-width:520px;margin:auto;padding:12px;padding-bottom:95px}
-.card{background:var(--crema);border:3px solid #000;border-radius:14px;padding:12px;margin-bottom:12px}
-.tit{border:3px solid #000;background:var(--blanco);border-radius:10px;text-align:center;padding:9px;font-size:12px;font-weight:900;margin-bottom:10px}
-.inp{width:100%;border:2.5px solid #000;background:var(--blanco);border-radius:10px;padding:12px;margin:5px 0;font-size:11px;font-weight:700;outline:none}
-.btn{width:100%;border:3px solid #000;background:var(--blanco);border-radius:10px;padding:13px;margin-top:6px;font-weight:900;cursor:pointer}
-.btnN{background:#000;color:#fff}
-.enlace{width:100%;border:0;border-bottom:2.5px solid #000;background:var(--blanco);border-radius:10px;margin:6px 0;padding:14px;font-weight:900;font-size:12px;display:flex;justify-content:space-between;text-align:left;cursor:pointer;border:2.5px solid #000}
-.bigGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.bigBtn{border:3px solid #000;background:var(--blanco);border-radius:12px;padding:10px 6px;font-size:10px;font-weight:900;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px}
-.bigBtn img{width:28px;height:28px;object-fit:contain}
-#installBtn{position:fixed;right:14px;bottom:14px;border:3px solid #000;background:#000;color:#fff;border-radius:25px;padding:13px 22px;font-weight:900;font-size:11px;z-index:99;cursor:pointer}
-#viewer{position:fixed;inset:0;background:var(--beige);z-index:100;display:none;flex-direction:column}
-#viewerTop{background:var(--crema);border-bottom:3px solid #000;padding:10px;display:flex;gap:8px;align-items:center}
-#viewerTop button{border:3px solid #000;background:var(--blanco);border-radius:20px;padding:7px 12px;font-size:10px;font-weight:900}
-#viewerFrame{flex:1;border:0;width:100%;background:#fff}
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#e8d5bd;
+    color:#000000;
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+}
+
+/* ENCABEZADO */
+header{
+    text-align:center;
+    padding:30px 15px 20px;
+    border-bottom:2px solid #000;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #000;
+    display:block;
+    margin:0 auto 12px;
+}
+
+h1{
+    margin:5px 0;
+    font-size:32px;
+    letter-spacing:2px;
+}
+
+.subtitulo{
+    margin:0;
+    font-size:15px;
+}
+
+/* CONTENEDOR */
+.contenedor{
+    width:94%;
+    max-width:850px;
+    margin:25px auto 100px;
+}
+
+/* TARJETAS */
+.seccion{
+    background:#eadbc8;
+    border:2px solid #000;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:20px;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+}
+
+.seccion h2{
+    margin-top:0;
+    text-align:center;
+}
+
+/* LOGIN */
+.formulario{
+    max-width:500px;
+    margin:auto;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin:14px 0 6px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:2px solid #000;
+    border-radius:10px;
+    background:#fff;
+    color:#000;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border:3px solid #000;
+}
+
+.limite{
+    font-size:12px;
+    margin-top:4px;
+}
+
+/* BOTONES */
+button,
+.boton{
+    display:inline-block;
+    width:100%;
+    padding:13px 18px;
+    margin-top:15px;
+    background:#fff;
+    color:#000;
+    border:2px solid #000;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+button:hover,
+.boton:hover{
+    background:#f2f2f2;
+}
+
+/* ENLACES */
+.enlaces{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+.enlace{
+    display:inline-block;
+    color:#000;
+    font-weight:bold;
+    text-decoration:underline;
+    padding:8px 12px;
+}
+
+.enlace:hover{
+    background:#fff;
+    border-radius:8px;
+}
+
+/* REDES */
+.redes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(135px,1fr));
+    gap:12px;
+}
+
+.red{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:52px;
+    padding:10px;
+    background:#fff;
+    border:2px solid #000;
+    border-radius:12px;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.red:hover{
+    transform:translateY(-2px);
+    background:#f3f3f3;
+}
+
+.icono{
+    width:25px;
+    height:25px;
+    object-fit:contain;
+}
+
+/* MENSAJES */
+#mensaje{
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* INSTALAR */
+#instalar{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:auto;
+    min-width:130px;
+    padding:13px 18px;
+    margin:0;
+    z-index:9999;
+    display:none;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+/* PIE */
+footer{
+    text-align:center;
+    border-top:2px solid #000;
+    padding:20px;
+    font-size:13px;
+}
+
+/* CELULAR */
+@media(max-width:600px){
+
+    header{
+        padding-top:20px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    .seccion{
+        padding:17px;
+    }
+
+    .redes{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    #instalar{
+        right:12px;
+        bottom:12px;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="top">
-<div class="cir"><img src="./icon-19.jpg"></div>
-<div class="brand">TierraRosa</div>
-</div>
 
-<div class="wrap">
-<div class="card">
-<div class="tit">🔑 INICIAR SESIÓN</div>
-<input class="inp" id="u" maxlength="75" placeholder="Usuario - 75 caracteres">
-<input class="inp" id="p" maxlength="75" type="password" placeholder="Contraseña - 75 caracteres">
-<button class="btn btnN" onclick="location.href='./tienda.html'">Login</button>
-</div>
+<header>
 
-<div class="card">
-<div class="tit">Enlaces</div>
-<button class="enlace" onclick="location.href='./registrarme.html'">Registrarme <span>></span></button>
-<button class="enlace" onclick="location.href='./un-click.html'">Un Click <span>></span></button>
-<div style="text-align:center;font-weight:900;margin:12px 0">O</div>
-<button class="btn btnN" onclick="location.href='./un-click.html'">[Un click] botón</button>
-</div>
+    <img src="icon-19.jpg"
+         alt="Icono de TierraRosa"
+         class="logo">
 
-<div class="card">
-<div class="tit">Consulta mis Redes Sociales - Icono Real</div>
-<div class="bigGrid" id="grid"></div>
-</div>
-</div>
+    <h1>TierraRosa</h1>
 
-<button id="installBtn">INSTALAR 📲</button>
+    <p class="subtitulo">Belleza que nace de la Tierra</p>
 
-<div id="viewer">
-<div id="viewerTop"><button onclick="closeViewer()">← Regresar</button><b id="vTitle" style="font-size:11px"></b><button style="margin-left:auto" onclick="openExternal()">Abrir fuera ↗</button></div>
-<iframe id="viewerFrame" src=""></iframe>
-</div>
+</header>
+
+
+<main class="contenedor">
+
+    <!-- INICIAR SESIÓN -->
+    <section class="seccion">
+
+        <h2>🔑 INICIAR SESIÓN</h2>
+
+        <form id="loginForm" class="formulario">
+
+            <label for="usuario">Usuario</label>
+
+            <input
+                type="text"
+                id="usuario"
+                name="usuario"
+                maxlength="75"
+                autocomplete="username"
+                placeholder="Escribe tu usuario"
+                required>
+
+            <div class="limite">
+                Máximo 75 caracteres
+            </div>
+
+
+            <label for="contrasena">Contraseña</label>
+
+            <input
+                type="password"
+                id="contrasena"
+                name="contrasena"
+                maxlength="75"
+                autocomplete="current-password"
+                placeholder="Escribe tu contraseña"
+                required>
+
+            <div class="limite">
+                Máximo 75 caracteres
+            </div>
+
+
+            <button type="submit">
+                Login
+            </button>
+
+            <div id="mensaje"></div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ENLACES -->
+    <section class="seccion">
+
+        <h2>Enlaces</h2>
+
+        <div class="enlaces">
+
+            <a class="enlace"
+               href="registrarme-aqui.html">
+               Registrarme
+            </a>
+
+            <a class="enlace"
+               href="acceso-con-un-click.html">
+               Un Click
+            </a>
+
+        </div>
+
+        <p style="text-align:center;font-weight:bold;">O</p>
+
+        <a class="boton"
+           href="acceso-con-un-click.html">
+           Un click
+        </a>
+
+    </section>
+
+
+    <!-- REDES -->
+    <section class="seccion">
+
+        <h2>Consulta mis Redes Sociales</h2>
+
+        <p style="text-align:center;">
+            Accede directamente a mis aplicaciones, redes sociales
+            y plataformas.
+        </p>
+
+
+        <div class="redes">
+
+            <a class="red"
+               href="https://www.apple.com/mx/apple-tv/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span></span>
+                Apple TV
+            </a>
+
+
+            <a class="red"
+               href="https://discord.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>💬</span>
+                Discord
+            </a>
+
+
+            <a class="red"
+               href="https://www.xbox.com/es-MX/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>🎮</span>
+                XBOX
+            </a>
+
+
+            <a class="red"
+               href="https://github.com/easportsfcmobile631-design"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>◉</span>
+                GitHub
+            </a>
+
+
+            <a class="red"
+               href="https://www.facebook.com/share/18fACYD7pv/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>f</span>
+                Facebook
+            </a>
+
+
+            <a class="red"
+               href="https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>●</span>
+                Spotify
+            </a>
+
+
+            <a class="red"
+               href="https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>▶</span>
+                YouTube
+            </a>
+
+
+            <a class="red"
+               href="https://www.twitch.tv/easportsfcmobile631?sr=a"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>♜</span>
+                Twitch
+            </a>
+
+
+            <a class="red"
+               href="https://x.com/eduardomar47137?s=09"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>𝕏</span>
+                X
+            </a>
+
+
+            <a class="red"
+               href="https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>☏</span>
+                WhatsApp
+            </a>
+
+
+            <a class="red"
+               href="https://t.me/Nadia98968999"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>➤</span>
+                Telegram
+            </a>
+
+
+            <a class="red"
+               href="https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>◎</span>
+                Instagram
+            </a>
+
+
+            <a class="red"
+               href="https://copafacil.com/-4y21q"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>⚽</span>
+                Copa Fácil
+            </a>
+
+
+            <a class="red"
+               href="https://m.me/zusuki.eduardo.martinez"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>✉</span>
+                Messenger
+            </a>
+
+
+            <a class="red"
+               href="https://websites.co.in/refer/749809"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>🌐</span>
+                Websites.co.in
+            </a>
+
+
+            <a class="red"
+               href="https://steamcommunity.com/profiles/76561199837311518/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>🎮</span>
+                Steam
+            </a>
+
+
+            <a class="red"
+               href="https://bsky.app/profile/jemart03.bsky.social"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>🦋</span>
+                Bluesky
+            </a>
+
+
+            <a class="red"
+               href="https://www.threads.com/@zuzukieduardomartinez"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>@</span>
+                Threads
+            </a>
+
+
+            <a class="red"
+               href="https://www.tiktok.com/@rebelde.de.corazn5"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>♪</span>
+                TikTok
+            </a>
+
+
+            <a class="red"
+               href="https://acode.app/profile"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>🅰</span>
+                Acode
+            </a>
+
+
+            <a class="red"
+               href="https://dashboard.render.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>◆</span>
+                Render
+            </a>
+
+
+            <a class="red"
+               href="https://app.netlify.com/teams/easportsfcmobile631-design/projects"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>◆</span>
+                Netlify
+            </a>
+
+
+            <a class="red"
+               href="https://vercel.com/martineztitanjesuseduardo"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>▲</span>
+                Vercel
+            </a>
+
+
+            <a class="red"
+               href="https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>👻</span>
+                Snapchat
+            </a>
+
+
+            <a class="red"
+               href="https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>🦉</span>
+                Duolingo
+            </a>
+
+
+            <a class="red"
+               href="https://websites.co.in/refer/749809"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span>🌐</span>
+                Websites
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    TierraRosa © 2026<br>
+    Belleza que nace de la Tierra
+</footer>
+
+
+<!-- BOTÓN INSTALAR -->
+<button id="instalar">
+    📲 Instalar
+</button>
+
 
 <script>
-let deferredPrompt,currentUrl="";const installBtn=document.getElementById('installBtn');
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});
-installBtn.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.textContent='INSTALADO ✅'}else{alert('TierraRosa 🌸\nChrome > ⋮ > Instalar app')}});
 
-function openInApp(name,url){currentUrl=url;document.getElementById('vTitle').innerText=name;document.getElementById('viewerFrame').src=url;document.getElementById('viewer').style.display='flex'}
-function closeViewer(){document.getElementById('viewer').style.display='none';document.getElementById('viewerFrame').src=''}
-function openExternal(){window.open(currentUrl,'_blank')}
+/* ===============================
+   REGISTRO / INICIO DE SESIÓN
+   =============================== */
 
-const redes=[
-["Apple TV","https://www.apple.com/mx/apple-tv/","https://www.apple.com/favicon.ico"],
-["Discord","https://discord.com/","https://discord.com/favicon.ico"],
-["XBOX","https://www.xbox.com/es-MX/","https://www.xbox.com/favicon.ico"],
-["GitHub","https://github.com/easportsfcmobile631-design","https://github.com/favicon.ico"],
-["Facebook","https://www.facebook.com/share/18fACYD7pv/","https://www.facebook.com/favicon.ico"],
-["Spotify","https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y","https://open.spotify.com/favicon.ico"],
-["YouTube","https://youtube.com/@fcmobileeasports-g7o","https://www.youtube.com/favicon.ico"],
-["Twitch","https://www.twitch.tv/easportsfcmobile631","https://www.twitch.tv/favicon.ico"],
-["X","https://x.com/eduardomar47137?s=09","https://x.com/favicon.ico"],
-["WhatsApp","https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B","https://www.whatsapp.com/favicon.ico"],
-["Telegram","https://t.me/Nadia98968999","https://telegram.org/favicon.ico"],
-["Instagram","https://www.instagram.com/zuzukieduardomartinez","https://www.instagram.com/favicon.ico"],
-["Copa Fácil","https://copafacil.com/-4y21q","https://copafacil.com/favicon.ico"],
-["Messenger","https://m.me/zusuki.eduardo.martinez","https://www.messenger.com/favicon.ico"],
-["Websites","https://websites.co.in/refer/749809","https://websites.co.in/favicon.ico"],
-["Steam","https://steamcommunity.com/profiles/76561199837311518/","https://steamcommunity.com/favicon.ico"],
-["Bluesky","https://bsky.app/profile/jemart03.bsky.social","https://bsky.app/favicon.ico"],
-["Threads","https://www.threads.com/@zuzukieduardomartinez","https://www.threads.com/favicon.ico"],
-["Tik Tok","https://www.tiktok.com/@rebelde.de.corazn5","https://www.tiktok.com/favicon.ico"],
-["Acode","https://acode.app/profile","https://acode.app/favicon.ico"],
-["Render","https://dashboard.render.com/","https://dashboard.render.com/favicon.ico"],
-["Netlify","https://app.netlify.com/teams/easportsfcmobile631-design/projects","https://www.netlify.com/favicon.ico"],
-["Vercel","https://vercel.com/martineztitanjesuseduardo","https://vercel.com/favicon.ico"],
-["Snapchat","https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX","https://www.snapchat.com/favicon.ico"],
-["Duolingo","https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link","https://www.duolingo.com/favicon.ico"]
-];
-const grid=document.getElementById('grid');
-redes.forEach(([name,url,icon])=>{
-let b=document.createElement('button');b.className='bigBtn';
-b.innerHTML=`<img src="${icon}" onerror="this.src='./icon-19.jpg'"><span>${name}</span>`;
-b.onclick=()=>openInApp(name,url);
-grid.appendChild(b);
+const loginForm = document.getElementById("loginForm");
+const mensaje = document.getElementById("mensaje");
+
+loginForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const usuario =
+        document.getElementById("usuario").value.trim();
+
+    const contrasena =
+        document.getElementById("contrasena").value;
+
+    if(usuario.length === 0 || contrasena.length === 0){
+
+        mensaje.textContent =
+            "Completa todos los campos.";
+
+        return;
+    }
+
+    /*
+       Los datos de registro se guardan localmente
+       en el navegador mediante localStorage.
+    */
+
+    const registro =
+        JSON.parse(localStorage.getItem("tierraRosaRegistro"));
+
+    if(!registro){
+
+        mensaje.textContent =
+            "No existe una cuenta registrada. Regístrate primero.";
+
+        return;
+    }
+
+    if(
+        usuario === registro.usuario &&
+        contrasena === registro.contrasena
+    ){
+
+        localStorage.setItem(
+            "tierraRosaSesion",
+            "activa"
+        );
+
+        mensaje.textContent =
+            "Inicio de sesión exitoso.";
+
+        /*
+          Si posteriormente tienes una página principal
+          interna, puedes cambiar esta dirección por:
+          tienda.html
+        */
+
+        setTimeout(function(){
+
+            window.location.href =
+                "tienda.html";
+
+        },800);
+
+    }else{
+
+        mensaje.textContent =
+            "Usuario o contraseña incorrectos.";
+
+    }
+
 });
+
+
+/* ===============================
+   PWA — INSTALAR APLICACIÓN
+   =============================== */
+
+let eventoInstalacion = null;
+
+const botonInstalar =
+    document.getElementById("instalar");
+
+
+window.addEventListener(
+    "beforeinstallprompt",
+    function(event){
+
+        event.preventDefault();
+
+        eventoInstalacion = event;
+
+        botonInstalar.style.display =
+            "block";
+
+    }
+);
+
+
+botonInstalar.addEventListener(
+    "click",
+    async function(){
+
+        if(!eventoInstalacion){
+
+            alert(
+                "La opción de instalación todavía no está disponible en este navegador."
+            );
+
+            return;
+        }
+
+        eventoInstalacion.prompt();
+
+        const resultado =
+            await eventoInstalacion.userChoice;
+
+        if(resultado.outcome === "accepted"){
+
+            botonInstalar.style.display =
+                "none";
+
+        }
+
+        eventoInstalacion = null;
+
+    }
+);
+
+
+window.addEventListener(
+    "appinstalled",
+    function(){
+
+        botonInstalar.style.display =
+            "none";
+
+    }
+);
+
 </script>
+
 </body>
 </html>
+
+Importante: para que Registrarme, Login y Instalar funcionen completamente, el proyecto debe tener también los archivos correspondientes. En particular, "registrarme-aqui.html" debe guardar el nuevo usuario y contraseña en "localStorage"; así el "index.html" que te dejé arriba podrá reconocer ese nuevo registro.
+
+También hay una diferencia importante con los “iconos reales”: los enlaces son reales y funcionales, pero para que cada tarjeta tenga el logotipo oficial de cada plataforma en lugar de símbolos como "f", "▶", "🎮", etc., conviene añadir los archivos/iconos de cada servicio o cargarlos desde una biblioteca de iconos. No quiero hacer pasar un emoji por un logotipo oficial.
