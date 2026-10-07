@@ -3,139 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIERRA ROSA</title>
+<title>TIERRA ROSA - INICIAR SESIÓN</title>
 <style>
-:root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#D9C5A0}
+:root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#000}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
 body{background:var(--beige);color:#000}
-.wrap{max-width:430px;margin:auto;padding:12px}
-.top{text-align:center;padding:18px 0}
-.icon{width:90px;height:90px;border-radius:50%;background:#fff;border:3px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:46px;margin:0 auto}
-h1{font-size:28px;font-weight:900;letter-spacing:2px;margin-top:10px;color:#000}
-h2{font-size:15px;font-weight:900;margin-top:12px;letter-spacing:1px;color:#000}
-.card{background:var(--beige2);border:3px solid var(--borde);border-radius:14px;padding:12px;margin:12px 0}
-.lab{display:block;font-size:11px;font-weight:900;margin:8px 0 3px;color:#000}
-.inp{width:100%;padding:12px;border:2px solid var(--borde);border-radius:9px;background:#fff;color:#000;font-size:13px}
-.btn{width:100%;padding:12px;background:#fff;color:#000;border:2px solid #000;border-radius:9px;font-weight:900;font-size:12px;cursor:pointer;margin-top:10px}
-.btn:active{transform:scale(.97);background:#000;color:#fff}
-.enlaces{text-align:center;margin:20px 0;line-height:2.5}
-.enlaces a{display:block;color:#000;font-size:14px;font-weight:700;text-decoration:underline}
-.sep{text-align:center;font-weight:900;font-size:13px;margin:18px 0;color:#000}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.mini{background:#fff;color:#000;border:2px solid #000;border-radius:11px;padding:12px 2px;text-align:center;font-weight:900;font-size:9.5px;cursor:pointer}
+.wrap{max-width:420px;margin:auto;padding:14px}
+.top{text-align:center;padding:10px 0}
+.icono{width:90px;height:90px;border-radius:50%;background:#fff;border:3px solid #000;display:flex;align-items:center;justify-content:center;font-size:46px;margin:0 auto}
+h1{font-size:22px;font-weight:900;letter-spacing:1px;margin-top:8px;color:#000}
+h2{font-size:16px;font-weight:900;margin:14px 0 8px;text-align:center;color:#000}
+.card{background:var(--beige2);border:3px solid #000;border-radius:14px;padding:11px;margin:10px 0}
+.lab{font-size:10px;font-weight:900;display:block;margin:6px 0 2px;color:#000}
+.inp{width:100%;padding:11px;border:2px solid #000;border-radius:9px;background:#fff;color:#000;font-size:11px;margin-bottom:4px}
+.btn{width:100%;padding:11px;background:#fff;color:#000;border:2px solid #000;border-radius:9px;font-weight:900;font-size:11px;cursor:pointer;margin-top:6px}
+.btn:active{background:#000;color:#fff;transform:scale(.97)}
+.enlaces{display:flex;justify-content:space-between;gap:8px;margin:14px 0}
+.enlaces a{flex:1;text-align:center;padding:10px;background:#fff;border:2px solid #000;border-radius:9px;font-size:11px;font-weight:900;color:#000;text-decoration:none}
+.sep{text-align:center;font-weight:900;margin:12px 0;font-size:13px}
+.gridBtns{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px}
+.mini{padding:8px 2px;background:#fff;color:#000;border:2px solid #000;border-radius:8px;font-size:8px;font-weight:900;cursor:pointer;text-align:center}
 .mini:active{background:#000;color:#fff}
-.foot{text-align:center;font-size:11px;font-weight:800;margin:22px 0;color:#000;line-height:1.6}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <div class="top">
-<div class="icon">🌸</div>
+<div class="icono">🌸</div>
 <h1>TIERRA ROSA</h1>
 <h2>INICIAR SESIÓN</h2>
 </div>
 
 <div class="card">
-<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="location.href='tienda.html'">Login</button>
+<span class="lab">Usuario</span><input id="u" class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input id="p" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="login('u','p')">Login</button>
 </div>
 
 <div class="card">
-<span class="lab">Teléfono</span><input class="inp" placeholder="Teléfono">
-<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="location.href='tienda.html'">Login</button>
+<span class="lab">Teléfono</span><input id="tel" class="inp" placeholder="Teléfono">
+<span class="lab">Usuario</span><input id="u1" class="inp" placeholder="Usuario">
+<span class="lab">Contraseña</span><input id="p1" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="login('u1','p1')">Login</button>
 </div>
 
 <div class="card">
-<span class="lab">1er Correo Electrónico</span><input class="inp" placeholder="Correo">
-<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="location.href='tienda.html'">Login</button>
+<span class="lab">1er Correo Electrónico</span><input id="c1" class="inp" placeholder="Correo">
+<span class="lab">Contraseña</span><input id="pc1" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="login('c1','pc1')">Login</button>
+
+<span class="lab">2do Correo Electrónico</span><input id="c2" class="inp" placeholder="Correo">
+<span class="lab">Contraseña</span><input id="pc2" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="login('c2','pc2')">Login</button>
 </div>
 
 <div class="card">
-<span class="lab">2do Correo Electrónico</span><input class="inp" placeholder="Correo">
-<span class="lab">Usuario</span><input class="inp" placeholder="Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="location.href='tienda.html'">Login</button>
-</div>
+<span class="lab">Microsoft</span><input id="ms" class="inp" placeholder="Microsoft Usuario">
+<span class="lab">Contraseña</span><input id="pms" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="login('ms','pms')">Login</button>
 
-<div class="card">
-<span class="lab">Microsoft Usuario</span><input class="inp" placeholder="Microsoft Usuario">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="location.href='tienda.html'">Login</button>
-</div>
+<span class="lab">Drive</span><input id="dr" class="inp" placeholder="Drive">
+<span class="lab">Contraseña</span><input id="pdr" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="login('dr','pdr')">Login</button>
 
-<div class="card">
-<span class="lab">Drive (solo)</span><input class="inp" placeholder="Drive">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="location.href='tienda.html'">Login</button>
-</div>
+<span class="lab">Netacad</span><input id="ne" class="inp" placeholder="Netacad">
+<span class="lab">Contraseña</span><input id="pne" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="login('ne','pne')">Login</button>
 
-<div class="card">
-<span class="lab">Netacad (solo)</span><input class="inp" placeholder="Netacad">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="location.href='tienda.html'">Login</button>
-</div>
-
-<div class="card">
-<span class="lab">Outlook (solo)</span><input class="inp" placeholder="Outlook">
-<span class="lab">Contraseña</span><input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="location.href='tienda.html'">Login</button>
+<span class="lab">Outlook</span><input id="ou" class="inp" placeholder="Outlook">
+<span class="lab">Contraseña</span><input id="pou" class="inp" type="password" placeholder="Contraseña">
+<button class="btn" onclick="login('ou','pou')">Login</button>
 </div>
 
 <div class="enlaces">
+<a href="registrarme-aqui.html">Registrarme Aquí?</a>
+<a href="acceso-con-un-click.html">Acceso con un Click?</a>
+</div>
 
-    <a href="registrarme-aqui.html">Registrarme Aquí</a>
+<div class="sep">O<br>CON UN CLICK 👌</div>
 
-    <a href="acceso-con-un-click.html">Acceso con un Click</a>
+<div class="card">
+<div class="gridBtns" id="grid"></div>
+</div>
+
+<div style="text-align:center;font-size:10px;font-weight:800;margin:10px">Hecho en México 2026 - TITANES x SPEAKING x TIERRA ROSA</div>
 
 </div>
 
-<div class="sep">Ó<br>INICIAR SESIÓN CON UN CLICK</div>
-
-<div class="grid">
-<div class="mini" onclick="location.href='tienda.html'">Google</div>
-<div class="mini" onclick="location.href='tienda.html'">GitHub</div>
-<div class="mini" onclick="location.href='tienda.html'">Vercel</div>
-<div class="mini" onclick="location.href='tienda.html'">Netlify</div>
-<div class="mini" onclick="location.href='tienda.html'">Render</div>
-<div class="mini" onclick="location.href='tienda.html'">Claro</div>
-<div class="mini" onclick="location.href='tienda.html'">Word</div>
-<div class="mini" onclick="location.href='tienda.html'">Files</div>
-<div class="mini" onclick="location.href='tienda.html'">Copa Fácil</div>
-<div class="mini" onclick="location.href='tienda.html'">Spotify</div>
-<div class="mini" onclick="location.href='tienda.html'">Facebook</div>
-<div class="mini" onclick="location.href='tienda.html'">Steam</div>
-<div class="mini" onclick="location.href='tienda.html'">Bluesky</div>
-<div class="mini" onclick="location.href='tienda.html'">XBOX</div>
-<div class="mini" onclick="location.href='tienda.html'">Apple TV</div>
-<div class="mini" onclick="location.href='tienda.html'">LinkedIn</div>
-<div class="mini" onclick="location.href='tienda.html'">Tik Tok</div>
-<div class="mini" onclick="location.href='tienda.html'">Canva</div>
-<div class="mini" onclick="location.href='tienda.html'">Pinterest</div>
-<div class="mini" onclick="location.href='tienda.html'">Threads</div>
-<div class="mini" onclick="location.href='tienda.html'">Duolingo</div>
-<div class="mini" onclick="location.href='tienda.html'">Termux</div>
-<div class="mini" onclick="location.href='tienda.html'">YouTube</div>
-<div class="mini" onclick="location.href='tienda.html'">EA</div>
-<div class="mini" onclick="location.href='tienda.html'">Acode</div>
-<div class="mini" onclick="location.href='tienda.html'">Twitch</div>
-<div class="mini" onclick="location.href='tienda.html'">Instagram</div>
-<div class="mini" onclick="location.href='tienda.html'">Snapchat</div>
-<div class="mini" onclick="location.href='tienda.html'">Telegram</div>
-<div class="mini" onclick="location.href='tienda.html'">Titanes</div>
-<div class="mini" onclick="location.href='tienda.html'">Speaking</div>
-<div class="mini" onclick="location.href='tienda.html'">FreeFire</div>
-<div class="mini" onclick="location.href='tienda.html'">Amazon</div>
-<div class="mini" onclick="location.href='tienda.html'">FCMobile</div>
-</div>
-
-<div class="foot">Gracias por tu preferencia en Tierra Rosa.<br>TIERRA ROSA - Hecho en México 2026</div>
-
-</div>
+<script>
+const apps=["Google","GitHub","Vercel","Netlify","Render","Claro","Word","Files","Copa Fácil","Spotify","Facebook","Steam","Bluesky","XBOX","Apple TV","LinkedIn","Tik Tok","Canva","Pinterest","Threads","Duolingo","Termux","YouTube","EA","Acode","Twitch","Instagram","Snapchat","Telegram","Titanes","Speaking","FreeFire","Amazon","FCMobile"];
+const grid=document.getElementById('grid');
+apps.forEach(name=>{
+ let id=name.replace(/\s/g,'_');
+ grid.innerHTML+=`<button class="mini" onclick="oneClick('${id}','${name}')">${name}</button>`;
+});
+function login(u,p){
+ let vu=document.getElementById(u).value.trim();
+ let vp=document.getElementById(p).value.trim();
+ if(!vu||!vp){alert('Llena Usuario y Contraseña');return}
+ localStorage.setItem('ultimo_login',vu);
+ alert('Login correcto ✅ Bienvenido '+vu);
+ location.href='tienda.html';
+}
+function oneClick(id,name){
+ let link=localStorage.getItem('link_'+id);
+ if(!link){
+   if(confirm(name+' no tiene enlace guardado. ¿Quieres ir a guardarlo en Acceso con un Click?')) location.href='acceso-con-un-click.html';
+   return;
+ }
+ let auth=localStorage.getItem('auth_'+id);
+ if(auth!=='si'){alert(name+' no autorizado. Ve a Acceso con un Click y dale Autorizar');return}
+ alert('Entrando a '+name+' 👌');
+ location.href='tienda.html?app='+id;
+}
+</script>
 </body>
-    </html>
+</html>
