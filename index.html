@@ -3,48 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIERRA ROSA</title>
+<title>TierraRosa</title>
 <link rel="icon" href="./icon-19.jpg">
-<link rel="apple-touch-icon" href="./icon-19.jpg">
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#F5E8D0">
 <style>
-:root{--beige:#F5E8D0;--arena:#EADFC7;--crema:#FFF8EC;--negro:#000;--blanco:#fff}
+:root{--beige:#F5E8D0;--crema:#FFF8EC;--blanco:#fff;--negro:#000}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black,Arial,sans-serif}
-body{background:var(--beige);color:#000}
+body{background:var(--beige);color:var(--negro)}
 .top{background:var(--crema);border-bottom:3px solid #000;display:flex;align-items:center;gap:10px;padding:10px;position:sticky;top:0;z-index:10}
-.cir{width:48px;height:48px;border:3px solid #000;border-radius:50%;overflow:hidden;background:#fff;flex-shrink:0}
+.cir{width:48px;height:48px;border:3px solid #000;border-radius:50%;overflow:hidden;background:#fff}
 .cir img{width:100%;height:100%;object-fit:cover;display:block}
-.brand{font-weight:900;font-size:14px;line-height:1}
-.inst{margin-left:auto;border:3px solid #000;background:var(--blanco);border-radius:20px;padding:6px 14px;font-weight:900;font-size:10px;cursor:pointer}
-.inst.ok{background:#000;color:#fff}
-.wrap{max-width:480px;margin:auto;padding:12px}
+.brand{font-weight:900;font-size:16px}
+.inst{margin-left:auto;border:3px solid #000;background:var(--blanco);border-radius:22px;padding:7px 15px;font-size:10px;font-weight:900;cursor:pointer}
+.inst.on{background:#000;color:#fff}
+.wrap{max-width:500px;margin:auto;padding:12px}
 .card{background:var(--crema);border:3px solid #000;border-radius:14px;padding:12px;margin-bottom:12px}
-.titulo{border:3px solid #000;background:var(--blanco);border-radius:10px;text-align:center;padding:8px;font-size:12px;font-weight:900;margin-bottom:12px}
-.inp{width:100%;border:2.5px solid #000;background:var(--blanco);border-radius:10px;padding:11px;font-size:12px;font-weight:700;margin:5px 0;outline:none}
-.btn{width:100%;border:3px solid #000;background:var(--blanco);border-radius:10px;padding:12px;font-size:12px;font-weight:900;cursor:pointer;margin-top:6px}
-.btnNegro{background:#000;color:#fff}
-.btn:active{transform:scale(.97)}
-.sep{text-align:center;font-weight:900;margin:12px 0}
-.enlace{padding:10px 0;border-bottom:2px solid #000;font-size:11px;font-weight:900;display:flex;justify-content:space-between}
-.enlace:last-child{border:0}
-.bigGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.bigBtn{border:3px solid #000;background:var(--blanco);border-radius:10px;padding:14px 8px;font-size:10px;font-weight:900;text-align:center;cursor:pointer}
+.tit{border:3px solid #000;background:var(--blanco);border-radius:10px;text-align:center;padding:8px;font-size:12px;font-weight:900;margin-bottom:10px}
+.inp{width:100%;border:2.5px solid #000;background:var(--blanco);border-radius:10px;padding:12px;margin:5px 0;font-size:12px;font-weight:700;outline:none}
+.btn{width:100%;border:3px solid #000;background:var(--blanco);border-radius:10px;padding:12px;margin-top:6px;font-weight:900;cursor:pointer}
+.btnN{background:#000;color:#fff}
+.enlace{width:100%;border:0;border-bottom:2.5px solid #000;background:transparent;padding:14px 4px;font-weight:900;font-size:12px;display:flex;justify-content:space-between;cursor:pointer;text-align:left}
+.enlace:active{background:#fff}
+.bigGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bigBtn{border:3px solid #000;background:var(--blanco);border-radius:10px;padding:15px 6px;font-size:11px;font-weight:900;cursor:pointer}
 .bigBtn:active{background:#000;color:#fff}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:99;padding:15px}
+#box{background:var(--crema);border:3px solid #000;border-radius:14px;padding:14px;width:100%;max-width:380px}
 </style>
 </head>
 <body>
 <div class="top">
-<div class="cir"><img src="./icon-19.jpg" onerror="this.style.display='none'"></div>
-<div class="brand">TIERRA ROSA<br><span style="font-size:9px">TITANES y SPEAKING</span></div>
+<div class="cir"><img src="./icon-19.jpg"></div>
+<div class="brand">TierraRosa</div>
 <button class="inst" id="btnInstall">INSTALAR</button>
 </div>
 
 <div class="wrap">
 <div class="card">
-<div class="titulo">TIERRA ROSA - INICIAR SESIÓN</div>
-
-<input class="inp" placeholder="Usuario"><input class="inp" type="password" placeholder="Contraseña"><button class="btn btnNegro" onclick="go()">Login</button>
+<div class="tit">INICIAR SESIÓN</div>
+<input class="inp" placeholder="Usuario"><input class="inp" type="password" placeholder="Contraseña"><button class="btn btnN" onclick="go()">Login</button>
 <input class="inp" placeholder="Teléfono" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
 <input class="inp" placeholder="1er Correo Electrónico" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
 <input class="inp" placeholder="2do Correo Electrónico" style="margin-top:10px"><input class="inp" type="password" placeholder="Contraseña"><button class="btn" onclick="go()">Login</button>
@@ -56,43 +54,36 @@ body{background:var(--beige);color:#000}
 </div>
 
 <div class="card">
-<div class="titulo">Enlaces</div>
-<div class="enlace"><span>Necesitas Ayuda</span><span>></span></div>
-<div class="enlace"><span>Noticias</span><span>></span></div>
-<div class="enlace"><span>Eventos</span><span>></span></div>
-<div class="enlace"><span>Sociedad</span><span>></span></div>
-<div class="enlace"><span>Actualizaciones</span><span>></span></div>
-<div class="enlace"><span>Fundadores</span><span>></span></div>
-<div class="enlace"><span>Registrarme</span><span>></span></div>
-<div class="enlace"><span>Un Click</span><span>></span></div>
-<div class="sep">O</div>
-<button class="btn btnNegro" onclick="go()">UN CLICK 👌</button>
+<div class="tit">Enlaces click</div>
+<button class="enlace" onclick="openM('Necesitas Ayuda')">Necesitas Ayuda <span>></span></button>
+<button class="enlace" onclick="openM('Noticias')">Noticias <span>></span></button>
+<button class="enlace" onclick="openM('Eventos')">Eventos <span>></span></button>
+<button class="enlace" onclick="openM('Sociedad')">Sociedad <span>></span></button>
+<button class="enlace" onclick="openM('Actualizaciones')">Actualizaciones <span>></span></button>
+<button class="enlace" onclick="openM('Fundadores')">Fundadores <span>></span></button>
+<button class="enlace" onclick="go()">Registrarme <span>></span></button>
+<button class="enlace" onclick="go()">Un Click <span>></span></button>
+<div style="text-align:center;font-weight:900;margin:12px 0">O</div>
+<button class="btn btnN" onclick="go()">UN CLICK 👌</button>
 </div>
 
 <div class="card">
-<div class="titulo">Botones Grandes funcionando</div>
+<div class="tit">Botones Grandes funcionando</div>
 <div class="bigGrid" id="grid"></div>
 </div>
-
-<div style="text-align:center;font-size:8px;font-weight:900;padding:10px">TIERRA ROSA - Beige Claro arena cálido / crema tostado<br>Bordes y texto negro - Botones blancos - icon-19.jpg</div>
 </div>
 
+<div id="modal" onclick="this.style.display='none'"><div id="box" onclick="event.stopPropagation()"><b id="mt"></b><div id="mx" style="font-size:11px;margin-top:8px;white-space:pre-line"></div><button class="btn btnN" style="margin-top:10px" onclick="document.getElementById('modal').style.display='none'">Cerrar</button></div></div>
+
 <script>
-let deferredPrompt;
-const btnInstall=document.getElementById('btnInstall');
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;btnInstall.classList.add('ok');btnInstall.textContent='INSTALAR 📲'});
-btnInstall.addEventListener('click',async()=>{
-if(deferredPrompt){deferredPrompt.prompt();const r=await deferredPrompt.userChoice;if(r.outcome==='accepted')btnInstall.textContent='INSTALADO ✅';deferredPrompt=null}
-else{alert('Para instalar TIERRA ROSA:\n\nChrome > 3 puntitos > Instalar app\n\nTu icon-19.jpg ya está listo 🌸');}
-});
-const apps=["Google","GitHub","Vercel","Netlify","Render","Claro","Word","Files","Copa Fácil","Spotify","Facebook","Steam","Bluesky","XBOX","Apple TV","LinkedIn","Tik Tok","Canva","Pinterest","Threads","Duolingo","Termux","YouTube","EA","Acode","Twitch","Instagram","Snapchat","Telegram","Titanes","Speaking","FreeFire","Amazon","FCMobile","Discord","Vix","Vivo"];
+let deferredPrompt;const bI=document.getElementById('btnInstall');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;bI.textContent='INSTALAR 📲';bI.classList.add('on')});
+bI.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();const c=await deferredPrompt.userChoice;if(c.outcome==='accepted')bI.textContent='INSTALADO ✅';deferredPrompt=null}else{alert('TierraRosa 🌸\n\nPara instalar:\nChrome > 3 puntos > Instalar app')}});
+function openM(t){document.getElementById('mt').innerText=t;document.getElementById('mx').innerText=t+'\n\nTierraRosa\nBeige Claro arena cálido / crema tostado\nTexto y bordes negro\nBotones blancos\n\nBotón funcionando ✅';document.getElementById('modal').style.display='flex'}
+function go(){location.href='./tienda.html'}
+const apps="Google,GitHub,Vercel,Netlify,Render,Claro,Word,Files,Copa Fácil,Spotify,Facebook,Steam,Bluesky,XBOX,Apple TV,LinkedIn,Tik Tok,Canva,Pinterest,Threads,Duolingo,Termux,YouTube,EA,Acode,Twitch,Instagram,Snapchat,Telegram,Titanes,Speaking,FreeFire,Amazon,FCMobile,Discord,Vix,Vivo".split(",");
 const grid=document.getElementById('grid');
-apps.forEach(n=>{
-let b=document.createElement('button');b.className='bigBtn';b.textContent=n;
-b.onclick=()=>{alert(n+' ✅\nBotón grande funcionando\nTIERRA ROSA');if(n==='Acode')location.href='tienda.html'};
-grid.appendChild(b);
-});
-function go(){location.href='tienda.html'}
+apps.forEach(n=>{let b=document.createElement('button');b.className='bigBtn';b.textContent=n;b.onclick=()=>openM(n);grid.appendChild(b)});
 </script>
 </body>
-    </html>
+                                                                            </html>
