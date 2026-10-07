@@ -2,119 +2,443 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>TIERRA ROSA</title>
-<div class="cir"><img src="./icon-19.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.src='icon-19-512.png'"></div>  
-<link rel="apple-touch-icon" href="icon-19.jpg">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#EADFC7">
+
 <style>
-:root{--beige:#F5E8D0;--arena:#EADFC7;--crema:#FFF8EC;--negro:#000;--blanco:#fff}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black,Arial,sans-serif}
-body{background:var(--beige);color:#000}
-.top{background:var(--crema);border-bottom:3px solid #000;display:flex;align-items:center;gap:10px;padding:10px;position:sticky;top:0;z-index:9}
-.cir{width:48px;height:48px;border:3px solid #000;border-radius:50%;background:var(--blanco);overflow:hidden}
-.cir img{width:100%;height:100%;object-fit:cover}
-.brand{font-size:14px;line-height:1;font-weight:900}
-.wrap{max-width:460px;margin:auto;padding:10px}
-.card{background:var(--crema);border:3px solid #000;border-radius:14px;padding:10px;margin-bottom:10px}
-.head{border:2.5px solid #000;background:var(--blanco);border-radius:9px;text-align:center;padding:7px;font-size:11px;font-weight:900;margin-bottom:10px}
-.inp{width:100%;border:2.5px solid #000;border-radius:9px;background:var(--blanco);padding:10px;font-size:11px;font-weight:700;margin:4px 0;outline:none;color:#000}
-.btn{width:100%;border:2.5px solid #000;border-radius:9px;background:var(--blanco);padding:10px;font-size:11px;font-weight:900;color:#000;cursor:pointer;margin-top:4px}
-.btnNegro{background:#000;color:#fff}
-.btn:active{transform:scale(.98)}
-.sep{text-align:center;font-size:10px;font-weight:900;margin:10px 0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{border:2px solid #000;background:var(--blanco);border-radius:20px;padding:5px 10px;font-size:8px;font-weight:900}
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 15px;
+        background: #e8d5b5;
+        color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 520px;
+        margin: auto;
+    }
+
+    /* ICONO DE LA APP */
+    .app-icon {
+        width: 115px;
+        height: 115px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #000000;
+        display: block;
+        margin: 10px auto 12px;
+        background: #ffffff;
+    }
+
+    h1 {
+        margin: 5px 0;
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .subtitulo {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        font-size: 21px;
+        margin: 20px 0 12px;
+        border-bottom: 2px solid #000000;
+        padding-bottom: 7px;
+    }
+
+    /* CAJAS DE LOGIN */
+    .login-box {
+        border: 2px solid #000000;
+        padding: 15px;
+        margin: 12px 0;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.20);
+    }
+
+    .login-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+
+    input {
+        width: 100%;
+        padding: 11px;
+        margin: 5px 0;
+        border: 2px solid #000000;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #000000;
+        font-size: 15px;
+        outline: none;
+    }
+
+    input:focus {
+        border-width: 3px;
+    }
+
+    /* TODOS LOS BOTONES BLANCOS */
+    button {
+        background: #ffffff;
+        color: #000000;
+        border: 2px solid #000000;
+        border-radius: 8px;
+        padding: 9px 18px;
+        margin-top: 7px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        transform: scale(1.03);
+    }
+
+    /* ENLACES SIN BOTONES */
+    .enlaces {
+        margin: 25px 0;
+        padding: 15px;
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+    }
+
+    .enlaces a {
+        color: #000000;
+        text-decoration: underline;
+        font-weight: bold;
+        margin: 7px 9px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .enlaces a:hover {
+        font-weight: 900;
+    }
+
+    /* UN CLICK */
+    .un-click {
+        margin-top: 20px;
+    }
+
+    .un-click h2 {
+        border-bottom: none;
+    }
+
+    /* BOTONES PEQUEÑOS */
+    .apps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .app-button {
+        background: #ffffff;
+        color: #000000;
+        border: 1.5px solid #000000;
+        border-radius: 6px;
+        padding: 6px 9px;
+        margin: 0;
+        font-size: 11px;
+        font-weight: bold;
+        min-width: 70px;
+    }
+
+    .app-button:hover {
+        transform: scale(1.04);
+    }
+
+    .proyecto {
+        margin-top: 30px;
+        padding: 15px;
+        border: 2px solid #000000;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.25);
+        font-weight: bold;
+    }
+
+    .mensaje {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    footer {
+        margin-top: 25px;
+        font-size: 12px;
+    }
 </style>
 </head>
+
 <body>
-<div class="top">
-<div class="cir"><img src="icon-19.jpg"></div>
-<div class="brand">TIERRA ROSA<br><span style="font-size:8px">x TITANES x SPEAKING</span></div>
-<button class="chip" style="margin-left:auto" onclick="location.href='tienda.html'">TIENDA</button>
+
+<div class="app">
+
+    <!-- ICONO CIRCULAR DE TIERRA ROSA -->
+    <img src="icon-19.jpg"
+         alt="Icono Tierra Rosa"
+         class="app-icon">
+
+    <h1>TIERRA ROSA</h1>
+    <div class="subtitulo">Belleza que nace de la Tierra</div>
+
+
+    <!-- INICIAR SESIÓN -->
+    <h2>INICIAR SESIÓN</h2>
+
+    <div class="login-box">
+        <div class="login-title">Usuario</div>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login('Usuario')">Login</button>
+    </div>
+
+
+    <div class="login-box">
+        <div class="login-title">Teléfono</div>
+        <input type="tel" placeholder="Teléfono">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="login('Teléfono')">Login</button>
+    </div>
+
+
+    <div class="login-box">
+        <div class="login-title">1er Correo Electrónico</div>
+        <input type="email" placeholder="1er Correo Electrónico">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="login('1er Correo Electrónico')">Login</button>
+    </div>
+
+
+    <div class="login-box">
+        <div class="login-title">2do Correo Electrónico</div>
+        <input type="email" placeholder="2do Correo Electrónico">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="login('2do Correo Electrónico')">Login</button>
+    </div>
+
+
+    <div class="login-box">
+        <div class="login-title">Microsoft</div>
+        <input type="text" placeholder="Cuenta Microsoft">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="login('Microsoft')">Login</button>
+    </div>
+
+
+    <div class="login-box">
+        <div class="login-title">Drive</div>
+        <input type="text" placeholder="Cuenta Drive">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="login('Drive')">Login</button>
+    </div>
+
+
+    <div class="login-box">
+        <div class="login-title">Netacad</div>
+        <input type="text" placeholder="Cuenta Netacad">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="login('Netacad')">Login</button>
+    </div>
+
+
+    <div class="login-box">
+        <div class="login-title">Outlook</div>
+        <input type="email" placeholder="Cuenta Outlook">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="login('Outlook')">Login</button>
+    </div>
+
+
+    <div class="login-box">
+        <div class="login-title">Eduardo</div>
+        <input type="text" placeholder="Usuario Eduardo">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="login('Eduardo')">Login</button>
+    </div>
+
+
+    <!-- ENLACES SIN BOTONES -->
+    <div class="enlaces">
+
+        <a href="necesitas-ayuda.html">Necesitas Ayuda</a>
+
+        <a href="noticias.html">Noticias</a>
+
+        <a href="eventos.html">Eventos</a>
+
+        <a href="sociedad.html">Sociedad</a>
+
+        <a href="actualizaciones.html">Actualizaciones</a>
+
+        <a href="fundadores.html">Fundadores</a>
+
+        <a href="registrarme-aqui.html">Registrarme</a>
+
+        <a href="acceso-con-un-click.html">Un Click</a>
+
+    </div>
+
+
+    <div class="un-click">
+
+        <h2>O</h2>
+
+        <h2>UN CLICK 👌</h2>
+
+        <div class="apps">
+
+            <button class="app-button" onclick="abrir('https://www.google.com')">Google</button>
+
+            <button class="app-button" onclick="abrir('https://github.com')">GitHub</button>
+
+            <button class="app-button" onclick="abrir('https://vercel.com')">Vercel</button>
+
+            <button class="app-button" onclick="abrir('https://www.netlify.com')">Netlify</button>
+
+            <button class="app-button" onclick="abrir('https://render.com')">Render</button>
+
+            <button class="app-button" onclick="abrir('https://www.claro.com')">Claro</button>
+
+            <button class="app-button" onclick="abrir('https://www.microsoft.com')">Word</button>
+
+            <button class="app-button" onclick="abrir('https://www.microsoft.com/microsoft-365')">Files</button>
+
+            <button class="app-button" onclick="abrir('https://www.copafacil.com')">Copa Fácil</button>
+
+            <button class="app-button" onclick="abrir('https://open.spotify.com')">Spotify</button>
+
+            <button class="app-button" onclick="abrir('https://www.facebook.com')">Facebook</button>
+
+            <button class="app-button" onclick="abrir('https://store.steampowered.com')">Steam</button>
+
+            <button class="app-button" onclick="abrir('https://bsky.app')">Bluesky</button>
+
+            <button class="app-button" onclick="abrir('https://www.xbox.com')">XBOX</button>
+
+            <button class="app-button" onclick="abrir('https://tv.apple.com')">Apple TV</button>
+
+            <button class="app-button" onclick="abrir('https://www.linkedin.com')">LinkedIn</button>
+
+            <button class="app-button" onclick="abrir('https://www.tiktok.com')">TikTok</button>
+
+            <button class="app-button" onclick="abrir('https://www.canva.com')">Canva</button>
+
+            <button class="app-button" onclick="abrir('https://www.pinterest.com')">Pinterest</button>
+
+            <button class="app-button" onclick="abrir('https://www.threads.net')">Threads</button>
+
+            <button class="app-button" onclick="abrir('https://www.duolingo.com')">Duolingo</button>
+
+            <button class="app-button" onclick="abrir('https://termux.dev')">Termux</button>
+
+            <button class="app-button" onclick="abrir('https://www.youtube.com')">YouTube</button>
+
+            <button class="app-button" onclick="abrir('https://www.ea.com')">EA</button>
+
+            <button class="app-button" onclick="abrir('https://acode.app')">Acode</button>
+
+            <button class="app-button" onclick="abrir('https://www.twitch.tv')">Twitch</button>
+
+            <button class="app-button" onclick="abrir('https://www.instagram.com')">Instagram</button>
+
+            <button class="app-button" onclick="abrir('https://www.snapchat.com')">Snapchat</button>
+
+            <button class="app-button" onclick="abrir('https://telegram.org')">Telegram</button>
+
+            <button class="app-button" onclick="abrir('#')">Titanes</button>
+
+            <button class="app-button" onclick="abrir('#')">Speaking</button>
+
+            <button class="app-button" onclick="abrir('https://ff.garena.com')">FreeFire</button>
+
+            <button class="app-button" onclick="abrir('https://www.amazon.com')">Amazon</button>
+
+            <button class="app-button" onclick="abrir('#')">FCMobile</button>
+
+            <button class="app-button" onclick="abrir('https://discord.com')">Discord</button>
+
+            <button class="app-button" onclick="abrir('https://www.vix.com')">Vix</button>
+
+            <button class="app-button" onclick="abrir('#')">Vivo</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROYECTO ESCOLAR -->
+    <div class="proyecto">
+
+        <div>Es un proyecto escolar</div>
+
+        <div class="mensaje">
+            TIERRA ROSA<br>
+            Proyecto académico y educativo
+        </div>
+
+    </div>
+
+
+    <footer>
+        © 2026 TIERRA ROSA
+    </footer>
+
 </div>
 
-<div class="wrap">
-
-<div class="card">
-<div class="head">TIERRA ROSA - INICIAR SESIÓN</div>
-
-<input class="inp" placeholder="Usuario">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn btnNegro" onclick="go()">Login</button>
-
-<input class="inp" placeholder="Teléfono" style="margin-top:10px">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
-
-<input class="inp" placeholder="1er Correo Electrónico" style="margin-top:10px">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
-
-<input class="inp" placeholder="2do Correo Electrónico" style="margin-top:10px">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
-
-<input class="inp" placeholder="Microsoft" style="margin-top:10px">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
-
-<input class="inp" placeholder="Drive" style="margin-top:10px">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
-
-<input class="inp" placeholder="Netacad" style="margin-top:10px">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
-
-<input class="inp" placeholder="Outlook" style="margin-top:10px">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
-
-<input class="inp" placeholder="Eduardo" style="margin-top:10px">
-<input class="inp" type="password" placeholder="Contraseña">
-<button class="btn" onclick="go()">Login</button>
-</div>
-
-<div class="card">
-<div class="head">Enlaces</div>
-<div class="grid2">
-<button class="btn" onclick="msg('Necesitas Ayuda')">Necesitas Ayuda</button>
-<button class="btn" onclick="msg('Noticias')">Noticias</button>
-<button class="btn" onclick="msg('Eventos')">Eventos</button>
-<button class="btn" onclick="msg('Sociedad')">Sociedad</button>
-<button class="btn" onclick="msg('Actualizaciones')">Actualizaciones</button>
-<button class="btn" onclick="msg('Fundadores')">Fundadores</button>
-<button class="btn" onclick="go()">Registrarme</button>
-<button class="btn" onclick="go()">Un Click</button>
-</div>
-<div class="sep">O</div>
-<button class="btn btnNegro" onclick="go()">UN CLICK 👌</button>
-</div>
-
-<div class="card">
-<div class="head">Botones chiquitos funcionando</div>
-<div class="chips" id="chipBox"></div>
-</div>
-
-<div style="text-align:center;font-size:7px;font-weight:900;padding:8px">
-TIERRA ROSA - Beige Claro arena cálido / crema tostado<br>Texto y bordes negro - Botones blancos - icon-19.jpg
-</div>
-
-</div>
 
 <script>
-const lista="Google,GitHub,Vercel,Netlify,Render,Claro,Word,Files,Copa Fácil,Spotify,Facebook,Steam,Bluesky,XBOX,Apple TV,LinkedIn,Tik Tok,Canva,Pinterest,Threads,Duolingo,Termux,YouTube,EA,Acode,Twitch,Instagram,Snapchat,Telegram,Titanes,Speaking,FreeFire,Amazon,FCMobile,Discord,Vix,Vivo".split(",");
-const box=document.getElementById('chipBox');
-lista.forEach(n=>{
-let b=document.createElement('button');b.className='chip';b.textContent=n;
-b.onclick=()=>{alert(n+" ✅\nBotón funcionando\nTIERRA ROSA"); if(n==='Acode') location.href='tienda.html'};
-box.appendChild(b);
-});
-function go(){location.href='tienda.html'}
-function msg(t){alert(t+"\nTIERRA ROSA x TITANES x SPEAKING\nHecho en México 2026")}
+
+function login(tipo) {
+
+    const usuario = document.getElementById("usuario");
+
+    if (tipo === "Usuario") {
+
+        if (usuario.value.trim() === "") {
+
+            alert("Por favor escribe tu usuario.");
+
+        } else {
+
+            alert("Inicio de sesión seleccionado: " + tipo);
+
+        }
+
+    } else {
+
+        alert("Inicio de sesión seleccionado: " + tipo);
+
+    }
+
+}
+
+
+function abrir(url) {
+
+    if (url === "#") {
+
+        alert("Este enlace pertenece al proyecto Tierra Rosa y todavía no tiene una página externa configurada.");
+
+        return;
+
+    }
+
+    window.open(url, "_blank");
+
+}
+
 </script>
+
 </body>
-</html>
+  </html>
