@@ -1,112 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TIENDA - TIERRA ROSA</title>
 <style>
-:root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#D9C5A0}
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+:root{--beige:#F5E8D0;--beige2:#FFF8EC;--borde:#000}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:var(--beige);color:#000}
-.top{position:sticky;top:0;z-index:99;background:var(--beige2);border-bottom:3px solid var(--borde);display:flex;align-items:center;gap:6px;padding:7px 8px}
-.cir{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--borde);display:flex;align-items:center;justify-content:center}
-.brand{font-weight:900;font-size:11px;letter-spacing:.5px;line-height:1}
-.search{flex:1;max-width:130px;padding:6px 8px;border:1.5px solid #d0d7de;background:#fff;border-radius:6px;font-size:12px;outline:none;color:#000}
-.icon{font-size:18px;cursor:pointer;padding:2px}
-.welcome{max-width:950px;margin:10px auto;padding:10px;text-align:center;font-weight:800;font-size:11px;border:2px dashed var(--borde);border-radius:10px;background:var(--beige2)}
-.grid{max-width:950px;margin:auto;padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:9px}
-@media(min-width:700px){.grid{grid-template-columns:1fr 1fr 1fr}}
-.card{background:#fff;border:2px solid var(--borde);border-radius:12px;overflow:hidden}
-.card img{width:100%;height:155px;object-fit:cover;display:block;background:#eee}
-.tcard{display:flex;justify-content:space-between;align-items:center;padding:5px 7px;background:#fff}
-.b2{background:#fff;color:#000;border:1.5px solid #000;padding:2px 5px;border-radius:4px;font-size:8px;font-weight:900}
+.top{position:sticky;top:0;z-index:100;background:var(--beige2);border-bottom:3px solid #000;display:flex;align-items:center;gap:5px;padding:6px 7px}
+.cir{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid #000;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.brand{font-weight:900;font-size:9px;line-height:1;flex-shrink:0}
+.busc{flex:1;max-width:110px;padding:6px;border:2px solid #000;border-radius:7px;background:#fff;color:#000;font-size:10px;outline:none}
+.ico{font-size:18px;cursor:pointer;padding:2px;flex-shrink:0}
+.grid{max-width:960px;margin:auto;padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:#fff;border:2px solid #000;border-radius:11px;overflow:hidden}
+.card img{width:100%;height:160px;object-fit:cover;display:block;background:#eee}
+.tcard{display:flex;justify-content:space-between;align-items:center;padding:4px 6px;background:#fff}
+.b2{background:#fff;color:#000;border:1.5px solid #000;padding:2px 5px;border-radius:4px;font-size:7px;font-weight:900}
+.puntos{font-size:20px;font-weight:900;cursor:pointer;padding:0 6px}
 .info{padding:6px}
-.badge{background:#000;color:#fff;padding:2px 5px;border-radius:4px;font-size:8px;margin-right:2px;display:inline-block}
-.price{font-weight:900;font-size:12px;margin:3px 0}
-.btn{background:#fff;color:#000;border:2px solid #000;border-radius:6px;padding:7px;width:100%;font-weight:900;font-size:10px;cursor:pointer;margin-top:3px}
-.menu{position:fixed;top:0;left:-100%;width:82%;max-width:320px;height:100%;background:var(--beige2);border-right:3px solid var(--borde);z-index:100;transition:.3s;padding:14px;overflow:auto;font-size:11px;line-height:2.1;color:#000}
+.badge{background:#000;color:#fff;padding:2px 5px;border-radius:4px;font-size:7px;margin-right:2px;display:inline-block}
+.price{font-weight:900;font-size:11px;margin:3px 0}
+.btn{width:100%;padding:7px;background:#fff;color:#000;border:2px solid #000;border-radius:7px;font-weight:900;font-size:9px;cursor:pointer;margin-top:4px}
+.menu{position:fixed;top:0;left:-100%;width:84%;max-width:320px;height:100%;background:var(--beige2);border-right:3px solid #000;z-index:200;transition:.3s;padding:12px;overflow:auto;font-size:10px;line-height:2.3}
 .menu.open{left:0}
-.perfil{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;z-index:101;padding:10px;overflow:auto}
+.perfil{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;z-index:300;padding:8px;overflow:auto}
 .perfil.open{display:flex;justify-content:center}
-.box{background:var(--beige2);width:100%;max-width:520px;border:3px solid var(--borde);border-radius:14px;padding:12px;height:fit-content}
-.inp{width:100%;padding:9px;border:2px solid var(--borde);border-radius:8px;margin:4px 0;background:#fff;color:#000;font-size:11px}
+.box{background:var(--beige2);width:100%;max-width:500px;border:3px solid #000;border-radius:14px;padding:11px;height:fit-content}
+.inp{width:100%;padding:8px;border:2px solid #000;border-radius:7px;background:#fff;color:#000;font-size:10px;margin:3px 0}
 </style>
 </head>
 <body>
 
 <div class="top">
-<span class="icon" onclick="toggleMenu()">☰</span>
+<span class="ico" onclick="toggleMenu()">☰</span>
 <div class="cir">🌸</div>
 <div class="brand">TIERRA<br>ROSA</div>
-<input id="buscador" class="search" placeholder="Buscar..." oninput="filtrar()">
-<span class="icon" onclick="compartirApp()" title="Compartir APP">⋮</span>
-<span class="icon">🛒</span>
-<span class="icon" onclick="openPerfil()" style="border:2px solid #000;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:#fff">👤</span>
+<input id="buscador" class="busc" placeholder="Buscar..." oninput="filtrar()">
+<span class="ico" onclick="shareApp()">⋮</span>
+<span class="ico">🛒</span>
+<span class="ico" onclick="openPerfil()" style="width:28px;height:28px;border-radius:50%;border:2px solid #000;background:#fff;display:flex;align-items:center;justify-content:center">👤</span>
 </div>
 
-<div class="welcome">Bienvenido a tu Tienda Tierra Rosa Creada y Fundada por Jesús Eduardo Martínez Carrillo y Jair Valenciana Speaking Market Laguna.</div>
+<div style="max-width:960px;margin:8px auto;padding:8px;text-align:center;font-weight:900;font-size:10px;border:2px dashed #000;border-radius:10px;background:var(--beige2)">Bienvenido a tu Tienda Tierra Rosa - Jesús Eduardo Martínez Carrillo y Jair Valenciana - Speaking Market Laguna</div>
 
 <div class="grid" id="grid"></div>
 
-<div style="text-align:center;padding:18px;font-weight:900;font-size:10px;line-height:1.5">
+<div style="text-align:center;padding:16px;font-weight:900;font-size:10px;line-height:1.5">
 TIERRA ROSA<br>Asociación de esta Empresa Tienda en línea de productos de Maquillaje Belleza y Cosméticos con<br>TITANES<br>SPEAKING<br>Hecho en México 2026<br><br>
 <button class="btn" style="max-width:200px" onclick="location.href='index.html'">Botón [Iniciar Sesión]</button>
 <button class="btn" style="max-width:200px" onclick="location.href='tienda.html'">Botón [Tienda]</button>
 </div>
 
-<div class="menu" id="menu"><b>TIENDA</b> <span style="float:right;cursor:pointer" onclick="toggleMenu()">✕</span><br><br>
-Acerca de<br>Configuración<br>Parámetros<br>Actualización del Sistema<br>Administración del Sistema<br>Usuarios<br>Cuentas<br>Google<br>Acerca de la Aplicación<br>Bienestar Digital y Controles Parentales<br>Atajos y Accesibilidad<br>Modo Ultra Juego<br>Ubicación<br>Privacidad<br>Contraseña<br>Seguridad<br>RAM y Almacenamiento<br>Batería<br>Sonido y Vibración<br>Efectos Dinámicos<br>Pantalla y Brillo<br>Más Conexiones<br>Bluetooth<br>Wi-fi y Datos Móviles<br>Información del Software<br>Estado<br>Información Legal<br>Servicio al Cliente<br>Versión del Sistema Operativo<br>Servicio de Garantía<br>Centros de Servicios<br>Derechos del Autor<br>Declaración de privacidad<br>Código Abierto<br>Noticias<br>Eventos<br>Rueda de Prensa<br>Belleza<br>Cosméticos<br>Maquillaje<br>Tarjeta de Regalo
+<div class="menu" id="menu"><b>TIENDA</b><span style="float:right;cursor:pointer;font-weight:900;font-size:16px" onclick="toggleMenu()">✕</span><br><br>
+<span onclick="location.href='acerca-de.html'" style="cursor:pointer;font-weight:900;text-decoration:underline">Acerca de</span><br>Configuración<br>Parámetros<br>Actualización del Sistema<br>Administración del Sistema<br>Usuarios<br>Cuentas<br>Google<br>Acerca de la Aplicación<br>Bienestar Digital y Controles Parentales<br>Atajos y Accesibilidad<br>Modo Ultra Juego<br>Ubicación<br>Privacidad<br>Contraseña<br>Seguridad<br>RAM y Almacenamiento<br>Batería<br>Sonido y Vibración<br>Efectos Dinámicos<br>Pantalla y Brillo<br>Más Conexiones<br>Bluetooth<br>Wi-fi y Datos Móviles<br>Información del Software<br>Estado<br>Información Legal<br>Servicio al Cliente<br>Versión del Sistema Operativo<br>Servicio de Garantía<br>Centros de Servicios<br>Derechos del Autor<br>Declaración de privacidad<br>Código Abierto<br>Noticias<br>Eventos<br>Rueda de Prensa<br>Belleza<br>Cosméticos<br>Maquillaje<br>Tarjeta de Regalo<br><br>
+<button class="btn" onclick="location.href='index.html'">Botón [Iniciar Sesión]</button>
+<button class="btn" onclick="toggleMenu()">Botón [Tienda]</button>
 </div>
 
 <div class="perfil" id="perfil"><div class="box">
 <div style="display:flex;justify-content:space-between;align-items:center">
 <b>Perfil 👤</b>
-<div style="display:flex;gap:8px;align-items:center">
-<span onclick="compartirPerfil()" style="cursor:pointer;font-size:9px;font-weight:900;border:2px solid #000;background:#fff;padding:5px 8px;border-radius:7px">⋮ compartir enlace de perfil</span>
+<div style="display:flex;gap:6px;align-items:center">
+<button class="btn" style="width:auto;padding:5px 8px;font-size:8px" onclick="sharePerfil()">⋮ compartir enlace de perfil</button>
 <span onclick="closePerfil()" style="cursor:pointer;font-weight:900;font-size:18px">✕</span>
 </div>
 </div>
-<div style="text-align:center;margin:8px 0"><img id="prev" style="width:80px;height:80px;border-radius:50%;display:none;margin:auto;object-fit:cover;border:3px solid #D9C5A0"><div id="ico" style="width:80px;height:80px;border-radius:50%;border:3px solid #D9C5A0;display:flex;align-items:center;justify-content:center;margin:auto;background:#fff;font-size:32px">👤</div><input type="file" id="file" accept="image/*" style="font-size:10px;margin-top:6px"><button class="btn">Botón Guardar foto</button></div>
-<label style="font-size:9px;font-weight:900">Descripción</label><input class="inp"><button class="btn">Botón Guardar</button>
-<label style="font-size:9px;font-weight:900">Biografía</label><input class="inp"><button class="btn">Botón Guardar</button>
-<label style="font-size:9px;font-weight:900">Nombre Completo Edad Apodo Escribir</label><input class="inp" placeholder="Nombre Completo"><input class="inp" placeholder="Edad"><input class="inp" placeholder="Apodo"><button class="btn" style="display:none">Guardar</button>
-<label style="font-size:9px;font-weight:900">6 Links Webs</label><input class="inp" placeholder="Web 1"><input class="inp" placeholder="Web 2"><input class="inp" placeholder="Web 3"><input class="inp" placeholder="Web 4"><input class="inp" placeholder="Web 5"><input class="inp" placeholder="Web 6"><button class="btn">Botón Guardar</button>
-<label style="font-size:9px;font-weight:900">6 Links de Redes Sociales</label><input class="inp" placeholder="Red 1"><input class="inp" placeholder="Red 2"><input class="inp" placeholder="Red 3"><input class="inp" placeholder="Red 4"><input class="inp" placeholder="Red 5"><input class="inp" placeholder="Red 6"><button class="btn">Botón Guardar</button>
-<input class="inp" placeholder="País E-mail"><input class="inp" placeholder="Teléfono"><input class="inp" placeholder="Ocupación"><input class="inp" placeholder="Idioma">
-<select class="inp"><option>Menu desplegable de Zona horaria mundial por país</option><option>México GMT-6</option><option>USA GMT-5</option><option>Colombia GMT-5</option><option>España GMT+1</option><option>Argentina GMT-3</option></select><button class="btn">Botón Guardar</button>
-<button class="btn" style="background:#000;color:#fff" onclick="location.href='index.html'">Botón Cerrar Sesión</button>
-<button class="btn" onclick="location.href='tienda.html'">Botón [Tienda] regresar a tienda.html</button>
+
+<div style="text-align:center;margin:10px 0">
+<img id="prev" style="width:80px;height:80px;border-radius:50%;display:none;margin:auto;object-fit:cover;border:3px solid #000">
+<div id="icoP" style="width:80px;height:80px;border-radius:50%;border:3px solid #000;display:flex;align-items:center;justify-content:center;margin:auto;background:#fff;font-size:32px">👤</div>
+<input type="file" id="file" accept="image/*" style="font-size:10px;margin-top:6px"><br>
+<button class="btn" onclick="saveFoto()">Guardar foto</button>
+</div>
+
+<span style="font-size:9px;font-weight:900">Descripción</span><input id="desc" class="inp" placeholder="Descripción"><button class="btn" onclick="saveField('desc')">Botón Guardar</button>
+<span style="font-size:9px;font-weight:900">Biografía</span><input id="bio" class="inp" placeholder="Biografía"><button class="btn" onclick="saveField('bio')">Botón Guardar</button>
+
+<span style="font-size:9px;font-weight:900">Nombre Completo</span><input id="nombre" class="inp" placeholder="Nombre Completo">
+<span style="font-size:9px;font-weight:900">Edad</span><input id="edad" class="inp" placeholder="Edad">
+<span style="font-size:9px;font-weight:900">Apodo</span><input id="apodo" class="inp" placeholder="Apodo">
+<span style="font-size:9px;font-weight:900">Escribir</span><input id="escribir" class="inp" placeholder="Escribir">
+
+<span style="font-size:9px;font-weight:900;margin-top:8px;display:block">16 Links Webs</span>
+<div id="webs"></div>
+<button class="btn" onclick="saveWebs()">Botón Guardar</button>
+
+<span style="font-size:9px;font-weight:900;margin-top:8px;display:block">9 Links de Redes Sociales</span>
+<div id="redes"></div>
+<button class="btn" onclick="saveRedes()">Guardar</button>
+
+<input id="pais" class="inp" placeholder="País"><input id="email" class="inp" placeholder="E-mail"><input id="tel" class="inp" placeholder="Teléfono"><input id="ocup" class="inp" placeholder="Ocupación"><input id="idioma" class="inp" placeholder="Idioma">
+<select id="zona" class="inp"><option>Menu desplegable de Zona horaria mundial por país</option><option>México GMT-6</option><option>USA GMT-5</option><option>España GMT+1</option><option>Argentina GMT-3</option><option>Colombia GMT-5</option><option>Chile GMT-4</option></select>
+<button class="btn" onclick="savePerfilFull()">[Guardar]</button>
+<button class="btn" style="background:#000;color:#fff" onclick="cerrarSesion()">[Cerrar Sesión]</button>
+<button class="btn" onclick="closePerfil()">[Tienda]</button>
 </div></div>
 
 <script>
+// IMAGENES 1 AL 17 EN ORDEN
 let lista=[];
-for(let i=1;i<=27;i++) lista.push(`images (${i}).jpeg`);
+for(let i=1;i<=17;i++) lista.push(`images (${i}).jpeg`);
 let grid=document.getElementById('grid');
 function render(arr){
  grid.innerHTML='';
  arr.forEach(s=>{
-  let n=parseInt(s.match(/\d+/)[0]);
+  let n=s.match(/\d+/)[0];
   grid.innerHTML+=`
-  <div class="card" id="producto-${n}">
-    <div class="tcard"><span><span class="b2">TITANES</span> <span class="b2">SPEAKING</span></span><span style="cursor:pointer;font-size:20px;font-weight:900;padding:0 4px" onclick="compartirProducto(${n})">⋮</span></div>
-    <img loading="eager" src="${s}" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x300/F5E8D0/000000?text=images+(${n}).jpeg'">
-    <div class="info">
-      <div><span class="badge">-${10+n%40}%</span><span class="badge">Nuevo lanzamiento</span><span class="badge">Destacado</span></div>
-      <div class="price">$${120+n*3} MXN</div>
-      <div style="font-size:8px;opacity:.7">${s} • TIERRA ROSA</div>
-      <button class="btn">$ precios % de descuento</button>
-    </div>
+  <div class="card" id="prod-${n}">
+   <div class="tcard"><span><span class="b2">TITANES</span> <span class="b2">SPEAKING</span></span><span class="puntos" onclick="shareProd(${n})">⋮</span></div>
+   <img src="${s}" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x300/F5E8D0/000000?text=images+(${n}).jpeg'">
+   <div class="info">
+    <div><span class="badge">-${10+n%30}%</span><span class="badge">Nuevo lanzamiento</span><span class="badge">Destacado</span></div>
+    <div class="price">$${120+n*5} MXN</div>
+    <div style="font-size:8px;opacity:.7">${s}</div>
+    <button class="btn">$ precios % de descuento</button>
+   </div>
   </div>`;
  });
 }
 render(lista);
-function filtrar(){let q=document.getElementById('buscador').value.toLowerCase();if(!q){render(lista);return}let f=lista.filter(x=>x.toLowerCase().includes(q));render(f)}
+function filtrar(){let q=document.getElementById('buscador').value.toLowerCase();if(!q){render(lista);return}render(lista.filter(x=>x.toLowerCase().includes(q)))}
 function toggleMenu(){document.getElementById('menu').classList.toggle('open')}
 function openPerfil(){document.getElementById('perfil').classList.add('open')}
 function closePerfil(){document.getElementById('perfil').classList.remove('open')}
-document.getElementById('file').addEventListener('change',e=>{let f=e.target.files[0];if(!f)return;let u=URL.createObjectURL(f);let p=document.getElementById('prev');p.src=u;p.style.display='block';document.getElementById('ico').style.display='none'});
-function compartirApp(){let l=location.href;if(navigator.share)navigator.share({title:'TIERRA ROSA App',url:l});else{navigator.clipboard.writeText(l);alert('Link APP copiado: '+l)}}
-function compartirPerfil(){let l=location.href.split('#')[0]+'#perfil';if(navigator.share)navigator.share({title:'Mi Perfil TIERRA ROSA',url:l});else{navigator.clipboard.writeText(l);alert('Link PERFIL copiado: '+l)}}
-function compartirProducto(n){let l=location.href.split('#')[0]+`#producto-${n}`;if(navigator.share)navigator.share({title:`TIERRA ROSA Producto ${n}`,text:`TITANES SPEAKING`,url:l});else{navigator.clipboard.writeText(l);alert(`Link producto ${n} copiado: `+l)}}
+let websDiv=document.getElementById('webs');for(let i=1;i<=16;i++) websDiv.innerHTML+=`<input id="w${i}" class="inp" placeholder="Web ${i}">`;
+let redesDiv=document.getElementById('redes');for(let i=1;i<=9;i++) redesDiv.innerHTML+=`<input id="r${i}" class="inp" placeholder="Red ${i}">`;
+document.getElementById('file').addEventListener('change',e=>{let f=e.target.files[0];if(!f)return;let u=URL.createObjectURL(f);let p=document.getElementById('prev');p.src=u;p.style.display='block';document.getElementById('icoP').style.display='none';localStorage.setItem('foto_perfil',u)});
+function saveFoto(){alert('Foto Guardada ✅');localStorage.setItem('foto_guardada','si')}
+function saveField(id){let v=document.getElementById(id).value;if(!v){alert('Escribe');return}localStorage.setItem(id,v);alert(id+' Guardado ✅')}
+function saveWebs(){let a=[];for(let i=1;i<=16;i++)a.push(document.getElementById('w'+i).value);localStorage.setItem('webs',JSON.stringify(a));alert('16 Webs Guardadas ✅')}
+function saveRedes(){let a=[];for(let i=1;i<=9;i++)a.push(document.getElementById('r'+i).value);localStorage.setItem('redes',JSON.stringify(a));alert('9 Redes Guardadas ✅')}
+function savePerfilFull(){localStorage.setItem('perfil_full',document.getElementById('pais').value+'|'+document.getElementById('email').value);alert('Perfil Guardado ✅')}
+function cerrarSesion(){if(confirm('¿Cerrar Sesión?')) location.href='index.html'}
+
+// COMPARTIR
+function shareApp(){let l=location.href;if(navigator.share){navigator.share({title:'TIERRA ROSA',url:l})}else{navigator.clipboard.writeText(l);alert('Link APP copiado: '+l)}}
+function sharePerfil(){let l=location.href.split('#')[0]+'#perfil';if(navigator.share){navigator.share({title:'Mi Perfil Tierra Rosa',url:l})}else{navigator.clipboard.writeText(l);alert('Link PERFIL copiado: '+l)}}
+function shareProd(n){let l=location.href.split('#')[0]+'#prod-'+n;if(navigator.share){navigator.share({title:'Producto '+n+' TIERRA ROSA',url:l})}else{navigator.clipboard.writeText(l);alert('Link Producto '+n+' copiado: '+l)}}
 </script>
 </body>
-                                                                                   </html>
+ </html>
