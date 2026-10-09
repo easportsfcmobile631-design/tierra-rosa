@@ -2,169 +2,787 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e8d5b8">
-<meta name="description" content="TierraRosa — belleza que nace de la Tierra">
-<title>TierraRosa | Iniciar sesión</title>
-<link rel="icon" href="icon-19.jpg" type="image/jpeg">
-<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#e8d5b7">
+<meta name="description" content="TierraRosa: belleza que nace de la Tierra">
+
+<title>TierraRosa</title>
+
+<link rel="icon" type="image/jpeg" href="icon-19.jpg">
+
 <style>
-:root{--bg:#ead9bf;--bg2:#f4e9d8;--ink:#17130f;--white:#fff;--line:#241d16;--muted:#66594b;--accent:#9b6b45}
-*{box-sizing:border-box}
-body{margin:0;background:linear-gradient(145deg,var(--bg),var(--bg2));color:var(--ink);font-family:Arial,Helvetica,sans-serif}
-header{padding:25px 15px 18px;text-align:center;border-bottom:2px solid var(--line)}
-.brand-icon{width:58px;height:58px;border:2px solid var(--ink);border-radius:50%;display:inline-grid;place-items:center;background:#fff;font-size:31px;vertical-align:middle;margin-right:8px}
-h1{display:inline-block;font-size:clamp(27px,6vw,42px);margin:0;vertical-align:middle;letter-spacing:1px}
-.tagline{margin:8px 0 0;font-size:14px;letter-spacing:.6px}
-main{max-width:1050px;margin:auto;padding:18px 14px 40px}
-.panel{background:rgba(255,255,255,.48);border:1.5px solid var(--line);border-radius:18px;padding:20px;margin:0 auto 20px;box-shadow:0 5px 16px #4b32151a}
-h2{font-size:22px;margin:0 0 16px;text-align:center}
-h3{font-size:18px;margin:22px 0 12px}
-label{display:block;font-weight:700;margin:12px 0 6px}
-input,select{width:100%;min-height:48px;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#17130f;font-size:16px}
-input[type=checkbox]{width:20px;min-height:20px;vertical-align:middle}
-button,.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:11px 18px;background:#fff;color:#17130f;border:1.5px solid var(--line);border-radius:11px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer}
-button:active,.button:active{transform:scale(.98)}
-.primary-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
-.primary-actions button{min-width:135px}
-.hint{color:var(--muted);font-size:13px;line-height:1.5}
-.status{display:none;padding:12px;border-radius:10px;background:#e2f5df;border:1px solid #397a32;margin-top:12px;overflow-wrap:anywhere}
-.status.error{background:#ffe4e1;border-color:#a22;color:#721b15}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
-.social{min-height:76px;display:flex;flex-direction:row;justify-content:flex-start;text-align:left;padding:10px;overflow-wrap:anywhere}
-.social img{width:30px;height:30px;object-fit:contain;flex:0 0 30px}
-.social .fallback{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid #ddd;font-weight:800}
-.social span:last-child{font-size:13px;line-height:1.2}
-.terms{display:flex;gap:8px;align-items:flex-start;font-weight:400;line-height:1.4}
-.terms input{margin-top:1px}
-.links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:14px 0}
-.links a{color:#17130f;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-footer{text-align:center;padding:22px 14px;border-top:2px solid var(--line);font-size:13px;line-height:1.7}
-.hidden{display:none!important}
-#installBtn{position:fixed;right:14px;bottom:25px;z-index:9;box-shadow:0 3px 14px #0002}
-@media(min-width:760px){.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{padding:24px}}
+:root {
+    --beige: #e8d5b7;
+    --arena: #d8bd96;
+    --crema: #f5ead8;
+    --negro: #17130f;
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--beige);
+    color: var(--negro);
+}
+
+header {
+    text-align: center;
+    padding: 25px 12px;
+    background: var(--crema);
+    border-bottom: 2px solid var(--negro);
+}
+
+.logo {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+header h1 {
+    margin: 10px 0 5px;
+    font-size: 32px;
+}
+
+header p {
+    margin: 0;
+    font-size: 15px;
+}
+
+main {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    padding: 15px;
+}
+
+.panel {
+    background: var(--crema);
+    border: 1px solid var(--negro);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 18px 0;
+    box-shadow: 0 3px 9px rgba(0,0,0,.08);
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+label {
+    display: block;
+    margin-top: 13px;
+    font-weight: bold;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: 11px;
+    margin-top: 6px;
+    border: 1px solid var(--negro);
+    border-radius: 7px;
+    background: var(--blanco);
+    color: var(--negro);
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    min-height: auto;
+    vertical-align: middle;
+    margin: 4px 7px 4px 0;
+}
+
+button {
+    background: var(--blanco);
+    color: var(--negro);
+    border: 1.5px solid var(--negro);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover, button:focus {
+    background: var(--arena);
+}
+
+.boton-principal {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+}
+
+.campo-guardar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    align-items: end;
+    margin-bottom: 12px;
+}
+
+.campo-guardar label {
+    min-width: 0;
+}
+
+.campo-guardar button {
+    margin-bottom: 0;
+}
+
+.mensaje {
+    display: none;
+    padding: 13px;
+    margin-top: 15px;
+    background: #e3f3df;
+    border: 1px solid #35702b;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+.error {
+    background: #ffe3e3;
+    border-color: #a10000;
+}
+
+.nota {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.enlaces {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.red-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 0;
+    min-height: 105px;
+    padding: 10px 4px;
+    color: var(--negro);
+    text-decoration: none;
+    background: var(--blanco);
+    border: 1px solid #b6a58d;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.red-social:hover {
+    background: #f1dfc5;
+}
+
+.icono-red {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--color);
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+footer {
+    padding: 22px 12px;
+    text-align: center;
+    border-top: 1px solid var(--negro);
+    font-size: 13px;
+}
+
+.oculto {
+    display: none !important;
+}
+
+@media (max-width: 430px) {
+    main {
+        padding: 10px;
+    }
+
+    .panel {
+        padding: 14px;
+    }
+
+    .enlaces {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .red-social {
+        min-height: 95px;
+        font-size: 11px;
+    }
+
+    .icono-red {
+        width: 38px;
+        height: 38px;
+    }
+
+    .campo-guardar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .campo-guardar button {
+        width: 100%;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div><span class="brand-icon" aria-hidden="true">🌸</span><h1>TierraRosa</h1></div>
-  <p class="tagline">Belleza que nace de la Tierra · Natural · Consciente · Real</p>
+    <img class="logo" src="icon-19.jpg" alt="Icono de TierraRosa"
+         onerror="this.style.display='none'">
+    <h1>TierraRosa</h1>
+    <p>Belleza que nace de la Tierra</p>
 </header>
+
 <main>
-  <section class="panel" id="loginPanel">
+
+<!-- INICIO DE SESIÓN -->
+<section class="panel" id="inicio">
     <h2>🔑 INICIAR SESIÓN 🔑</h2>
-    <form id="loginForm">
-      <label for="loginUser">Usuario</label>
-      <input id="loginUser" name="username" maxlength="75" autocomplete="username" required placeholder="Escribe tu usuario">
-      <label for="loginPass">Contraseña</label>
-      <input id="loginPass" name="password" type="password" maxlength="75" autocomplete="current-password" required placeholder="Escribe tu contraseña">
-      <div class="primary-actions"><button type="submit">Login</button><button type="button" id="showRegister">Registrarme aquí</button></div>
-      <div id="loginStatus" class="status" role="status"></div>
-    </form>
-    <p class="hint">Esta versión guarda el registro en este navegador/dispositivo. Para cuentas seguras y sincronizadas entre dispositivos se necesita un servidor de autenticación.</p>
-  </section>
 
-  <section class="panel hidden" id="registerPanel">
+    <form id="formLogin">
+        <label for="loginUsuario">Usuario</label>
+        <input id="loginUsuario" name="usuario"
+               type="text" maxlength="75"
+               autocomplete="username" required>
+
+        <label for="loginPassword">Contraseña</label>
+        <input id="loginPassword" name="password"
+               type="password" maxlength="75"
+               autocomplete="current-password" required>
+
+        <button class="boton-principal" type="submit">Login</button>
+    </form>
+
+    <p id="mensajeLogin" class="mensaje" role="status"></p>
+
+    <p class="nota">
+        ¿Todavía no tienes una cuenta?
+        <a href="#registro">REGISTRARME AQUÍ</a>
+    </p>
+</section>
+
+<!-- REGISTRO -->
+<section class="panel" id="registro">
     <h2>REGISTRARME AQUÍ</h2>
-    <form id="registerForm">
-      <div class="two-col">
-        <div>
-          <label for="firstName">1er Nombre</label><input id="firstName" maxlength="75" required>
-          <label for="secondName">2do Nombre</label><input id="secondName" maxlength="75">
-          <label for="lastName">1er Apellido</label><input id="lastName" maxlength="75" required>
-          <label for="secondLastName">2do Apellido</label><input id="secondLastName" maxlength="75">
-          <label for="newUser">Usuario</label><input id="newUser" maxlength="75" autocomplete="username" required>
-          <label for="newPass">Contraseña</label><input id="newPass" type="password" maxlength="75" autocomplete="new-password" required>
-          <label for="phone">Teléfono</label><input id="phone" type="tel" maxlength="25" placeholder="Número de teléfono">
-          <label for="email1">1er Correo Electrónico</label><input id="email1" type="email" maxlength="120">
-          <label for="emailPass1">Contraseña del correo (opcional)</label><input id="emailPass1" type="password" maxlength="75" autocomplete="off"><p class="hint">No recomendamos guardar contraseñas de correo en esta página. Este campo no se almacena.</p>
+
+    <p class="nota">
+        Completa tus datos. Puedes guardar cada campo individualmente
+        o utilizar el botón Registrar al final.
+    </p>
+
+    <form id="formRegistro">
+
+        <div class="campo-guardar">
+            <label>1er Nombre
+                <input id="nombre1" maxlength="75" autocomplete="given-name">
+            </label>
+            <button type="button" data-save="nombre1">Guardar</button>
         </div>
-        <div>
-          <label for="email2">2do Correo Electrónico</label><input id="email2" type="email" maxlength="120">
-          <label for="emailPass2">Contraseña del segundo correo (opcional)</label><input id="emailPass2" type="password" maxlength="75" autocomplete="off"><p class="hint">Por seguridad, este campo tampoco se almacena.</p>
-          <label for="nickname">1er Apodo</label><input id="nickname" maxlength="75">
-          <label for="birthDate">Fecha de nacimiento</label><input id="birthDate" type="date">
-          <label for="age">Edad</label><input id="age" type="number" min="0" max="120">
-          <label for="city">Ciudad</label><input id="city" maxlength="75">
-          <label for="state">Estado</label><input id="state" maxlength="75">
-          <label for="country">País</label><input id="country" maxlength="75" value="México">
+
+        <div class="campo-guardar">
+            <label>2do Nombre
+                <input id="nombre2" maxlength="75">
+            </label>
+            <button type="button" data-save="nombre2">Guardar</button>
         </div>
-      </div>
-      <label class="terms"><input type="checkbox" id="updates" required><span>Acepto recibir las actualizaciones de esta app y respetar los lineamientos que surjan de aquí.</span></label>
-      <p class="links"><a href="#terminos" id="termsLink">Términos y Condiciones</a><a href="#privacidad" id="privacyLink">Avisos de Privacidad</a></p>
-      <div class="primary-actions"><button type="submit">Registrar</button><button type="button" id="cancelRegister">Volver al Login</button></div>
-      <div id="registerStatus" class="status" role="status"></div>
+
+        <div class="campo-guardar">
+            <label>1er Apellido
+                <input id="apellido1" maxlength="75" autocomplete="family-name">
+            </label>
+            <button type="button" data-save="apellido1">Guardar</button>
+        </div>
+
+        <div class="campo-guardar">
+            <label>2do Apellido
+                <input id="apellido2" maxlength="75">
+            </label>
+            <button type="button" data-save="apellido2">Guardar</button>
+        </div>
+
+        <div class="campo-guardar">
+            <label>Usuario
+                <input id="usuario" maxlength="75"
+                       autocomplete="username" required>
+            </label>
+            <button type="button" data-save="usuario">Guardar</button>
+        </div>
+
+        <div class="campo-guardar">
+            <label>Contraseña
+                <input id="password" type="password" maxlength="75"
+                       autocomplete="new-password" required>
+            </label>
+            <button type="button" data-save="password">Guardar</button>
+        </div>
+
+        <div class="campo-guardar">
+            <label>Teléfono
+                <input id="telefono" type="tel" maxlength="25"
+                       autocomplete="tel">
+            </label>
+            <button type="button" data-save="telefono">Guardar</button>
+        </div>
+
+        <div class="campo-guardar">
+            <label>1er Correo Electrónico
+                <input id="correo1" type="email" maxlength="150"
+                       autocomplete="email">
+            </label>
+            <button type="button" data-save="correo1">Guardar</button>
+        </div>
+
+        <div class="campo-guardar">
+            <label>Contraseña del primer correo
+                <input id="passwordCorreo1" type="password" maxlength="75"
+                       autocomplete="off">
+            </label>
+            <button type="button" data-save="passwordCorreo1">Guardar</button>
+        </div>
+
+        <div class="campo-guardar">
+            <label>2do Correo Electrónico
+                <input id="correo2" type="email" maxlength="150">
+            </label>
+            <button type="button" data-save="correo2">Guardar</button>
+        </div>
+
+        <div class="campo-guardar">
+            <label>Contraseña del segundo correo
+                <input id="passwordCorreo2" type="password" maxlength="75"
+                       autocomplete="off">
+            </label>
+            <button type="button" data-save="passwordCorreo2">Guardar</button>
+        </div>
+
+        <label>1er Apodo
+            <input id="apodo1" maxlength="75">
+        </label>
+
+        <label>Fecha de Nacimiento</label>
+        <input id="fechaNacimiento" type="date">
+
+        <label>Edad</label>
+        <input id="edad" type="number" min="1" max="120">
+
+        <label>Ciudad</label>
+        <input id="ciudad" maxlength="100" autocomplete="address-level2">
+
+        <label>Estado</label>
+        <input id="estado" maxlength="100" autocomplete="address-level1">
+
+        <label>País</label>
+        <input id="pais" maxlength="100" value="México"
+               autocomplete="country-name">
+
+        <h3>Consentimiento y condiciones</h3>
+
+        <label class="nota">
+            <input id="aceptaActualizaciones" type="checkbox" required>
+            Acepto recibir las actualizaciones de esta aplicación.
+        </label>
+
+        <label class="nota">
+            <input id="aceptaAlineamientos" type="checkbox" required>
+            Acepto respetar los lineamientos aplicables de la aplicación.
+        </label>
+
+        <label class="nota">
+            <input id="aceptaTerminos" type="checkbox" required>
+            He leído y acepto los
+            <a href="#terminos">Términos y Condiciones</a>.
+        </label>
+
+        <label class="nota">
+            <input id="aceptaPrivacidad" type="checkbox" required>
+            He leído el
+            <a href="#privacidad">Aviso de Privacidad</a>.
+        </label>
+
+        <button class="boton-principal" type="submit">Registrar</button>
+
+        <p id="mensajeRegistro" class="mensaje" role="status"></p>
     </form>
-  </section>
+</section>
 
-  <section class="panel" id="socialPanel">
-    <h2>Acceso con un clic</h2>
-    <p class="hint">Los accesos con iconos abren directamente los enlaces o servicios indicados. Son accesos directos, no inicios de sesión OAuth dentro de TierraRosa.</p>
-    <div class="grid" id="socialGrid"></div>
-  </section>
+<!-- TÉRMINOS -->
+<section class="panel" id="terminos">
+    <h2>Términos y Condiciones</h2>
+    <p class="nota">
+        Al registrarte, te comprometes a proporcionar información correcta,
+        mantener el control de tu cuenta y utilizar TierraRosa de manera
+        responsable. No debes utilizar la aplicación para actividades
+        ilegales ni suplantar la identidad de otras personas.
+    </p>
+    <p class="nota">
+        Las funciones disponibles pueden cambiar con las actualizaciones.
+        El registro de esta demostración se guarda localmente en el navegador
+        y no constituye por sí solo una cuenta en un servidor.
+    </p>
+</section>
 
-  <section class="panel">
+<!-- PRIVACIDAD -->
+<section class="panel" id="privacidad">
+    <h2>Avisos de Privacidad</h2>
+    <p class="nota">
+        Los datos introducidos en esta versión de demostración se guardan
+        en el almacenamiento local del navegador de este dispositivo.
+        No se envían automáticamente a un servidor.
+    </p>
+    <p class="nota">
+        No introduzcas contraseñas de tu correo electrónico, cuentas
+        bancarias ni otros servicios. TierraRosa no necesita esas
+        contraseñas para crear una cuenta propia.
+    </p>
+    <p class="nota">
+        Antes de publicar un sistema real de registro, se debe implementar
+        una política de privacidad completa, informar quién es responsable
+        de los datos y establecer mecanismos seguros para ejercer los
+        derechos que correspondan.
+    </p>
+</section>
+
+<!-- REDES SOCIALES -->
+<section class="panel" id="redes">
     <h2>Consulta mis Redes Sociales</h2>
-    <p class="hint">Selecciona una aplicación para abrir el perfil, canal o página compartida.</p>
-    <div class="grid" id="profileGrid"></div>
-  </section>
 
-  <section class="panel" id="terminos">
-    <h3>Términos y Condiciones</h3>
-    <p>Usa TierraRosa de manera responsable. Los enlaces externos pertenecen a sus respectivas plataformas y pueden cambiar sus condiciones. El registro de esta versión es local y de demostración; no representa una cuenta protegida por un servidor.</p>
-    <h3 id="privacidad">Avisos de Privacidad</h3>
-    <p>Los datos del formulario se guardan en el almacenamiento local del navegador de este dispositivo. No se envían a un servidor. Evita introducir datos sensibles o contraseñas que uses en otros servicios. Puedes borrar los datos del sitio desde la configuración del navegador.</p>
-  </section>
+    <p class="nota">
+        Selecciona el icono de una aplicación para abrir el enlace
+        correspondiente. Los enlaces dirigen a las páginas o perfiles
+        asociados a las direcciones que proporcionaste.
+    </p>
 
-  <section class="panel">
-    <h3>Fundadores</h3><p>Jesús Eduardo Martínez Carrillo y Jair Valenciana.</p>
-    <h3>Marcas que trabajaron dentro de esta aplicación</h3><p><strong>TITANES</strong> · <strong>SPEAKING</strong></p>
-  </section>
+    <div class="enlaces" id="listaRedes"></div>
+</section>
+
 </main>
-<footer>🌸 TierraRosa · Belleza que nace de la Tierra<br>Los nombres e iconos de servicios externos pertenecen a sus respectivos titulares.</footer>
-<button id="installBtn" class="hidden" type="button">Instalar App</button>
+
+<footer>
+    <strong>TierraRosa</strong><br>
+    Belleza que nace de la Tierra
+</footer>
+
 <script>
-const socialLinks = [
-["Google","https://www.google.com/"],["GitHub","https://github.com/easportsfcmobile631-design"],["Vercel","https://vercel.com/martineztitanjesuseduardo"],["Netlify","https://app.netlify.com/teams/easportsfcmobile631-design/projects"],["Render","https://dashboard.render.com/"],["Claro","https://www.claro.com/"],["Word","https://www.microsoft.com/microsoft-365/word"],["Files","https://files.google.com/"],["Copa Fácil","https://copafacil.com/-4y21q"],["Spotify","https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link"],["Facebook","https://www.facebook.com/share/18fACYD7pv/"],["Steam","https://steamcommunity.com/profiles/76561199837311518/"],["Bluesky","https://bsky.app/profile/jemart03.bsky.social"],["Xbox","https://www.xbox.com/es-MX/"],["Apple TV","https://www.apple.com/mx/apple-tv/"],["LinkedIn","https://www.linkedin.com/"],["TikTok","https://www.tiktok.com/@rebelde.de.corazn5?_r=1&_d=eeamgk995if3kh&sec_uid=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&share_author_id=7646631851419239445&sharer_language=es&source=h5_m&u_code=f3l814548l21ii&timestamp=1790848216&user_id=7646631851419239445&sec_user_id=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7615113577812821781&share_link_id=4cf9b900-7336-4b5d-9101-4844923c84af&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"],["Canva","https://www.canva.com/"],["Pinterest","https://www.pinterest.com/"],["Threads","https://www.threads.com/@zuzukieduardomartinez"],["Termux","https://termux.dev/"],["Duolingo","https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link"],["Twitch","https://www.twitch.tv/easportsfcmobile631?sr=a"],["Instagram","https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw"],["YouTube","https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY"],["Acode","https://acode.app/profile"],["Fotos","https://photos.google.com/"],["Snapchat","https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX"],["Discord","https://discord.com/"],["Telegram","https://t.me/Nadia98968999"],["Titanes","https://www.google.com/search?q=TITANES"],["Speaking","https://www.google.com/search?q=SPEAKING"],["Free Fire","https://ff.garena.com/"],["Amazon","https://www.amazon.com.mx/"],["Vivo","https://www.vivo.com/"],["Grabadora","https://play.google.com/store/search?q=voice%20recorder&c=apps"],["WhatsApp","https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B"],["Messenger","https://m.me/zusuki.eduardo.martinez"]
+"use strict";
+
+/*
+ * IMPORTANTE:
+ * Esta es una demostración local.
+ * No almacena las contraseñas de otros correos.
+ * Para una aplicación pública se necesita un servidor seguro.
+ */
+
+const CLAVE_PERFIL = "tierrarosa_perfil_v1";
+const CLAVE_SESION = "tierrarosa_sesion_v1";
+
+const campos = [
+    "nombre1", "nombre2", "apellido1", "apellido2",
+    "usuario", "password", "telefono", "correo1",
+    "correo2", "apodo1", "fechaNacimiento", "edad",
+    "ciudad", "estado", "pais"
 ];
-const profileLinks = [
-["Apple TV","https://www.apple.com/mx/apple-tv/"],["Discord","https://discord.com/"],["Xbox","https://www.xbox.com/es-MX/"],["GitHub","https://github.com/easportsfcmobile631-design"],["Facebook","https://www.facebook.com/share/18fACYD7pv/"],["Spotify","https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link"],["YouTube","https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY"],["Twitch","https://www.twitch.tv/easportsfcmobile631?sr=a"],["X","https://x.com/eduardomar47137?s=09"],["WhatsApp","https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B"],["Telegram","https://t.me/Nadia98968999"],["Instagram","https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw"],["Copa Fácil","https://copafacil.com/-4y21q"],["Messenger","https://m.me/zusuki.eduardo.martinez"],["Websites.co.in","https://websites.co.in/refer/749809"],["Steam","https://steamcommunity.com/profiles/76561199837311518/"],["Bluesky","https://bsky.app/profile/jemart03.bsky.social"],["Threads","https://www.threads.com/@zuzukieduardomartinez"],["TikTok","https://www.tiktok.com/@rebelde.de.corazn5?_r=1&_d=eeamgk995if3kh&sec_uid=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&share_author_id=7646631851419239445&sharer_language=es&source=h5_m&u_code=f3l814548l21ii&timestamp=1790848216&user_id=7646631851419239445&sec_user_id=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7615113577812821781&share_link_id=4cf9b900-7336-4b5d-9101-4844923c84af&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"],["Acode","https://acode.app/profile"],["Render","https://dashboard.render.com/"],["Netlify","https://app.netlify.com/teams/easportsfcmobile631-design/projects"],["Vercel","https://vercel.com/martineztitanjesuseduardo"],["Snapchat","https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX"],["Duolingo","https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link"],["Websites","https://websites.co.in/refer/749809"]
-];
-const iconMap = {
-"Google":"https://cdn.simpleicons.org/google/4285F4","GitHub":"https://cdn.simpleicons.org/github/181717","Vercel":"https://cdn.simpleicons.org/vercel/000000","Netlify":"https://cdn.simpleicons.org/netlify/00C7B7","Render":"https://cdn.simpleicons.org/render/46E3B7","Word":"https://cdn.simpleicons.org/microsoftword/2B579A","Spotify":"https://cdn.simpleicons.org/spotify/1DB954","Facebook":"https://cdn.simpleicons.org/facebook/0866FF","Steam":"https://cdn.simpleicons.org/steam/171A21","Bluesky":"https://cdn.simpleicons.org/bluesky/0285FF","Xbox":"https://cdn.simpleicons.org/xbox/107C10","Apple TV":"https://cdn.simpleicons.org/appletv/000000","LinkedIn":"https://cdn.simpleicons.org/linkedin/0A66C2","TikTok":"https://cdn.simpleicons.org/tiktok/000000","Canva":"https://cdn.simpleicons.org/canva/00C4CC","Pinterest":"https://cdn.simpleicons.org/pinterest/BD081C","Threads":"https://cdn.simpleicons.org/threads/000000","Termux":"https://cdn.simpleicons.org/termux/000000","Duolingo":"https://cdn.simpleicons.org/duolingo/58CC02","Twitch":"https://cdn.simpleicons.org/twitch/9146FF","Instagram":"https://cdn.simpleicons.org/instagram/E4405F","YouTube":"https://cdn.simpleicons.org/youtube/FF0000","Acode":"https://cdn.simpleicons.org/android/3DDC84","Snapchat":"https://cdn.simpleicons.org/snapchat/FFFC00","Discord":"https://cdn.simpleicons.org/discord/5865F2","Telegram":"https://cdn.simpleicons.org/telegram/26A5E4","WhatsApp":"https://cdn.simpleicons.org/whatsapp/25D366","Messenger":"https://cdn.simpleicons.org/messenger/0866FF","Amazon":"https://cdn.simpleicons.org/amazon/FF9900","Claro":"https://cdn.simpleicons.org/claro/DA291C","Canva":"https://cdn.simpleicons.org/canva/00C4CC","X":"https://cdn.simpleicons.org/x/000000"
-};
-function makeLink(item){
- const [name,url]=item, a=document.createElement('a'); a.className='button social'; a.href=url; a.target='_blank'; a.rel='noopener noreferrer'; a.title='Abrir '+name;
- const icon=iconMap[name];
- if(icon){const img=document.createElement('img');img.src=icon;img.alt='';img.loading='lazy';img.onerror=()=>{img.replaceWith(fallback(name))};a.appendChild(img)}
- else a.appendChild(fallback(name));
- const label=document.createElement('span');label.textContent=name;a.appendChild(label);return a;
+
+/* Cargar los datos guardados anteriormente. */
+function leerPerfil() {
+    try {
+        return JSON.parse(localStorage.getItem(CLAVE_PERFIL) || "{}");
+    } catch (error) {
+        return {};
+    }
 }
-function fallback(name){const e=document.createElement('span');e.className='fallback';e.textContent=name.slice(0,1).toUpperCase();return e}
-socialLinks.forEach(x=>document.getElementById('socialGrid').appendChild(makeLink(x)));
-profileLinks.forEach(x=>document.getElementById('profileGrid').appendChild(makeLink(x)));
-const registerPanel=document.getElementById('registerPanel');
-document.getElementById('showRegister').onclick=()=>{registerPanel.classList.remove('hidden');registerPanel.scrollIntoView({behavior:'smooth'});};
-document.getElementById('cancelRegister').onclick=()=>{registerPanel.classList.add('hidden');document.getElementById('loginPanel').scrollIntoView({behavior:'smooth'});};
-function showStatus(id,msg,error=false){const el=document.getElementById(id);el.textContent=msg;el.classList.toggle('error',error);el.style.display='block';}
-document.getElementById('registerForm').addEventListener('submit',e=>{
- e.preventDefault();
- const username=document.getElementById('newUser').value.trim(), password=document.getElementById('newPass').value;
- if(!username||!password){showStatus('registerStatus','Completa usuario y contraseña.',true);return}
- if(/\s/.test(password)){showStatus('registerStatus','La contraseña no debe contener espacios.',true);return}
- const data={firstName:firstName.value,secondName:secondName.value,lastName:lastName.value,secondLastName:secondLastName.value,username,password,phone:phone.value,email1:email1.value,email2:email2.value,nickname:nickname.value,birthDate:birthDate.value,age:age.value,city:city.value,state:state.value,country:country.value,updates:updates.checked};
- try{localStorage.setItem('tierrarosa_user',JSON.stringify(data));showStatus('registerStatus','Su registro fue exitoso y sus datos se guardaron con éxito en este dispositivo.');document.getElementById('loginUser').value=username;document.getElementById('loginPass').value='';}
- catch(err){showStatus('registerStatus','No se pudo guardar el registro en este navegador.',true)}
+
+function cargarFormulario() {
+    const perfil = leerPerfil();
+
+    campos.forEach(id => {
+        const campo = document.getElementById(id);
+        if (campo && perfil[id] !== undefined) {
+            campo.value = perfil[id];
+        }
+    });
+}
+
+function obtenerDatos() {
+    const datos = {};
+
+    campos.forEach(id => {
+        datos[id] = document.getElementById(id).value.trim();
+    });
+
+    return datos;
+}
+
+function mostrarMensaje(id, texto, esError = false) {
+    const elemento = document.getElementById(id);
+
+    elemento.textContent = texto;
+    elemento.style.display = "block";
+    elemento.classList.toggle("error", esError);
+}
+
+/*
+ * Los botones Guardar guardan el campo seleccionado.
+ * Las contraseñas se excluyen del almacenamiento local.
+ */
+document.querySelectorAll("[data-save]").forEach(boton => {
+    boton.addEventListener("click", () => {
+        const id = boton.dataset.save;
+        const campo = document.getElementById(id);
+
+        if (!campo.value.trim()) {
+            alert("Escribe un dato antes de guardarlo.");
+            campo.focus();
+            return;
+        }
+
+        if (id === "password" ||
+            id === "passwordCorreo1" ||
+            id === "passwordCorreo2") {
+            alert(
+                "Por seguridad, no guardamos contraseñas mediante " +
+                "este botón. No introduzcas aquí la contraseña de tu correo."
+            );
+            campo.value = "";
+            return;
+        }
+
+        const perfil = leerPerfil();
+        perfil[id] = campo.value.trim();
+
+        try {
+            localStorage.setItem(CLAVE_PERFIL, JSON.stringify(perfil));
+            alert("El campo se guardó en este dispositivo.");
+        } catch (error) {
+            alert("No fue posible guardar el dato en este navegador.");
+        }
+    });
 });
-document.getElementById('loginForm').addEventListener('submit',e=>{
- e.preventDefault();let data;try{data=JSON.parse(localStorage.getItem('tierrarosa_user')||'null')}catch(err){}
- if(data&&loginUser.value.trim()===data.username&&loginPass.value===data.password)showStatus('loginStatus','¡Bienvenido/a a TierraRosa, '+(data.firstName||data.username)+'! La sesión de demostración se inició correctamente.');
- else showStatus('loginStatus','No encontramos esa cuenta en este dispositivo. Regístrate aquí o comprueba tus datos.',true);
+
+/* Calcular edad a partir de la fecha de nacimiento. */
+document.getElementById("fechaNacimiento").addEventListener("change", e => {
+    if (!e.target.value) return;
+
+    const nacimiento = new Date(e.target.value + "T00:00:00");
+    const hoy = new Date();
+
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+
+    const faltaCumpleanos =
+        hoy.getMonth() < nacimiento.getMonth() ||
+        (hoy.getMonth() === nacimiento.getMonth() &&
+         hoy.getDate() < nacimiento.getDate());
+
+    if (faltaCumpleanos) edad--;
+
+    if (edad >= 0 && edad <= 120) {
+        document.getElementById("edad").value = edad;
+    }
 });
-let deferredPrompt;const installBtn=document.getElementById('installBtn');
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.classList.remove('hidden')});
-installBtn.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.classList.add('hidden')}else alert('Para instalar: abre esta página en Chrome, toca ⋮ y elige “Instalar aplicación” o “Añadir a pantalla principal”.')});
-if('serviceWorker' in navigator && location.protocol.startsWith('http')){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
-</script>
-</body>
-</html>
+
+/* Registro local. */
+document.getElementById("formRegistro").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const usuario = document.getElementById("usuario").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!usuario || !password) {
+        mostrarMensaje(
+            "mensajeRegistro",
+            "Es necesario escribir un usuario y una contraseña.",
+            true
+        );
+        return;
+    }
+
+    if (/\s/.test(password)) {
+        mostrarMensaje(
+            "mensajeRegistro",
+            "La contraseña no puede contener espacios.",
+            true
+        );
+        return;
+    }
+
+    const datos = obtenerDatos();
+
+    /*
+     * Nunca guardamos contraseñas de inicio de sesión en texto plano.
+     * Esta demostración no registra credenciales para autenticación.
+     */
+    delete datos.password;
+    delete datos.passwordCorreo1;
+    delete datos.passwordCorreo2;
+
+    try {
+        const perfilAnterior = leerPerfil();
+
+        localStorage.setItem(
+            CLAVE_PERFIL,
+            JSON.stringify({...perfilAnterior, ...datos})
+        );
+
+        mostrarMensaje(
+            "mensajeRegistro",
+            "Los datos del perfil se guardaron correctamente en este " +
+            "dispositivo. Para habilitar una cuenta real con contraseña " +
+            "se necesita configurar un servidor de autenticación."
+        );
+
+        document.getElementById("password").value = "";
+        document.getElementById("passwordCorreo1").value = "";
+        document.getElementById("passwordCorreo2").value = "";
+
+    } catch (error) {
+        mostrarMensaje(
+            "mensajeRegistro",
+            "No se pudieron guardar los datos. Revisa el almacenamiento " +
+            "disponible en el navegador.",
+            true
+        );
+    }
+});
+
+/* Inicio de sesión de demostración: comprueba el perfil local,
+   pero no autentica una contraseña. */
+document.getElementById("formLogin").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const usuario = document.getElementById("loginUsuario").value.trim();
+
+    if (!usuario) {
+        mostrarMensaje("mensajeLogin", "Escribe tu usuario.", true);
+        return;
+    }
+
+    const perfil = leerPerfil();
+
+    if (perfil.usuario && perfil.usuario === usuario) {
+        mostrarMensaje(
+            "mensajeLogin",
+            "Encontramos el perfil guardado en este dispositivo. " +
+            "La validación segura de la contraseña requiere un servidor."
+        );
+    } else {
+        mostrarMensaje(
+            "mensajeLogin",
+            "No encontramos ese usuario en el almacenamiento local. " +
+            "Puedes registrarte en esta página."
+        );
+    }
+});
+
+/* Redes y perfiles que proporcionaste. */
+const redes = [
+    {
+        nombre: "Apple TV",
+        icono: "",
+        color: "#161616",
+        url: "https://www.apple.com/mx/apple-tv/"
+    },
+    {
+        nombre: "Discord",
+        icono: "◉",
+        color: "#5865F2",
+        url: "https://discord.com/"
+    },
+    {
+        nombre: "XBOX",
+        icono: "X",
+        color: "#107C10",
+        url: "https://www.xbox.com/es-MX/"
+    },
+    {
+        nombre: "GitHub",
+        icono: "GH",
+        color: "#24292f",
+        url: "https://github.com/easportsfcmobile631-design"
+    },
+    {
+        nombre: "Facebook",
+        icono: "f",
+        color: "#1877F2",
+        url: "https://www.facebook.com/share/18fACYD7pv/"
+    },
+    {
+        nombre: "Spotify",
+        icono: "≋",
+        color: "#1DB954",
+        url: "https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link"
+    },
+    {
+        nombre: "YouTube",
+        icono: "▶",
+        color: "#FF0033",
+        url: "https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY"
+    },
+    {
+        nombre: "Twitch",
+        icono: "T",
+        color: "#9146FF",
+        url: "https://www.twitch.tv/easportsfcmobile631?sr=a"
+    },
+    {
+        nombre: "X",
+        icono: "𝕏",
+        color: "#000000",
+        url: "https://x.com/eduardomar47137?s=09"
+    },
+    {
+        nombre: "WhatsApp",
+        icono: "◉",
+        color: "#25D366",
+        url: "https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B"
+    },
+    {
+        nombre: "Telegram",
+        icono: "➤",
+        color: "#229ED9",
+        url: "https://t.me/Nadia98968999"
+    },
+    {
+        nombre: "Instagram",
+        icono: "◎",
+        color: "#C13584",
+        url: "https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw"
+    },
+    {
+        nombre: "Copa Fácil",
+        icono: "⚽",
+        color: "#176B43",
+        url: "https://copafacil.com/-4y21q"
+    },
+    {
+        nombre: "Messenger",
+        icono: "ϟ",
+        color: "#0084FF",
+        url: "https
