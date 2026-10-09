@@ -2,637 +2,120 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#e8d5b7">
-<meta name="description" content="TierraRosa">
-<link rel="icon" href="icon-19.jpg" type="image/jpeg">
-<link rel="apple-touch-icon" href="icon-19.jpg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TierraRosa</title>
-
+<link rel="icon" href="./icon-19.jpg">
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#F5E8D0">
 <style>
-:root {
-    --fondo: #e8d5b7;
-    --crema: #f3e7d3;
-    --arena: #d8bd96;
-    --negro: #000000;
-    --blanco: #ffffff;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background: var(--fondo);
-    color: var(--negro);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
-    text-align: center;
-    padding: 25px 12px;
-    background: var(--crema);
-    border-bottom: 2px solid var(--negro);
-}
-
-.logo {
-    width: 85px;
-    height: 85px;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 2px solid var(--negro);
-    background: var(--blanco);
-}
-
-h1 {
-    margin: 12px 0 5px;
-    font-size: 32px;
-    overflow-wrap: anywhere;
-}
-
-h2 {
-    text-align: center;
-    font-size: 23px;
-}
-
-h3 {
-    font-size: 18px;
-}
-
-main {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    padding: 15px;
-}
-
-.seccion {
-    margin: 20px 0;
-    padding: 20px;
-    background: var(--crema);
-    border: 1px solid var(--negro);
-    border-radius: 12px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin: 13px 0 6px;
-}
-
-input,
-select {
-    display: block;
-    width: 100%;
-    min-height: 46px;
-    padding: 12px;
-    border: 1px solid var(--negro);
-    border-radius: 6px;
-    background: var(--blanco);
-    color: var(--negro);
-    font-size: 16px;
-}
-
-input[type="checkbox"] {
-    display: inline-block;
-    width: 22px;
-    min-height: 22px;
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-button {
-    display: inline-block;
-    padding: 12px 18px;
-    margin: 10px 4px 4px 0;
-    background: var(--blanco);
-    color: var(--negro);
-    border: 1px solid var(--negro);
-    border-radius: 7px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background: var(--arena);
-}
-
-button:focus,
-a:focus,
-input:focus {
-    outline: 2px solid var(--negro);
-    outline-offset: 2px;
-}
-
-a {
-    color: var(--negro);
-    overflow-wrap: anywhere;
-}
-
-.enlaces {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 10px;
-}
-
-.enlaces a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    background: var(--blanco);
-    color: var(--negro);
-    border: 1px solid var(--negro);
-    border-radius: 7px;
-}
-
-.enlaces a:hover {
-    background: var(--arena);
-}
-
-.fila {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5px;
-}
-
-.mensaje {
-    display: none;
-    margin-top: 15px;
-    padding: 14px;
-    border: 1px solid var(--negro);
-    background: var(--blanco);
-    border-radius: 7px;
-    overflow-wrap: anywhere;
-}
-
-.nota {
-    font-size: 14px;
-}
-
-footer {
-    text-align: center;
-    padding: 22px 12px;
-    background: var(--crema);
-    border-top: 2px solid var(--negro);
-}
-
-.instalar {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    z-index: 10;
-    box-shadow: 0 2px 8px #0003;
-}
-
-@media (min-width: 600px) {
-    .fila {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+:root{--beige:#F5E8D0;--crema:#FFF8EC;--blanco:#FFFFFF;--negro:#000000}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black, Arial, sans-serif}
+body{background:var(--beige);color:var(--negro)}
+.header{background:var(--crema);border-bottom:3px solid var(--negro);padding:12px;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:10}
+.icon{width:48px;height:48px;border:2.5px solid var(--negro);border-radius:50%;overflow:hidden;background:var(--blanco)}
+.icon img{width:100%;height:100%;object-fit:cover}
+.wrap{max-width:600px;margin:auto;padding:12px;padding-bottom:120px}
+.card{background:var(--crema);border:3px solid var(--negro);border-radius:16px;padding:16px;margin-bottom:14px}
+.titulo{font-size:14px;font-weight:900;text-align:center;color:var(--negro);margin-bottom:12px}
+.label{font-size:11px;font-weight:900;margin:10px 0 4px 2px;color:var(--negro)}
+.input-grande{width:100%;height:56px;border:2.5px solid var(--negro);background:var(--blanco);border-radius:12px;padding:0 12px;font-size:12px;font-weight:700}
+.hint{font-size:9px;text-align:right;margin:2px 0 6px;font-family:Arial}
+.btn{width:100%;height:52px;border:2.5px solid var(--negro);background:var(--blanco);color:var(--negro);border-radius:12px;font-weight:900;font-size:12px;cursor:pointer;margin-top:8px}
+.btnNegro{background:var(--negro);color:var(--blanco)}
+.ok{display:none;margin-top:10px;background:#D4EDDA;border:2.5px solid #155724;color:#155724;border-radius:10px;padding:10px;font-size:11px;font-weight:900;text-align:center;font-family:Arial}
+.o{text-align:center;font-weight:900;margin:12px 0}
+.grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px }
+.btnApp{height:58px;border:3px solid var(--negro);background:var(--blanco);color:var(--negro);border-radius:12px;font-weight:900;font-size:11px;cursor:pointer}
+#installBtn{position:fixed;right:14px;bottom:14px;border:3px solid var(--negro);background:var(--blanco);color:var(--negro);border-radius:28px;padding:12px 20px;font-weight:900;font-size:11px;z-index:999;box-shadow:4px 4px 0 var(--negro)}
+#viewer{position:fixed;inset:0;background:var(--beige);z-index:2000;display:none;flex-direction:column}
+#vTop{background:var(--crema);border-bottom:3px solid var(--negro);padding:10px;display:flex;gap:8px;align-items:center}
+#vFrame{flex:1;border:0;background:#fff}
 </style>
 </head>
-
 <body>
+<div class="header"><div class="icon"><img src="./icon-19.jpg"></div><b>TierraRosa</b></div>
+<div class="wrap">
 
-<header>
-    <img class="logo" src="icon-19.jpg" alt="Icono de TierraRosa">
-    <h1>TierraRosa</h1>
-</header>
+<div class="card">
+<div class="titulo">🔑INICIAR SESIÓN🔑</div>
+<div class="label">Usuario</div><input class="input-grande" id="loginUser" maxlength="75" placeholder="Cajón de texto grande"><div class="hint">75 caracteres</div>
+<div class="label">Contraseña</div><input class="input-grande" id="loginPass" type="password" maxlength="75" placeholder="Cajón de texto grande"><div class="hint">75 caracteres</div>
+<button class="btn btnNegro" onclick="hacerLogin()">[Login]</button>
+<div class="o">Ó</div>
+<div style="font-size:11px;font-weight:900;text-align:center;font-family:Arial">Acceder con un click más fácil y rápido y sencillo.</div>
+<button class="btn" onclick="document.getElementById('secUnClick').scrollIntoView({behavior:'smooth'})">[UN CLICK]</button>
+</div>
 
-<main>
+<div class="card">
+<div class="titulo">REGISTRARME</div>
+<div class="label">Primer Nombre</div><input class="input-grande" id="pNombre">
+<div class="label">Segundo Nombre</div><input class="input-grande" id="sNombre">
+<div class="label">Primer Apellido</div><input class="input-grande" id="pApellido">
+<div class="label">Segundo Apellido</div><input class="input-grande" id="sApellido">
+<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Usuario</div><input class="input-grande" id="rUser"></div><div style="flex:1"><div class="label">Contraseña</div><input class="input-grande" id="rPass" type="password"></div><div style="flex:1"><div class="label">Teléfono</div><input class="input-grande" id="rTel"></div></div>
+<div class="label">E-mail Primario</div><input class="input-grande" id="email1">
+<div class="label">E-mail Secundario</div><input class="input-grande" id="email2">
+<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Apodo</div><input class="input-grande" id="apodo"></div><div style="flex:1"><div class="label">Fecha de Nacimiento</div><input class="input-grande" id="fn" type="date"></div></div>
+<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Edad</div><input class="input-grande" id="edad"></div><div style="flex:1"><div class="label">Ciudad</div><input class="input-grande" id="ciudad"></div><div style="flex:1"><div class="label">Estado</div><input class="input-grande" id="estado"></div><div style="flex:1"><div class="label">País</div><input class="input-grande" id="pais"></div></div>
+<button class="btn btnNegro" onclick="registrar()">[Registrar]</button>
+<div id="okReg" class="ok">Su información se ha guardado con registro exitoso.</div>
+</div>
 
-<!-- INICIAR SESIÓN -->
-<section class="seccion" id="iniciar-sesion">
-    <h2>🔑 INICIAR SESIÓN 🔑</h2>
+<div class="card" id="secUnClick">
+<div class="titulo">UN CLICK</div>
+<div class="label">Usuario</div><input class="input-grande" id="ucUser">
+<div class="label">Contraseña</div><input class="input-grande" id="ucPass" type="password">
+<button class="btn btnNegro" onclick="autorizar()">[Autorizar]</button>
+<div id="okUnClick" class="ok">Se Autorizó el acceso con *Un Click* con que usted iniciara sesión más fácil y rápido.</div>
+</div>
 
-    <form id="formLogin">
-        <label for="loginUsuario">Usuario</label>
-        <input id="loginUsuario" name="usuario" type="text"
-               maxlength="75" required autocomplete="username">
+<div class="card">
+<div class="titulo">Olvide mi Usuario y Contraseña</div>
+<div class="label">escribe aquí tu E-mail</div><input class="input-grande" id="olvEmail" placeholder="escribir e-mail">
+<button class="btn" onclick="enviarCodigo()">[Enviar] un e-mail a esa dirección</button>
+<div class="label">escribe aquí el código 5 dígitos</div><input class="input-grande" id="codigo" maxlength="5" placeholder="5 dígitos">
+<div class="label">Usuario</div><input class="input-grande" id="newUser" placeholder="Escribir">
+<div class="label">Contraseña</div><input class="input-grande" id="newPass" type="password" placeholder="Escribir">
+<div class="label">Usted desea actualizar su Inicio de Sesión</div><button class="btn" onclick="actualizar()">[Si]</button>
+<div id="okAct" class="ok">Actualización con Éxito.</div>
+</div>
 
-        <label for="loginContrasena">Contraseña</label>
-        <input id="loginContrasena" name="contrasena" type="password"
-               maxlength="75" required autocomplete="current-password">
+<div class="card">
+<div class="titulo">Fundadores</div><div style="text-align:center;font-size:12px;font-weight:900">Jesús Eduardo Martínez Carrillo y Jair Valenciana</div>
+<div class="titulo" style="margin-top:12px">Marcas</div><div style="display:flex;gap:10px;justify-content:center"><div class="btnApp" style="padding:12px 22px;height:auto">TITANES</div><div class="btnApp" style="padding:12px 22px;height:auto">SPEAKING</div></div>
+</div>
 
-        <button type="submit">Login</button>
-    </form>
+<div class="card">
+<div class="titulo">consulta mis redes sociales</div>
+<div class="grid" id="gridRedes"></div>
+</div>
 
-    <div id="mensajeLogin" class="mensaje" role="status"></div>
-</section>
+<div class="card">
+<div class="titulo">Mi Correo Electrónico personal</div><div style="text-align:center;font-size:12px;font-weight:900;font-family:Arial">easportsfcmobile631@gmail.com</div>
+<div class="titulo" style="margin-top:10px">Contacto</div><div style="text-align:center;font-size:12px;font-weight:900">+52 867 164 0906<br>+52 81 1722-7500</div>
+</div>
 
-<!-- REGISTRO -->
-<section class="seccion" id="registro">
-    <h2>REGISTRARME AQUÍ</h2>
+</div>
 
-    <form id="formRegistro">
-
-        <div class="fila">
-            <div>
-                <label for="nombre1">1er Nombre</label>
-                <input id="nombre1" maxlength="75" required>
-                <button type="button" data-guardar="nombre1">Guardar</button>
-            </div>
-
-            <div>
-                <label for="nombre2">2do Nombre</label>
-                <input id="nombre2" maxlength="75">
-                <button type="button" data-guardar="nombre2">Guardar</button>
-            </div>
-
-            <div>
-                <label for="apellido1">1er Apellido</label>
-                <input id="apellido1" maxlength="75" required>
-                <button type="button" data-guardar="apellido1">Guardar</button>
-            </div>
-
-            <div>
-                <label for="apellido2">2do Apellido</label>
-                <input id="apellido2" maxlength="75">
-                <button type="button" data-guardar="apellido2">Guardar</button>
-            </div>
-        </div>
-
-        <label for="registroUsuario">Usuario</label>
-        <input id="registroUsuario" maxlength="75" required
-               autocomplete="username">
-
-        <label for="registroContrasena">Contraseña</label>
-        <input id="registroContrasena" type="password" maxlength="75"
-               required autocomplete="new-password">
-
-        <button type="button" data-guardar="registroUsuario">Guardar usuario</button>
-
-        <label for="telefono">Teléfono</label>
-        <input id="telefono" type="tel" maxlength="75">
-        <button type="button" data-guardar="telefono">Guardar</button>
-
-        <label for="correo1">1er Correo Electrónico</label>
-        <input id="correo1" type="email" maxlength="75">
-        <label for="contrasenaCorreo1">Contraseña</label>
-        <input id="contrasenaCorreo1" type="password" maxlength="75">
-        <button type="button" data-guardar="correo1">Guardar</button>
-
-        <label for="correo2">2do Correo Electrónico</label>
-        <input id="correo2" type="email" maxlength="75">
-        <label for="contrasenaCorreo2">Contraseña</label>
-        <input id="contrasenaCorreo2" type="password" maxlength="75">
-        <button type="button" data-guardar="correo2">Guardar</button>
-
-        <div class="fila">
-            <div>
-                <label for="apodo">1er Apodo</label>
-                <input id="apodo" maxlength="75">
-            </div>
-
-            <div>
-                <label for="nacimiento">Fecha de Nacimiento</label>
-                <input id="nacimiento" type="date">
-            </div>
-
-            <div>
-                <label for="edad">Edad</label>
-                <input id="edad" type="number" min="0" max="120">
-            </div>
-
-            <div>
-                <label for="ciudad">Ciudad</label>
-                <input id="ciudad" maxlength="75">
-            </div>
-
-            <div>
-                <label for="estado">Estado</label>
-                <input id="estado" maxlength="75">
-            </div>
-
-            <div>
-                <label for="pais">País</label>
-                <input id="pais" maxlength="75">
-            </div>
-        </div>
-
-        <hr>
-
-        <h3>Se requiere palomear lo siguiente</h3>
-
-        <label>
-            <input type="checkbox" id="aceptar" required>
-            Aceptas recibir las actualizaciones de esta app y respetar los
-            alineamientos que surjan de aquí.
-        </label>
-
-        <p><a href="#terminos">Términos y Condiciones</a></p>
-        <p><a href="#privacidad">Avisos de Privacidad</a></p>
-
-        <button type="submit">Registrar</button>
-
-        <div id="mensajeRegistro" class="mensaje" role="status"></div>
-    </form>
-</section>
-
-<!-- FUNDADORES -->
-<section class="seccion">
-    <h2>Fundadores</h2>
-    <p>Jesús Eduardo Martínez Carrillo y Jair Valenciana</p>
-
-    <h2>Marcas registradas</h2>
-    <p>TITANES</p>
-    <p>SPEAKING</p>
-</section>
-
-<!-- REDES SOCIALES -->
-<section class="seccion" id="redes">
-    <h2>Consulta mis Redes Sociales</h2>
-    <p>Enlaces a las aplicaciones y páginas proporcionadas.</p>
-
-    <div class="enlaces">
-        <a href="https://www.apple.com/mx/apple-tv/" target="_blank" rel="noopener noreferrer">Apple TV</a>
-
-        <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">Discord</a>
-
-        <a href="https://www.xbox.com/es-MX/" target="_blank" rel="noopener noreferrer">XBOX</a>
-
-        <a href="https://github.com/easportsfcmobile631-design" target="_blank" rel="noopener noreferrer">GitHub</a>
-
-        <a href="https://www.facebook.com/share/18fACYD7pv/" target="_blank" rel="noopener noreferrer">Facebook</a>
-
-        <a href="https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link" target="_blank" rel="noopener noreferrer">Spotify</a>
-
-        <a href="https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY" target="_blank" rel="noopener noreferrer">YouTube</a>
-
-        <a href="https://www.twitch.tv/easportsfcmobile631?sr=a" target="_blank" rel="noopener noreferrer">Twitch</a>
-
-        <a href="https://x.com/eduardomar47137?s=09" target="_blank" rel="noopener noreferrer">X</a>
-
-        <a href="https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-
-        <a href="https://t.me/Nadia98968999" target="_blank" rel="noopener noreferrer">Telegram</a>
-
-        <a href="https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw" target="_blank" rel="noopener noreferrer">Instagram</a>
-
-        <a href="https://copafacil.com/-4y21q" target="_blank" rel="noopener noreferrer">Copa Fácil</a>
-
-        <a href="https://m.me/zusuki.eduardo.martinez" target="_blank" rel="noopener noreferrer">Messenger</a>
-
-        <a href="https://websites.co.in/refer/749809" target="_blank" rel="noopener noreferrer">Wenbsites.co.in</a>
-
-        <a href="https://steamcommunity.com/profiles/76561199837311518/" target="_blank" rel="noopener noreferrer">Steam</a>
-
-        <a href="https://bsky.app/profile/jemart03.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
-
-        <a href="https://www.threads.com/@zuzukieduardomartinez" target="_blank" rel="noopener noreferrer">Threads</a>
-
-        <a href="https://www.tiktok.com/@rebelde.de.corazn5?_r=1&_d=eeamgk995if3kh&sec_uid=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&share_author_id=7646631851419239445&sharer_language=es&source=h5_m&u_code=f3l814548l21ii&timestamp=1790848216&user_id=7646631851419239445&sec_user_id=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7615113577812821781&share_link_id=4cf9b900-7336-4b5d-9101-4844923c84af&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" target="_blank" rel="noopener noreferrer">Tik Tok</a>
-
-        <a href="https://acode.app/profile" target="_blank" rel="noopener noreferrer">Acode</a>
-
-        <a href="https://dashboard.render.com/" target="_blank" rel="noopener noreferrer">Render</a>
-
-        <a href="https://app.netlify.com/teams/easportsfcmobile631-design/projects" target="_blank" rel="noopener noreferrer">Netlify</a>
-
-        <a href="https://vercel.com/martineztitanjesuseduardo" target="_blank" rel="noopener noreferrer">Vercel</a>
-
-        <a href="https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX" target="_blank" rel="noopener noreferrer">Snapchat</a>
-
-        <a href="https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link" target="_blank" rel="noopener noreferrer">Duolingo</a>
-
-        <a href="https://websites.co.in/refer/749809" target="_blank" rel="noopener noreferrer">Websites</a>
-    </div>
-</section>
-
-<footer>
-    <p>TierraRosa</p>
-    <p>Fundadores: Jesús Eduardo Martínez Carrillo y Jair Valenciana</p>
-</footer>
-
-<button class="instalar" id="botonInstalar" hidden>
-    Instalar App
-</button>
+<button id="installBtn">Instalar App 📲</button>
+<div id="viewer"><div id="vTop"><button class="btnApp" style="height:38px;padding:0 14px" onclick="document.getElementById('viewer').style.display='none'">← Regresar</button><b id="vTit" style="flex:1;font-size:11px;overflow:hidden"></b><button class="btnApp" style="height:38px;padding:0 14px" onclick="window.open(curUrl,'_blank')">Abrir ↗</button></div><iframe id="vFrame"></iframe></div>
 
 <script>
-const campo = id => document.getElementById(id);
+let curUrl="",deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;});
+document.getElementById('installBtn').onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;document.getElementById('installBtn').innerText='INSTALADO ✅'}else{alert('TierraRosa: Chrome > ⋮ > Instalar app');}};
 
-function mostrarMensaje(id, texto) {
-    const elemento = campo(id);
-    elemento.textContent = texto;
-    elemento.style.display = "block";
-}
+function hacerLogin(){if(!loginUser.value||!loginPass.value){alert('Llena Usuario y Contraseña');return;}localStorage.setItem('login',JSON.stringify({u:loginUser.value}));alert('Bienvenido '+loginUser.value);}
+function registrar(){if(!pNombre.value||!rUser.value){alert('Llena Primer Nombre y Usuario');return;}localStorage.setItem('registro',JSON.stringify({pNombre:pNombre.value,sNombre:sNombre.value}));document.getElementById('okReg').style.display='block';}
+function autorizar(){if(!ucUser.value||!ucPass.value){alert('Llena Usuario y Contraseña');return;}localStorage.setItem('unClick',JSON.stringify({u:ucUser.value}));document.getElementById('okUnClick').style.display='block';}
+function enviarCodigo(){if(!olvEmail.value){alert('Escribe E-mail');return;}const c=Math.floor(10000+Math.random()*90000);localStorage.setItem('cod',c);alert('Código enviado a '+olvEmail.value+': '+c+' (simulado)');}
+function actualizar(){if(codigo.value!=localStorage.getItem('cod')){alert('Código 5 dígitos incorrecto. Primero da Enviar');return;}document.getElementById('okAct').style.display='block';localStorage.setItem('login',JSON.stringify({u:newUser.value,p:newPass.value}));}
 
-function obtenerUsuarios() {
-    try {
-        return JSON.parse(localStorage.getItem("tierrarosa_usuarios") || "[]");
-    } catch {
-        return [];
-    }
-}
-
-/* Guardar individualmente los campos indicados. */
-document.querySelectorAll("[data-guardar]").forEach(boton => {
-    boton.addEventListener("click", () => {
-        const entrada = campo(boton.dataset.guardar);
-        if (entrada) {
-            entrada.dataset.guardado = "true";
-            boton.textContent = "Guardado";
-        }
-    });
-});
-
-/* Registro local en este navegador. */
-campo("formRegistro").addEventListener("submit", function(evento) {
-    evento.preventDefault();
-
-    if (!campo("aceptar").checked) {
-        mostrarMensaje("mensajeRegistro",
-            "Debes palomear la casilla para continuar.");
-        return;
-    }
-
-    const usuario = campo("registroUsuario").value.trim();
-    const contrasena = campo("registroContrasena").value;
-
-    if (!usuario || !contrasena) {
-        mostrarMensaje("mensajeRegistro",
-            "Escribe el usuario y la contraseña.");
-        return;
-    }
-
-    if (/\s/.test(usuario)) {
-        mostrarMensaje("mensajeRegistro",
-            "El usuario no debe contener espacios.");
-        return;
-    }
-
-    const usuarios = obtenerUsuarios();
-
-    if (usuarios.some(u => u.usuario.toLowerCase() === usuario.toLowerCase())) {
-        mostrarMensaje("mensajeRegistro",
-            "Este usuario ya está registrado en este navegador.");
-        return;
-    }
-
-    /*
-      Esta versión guarda el registro en el navegador.
-      No es un sistema de cuentas seguro para producción.
-    */
-    const registro = {
-        nombre1: campo("nombre1").value.trim(),
-        nombre2: campo("nombre2").value.trim(),
-        apellido1: campo("apellido1").value.trim(),
-        apellido2: campo("apellido2").value.trim(),
-        usuario: usuario,
-        telefono: campo("telefono").value.trim(),
-        correo1: campo("correo1").value.trim(),
-        correo2: campo("correo2").value.trim(),
-        apodo: campo("apodo").value.trim(),
-        nacimiento: campo("nacimiento").value,
-        edad: campo("edad").value,
-        ciudad: campo("ciudad").value.trim(),
-        estado: campo("estado").value.trim(),
-        pais: campo("pais").value.trim(),
-        fechaRegistro: new Date().toISOString()
-    };
-
-    /*
-      La contraseña no se guarda en texto plano.
-      Se utiliza Web Crypto para derivar un verificador local.
-      Esto no sustituye la autenticación de un servidor.
-    */
-    async function guardarRegistro() {
-        if (!crypto.subtle) {
-            mostrarMensaje("mensajeRegistro",
-                "El navegador no permite guardar credenciales de forma protegida en este contexto. Abre la página mediante HTTPS.");
-            return;
-        }
-
-        const sal = crypto.getRandomValues(new Uint8Array(16));
-        const clave = await crypto.subtle.importKey(
-            "raw",
-            new TextEncoder().encode(contrasena),
-            "PBKDF2",
-            false,
-            ["deriveBits"]
-        );
-
-        const bits = await crypto.subtle.deriveBits({
-            name: "PBKDF2",
-            salt: sal,
-            iterations: 150000,
-            hash: "SHA-256"
-        }, clave, 256);
-
-        registro.sal = Array.from(sal);
-        registro.verificador = Array.from(new Uint8Array(bits));
-
-        try {
-            usuarios.push(registro);
-            localStorage.setItem("tierrarosa_usuarios",
-                JSON.stringify(usuarios));
-
-            mostrarMensaje("mensajeRegistro",
-                "Su registro fue exitoso y sus datos se guardaron con éxito.");
-
-            campo("formRegistro").reset();
-            document.querySelectorAll("[data-guardar]").forEach(b => {
-                b.textContent = b.dataset.guardar === "registroUsuario"
-                    ? "Guardar usuario" : "Guardar";
-            });
-        } catch {
-            mostrarMensaje("mensajeRegistro",
-                "No fue posible guardar el registro en el navegador.");
-        }
-    }
-
-    guardarRegistro();
-});
-
-/* Inicio de sesión local. */
-campo("formLogin").addEventListener("submit", async function(evento) {
-    evento.preventDefault();
-
-    const usuario = campo("loginUsuario").value.trim();
-    const contrasena = campo("loginContrasena").value;
-    const usuarios = obtenerUsuarios();
-
-    const registro = usuarios.find(
-        u => u.usuario.toLowerCase() === usuario.toLowerCase()
-    );
-
-    if (!registro || !crypto.subtle) {
-        mostrarMensaje("mensajeLogin",
-            "No se encontró una cuenta local coincidente.");
-        return;
-    }
-
-    try {
-        const clave = await crypto.subtle.importKey(
-            "raw",
-            new TextEncoder().encode(contrasena),
-            "PBKDF2",
-            false,
-            ["deriveBits"]
-        );
-
-        const bits = await crypto.subtle.deriveBits({
-            name: "PBKDF2",
-            salt: new Uint8Array(registro.sal),
-            iterations: 150000,
-            hash: "SHA-256"
-        }, clave, 256);
-
-        const resultado = Array.from(new Uint8Array(bits));
-        const coincide = resultado.length === registro.verificador.length &&
-            resultado.every((valor, i) => valor === registro.verificador[i]);
-
-        if (coincide) {
-            mostrarMensaje("mensajeLogin",
-                "Inicio de sesión correcto.");
-        } else {
-            mostrarMensaje("mensajeLogin",
-                "Usuario o contraseña incorrectos.");
-        }
-    } catch {
-        mostrarMensaje("mensajeLogin",
-            "No fue posible verificar los datos.");
-    }
-});
-
-/* Instalar la aplicación cuando el navegador lo permita. */
-let instalacionPendiente;
-
-const botonInstalar = campo("botonInstalar");
-
-window.addEventListener("beforeinstallprompt", evento => {
-    evento.preventDefault();
-    instalacionPendiente = evento;
-    botonInstalar.hidden = false;
-});
-
-botonInstalar.addEventListener("click", async () => {
-    if (instalacionPendiente) {
-        instalacionPendiente.prompt();
-        await instalacionPendiente.userChoice;
-        instalacionPendiente = null;
-        botonInstalar.hidden = true;
-    } else {
-        alert("Para instalar la aplicación, abre TierraRosa desde el navegador y utiliza la opción Agregar a pantalla de inicio si está disponible.");
-    }
-});
-
-window.addEventListener("appinstalled", () => {
-    botonInstalar.hidden = true;
-});
+const LINKS={
+"Apple TV":"https://www.apple.com/mx/apple-tv/","Discord":"https://discord.com/","XBOX":"https://www.xbox.com/es-MX/","GitHub":"https://github.com/easportsfcmobile631-design","Facebook":"https://www.facebook.com/share/18fACYD7pv/","Spotify":"https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link","YouTube":"https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY","Twitch":"https://www.twitch.tv/easportsfcmobile631?sr=a","X":"https://x.com/eduardomar47137?s=09","WhatsApp":"https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B","Telegram":"https://t.me/Nadia98968999","Instagram":"https://www.instagram.com/zuzukieduardomartinez","Copa Fácil":"https://copafacil.com/-4y21q","Messenger":"https://m.me/zusuki.eduardo.martinez","Wenbsites.co.in":"https://websites.co.in/refer/749809","Steam":"https://steamcommunity.com/profiles/76561199837311518/","Bluesky":"https://bsky.app/profile/jemart03.bsky.social","Threads":"https://www.threads.com/@zuzukieduardomartinez","Tik Tok":"https://www.tiktok.com/@rebelde.de.corazn5","Acode":"https://acode.app/profile","Render":"https://dashboard.render.com/","Netlify":"https://app.netlify.com/teams/easportsfcmobile631-design/projects","Vercel":"https://vercel.com/martineztitanjesuseduardo","Snapchat":"https://www.snapchat.com/add/fcmobileeaspo26","Duolingo":"https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link","Websites":"https://websites.co.in/refer/749809"
+};
+const grid=document.getElementById('gridRedes');
+Object.keys(LINKS).forEach(n=>{let b=document.createElement('button');b.className='btnApp';b.textContent=n;b.onclick=()=>{curUrl=LINKS[n];document.getElementById('vTit').textContent=n;document.getElementById('vFrame').src=curUrl;document.getElementById('viewer').style.display='flex';};grid.appendChild(b);});
 </script>
-
 </body>
-            </html>
+    </html>
