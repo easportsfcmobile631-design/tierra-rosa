@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="theme-color" content="#e8d5b7">
-<meta name="description" content="TierraRosa: belleza que nace de la Tierra">
-
+<meta name="description" content="TierraRosa">
+<link rel="icon" href="icon-19.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="icon-19.jpg">
 <title>TierraRosa</title>
-
-<link rel="icon" type="image/jpeg" href="icon-19.jpg">
 
 <style>
 :root {
-    --beige: #e8d5b7;
+    --fondo: #e8d5b7;
+    --crema: #f3e7d3;
     --arena: #d8bd96;
-    --crema: #f5ead8;
-    --negro: #17130f;
+    --negro: #000000;
     --blanco: #ffffff;
 }
 
@@ -24,11 +22,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--beige);
+    padding: 0;
+    background: var(--fondo);
     color: var(--negro);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -39,60 +42,58 @@ header {
 }
 
 .logo {
-    width: 78px;
-    height: 78px;
+    width: 85px;
+    height: 85px;
     object-fit: contain;
     border-radius: 50%;
+    border: 2px solid var(--negro);
+    background: var(--blanco);
 }
 
-header h1 {
-    margin: 10px 0 5px;
+h1 {
+    margin: 12px 0 5px;
     font-size: 32px;
+    overflow-wrap: anywhere;
 }
 
-header p {
-    margin: 0;
-    font-size: 15px;
+h2 {
+    text-align: center;
+    font-size: 23px;
+}
+
+h3 {
+    font-size: 18px;
 }
 
 main {
     width: 100%;
-    max-width: 850px;
+    max-width: 900px;
     margin: auto;
     padding: 15px;
 }
 
-.panel {
+.seccion {
+    margin: 20px 0;
+    padding: 20px;
     background: var(--crema);
     border: 1px solid var(--negro);
-    border-radius: 14px;
-    padding: 20px;
-    margin: 18px 0;
-    box-shadow: 0 3px 9px rgba(0,0,0,.08);
-}
-
-h2, h3 {
-    text-align: center;
-}
-
-h2 {
-    font-size: 23px;
+    border-radius: 12px;
 }
 
 label {
     display: block;
-    margin-top: 13px;
     font-weight: bold;
+    margin: 13px 0 6px;
 }
 
-input, select {
+input,
+select {
     display: block;
     width: 100%;
     min-height: 46px;
-    padding: 11px;
-    margin-top: 6px;
+    padding: 12px;
     border: 1px solid var(--negro);
-    border-radius: 7px;
+    border-radius: 6px;
     background: var(--blanco);
     color: var(--negro);
     font-size: 16px;
@@ -100,154 +101,104 @@ input, select {
 
 input[type="checkbox"] {
     display: inline-block;
-    width: 21px;
-    height: 21px;
-    min-height: auto;
+    width: 22px;
+    min-height: 22px;
     vertical-align: middle;
-    margin: 4px 7px 4px 0;
+    margin-right: 8px;
 }
 
 button {
+    display: inline-block;
+    padding: 12px 18px;
+    margin: 10px 4px 4px 0;
     background: var(--blanco);
     color: var(--negro);
-    border: 1.5px solid var(--negro);
-    border-radius: 8px;
-    padding: 12px 18px;
-    font-size: 16px;
+    border: 1px solid var(--negro);
+    border-radius: 7px;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
 }
 
-button:hover, button:focus {
+button:hover {
     background: var(--arena);
 }
 
-.boton-principal {
-    display: block;
-    width: 100%;
-    margin-top: 18px;
+button:focus,
+a:focus,
+input:focus {
+    outline: 2px solid var(--negro);
+    outline-offset: 2px;
 }
 
-.campo-guardar {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 8px;
-    align-items: end;
-    margin-bottom: 12px;
-}
-
-.campo-guardar label {
-    min-width: 0;
-}
-
-.campo-guardar button {
-    margin-bottom: 0;
-}
-
-.mensaje {
-    display: none;
-    padding: 13px;
-    margin-top: 15px;
-    background: #e3f3df;
-    border: 1px solid #35702b;
-    border-radius: 8px;
+a {
+    color: var(--negro);
     overflow-wrap: anywhere;
-}
-
-.error {
-    background: #ffe3e3;
-    border-color: #a10000;
-}
-
-.nota {
-    font-size: 14px;
-    line-height: 1.5;
 }
 
 .enlaces {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
 }
 
-.red-social {
+.enlaces a {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    min-width: 0;
-    min-height: 105px;
-    padding: 10px 4px;
-    color: var(--negro);
-    text-decoration: none;
-    background: var(--blanco);
-    border: 1px solid #b6a58d;
-    border-radius: 12px;
-    overflow-wrap: anywhere;
+    min-height: 44px;
+    padding: 10px;
     text-align: center;
-    font-size: 12px;
+    text-decoration: none;
     font-weight: bold;
+    background: var(--blanco);
+    color: var(--negro);
+    border: 1px solid var(--negro);
+    border-radius: 7px;
 }
 
-.red-social:hover {
-    background: #f1dfc5;
+.enlaces a:hover {
+    background: var(--arena);
 }
 
-.icono-red {
-    width: 43px;
-    height: 43px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: var(--color);
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+.fila {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+.mensaje {
+    display: none;
+    margin-top: 15px;
+    padding: 14px;
+    border: 1px solid var(--negro);
+    background: var(--blanco);
+    border-radius: 7px;
+    overflow-wrap: anywhere;
+}
+
+.nota {
+    font-size: 14px;
 }
 
 footer {
-    padding: 22px 12px;
     text-align: center;
-    border-top: 1px solid var(--negro);
-    font-size: 13px;
+    padding: 22px 12px;
+    background: var(--crema);
+    border-top: 2px solid var(--negro);
 }
 
-.oculto {
-    display: none !important;
+.instalar {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 10;
+    box-shadow: 0 2px 8px #0003;
 }
 
-@media (max-width: 430px) {
-    main {
-        padding: 10px;
-    }
-
-    .panel {
-        padding: 14px;
-    }
-
-    .enlaces {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 7px;
-    }
-
-    .red-social {
-        min-height: 95px;
-        font-size: 11px;
-    }
-
-    .icono-red {
-        width: 38px;
-        height: 38px;
-    }
-
-    .campo-guardar {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .campo-guardar button {
-        width: 100%;
+@media (min-width: 600px) {
+    .fila {
+        grid-template-columns: 1fr 1fr;
     }
 }
 </style>
@@ -256,533 +207,444 @@ footer {
 <body>
 
 <header>
-    <img class="logo" src="icon-19.jpg" alt="Icono de TierraRosa"
-         onerror="this.style.display='none'">
+    <img class="logo" src="icon-19.jpg" alt="Icono de TierraRosa">
     <h1>TierraRosa</h1>
-    <p>Belleza que nace de la Tierra</p>
 </header>
 
 <main>
 
-<!-- INICIO DE SESIÓN -->
-<section class="panel" id="inicio">
+<!-- INICIAR SESIÓN -->
+<section class="seccion" id="iniciar-sesion">
     <h2>🔑 INICIAR SESIÓN 🔑</h2>
 
     <form id="formLogin">
         <label for="loginUsuario">Usuario</label>
-        <input id="loginUsuario" name="usuario"
-               type="text" maxlength="75"
-               autocomplete="username" required>
+        <input id="loginUsuario" name="usuario" type="text"
+               maxlength="75" required autocomplete="username">
 
-        <label for="loginPassword">Contraseña</label>
-        <input id="loginPassword" name="password"
-               type="password" maxlength="75"
-               autocomplete="current-password" required>
+        <label for="loginContrasena">Contraseña</label>
+        <input id="loginContrasena" name="contrasena" type="password"
+               maxlength="75" required autocomplete="current-password">
 
-        <button class="boton-principal" type="submit">Login</button>
+        <button type="submit">Login</button>
     </form>
 
-    <p id="mensajeLogin" class="mensaje" role="status"></p>
-
-    <p class="nota">
-        ¿Todavía no tienes una cuenta?
-        <a href="#registro">REGISTRARME AQUÍ</a>
-    </p>
+    <div id="mensajeLogin" class="mensaje" role="status"></div>
 </section>
 
 <!-- REGISTRO -->
-<section class="panel" id="registro">
+<section class="seccion" id="registro">
     <h2>REGISTRARME AQUÍ</h2>
-
-    <p class="nota">
-        Completa tus datos. Puedes guardar cada campo individualmente
-        o utilizar el botón Registrar al final.
-    </p>
 
     <form id="formRegistro">
 
-        <div class="campo-guardar">
-            <label>1er Nombre
-                <input id="nombre1" maxlength="75" autocomplete="given-name">
-            </label>
-            <button type="button" data-save="nombre1">Guardar</button>
-        </div>
+        <div class="fila">
+            <div>
+                <label for="nombre1">1er Nombre</label>
+                <input id="nombre1" maxlength="75" required>
+                <button type="button" data-guardar="nombre1">Guardar</button>
+            </div>
 
-        <div class="campo-guardar">
-            <label>2do Nombre
+            <div>
+                <label for="nombre2">2do Nombre</label>
                 <input id="nombre2" maxlength="75">
-            </label>
-            <button type="button" data-save="nombre2">Guardar</button>
-        </div>
+                <button type="button" data-guardar="nombre2">Guardar</button>
+            </div>
 
-        <div class="campo-guardar">
-            <label>1er Apellido
-                <input id="apellido1" maxlength="75" autocomplete="family-name">
-            </label>
-            <button type="button" data-save="apellido1">Guardar</button>
-        </div>
+            <div>
+                <label for="apellido1">1er Apellido</label>
+                <input id="apellido1" maxlength="75" required>
+                <button type="button" data-guardar="apellido1">Guardar</button>
+            </div>
 
-        <div class="campo-guardar">
-            <label>2do Apellido
+            <div>
+                <label for="apellido2">2do Apellido</label>
                 <input id="apellido2" maxlength="75">
-            </label>
-            <button type="button" data-save="apellido2">Guardar</button>
+                <button type="button" data-guardar="apellido2">Guardar</button>
+            </div>
         </div>
 
-        <div class="campo-guardar">
-            <label>Usuario
-                <input id="usuario" maxlength="75"
-                       autocomplete="username" required>
-            </label>
-            <button type="button" data-save="usuario">Guardar</button>
+        <label for="registroUsuario">Usuario</label>
+        <input id="registroUsuario" maxlength="75" required
+               autocomplete="username">
+
+        <label for="registroContrasena">Contraseña</label>
+        <input id="registroContrasena" type="password" maxlength="75"
+               required autocomplete="new-password">
+
+        <button type="button" data-guardar="registroUsuario">Guardar usuario</button>
+
+        <label for="telefono">Teléfono</label>
+        <input id="telefono" type="tel" maxlength="75">
+        <button type="button" data-guardar="telefono">Guardar</button>
+
+        <label for="correo1">1er Correo Electrónico</label>
+        <input id="correo1" type="email" maxlength="75">
+        <label for="contrasenaCorreo1">Contraseña</label>
+        <input id="contrasenaCorreo1" type="password" maxlength="75">
+        <button type="button" data-guardar="correo1">Guardar</button>
+
+        <label for="correo2">2do Correo Electrónico</label>
+        <input id="correo2" type="email" maxlength="75">
+        <label for="contrasenaCorreo2">Contraseña</label>
+        <input id="contrasenaCorreo2" type="password" maxlength="75">
+        <button type="button" data-guardar="correo2">Guardar</button>
+
+        <div class="fila">
+            <div>
+                <label for="apodo">1er Apodo</label>
+                <input id="apodo" maxlength="75">
+            </div>
+
+            <div>
+                <label for="nacimiento">Fecha de Nacimiento</label>
+                <input id="nacimiento" type="date">
+            </div>
+
+            <div>
+                <label for="edad">Edad</label>
+                <input id="edad" type="number" min="0" max="120">
+            </div>
+
+            <div>
+                <label for="ciudad">Ciudad</label>
+                <input id="ciudad" maxlength="75">
+            </div>
+
+            <div>
+                <label for="estado">Estado</label>
+                <input id="estado" maxlength="75">
+            </div>
+
+            <div>
+                <label for="pais">País</label>
+                <input id="pais" maxlength="75">
+            </div>
         </div>
 
-        <div class="campo-guardar">
-            <label>Contraseña
-                <input id="password" type="password" maxlength="75"
-                       autocomplete="new-password" required>
-            </label>
-            <button type="button" data-save="password">Guardar</button>
-        </div>
+        <hr>
 
-        <div class="campo-guardar">
-            <label>Teléfono
-                <input id="telefono" type="tel" maxlength="25"
-                       autocomplete="tel">
-            </label>
-            <button type="button" data-save="telefono">Guardar</button>
-        </div>
+        <h3>Se requiere palomear lo siguiente</h3>
 
-        <div class="campo-guardar">
-            <label>1er Correo Electrónico
-                <input id="correo1" type="email" maxlength="150"
-                       autocomplete="email">
-            </label>
-            <button type="button" data-save="correo1">Guardar</button>
-        </div>
-
-        <div class="campo-guardar">
-            <label>Contraseña del primer correo
-                <input id="passwordCorreo1" type="password" maxlength="75"
-                       autocomplete="off">
-            </label>
-            <button type="button" data-save="passwordCorreo1">Guardar</button>
-        </div>
-
-        <div class="campo-guardar">
-            <label>2do Correo Electrónico
-                <input id="correo2" type="email" maxlength="150">
-            </label>
-            <button type="button" data-save="correo2">Guardar</button>
-        </div>
-
-        <div class="campo-guardar">
-            <label>Contraseña del segundo correo
-                <input id="passwordCorreo2" type="password" maxlength="75"
-                       autocomplete="off">
-            </label>
-            <button type="button" data-save="passwordCorreo2">Guardar</button>
-        </div>
-
-        <label>1er Apodo
-            <input id="apodo1" maxlength="75">
+        <label>
+            <input type="checkbox" id="aceptar" required>
+            Aceptas recibir las actualizaciones de esta app y respetar los
+            alineamientos que surjan de aquí.
         </label>
 
-        <label>Fecha de Nacimiento</label>
-        <input id="fechaNacimiento" type="date">
+        <p><a href="#terminos">Términos y Condiciones</a></p>
+        <p><a href="#privacidad">Avisos de Privacidad</a></p>
 
-        <label>Edad</label>
-        <input id="edad" type="number" min="1" max="120">
+        <button type="submit">Registrar</button>
 
-        <label>Ciudad</label>
-        <input id="ciudad" maxlength="100" autocomplete="address-level2">
-
-        <label>Estado</label>
-        <input id="estado" maxlength="100" autocomplete="address-level1">
-
-        <label>País</label>
-        <input id="pais" maxlength="100" value="México"
-               autocomplete="country-name">
-
-        <h3>Consentimiento y condiciones</h3>
-
-        <label class="nota">
-            <input id="aceptaActualizaciones" type="checkbox" required>
-            Acepto recibir las actualizaciones de esta aplicación.
-        </label>
-
-        <label class="nota">
-            <input id="aceptaAlineamientos" type="checkbox" required>
-            Acepto respetar los lineamientos aplicables de la aplicación.
-        </label>
-
-        <label class="nota">
-            <input id="aceptaTerminos" type="checkbox" required>
-            He leído y acepto los
-            <a href="#terminos">Términos y Condiciones</a>.
-        </label>
-
-        <label class="nota">
-            <input id="aceptaPrivacidad" type="checkbox" required>
-            He leído el
-            <a href="#privacidad">Aviso de Privacidad</a>.
-        </label>
-
-        <button class="boton-principal" type="submit">Registrar</button>
-
-        <p id="mensajeRegistro" class="mensaje" role="status"></p>
+        <div id="mensajeRegistro" class="mensaje" role="status"></div>
     </form>
 </section>
 
-<!-- TÉRMINOS -->
-<section class="panel" id="terminos">
-    <h2>Términos y Condiciones</h2>
-    <p class="nota">
-        Al registrarte, te comprometes a proporcionar información correcta,
-        mantener el control de tu cuenta y utilizar TierraRosa de manera
-        responsable. No debes utilizar la aplicación para actividades
-        ilegales ni suplantar la identidad de otras personas.
-    </p>
-    <p class="nota">
-        Las funciones disponibles pueden cambiar con las actualizaciones.
-        El registro de esta demostración se guarda localmente en el navegador
-        y no constituye por sí solo una cuenta en un servidor.
-    </p>
-</section>
+<!-- FUNDADORES -->
+<section class="seccion">
+    <h2>Fundadores</h2>
+    <p>Jesús Eduardo Martínez Carrillo y Jair Valenciana</p>
 
-<!-- PRIVACIDAD -->
-<section class="panel" id="privacidad">
-    <h2>Avisos de Privacidad</h2>
-    <p class="nota">
-        Los datos introducidos en esta versión de demostración se guardan
-        en el almacenamiento local del navegador de este dispositivo.
-        No se envían automáticamente a un servidor.
-    </p>
-    <p class="nota">
-        No introduzcas contraseñas de tu correo electrónico, cuentas
-        bancarias ni otros servicios. TierraRosa no necesita esas
-        contraseñas para crear una cuenta propia.
-    </p>
-    <p class="nota">
-        Antes de publicar un sistema real de registro, se debe implementar
-        una política de privacidad completa, informar quién es responsable
-        de los datos y establecer mecanismos seguros para ejercer los
-        derechos que correspondan.
-    </p>
+    <h2>Marcas registradas</h2>
+    <p>TITANES</p>
+    <p>SPEAKING</p>
 </section>
 
 <!-- REDES SOCIALES -->
-<section class="panel" id="redes">
+<section class="seccion" id="redes">
     <h2>Consulta mis Redes Sociales</h2>
+    <p>Enlaces a las aplicaciones y páginas proporcionadas.</p>
 
-    <p class="nota">
-        Selecciona el icono de una aplicación para abrir el enlace
-        correspondiente. Los enlaces dirigen a las páginas o perfiles
-        asociados a las direcciones que proporcionaste.
-    </p>
+    <div class="enlaces">
+        <a href="https://www.apple.com/mx/apple-tv/" target="_blank" rel="noopener noreferrer">Apple TV</a>
 
-    <div class="enlaces" id="listaRedes"></div>
+        <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">Discord</a>
+
+        <a href="https://www.xbox.com/es-MX/" target="_blank" rel="noopener noreferrer">XBOX</a>
+
+        <a href="https://github.com/easportsfcmobile631-design" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+        <a href="https://www.facebook.com/share/18fACYD7pv/" target="_blank" rel="noopener noreferrer">Facebook</a>
+
+        <a href="https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link" target="_blank" rel="noopener noreferrer">Spotify</a>
+
+        <a href="https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY" target="_blank" rel="noopener noreferrer">YouTube</a>
+
+        <a href="https://www.twitch.tv/easportsfcmobile631?sr=a" target="_blank" rel="noopener noreferrer">Twitch</a>
+
+        <a href="https://x.com/eduardomar47137?s=09" target="_blank" rel="noopener noreferrer">X</a>
+
+        <a href="https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+        <a href="https://t.me/Nadia98968999" target="_blank" rel="noopener noreferrer">Telegram</a>
+
+        <a href="https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw" target="_blank" rel="noopener noreferrer">Instagram</a>
+
+        <a href="https://copafacil.com/-4y21q" target="_blank" rel="noopener noreferrer">Copa Fácil</a>
+
+        <a href="https://m.me/zusuki.eduardo.martinez" target="_blank" rel="noopener noreferrer">Messenger</a>
+
+        <a href="https://websites.co.in/refer/749809" target="_blank" rel="noopener noreferrer">Wenbsites.co.in</a>
+
+        <a href="https://steamcommunity.com/profiles/76561199837311518/" target="_blank" rel="noopener noreferrer">Steam</a>
+
+        <a href="https://bsky.app/profile/jemart03.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
+
+        <a href="https://www.threads.com/@zuzukieduardomartinez" target="_blank" rel="noopener noreferrer">Threads</a>
+
+        <a href="https://www.tiktok.com/@rebelde.de.corazn5?_r=1&_d=eeamgk995if3kh&sec_uid=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&share_author_id=7646631851419239445&sharer_language=es&source=h5_m&u_code=f3l814548l21ii&timestamp=1790848216&user_id=7646631851419239445&sec_user_id=MS4wLjABAAAAdwUjjPzxKOXdagLZfBEyNb0kO_RfhphAr3xzRt8o23RvAmRZVk7cuZ8uCYKI3gjK&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7615113577812821781&share_link_id=4cf9b900-7336-4b5d-9101-4844923c84af&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" target="_blank" rel="noopener noreferrer">Tik Tok</a>
+
+        <a href="https://acode.app/profile" target="_blank" rel="noopener noreferrer">Acode</a>
+
+        <a href="https://dashboard.render.com/" target="_blank" rel="noopener noreferrer">Render</a>
+
+        <a href="https://app.netlify.com/teams/easportsfcmobile631-design/projects" target="_blank" rel="noopener noreferrer">Netlify</a>
+
+        <a href="https://vercel.com/martineztitanjesuseduardo" target="_blank" rel="noopener noreferrer">Vercel</a>
+
+        <a href="https://www.snapchat.com/add/fcmobileeaspo26?share_id=vwnm6xed_GI&locale=es-MX" target="_blank" rel="noopener noreferrer">Snapchat</a>
+
+        <a href="https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link" target="_blank" rel="noopener noreferrer">Duolingo</a>
+
+        <a href="https://websites.co.in/refer/749809" target="_blank" rel="noopener noreferrer">Websites</a>
+    </div>
+</section>
+
+<!-- TÉRMINOS -->
+<section class="seccion" id="terminos">
+    <h2>Términos y Condiciones</h2>
+</section>
+
+<!-- PRIVACIDAD -->
+<section class="seccion" id="privacidad">
+    <h2>Avisos de Privacidad</h2>
 </section>
 
 </main>
 
 <footer>
-    <strong>TierraRosa</strong><br>
-    Belleza que nace de la Tierra
+    <p>TierraRosa</p>
+    <p>Fundadores: Jesús Eduardo Martínez Carrillo y Jair Valenciana</p>
 </footer>
 
+<button class="instalar" id="botonInstalar" hidden>
+    Instalar App
+</button>
+
 <script>
-"use strict";
+const campo = id => document.getElementById(id);
 
-/*
- * IMPORTANTE:
- * Esta es una demostración local.
- * No almacena las contraseñas de otros correos.
- * Para una aplicación pública se necesita un servidor seguro.
- */
-
-const CLAVE_PERFIL = "tierrarosa_perfil_v1";
-const CLAVE_SESION = "tierrarosa_sesion_v1";
-
-const campos = [
-    "nombre1", "nombre2", "apellido1", "apellido2",
-    "usuario", "password", "telefono", "correo1",
-    "correo2", "apodo1", "fechaNacimiento", "edad",
-    "ciudad", "estado", "pais"
-];
-
-/* Cargar los datos guardados anteriormente. */
-function leerPerfil() {
-    try {
-        return JSON.parse(localStorage.getItem(CLAVE_PERFIL) || "{}");
-    } catch (error) {
-        return {};
-    }
-}
-
-function cargarFormulario() {
-    const perfil = leerPerfil();
-
-    campos.forEach(id => {
-        const campo = document.getElementById(id);
-        if (campo && perfil[id] !== undefined) {
-            campo.value = perfil[id];
-        }
-    });
-}
-
-function obtenerDatos() {
-    const datos = {};
-
-    campos.forEach(id => {
-        datos[id] = document.getElementById(id).value.trim();
-    });
-
-    return datos;
-}
-
-function mostrarMensaje(id, texto, esError = false) {
-    const elemento = document.getElementById(id);
-
+function mostrarMensaje(id, texto) {
+    const elemento = campo(id);
     elemento.textContent = texto;
     elemento.style.display = "block";
-    elemento.classList.toggle("error", esError);
 }
 
-/*
- * Los botones Guardar guardan el campo seleccionado.
- * Las contraseñas se excluyen del almacenamiento local.
- */
-document.querySelectorAll("[data-save]").forEach(boton => {
+function obtenerUsuarios() {
+    try {
+        return JSON.parse(localStorage.getItem("tierrarosa_usuarios") || "[]");
+    } catch {
+        return [];
+    }
+}
+
+/* Guardar individualmente los campos indicados. */
+document.querySelectorAll("[data-guardar]").forEach(boton => {
     boton.addEventListener("click", () => {
-        const id = boton.dataset.save;
-        const campo = document.getElementById(id);
-
-        if (!campo.value.trim()) {
-            alert("Escribe un dato antes de guardarlo.");
-            campo.focus();
-            return;
-        }
-
-        if (id === "password" ||
-            id === "passwordCorreo1" ||
-            id === "passwordCorreo2") {
-            alert(
-                "Por seguridad, no guardamos contraseñas mediante " +
-                "este botón. No introduzcas aquí la contraseña de tu correo."
-            );
-            campo.value = "";
-            return;
-        }
-
-        const perfil = leerPerfil();
-        perfil[id] = campo.value.trim();
-
-        try {
-            localStorage.setItem(CLAVE_PERFIL, JSON.stringify(perfil));
-            alert("El campo se guardó en este dispositivo.");
-        } catch (error) {
-            alert("No fue posible guardar el dato en este navegador.");
+        const entrada = campo(boton.dataset.guardar);
+        if (entrada) {
+            entrada.dataset.guardado = "true";
+            boton.textContent = "Guardado";
         }
     });
 });
 
-/* Calcular edad a partir de la fecha de nacimiento. */
-document.getElementById("fechaNacimiento").addEventListener("change", e => {
-    if (!e.target.value) return;
+/* Registro local en este navegador. */
+campo("formRegistro").addEventListener("submit", function(evento) {
+    evento.preventDefault();
 
-    const nacimiento = new Date(e.target.value + "T00:00:00");
-    const hoy = new Date();
-
-    let edad = hoy.getFullYear() - nacimiento.getFullYear();
-
-    const faltaCumpleanos =
-        hoy.getMonth() < nacimiento.getMonth() ||
-        (hoy.getMonth() === nacimiento.getMonth() &&
-         hoy.getDate() < nacimiento.getDate());
-
-    if (faltaCumpleanos) edad--;
-
-    if (edad >= 0 && edad <= 120) {
-        document.getElementById("edad").value = edad;
-    }
-});
-
-/* Registro local. */
-document.getElementById("formRegistro").addEventListener("submit", e => {
-    e.preventDefault();
-
-    const usuario = document.getElementById("usuario").value.trim();
-    const password = document.getElementById("password").value;
-
-    if (!usuario || !password) {
-        mostrarMensaje(
-            "mensajeRegistro",
-            "Es necesario escribir un usuario y una contraseña.",
-            true
-        );
+    if (!campo("aceptar").checked) {
+        mostrarMensaje("mensajeRegistro",
+            "Debes palomear la casilla para continuar.");
         return;
     }
 
-    if (/\s/.test(password)) {
-        mostrarMensaje(
-            "mensajeRegistro",
-            "La contraseña no puede contener espacios.",
-            true
-        );
+    const usuario = campo("registroUsuario").value.trim();
+    const contrasena = campo("registroContrasena").value;
+
+    if (!usuario || !contrasena) {
+        mostrarMensaje("mensajeRegistro",
+            "Escribe el usuario y la contraseña.");
         return;
     }
 
-    const datos = obtenerDatos();
+    if (/\s/.test(usuario)) {
+        mostrarMensaje("mensajeRegistro",
+            "El usuario no debe contener espacios.");
+        return;
+    }
+
+    const usuarios = obtenerUsuarios();
+
+    if (usuarios.some(u => u.usuario.toLowerCase() === usuario.toLowerCase())) {
+        mostrarMensaje("mensajeRegistro",
+            "Este usuario ya está registrado en este navegador.");
+        return;
+    }
 
     /*
-     * Nunca guardamos contraseñas de inicio de sesión en texto plano.
-     * Esta demostración no registra credenciales para autenticación.
-     */
-    delete datos.password;
-    delete datos.passwordCorreo1;
-    delete datos.passwordCorreo2;
+      Esta versión guarda el registro en el navegador.
+      No es un sistema de cuentas seguro para producción.
+    */
+    const registro = {
+        nombre1: campo("nombre1").value.trim(),
+        nombre2: campo("nombre2").value.trim(),
+        apellido1: campo("apellido1").value.trim(),
+        apellido2: campo("apellido2").value.trim(),
+        usuario: usuario,
+        telefono: campo("telefono").value.trim(),
+        correo1: campo("correo1").value.trim(),
+        correo2: campo("correo2").value.trim(),
+        apodo: campo("apodo").value.trim(),
+        nacimiento: campo("nacimiento").value,
+        edad: campo("edad").value,
+        ciudad: campo("ciudad").value.trim(),
+        estado: campo("estado").value.trim(),
+        pais: campo("pais").value.trim(),
+        fechaRegistro: new Date().toISOString()
+    };
 
-    try {
-        const perfilAnterior = leerPerfil();
+    /*
+      La contraseña no se guarda en texto plano.
+      Se utiliza Web Crypto para derivar un verificador local.
+      Esto no sustituye la autenticación de un servidor.
+    */
+    async function guardarRegistro() {
+        if (!crypto.subtle) {
+            mostrarMensaje("mensajeRegistro",
+                "El navegador no permite guardar credenciales de forma protegida en este contexto. Abre la página mediante HTTPS.");
+            return;
+        }
 
-        localStorage.setItem(
-            CLAVE_PERFIL,
-            JSON.stringify({...perfilAnterior, ...datos})
+        const sal = crypto.getRandomValues(new Uint8Array(16));
+        const clave = await crypto.subtle.importKey(
+            "raw",
+            new TextEncoder().encode(contrasena),
+            "PBKDF2",
+            false,
+            ["deriveBits"]
         );
 
-        mostrarMensaje(
-            "mensajeRegistro",
-            "Los datos del perfil se guardaron correctamente en este " +
-            "dispositivo. Para habilitar una cuenta real con contraseña " +
-            "se necesita configurar un servidor de autenticación."
-        );
+        const bits = await crypto.subtle.deriveBits({
+            name: "PBKDF2",
+            salt: sal,
+            iterations: 150000,
+            hash: "SHA-256"
+        }, clave, 256);
 
-        document.getElementById("password").value = "";
-        document.getElementById("passwordCorreo1").value = "";
-        document.getElementById("passwordCorreo2").value = "";
+        registro.sal = Array.from(sal);
+        registro.verificador = Array.from(new Uint8Array(bits));
 
-    } catch (error) {
-        mostrarMensaje(
-            "mensajeRegistro",
-            "No se pudieron guardar los datos. Revisa el almacenamiento " +
-            "disponible en el navegador.",
-            true
-        );
+        try {
+            usuarios.push(registro);
+            localStorage.setItem("tierrarosa_usuarios",
+                JSON.stringify(usuarios));
+
+            mostrarMensaje("mensajeRegistro",
+                "Su registro fue exitoso y sus datos se guardaron con éxito.");
+
+            campo("formRegistro").reset();
+            document.querySelectorAll("[data-guardar]").forEach(b => {
+                b.textContent = b.dataset.guardar === "registroUsuario"
+                    ? "Guardar usuario" : "Guardar";
+            });
+        } catch {
+            mostrarMensaje("mensajeRegistro",
+                "No fue posible guardar el registro en el navegador.");
+        }
     }
+
+    guardarRegistro();
 });
 
-/* Inicio de sesión de demostración: comprueba el perfil local,
-   pero no autentica una contraseña. */
-document.getElementById("formLogin").addEventListener("submit", e => {
-    e.preventDefault();
+/* Inicio de sesión local. */
+campo("formLogin").addEventListener("submit", async function(evento) {
+    evento.preventDefault();
 
-    const usuario = document.getElementById("loginUsuario").value.trim();
+    const usuario = campo("loginUsuario").value.trim();
+    const contrasena = campo("loginContrasena").value;
+    const usuarios = obtenerUsuarios();
 
-    if (!usuario) {
-        mostrarMensaje("mensajeLogin", "Escribe tu usuario.", true);
+    const registro = usuarios.find(
+        u => u.usuario.toLowerCase() === usuario.toLowerCase()
+    );
+
+    if (!registro || !crypto.subtle) {
+        mostrarMensaje("mensajeLogin",
+            "No se encontró una cuenta local coincidente.");
         return;
     }
 
-    const perfil = leerPerfil();
+    try {
+        const clave = await crypto.subtle.importKey(
+            "raw",
+            new TextEncoder().encode(contrasena),
+            "PBKDF2",
+            false,
+            ["deriveBits"]
+        );
 
-    if (perfil.usuario && perfil.usuario === usuario) {
-        mostrarMensaje(
-            "mensajeLogin",
-            "Encontramos el perfil guardado en este dispositivo. " +
-            "La validación segura de la contraseña requiere un servidor."
-        );
-    } else {
-        mostrarMensaje(
-            "mensajeLogin",
-            "No encontramos ese usuario en el almacenamiento local. " +
-            "Puedes registrarte en esta página."
-        );
+        const bits = await crypto.subtle.deriveBits({
+            name: "PBKDF2",
+            salt: new Uint8Array(registro.sal),
+            iterations: 150000,
+            hash: "SHA-256"
+        }, clave, 256);
+
+        const resultado = Array.from(new Uint8Array(bits));
+        const coincide = resultado.length === registro.verificador.length &&
+            resultado.every((valor, i) => valor === registro.verificador[i]);
+
+        if (coincide) {
+            mostrarMensaje("mensajeLogin",
+                "Inicio de sesión correcto.");
+        } else {
+            mostrarMensaje("mensajeLogin",
+                "Usuario o contraseña incorrectos.");
+        }
+    } catch {
+        mostrarMensaje("mensajeLogin",
+            "No fue posible verificar los datos.");
     }
 });
 
-/* Redes y perfiles que proporcionaste. */
-const redes = [
-    {
-        nombre: "Apple TV",
-        icono: "",
-        color: "#161616",
-        url: "https://www.apple.com/mx/apple-tv/"
-    },
-    {
-        nombre: "Discord",
-        icono: "◉",
-        color: "#5865F2",
-        url: "https://discord.com/"
-    },
-    {
-        nombre: "XBOX",
-        icono: "X",
-        color: "#107C10",
-        url: "https://www.xbox.com/es-MX/"
-    },
-    {
-        nombre: "GitHub",
-        icono: "GH",
-        color: "#24292f",
-        url: "https://github.com/easportsfcmobile631-design"
-    },
-    {
-        nombre: "Facebook",
-        icono: "f",
-        color: "#1877F2",
-        url: "https://www.facebook.com/share/18fACYD7pv/"
-    },
-    {
-        nombre: "Spotify",
-        icono: "≋",
-        color: "#1DB954",
-        url: "https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link"
-    },
-    {
-        nombre: "YouTube",
-        icono: "▶",
-        color: "#FF0033",
-        url: "https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY"
-    },
-    {
-        nombre: "Twitch",
-        icono: "T",
-        color: "#9146FF",
-        url: "https://www.twitch.tv/easportsfcmobile631?sr=a"
-    },
-    {
-        nombre: "X",
-        icono: "𝕏",
-        color: "#000000",
-        url: "https://x.com/eduardomar47137?s=09"
-    },
-    {
-        nombre: "WhatsApp",
-        icono: "◉",
-        color: "#25D366",
-        url: "https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B"
-    },
-    {
-        nombre: "Telegram",
-        icono: "➤",
-        color: "#229ED9",
-        url: "https://t.me/Nadia98968999"
-    },
-    {
-        nombre: "Instagram",
-        icono: "◎",
-        color: "#C13584",
-        url: "https://www.instagram.com/zuzukieduardomartinez?stkn=c3p3bHo4dWRxZGsw"
-    },
-    {
-        nombre: "Copa Fácil",
-        icono: "⚽",
-        color: "#176B43",
-        url: "https://copafacil.com/-4y21q"
-    },
-    {
-        nombre: "Messenger",
-        icono: "ϟ",
-        color: "#0084FF",
-        url: "https
+/* Instalar la aplicación cuando el navegador lo permita. */
+let instalacionPendiente;
+
+const botonInstalar = campo("botonInstalar");
+
+window.addEventListener("beforeinstallprompt", evento => {
+    evento.preventDefault();
+    instalacionPendiente = evento;
+    botonInstalar.hidden = false;
+});
+
+botonInstalar.addEventListener("click", async () => {
+    if (instalacionPendiente) {
+        instalacionPendiente.prompt();
+        await instalacionPendiente.userChoice;
+        instalacionPendiente = null;
+        botonInstalar.hidden = true;
+    } else {
+        alert("Para instalar la aplicación, abre TierraRosa desde el navegador y utiliza la opción Agregar a pantalla de inicio si está disponible.");
+    }
+});
+
+window.addEventListener("appinstalled", () => {
+    botonInstalar.hidden = true;
+});
+</script>
+
+</body>
+            </html>
