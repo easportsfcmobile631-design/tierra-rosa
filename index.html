@@ -8,114 +8,119 @@
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#F5E8D0">
 <style>
-:root{--beige:#F5E8D0;--crema:#FFF8EC;--blanco:#FFFFFF;--negro:#000000}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black, Arial, sans-serif}
+:root{--beige:#F5E8D0;--crema:#FFF8EC;--blanco:#fff;--negro:#000}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
 body{background:var(--beige);color:var(--negro)}
-.header{background:var(--crema);border-bottom:3px solid var(--negro);padding:12px;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:10}
-.icon{width:48px;height:48px;border:2.5px solid var(--negro);border-radius:50%;overflow:hidden;background:var(--blanco)}
-.icon img{width:100%;height:100%;object-fit:cover}
+.top{background:var(--crema);border-bottom:3px solid var(--negro);padding:12px;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:10}
+.ic{width:46px;height:46px;border:2.5px solid var(--negro);border-radius:50%;overflow:hidden;background:#fff}
+.ic img{width:100%;height:100%;object-fit:cover}
 .wrap{max-width:600px;margin:auto;padding:12px;padding-bottom:120px}
 .card{background:var(--crema);border:3px solid var(--negro);border-radius:16px;padding:16px;margin-bottom:14px}
-.titulo{font-size:14px;font-weight:900;text-align:center;color:var(--negro);margin-bottom:12px}
-.label{font-size:11px;font-weight:900;margin:10px 0 4px 2px;color:var(--negro)}
-.input-grande{width:100%;height:56px;border:2.5px solid var(--negro);background:var(--blanco);border-radius:12px;padding:0 12px;font-size:12px;font-weight:700}
-.hint{font-size:9px;text-align:right;margin:2px 0 6px;font-family:Arial}
+.tit{font-weight:900;font-size:14px;text-align:center;color:var(--negro);margin-bottom:10px}
+.label{font-weight:900;font-size:11px;margin:8px 0 4px 2px}
+.in{width:100%;height:56px;border:2.5px solid var(--negro);background:var(--blanco);border-radius:12px;padding:0 12px;font-weight:700}
+.hint{font-size:9px;text-align:right}
 .btn{width:100%;height:52px;border:2.5px solid var(--negro);background:var(--blanco);color:var(--negro);border-radius:12px;font-weight:900;font-size:12px;cursor:pointer;margin-top:8px}
 .btnNegro{background:var(--negro);color:var(--blanco)}
-.ok{display:none;margin-top:10px;background:#D4EDDA;border:2.5px solid #155724;color:#155724;border-radius:10px;padding:10px;font-size:11px;font-weight:900;text-align:center;font-family:Arial}
-.o{text-align:center;font-weight:900;margin:12px 0}
-.grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px }
+.ok{display:none;margin-top:10px;background:#D4EDDA;border:2px solid #155724;color:#155724;border-radius:10px;padding:10px;font-size:11px;font-weight:900;text-align:center}
+.o{text-align:center;font-weight:900;margin:10px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .btnApp{height:58px;border:3px solid var(--negro);background:var(--blanco);color:var(--negro);border-radius:12px;font-weight:900;font-size:11px;cursor:pointer}
-#installBtn{position:fixed;right:14px;bottom:14px;border:3px solid var(--negro);background:var(--blanco);color:var(--negro);border-radius:28px;padding:12px 20px;font-weight:900;font-size:11px;z-index:999;box-shadow:4px 4px 0 var(--negro)}
-#viewer{position:fixed;inset:0;background:var(--beige);z-index:2000;display:none;flex-direction:column}
-#vTop{background:var(--crema);border-bottom:3px solid var(--negro);padding:10px;display:flex;gap:8px;align-items:center}
-#vFrame{flex:1;border:0;background:#fff}
+#install{position:fixed;right:14px;bottom:14px;border:3px solid var(--negro);background:var(--blanco);color:var(--negro);border-radius:28px;padding:12px 20px;font-weight:900;z-index:99;box-shadow:4px 4px 0 var(--negro)}
+#view{position:fixed;inset:0;background:var(--beige);z-index:200;display:none;flex-direction:column}
+#vTop{background:var(--crema);border-bottom:3px solid var(--negro);padding:10px;display:flex;gap:8px}
+#vFrame{flex:1;border:0}
 </style>
 </head>
 <body>
-<div class="header"><div class="icon"><img src="./icon-19.jpg"></div><b>TierraRosa</b></div>
+<div class="top"><div class="ic"><img src="./icon-19.jpg"></div><b>TierraRosa</b></div>
 <div class="wrap">
 
 <div class="card">
-<div class="titulo">🔑INICIAR SESIÓN🔑</div>
-<div class="label">Usuario</div><input class="input-grande" id="loginUser" maxlength="75" placeholder="Cajón de texto grande"><div class="hint">75 caracteres</div>
-<div class="label">Contraseña</div><input class="input-grande" id="loginPass" type="password" maxlength="75" placeholder="Cajón de texto grande"><div class="hint">75 caracteres</div>
-<button class="btn btnNegro" onclick="hacerLogin()">[Login]</button>
+<div class="tit">🔑INICIAR SESIÓN🔑</div>
+<div class="label">Usuario</div><input class="in" id="loginUser" maxlength="75" placeholder="75 caracteres"><div class="hint">75 caracteres</div>
+<div class="label">Contraseña</div><input class="in" id="loginPass" type="password" maxlength="75" placeholder="75 caracteres"><div class="hint">75 caracteres</div>
+<button class="btn btnNegro" onclick="irTienda('Login')">Botón Login</button>
 <div class="o">Ó</div>
-<div style="font-size:11px;font-weight:900;text-align:center;font-family:Arial">Acceder con un click más fácil y rápido y sencillo.</div>
-<button class="btn" onclick="document.getElementById('secUnClick').scrollIntoView({behavior:'smooth'})">[UN CLICK]</button>
+<div style="font-size:11px;font-weight:900;text-align:center">Acceder con un click más fácil y rápido y sencillo.</div>
+<button class="btn" onclick="irTienda('Un Click')">Botón UN CLICK</button>
 </div>
 
 <div class="card">
-<div class="titulo">REGISTRARME</div>
-<div class="label">Primer Nombre</div><input class="input-grande" id="pNombre">
-<div class="label">Segundo Nombre</div><input class="input-grande" id="sNombre">
-<div class="label">Primer Apellido</div><input class="input-grande" id="pApellido">
-<div class="label">Segundo Apellido</div><input class="input-grande" id="sApellido">
-<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Usuario</div><input class="input-grande" id="rUser"></div><div style="flex:1"><div class="label">Contraseña</div><input class="input-grande" id="rPass" type="password"></div><div style="flex:1"><div class="label">Teléfono</div><input class="input-grande" id="rTel"></div></div>
-<div class="label">E-mail Primario</div><input class="input-grande" id="email1">
-<div class="label">E-mail Secundario</div><input class="input-grande" id="email2">
-<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Apodo</div><input class="input-grande" id="apodo"></div><div style="flex:1"><div class="label">Fecha de Nacimiento</div><input class="input-grande" id="fn" type="date"></div></div>
-<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Edad</div><input class="input-grande" id="edad"></div><div style="flex:1"><div class="label">Ciudad</div><input class="input-grande" id="ciudad"></div><div style="flex:1"><div class="label">Estado</div><input class="input-grande" id="estado"></div><div style="flex:1"><div class="label">País</div><input class="input-grande" id="pais"></div></div>
-<button class="btn btnNegro" onclick="registrar()">[Registrar]</button>
+<div class="tit">REGISTRARME</div>
+<div class="label">Primer Nombre</div><input class="in" id="p1">
+<div class="label">Segundo Nombre</div><input class="in" id="p2">
+<div class="label">Primer Apellido</div><input class="in" id="a1">
+<div class="label">Segundo Apellido</div><input class="in" id="a2">
+<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Usuario</div><input class="in" id="rUser"></div><div style="flex:1"><div class="label">Contraseña</div><input class="in" id="rPass" type="password"></div><div style="flex:1"><div class="label">Teléfono</div><input class="in" id="rTel"></div></div>
+<div class="label">E-mail Primario</div><input class="in" id="e1">
+<div class="label">E-mail Secundario</div><input class="in" id="e2">
+<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Apodo</div><input class="in" id="apodo"></div><div style="flex:1"><div class="label">Fecha de Nacimiento</div><input class="in" id="fn" type="date"></div></div>
+<div style="display:flex;gap:8px"><div style="flex:1"><div class="label">Edad</div><input class="in" id="edad"></div><div style="flex:1"><div class="label">Ciudad</div><input class="in" id="ciu"></div><div style="flex:1"><div class="label">Estado</div><input class="in" id="est"></div><div style="flex:1"><div class="label">País</div><input class="in" id="pais"></div></div>
+<button class="btn btnNegro" onclick="registrar()">Botón Registrar</button>
 <div id="okReg" class="ok">Su información se ha guardado con registro exitoso.</div>
 </div>
 
-<div class="card" id="secUnClick">
-<div class="titulo">UN CLICK</div>
-<div class="label">Usuario</div><input class="input-grande" id="ucUser">
-<div class="label">Contraseña</div><input class="input-grande" id="ucPass" type="password">
-<button class="btn btnNegro" onclick="autorizar()">[Autorizar]</button>
-<div id="okUnClick" class="ok">Se Autorizó el acceso con *Un Click* con que usted iniciara sesión más fácil y rápido.</div>
+<div class="card" id="unClickSec">
+<div class="tit">UN CLICK</div>
+<div class="label">Usuario</div><input class="in" id="ucUser">
+<div class="label">Contraseña</div><input class="in" id="ucPass" type="password">
+<button class="btn btnNegro" onclick="autorizar()">Autorizar</button>
+<div id="okUn" class="ok">Se Autorizó el acceso con *Un Click* con que usted iniciara sesión más fácil y rápido.</div>
 </div>
 
 <div class="card">
-<div class="titulo">Olvide mi Usuario y Contraseña</div>
-<div class="label">escribe aquí tu E-mail</div><input class="input-grande" id="olvEmail" placeholder="escribir e-mail">
-<button class="btn" onclick="enviarCodigo()">[Enviar] un e-mail a esa dirección</button>
-<div class="label">escribe aquí el código 5 dígitos</div><input class="input-grande" id="codigo" maxlength="5" placeholder="5 dígitos">
-<div class="label">Usuario</div><input class="input-grande" id="newUser" placeholder="Escribir">
-<div class="label">Contraseña</div><input class="input-grande" id="newPass" type="password" placeholder="Escribir">
-<div class="label">Usted desea actualizar su Inicio de Sesión</div><button class="btn" onclick="actualizar()">[Si]</button>
+<div class="tit">Olvide mi Usuario y Contraseña</div>
+<div class="label">escribe aquí tu E-mail</div><input class="in" id="olvMail" placeholder="escribir e-mail">
+<button class="btn" onclick="enviar()">Enviar</button>
+<div class="label">escribe aquí el código 5 dígitos</div><input class="in" id="cod" maxlength="5">
+<div class="label">Usuario</div><input class="in" id="newU" placeholder="Escribir">
+<div class="label">Contraseña</div><input class="in" id="newP" type="password" placeholder="Escribir">
+<div class="label">Usted desea actualizar su Inicio de Sesión</div><button class="btn" onclick="actualizar()">Si</button>
 <div id="okAct" class="ok">Actualización con Éxito.</div>
 </div>
 
 <div class="card">
-<div class="titulo">Fundadores</div><div style="text-align:center;font-size:12px;font-weight:900">Jesús Eduardo Martínez Carrillo y Jair Valenciana</div>
-<div class="titulo" style="margin-top:12px">Marcas</div><div style="display:flex;gap:10px;justify-content:center"><div class="btnApp" style="padding:12px 22px;height:auto">TITANES</div><div class="btnApp" style="padding:12px 22px;height:auto">SPEAKING</div></div>
+<div class="tit">Fundadores</div><div style="text-align:center;font-weight:900;font-size:12px">Jesús Eduardo Martínez Carrillo y Jair Valenciana</div>
+<div class="tit" style="margin-top:10px">Marcas</div><div style="display:flex;gap:10px;justify-content:center"><div class="btnApp" style="padding:10px 20px;height:auto">TITANES</div><div class="btnApp" style="padding:10px 20px;height:auto">SPEAKING</div></div>
 </div>
 
 <div class="card">
-<div class="titulo">consulta mis redes sociales</div>
-<div class="grid" id="gridRedes"></div>
+<div class="tit">consulta mis redes sociales</div>
+<div class="grid" id="grid"></div>
 </div>
 
 <div class="card">
-<div class="titulo">Mi Correo Electrónico personal</div><div style="text-align:center;font-size:12px;font-weight:900;font-family:Arial">easportsfcmobile631@gmail.com</div>
-<div class="titulo" style="margin-top:10px">Contacto</div><div style="text-align:center;font-size:12px;font-weight:900">+52 867 164 0906<br>+52 81 1722-7500</div>
+<div class="tit">Mi Correo Electrónico personal</div><div style="text-align:center;font-weight:900;font-size:12px">easportsfcmobile631@gmail.com</div>
+<div class="tit" style="margin-top:8px">Contacto</div><div style="text-align:center;font-weight:900">867 164 0906<br>81 1722-7500</div>
 </div>
 
 </div>
 
-<button id="installBtn">Instalar App 📲</button>
-<div id="viewer"><div id="vTop"><button class="btnApp" style="height:38px;padding:0 14px" onclick="document.getElementById('viewer').style.display='none'">← Regresar</button><b id="vTit" style="flex:1;font-size:11px;overflow:hidden"></b><button class="btnApp" style="height:38px;padding:0 14px" onclick="window.open(curUrl,'_blank')">Abrir ↗</button></div><iframe id="vFrame"></iframe></div>
+<button id="install">Instalar</button>
+<div id="view"><div id="vTop"><button class="btnApp" style="height:36px;padding:0 12px" onclick="view.style.display='none'">← Regresar</button><b id="vTit" style="flex:1;font-size:11px"></b><button class="btnApp" style="height:36px;padding:0 12px" onclick="window.open(cur,'_blank')">Abrir ↗</button></div><iframe id="vFrame"></iframe></div>
 
 <script>
-let curUrl="",deferredPrompt;
+let cur="",deferredPrompt;
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;});
-document.getElementById('installBtn').onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;document.getElementById('installBtn').innerText='INSTALADO ✅'}else{alert('TierraRosa: Chrome > ⋮ > Instalar app');}};
+install.onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;install.textContent='INSTALADO ✅'}else{alert('Instalar: Chrome > ⋮ > Instalar app');}};
 
-function hacerLogin(){if(!loginUser.value||!loginPass.value){alert('Llena Usuario y Contraseña');return;}localStorage.setItem('login',JSON.stringify({u:loginUser.value}));alert('Bienvenido '+loginUser.value);}
-function registrar(){if(!pNombre.value||!rUser.value){alert('Llena Primer Nombre y Usuario');return;}localStorage.setItem('registro',JSON.stringify({pNombre:pNombre.value,sNombre:sNombre.value}));document.getElementById('okReg').style.display='block';}
-function autorizar(){if(!ucUser.value||!ucPass.value){alert('Llena Usuario y Contraseña');return;}localStorage.setItem('unClick',JSON.stringify({u:ucUser.value}));document.getElementById('okUnClick').style.display='block';}
-function enviarCodigo(){if(!olvEmail.value){alert('Escribe E-mail');return;}const c=Math.floor(10000+Math.random()*90000);localStorage.setItem('cod',c);alert('Código enviado a '+olvEmail.value+': '+c+' (simulado)');}
-function actualizar(){if(codigo.value!=localStorage.getItem('cod')){alert('Código 5 dígitos incorrecto. Primero da Enviar');return;}document.getElementById('okAct').style.display='block';localStorage.setItem('login',JSON.stringify({u:newUser.value,p:newPass.value}));}
+function irTienda(tipo){
+ const u=loginUser.value||document.getElementById('rUser').value||ucUser.value;
+ if(!u && tipo==='Login'){alert('Escribe Usuario');return;}
+ localStorage.setItem('sesion','ok');
+ location.href='./tienda.html';
+}
+function registrar(){if(!p1.value||!rUser.value){alert('Llena Primer Nombre y Usuario');return;}document.getElementById('okReg').style.display='block';localStorage.setItem('registro','ok');}
+function autorizar(){document.getElementById('okUn').style.display='block';localStorage.setItem('unClick','ok');setTimeout(()=>location.href='./tienda.html',800);}
+function enviar(){const c=Math.floor(10000+Math.random()*90000);localStorage.setItem('cod',c);alert('Código: '+c+' enviado a '+olvMail.value);}
+function actualizar(){if(cod.value!=localStorage.getItem('cod')){alert('Código incorrecto');return;}document.getElementById('okAct').style.display='block';}
 
-const LINKS={
-"Apple TV":"https://www.apple.com/mx/apple-tv/","Discord":"https://discord.com/","XBOX":"https://www.xbox.com/es-MX/","GitHub":"https://github.com/easportsfcmobile631-design","Facebook":"https://www.facebook.com/share/18fACYD7pv/","Spotify":"https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y?si=Wg_BRZOMSvWzPEOXbfNjhA&utm_source=copy-link","YouTube":"https://youtube.com/@fcmobileeasports-g7o?si=CMYiPa05uA0GuSIY","Twitch":"https://www.twitch.tv/easportsfcmobile631?sr=a","X":"https://x.com/eduardomar47137?s=09","WhatsApp":"https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B","Telegram":"https://t.me/Nadia98968999","Instagram":"https://www.instagram.com/zuzukieduardomartinez","Copa Fácil":"https://copafacil.com/-4y21q","Messenger":"https://m.me/zusuki.eduardo.martinez","Wenbsites.co.in":"https://websites.co.in/refer/749809","Steam":"https://steamcommunity.com/profiles/76561199837311518/","Bluesky":"https://bsky.app/profile/jemart03.bsky.social","Threads":"https://www.threads.com/@zuzukieduardomartinez","Tik Tok":"https://www.tiktok.com/@rebelde.de.corazn5","Acode":"https://acode.app/profile","Render":"https://dashboard.render.com/","Netlify":"https://app.netlify.com/teams/easportsfcmobile631-design/projects","Vercel":"https://vercel.com/martineztitanjesuseduardo","Snapchat":"https://www.snapchat.com/add/fcmobileeaspo26","Duolingo":"https://www.duolingo.com/profile/EduardoMar383499?via=share_profile_link","Websites":"https://websites.co.in/refer/749809"
+const L={
+"Apple TV":"https://www.apple.com/mx/apple-tv/","Discord":"https://discord.com/","XBOX":"https://www.xbox.com/es-MX/","GitHub":"https://github.com/easportsfcmobile631-design","Facebook":"https://www.facebook.com/share/18fACYD7pv/","Spotify":"https://open.spotify.com/user/31eunzqjk2nf7g7ly3bmokfejt6y","YouTube":"https://youtube.com/@fcmobileeasports-g7o","Twitch":"https://www.twitch.tv/easportsfcmobile631","X":"https://x.com/eduardomar47137","WhatsApp":"https://whatsapp.com/channel/0029VbANeL93gvWas25UGH3B","Telegram":"https://t.me/Nadia98968999","Instagram":"https://www.instagram.com/zuzukieduardomartinez","Copa Fácil":"https://copafacil.com/-4y21q","Messenger":"https://m.me/zusuki.eduardo.martinez","Wenbsites.co.in":"https://websites.co.in/refer/749809","Steam":"https://steamcommunity.com/profiles/76561199837311518/","Bluesky":"https://bsky.app/profile/jemart03.bsky.social","Threads":"https://www.threads.com/@zuzukieduardomartinez","Tik Tok":"https://www.tiktok.com/@rebelde.de.corazn5","Acode":"https://acode.app/profile","Render":"https://dashboard.render.com/","Netlify":"https://app.netlify.com/teams/easportsfcmobile631-design/projects","Vercel":"https://vercel.com/martineztitanjesuseduardo","Snapchat":"https://www.snapchat.com/add/fcmobileeaspo26","Duolingo":"https://www.duolingo.com/profile/EduardoMar383499","Websites":"https://websites.co.in/refer/749809"
 };
-const grid=document.getElementById('gridRedes');
-Object.keys(LINKS).forEach(n=>{let b=document.createElement('button');b.className='btnApp';b.textContent=n;b.onclick=()=>{curUrl=LINKS[n];document.getElementById('vTit').textContent=n;document.getElementById('vFrame').src=curUrl;document.getElementById('viewer').style.display='flex';};grid.appendChild(b);});
+const grid=document.getElementById('grid');
+Object.keys(L).forEach(n=>{let b=document.createElement('button');b.className='btnApp';b.textContent=n;b.onclick=()=>{cur=L[n];vTit.textContent=n;vFrame.src=cur;view.style.display='flex';};grid.appendChild(b);});
 </script>
 </body>
-    </html>
+                                                                                                                                                                            </html>
